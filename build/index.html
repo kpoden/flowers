@@ -21,6 +21,79 @@
     <link rel="stylesheet" href="styles/app.css"/><!--/assets block-->
   </head>
   <body>
-    <div class="container"></div>
+    <div class="container">
+      <header class="header"><img class="header__bg" src="images/header/bg.png"/>
+        <div class="header-top wrapper">
+          <div class="header-top__burger burger"><span class="burger__line"> </span><span class="burger__line"> </span><span class="burger__line"> </span></div><img class="header-top__logo" src="/images/header/logo.png"/>
+          <div class="header-top__findInput desktopBig">
+            <input type="text" name="search" placeholder="Поиск"/>
+            <div class="header-top__findBtn">
+              <svg width="20" height="20">
+                <use xlink:href="images/sprite.svg#find"></use>
+              </svg>
+            </div>
+          </div>
+          <nav class="header-top__nav desktopBig">
+            <ul class="header-top__nav-list">
+              <li class="header-top__nav-item"><a href="/">Оплата</a></li>
+              <li class="header-top__nav-item"><a href="/">Доставка</a></li>
+              <li class="header-top__nav-item"><a href="/">Контакты</a></li>
+              <li class="header-top__nav-item"><a href="/">Скидки</a></li>
+              <li class="header-top__nav-item"><a href="/">Бонусы</a></li>
+            </ul>
+          </nav><a class="header-top__phone desktopBig" href="tel: +73432022106">
+            <svg width="20" height="20">
+              <use xlink:href="images/sprite.svg#phone"></use>
+            </svg><span>+7 (343) 20-22-106</span></a>
+          <button class="header-top__callback btn desktopBig" type="button">Заказать звонок</button>
+          <div class="header-top__personal"><a class="header-top__personal-item">
+              <svg width="20" height="20">
+                <use xlink:href="images/sprite.svg#shop"></use>
+              </svg></a><a class="header-top__personal-item">
+              <svg width="20" height="20">
+                <use xlink:href="images/sprite.svg#pers"></use>
+              </svg></a></div>
+        </div>
+        <div class="header-main wrapper">
+          <h1 class="header-main__title">Только свежие цветы</h1>
+          <p class="header-main__subtitle">Ежедневно получаем цветы от поставщиков. Гарантируем качество</p>
+          <button class="header-main__btn btn" type="button">собрать свой букет</button>
+        </div>
+      </header>
+      <main class="wrapper"></main>
+      <footer class="footer">
+        <div class="footer__wrapper wrapper"><img class="footer__logo" src="/images/header/logo.png"/>
+          <div class="footer__links-block">
+            <ul class="footer__links-col">
+              <li class="footer__link"> <a>Оплата</a></li>
+              <li class="footer__link"> <a>Доставка</a></li>
+              <li class="footer__link"> <a>Контакты</a></li>
+            </ul>
+            <ul class="footer__links-col">
+              <li class="footer__link"> <a>Скидки</a></li>
+              <li class="footer__link"> <a>Бонусы</a></li>
+            </ul>
+            <ul class="footer__links-col">
+              <li class="footer__link"> <a>Правила компании</a></li>
+              <li class="footer__link"> <a>Политика конфиденциальности</a></li>
+            </ul>
+          </div>
+          <div class="footer__contacts"><a class="footer__contact footer__phone" href="+79090022106">+7 (909) 00-22-106</a><a class="footer__contact footer__phone" href="+73432022106">+7 (343) 20-22-106</a><a class="footer__contact footer__address">620043, г. Екатеринбург. ул. Репина 99</a>
+            <div class="footer__icons">
+              <div class="footer__pay"><img src="/images/footer/visa.png"/><img src="/images/footer/mc.png"/><img src="/images/footer/sber.png"/></div>
+              <div class="footer__messenger">
+                <svg width="30" height="30">
+                  <use xlink:href="images/sprite.svg#viber"></use>
+                </svg>
+                <svg width="30" height="30">
+                  <use xlink:href="images/sprite.svg#wa"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <p class="footer__copyright">© 2009 - 2023г. «Любимый-цветочный.рф»</p>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>

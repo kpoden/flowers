@@ -10,28 +10,25 @@
     outline: none
 
 body
-    font-family: OpenSans, Helvetica, Arial, sans-serif
-    color: var(--c-font)
+    font-family: Raleway, Helvetica, Arial, sans-serif
+    color: #fff
     position: relative
-    min-height: 100vh
+    background: var(--c-bg)
 
 ._locked
     overflow: hidden
     padding-right: 20px
 
 main
-    padding-bottom: 100px
 
 .container
+    width: 100%
+    height: 100%
     margin: 0 auto
     min-width: 360px
     position: relative
-    min-height: 100%
-    padding-bottom: 400px
+    
 
-    +mw(760)
-        padding-top: 60px
-        padding-bottom: 50px
 
 
 img
@@ -46,16 +43,17 @@ a
     text-decoration: none
     color: inherit
     transition: .2s
+    cursor: pointer
+
+    &:hover
+        color: var(--c-link--h)
+
+    &:active
+        color: var(--c-link--a)
 
 
 .wrapper
-    max-width: 1500px
+    max-width: 1650px
     margin: 0 auto
-    padding-left: 50px
-    padding-right: 50px
-
-    +mw(600)
-        padding-left: 20px
-        padding-right: 20px
-
-
+    padding: 0 15px
+    

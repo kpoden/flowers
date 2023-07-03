@@ -1,0 +1,25 @@
+.burger
+    width: 30px
+    height: 20px
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    cursor: pointer
+    transition: .2s
+    padding-right: 86px
+    display: none
+
+    +mw(1150)
+        display: flex
+
+    &:hover
+        height: 30px
+    
+
+    &__line
+        width: 25px
+        height: 3px
+        background: #fff
+        display: block
+
+        
