@@ -1,0 +1,117 @@
+.logos
+    display: flex
+    flex-wrap: wrap
+    margin-bottom: 20px
+
+.logo
+    width: 14.35%
+    height: 66px
+    padding: 20px 8px
+    border: 1px solid #A4A7B7
+    margin-left: -1px
+    margin-bottom: -1px
+    min-width: 150px
+    position: relative
+    cursor: pointer
+    transition: .2s
+    display: flex
+    align-items: center
+    transition: .2s
+
+
+    &:hover
+        background: rgba(160, 170, 194, 0.20)
+    &:hover::after
+        border-color: rgba(78, 78, 78, 0.9)
+        right: 10px
+    &:hover .logo__name
+        font-weight: 500
+
+    &:active
+        background: rgba(160, 170, 194, 0.30)
+
+    &:active::after
+        border-color: rgba(78, 78, 78, 1)
+        right: 7px
+
+    +mw(750)
+        width: 100%
+        height: 40px
+        padding: 10px 0 10px 10px
+        border: none
+        border-bottom: 1px solid rgba(160, 170, 194, 0.30)
+
+        &::after
+            content: ""
+            background: transparent
+            width: 15px
+            height: 15px
+            display: block
+            position: absolute
+            right: 15px
+            top: 50%
+            transform: translateY(-50%) rotate(45deg)
+            border-top: 1px solid 
+            border-right: 1px solid 
+            border-color: #A4A7B7
+            transition: .2s
+
+    
+    .logo-img
+        width: 100%
+
+        +mw(750)
+            width: 60px
+    img
+        width: auto
+        height: 100%
+        object-fit: contain
+        transition: .2s
+
+
+    span:not(.logo__name)
+        font-weight: 700
+        font-size: 24px
+        line-height: 120%
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+
+
+            
+
+    .logo__name
+        
+        +mw(750)
+            font-size: 14px
+            line-height: 140%
+            font-weight: 300
+            position: relative
+            padding-left: 10px
+            transition: .2s
+            text-align: left
+
+
+.logos-text
+    .logo
+        padding-left: 0
+
+        .logo__name
+            padding-left: 0
+
+        span
+            font-weight: 700
+            font-size: 24px
+            line-height: 120%
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+
+            +mw(750)
+                font-size: 14px
+                line-height: 140%
+                font-weight: 300
+                position: static
+                transform: none

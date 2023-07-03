@@ -1,0 +1,3676 @@
+<style>
+    .genplan ul {
+        padding-left: 0;
+        list-style: none;
+    }
+    
+    
+    
+    
+    
+    
+    a {
+        color: #0066ff;
+        text-decoration: none;
+    }
+    
+    a:hover {
+        text-decoration: underline;
+    }
+    
+    h1 {
+        font-size: 16px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        color: #000;
+        line-height: 40px;
+        padding: 20px 20px 0 20px;
+    }
+    
+    h2 {
+        font-size: 24px;
+        text-align: center;
+    }
+    
+    ::after, ::before {
+        box-sizing: inherit;
+    }
+    
+    .clearfloat {
+        clear:both !important;
+        height:0 !important;
+        font-size: 1px !important;
+        line-height: 0px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    .display-none {
+        display: none;
+    }
+    
+    .overflow-hidden {
+        overflow: hidden;
+    }
+    
+    .image-content {
+        width: 100%;
+        max-width:1280px;
+            background: #b3d9b3a1;
+        height: 720px;
+    margin:auto;
+    position:relative;
+        overflow: hidden;
+    }
+    
+    .genplan {
+        display: inline-block;
+        position: relative;
+        /*cursor: url('http://s28092.h6.modhost.pro/assets/cursor_pan.cur'), auto;*/
+        transform-origin: left top;
+        /* transition: transform .3s ease; */
+    }
+    
+    .genplan:active {
+        cursor: url('http://s28092.h6.modhost.pro/assets/cursor_pan_active.cur'), auto;
+    }
+    
+    /*	MARKS	*/
+    
+    .marks li {
+        width: 40px;
+        height: 20px;
+        position: absolute;
+    /*	margin: -0.21% 0 0 -0.3%;*/
+        /*transition: all 0.3s ease;*/
+        /*transform: translate(-50%, -50%);*/
+        margin-left: -20px;
+        margin-top: -10px;
+    }
+    
+    .u-number {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        color: #fff;
+        font-size: 9px;
+        font-weight: 700;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .middle .u-number, .max .u-number {
+        font-size: 24px;
+    }
+    
+    .minimal .u-number {
+        font-size: 14px;
+    }
+    
+    
+    .u-number div {
+        display: inline-block;
+        padding: 4px 7px 4px 7px;
+        background: #55657a;
+        border-radius: 10px;
+    }
+    
+    /*.minimal .u-number div {
+        padding: 1px 2px 1px 2px;
+    }
+    
+    .marks li.is-action .u-number div {
+        width: 15px;
+        height: 15px;
+        background: url('http://s28092.h6.modhost.pro/assets/star1.png') center center no-repeat #ff9933 !important;
+        padding: 0;
+        text-indent: -9000px;
+    }*/
+    
+    .marks li.is-action .u-number div {
+        background: #ff9933 !important;
+    }
+    
+    .marks li:hover {
+        cursor: pointer;
+    }
+    
+    .mark-cont {
+        width: 60px;
+        height: 30px;
+        position: relative;
+    }
+    
+    .mark-cont:after {
+        content: "";
+        border: 10px solid transparent;
+        border-top: 10px solid #ccc;
+        position: absolute;
+        z-index: 34;
+        top: -17px;
+        left: 50%;
+        margin-left: -11px;
+        display: none;
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+    
+    .about-object {
+        display: none;
+        visibility: hidden;
+        width: 300px;
+        height: 260px;
+        padding: 26px 0 0 20px;
+        position: absolute;
+        z-index: 33;
+        top: -275px;
+        left: 50%;
+        margin-left: -150px;
+        background: #fff;
+        cursor: default;
+        border-bottom: solid 3px #ccc;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        opacity: 0;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+        -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+        -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+        -o-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+    }
+    
+    .marks li.sold .about-object {
+        height: 100px;
+        top: -115px;
+    }
+    
+    .marks li.active {
+        z-index: 30;
+    }
+    
+    .marks li.active .about-object {
+        display: block;
+        visibility: visible;
+        opacity: 1;
+        transition: all 0.3s ease;
+    }
+    
+    .marks li.active .mark-cont:after {
+        display: block;
+        visibility: visible;
+        opacity: 1;
+        transition: all 0.3s ease;
+    }
+    
+    .sold .about-object p.square, .sold .about-object p.location, .sold .about-object p.price, .sold .about-object p.comm, .sold .about-object div.p-bc {
+        display: none;
+    }
+    
+    .about-object p {
+        padding: 0 0 14px 0;
+        font-size: 13px;
+    }
+    
+    .about-object p.title {
+        font-size: 16px;
+        font-weight: 700;
+    }
+    
+    .about-object p.comm {
+        padding: 0 0 0 22px;
+        background: url('https://static.tildacdn.com/tild3837-3462-4562-b030-373530303733/check.png') no-repeat;
+    }
+    
+    .about-object div.p-btn	{
+        display: inline-block;
+        width: 100%;
+        padding: 12px 0 11px 0;
+        margin: 20px 0 0 0;
+        font-size: 13px;
+        font-weight: 700;
+        color: #fff;
+        text-align: center;
+        background: #282828;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .about-object div.p-btn:hover {
+        opacity: .8;
+    }
+    
+    .p-bc {
+        padding:	0 20px 0 0;
+    }
+    
+    .about-object p span {
+        font-weight: 700;
+    }
+    
+    .about-object .amount-old {
+        text-decoration: line-through;
+    }
+    
+    
+    /* Colors */
+    .free .u-number div {
+        background: #00CC33;
+    }
+    
+    .reserved .u-number div {
+        background: #CB00FE;
+    }
+    
+    .sold .u-number div {
+        background: #FA0032;
+    }
+    
+    .free .mark-cont:after {
+        border-top: 10px solid #00CC33;
+    }
+    
+    .free .about-object {
+        border-bottom: solid 3px #00CC33;
+    }
+    
+    .free .about-object p.status span {
+        color: #00CC33;
+    }
+	.is-action.free .about-object p.status span {
+        color: #ff9933;
+    }
+    
+    .reserved .mark-cont:after {
+        border-top: 10px solid #CB00FE;
+    }
+    
+    .reserved .about-object {
+        border-bottom: solid 3px #CB00FE;
+    }
+    
+    .reserved .about-object p.status span {
+        color: #CB00FE;
+    }
+    
+    .sold .mark-cont:after {
+        border-top: 10px solid #FA0032;
+    }
+    
+    .sold .about-object {
+        border-bottom: solid 3px #FA0032;
+    }
+    
+    .sold .about-object p.status span {
+        color: #FA0032;
+    }
+    
+    /*Markers*/
+    .marker {
+        width: 18px;
+        height: 26px;
+        background: url('https://static.tildacdn.com/tild3664-6130-4134-a131-316564363563/marker.png') no-repeat;
+        cursor: pointer;
+        position: absolute;
+        overflow: hidden;
+        /*margin: -0.1% 0 0 -0.15%;*/
+        transform: translate(-50%, -90%);
+    }
+    
+    .marker-container {
+        width: 18px;
+        height: 26px;
+        position: relative;
+    }
+    
+    .marker-wrap {
+        width: 200px;
+        height: 34px;
+        position: absolute;
+        z-index: 10;
+        top: -35px;
+        left: 50%;
+        margin-left: -100px;
+        background: transparent;
+        text-align: center;
+        cursor: default;
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+    
+    .marker:hover {
+        overflow: visible;
+        z-index: 1;
+    }
+    
+    .marker:hover .marker-wrap {
+        opacity: 1;
+    }
+    
+    .marker-wrap span {
+        display: inline-block;
+        padding: 8px 12px;
+        background: #fff;
+        font-size: 13px;
+        font-weight: 400;
+        color: #000;
+        border-radius: 100px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+        -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+        -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+        -o-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+    }
+    
+    /* Filter */
+    .filter {
+        width: 300px;
+        max-height: calc(100vh - 20px);
+        height: auto;
+        position: absolute;
+        z-index: 30;
+        bottom: 10px;
+        left: 16.5vw;
+        background: #fff;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+        -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+        -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+        -o-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+    }
+    
+    .filter.hide {
+        max-height: 79px;
+    }
+    
+    .filter-title {
+        display: inline-block;
+        width: 100%;
+        padding: 10px 0 6px 20px;
+        font-size: 18px;
+        font-weight: 300;
+        position: relative;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .filter-title:after {
+        content: "свернуть";
+        display: block;
+        width: 100px;
+        height: 14px;
+        text-align: right;
+        font-size: 12px;
+        color: #333;
+        font-weight: 400;
+        position: absolute;
+        z-index: 40;
+        top: 12px;
+        right: 20px;
+    }
+    
+    .filter.hide .filter-title:after {
+        content: "развернуть";
+    }
+    
+    .filter-title:hover {
+        background: #FCFCFC;
+    }
+    
+    .f-status {
+        font-family: Roboto, Arial;
+        display: inline-block;
+        width: 100%;
+        padding: 10px 0 8px 30px;
+        font-size: 13px;
+        font-weight: 400;
+        border-top: solid 1px #ECF1F5;
+    }
+    .f-status div {
+        float: left;
+        margin-right: 10px;
+    }
+    .f-status input {
+        position: absolute;
+        left: -9999px;
+    }
+    .f-status label {
+        display: block;
+        margin: 0 0 0 -1px;
+        padding: 7px 17px;
+        border-radius: 100px;
+        cursor: pointer;
+    }
+    
+    .btn-free label {
+        border: solid 2px #00CC33;
+        background: #fff;
+    }
+    
+    .btn-free input:checked + label {
+        background: #00CC33;
+        color: #fff;
+    }
+    
+    .btn-reserved label {
+        border: solid 2px #CC00FF;
+        background: #fff;
+    }
+    
+    .btn-reserved input:checked + label {
+        background: #CC00FF;
+        color: #fff;
+    }
+    
+    .btn-sold label {
+        border: solid 2px #FF0033;
+        background: #fff;
+    }
+    
+    .btn-sold input:checked + label {
+        background: #FF0033;
+        color: #fff;
+    }
+    
+    .options li {
+        width: 100%;
+        padding: 0;
+        font-size: 14px;
+        transition: all 0.3s ease;
+    }
+    
+    .option-title {
+        display: inline-block;
+        width: 100%;
+        padding: 12px 0 5px 20px;
+        border-top: solid 1px #ECF1F5;
+        font-size: 14px;
+        font-weight: 300;
+        position: relative;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .option-title:hover {
+        background: #FCFCFC;
+    }
+    
+    .options li p {
+        padding: 4px 0 4px 20px
+    }
+    
+    .options li p.last {
+        padding: 4px 0 12px 20px;
+    }
+    
+    .switch {
+        vertical-align: top;
+        margin: 0 3px 0 0;
+        width: 13px;
+        height: 13px;
+    }
+    
+    .switch + label {
+        cursor: pointer;
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
+        -webkit-tap-highlight-color: transparent;
+        display: block;
+    }
+    
+    .switch:not(checked) {
+        position: absolute;
+        opacity: 0;
+    }
+    
+    .switch:not(checked) + label {
+        position: relative;
+        padding: 0 0 0 42px;
+    }
+    
+    .switch:not(checked) + label:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 32px;
+        height: 15px;
+        border: solid 1px #DEDEDE;
+        border-radius: 13px;
+        background: #F3F3F3;
+    }
+    
+    .switch:not(checked) + label:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 15px;
+        height: 15px;
+        border: solid 1px #DEDEDE;
+        border-radius: 10px;
+        background: #FFF;
+        transition: all .2s;
+    }
+    
+    .switch:checked + label:before {
+        background: #00CC33;
+        border: 0;
+    }
+    
+    .switch:checked + label:after {
+        border: 0;
+        top: 1px;
+        left: 18px;
+        width: 13px;
+        height: 13px;
+    }
+    
+    .action-option {
+        display: inline-block;
+        width: 100%;
+        padding: 14px 0 12px 20px;
+        border-top: solid 1px #ECF1F5;
+        font-size: 14px;
+    }
+    
+    .reset-form {
+        display: inline-block;
+        width: 100%;
+        padding: 18px 0 18px 30px;
+        border-top: solid 1px #ECF1F5;
+    }
+    
+    .btn-reset {
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+        font-family: Roboto;
+        font-size: 16px;
+        font-weight: 400;
+        color: #4E95FF;
+        border: 0;
+        outline: none;
+        cursor: pointer;
+        background: transparent;
+        border-bottom: dotted 1px #4E95FF;
+        transition: all 0.3s ease;
+    }
+    
+    .btn-reset:hover {
+        color: #61A0FF;
+        border-bottom: dotted 1px #61A0FF;
+    }
+    
+    .legend {
+        display: inline-block;
+        width: 510px;
+        height: 45px;
+        background: #fff;
+        padding: 18px 0 0 0;
+        position: fixed;
+        z-index: 5;
+        bottom: 0;
+        right: 0;
+    }
+    
+    .legend div {
+        float: left;
+        margin: 0 0 0 20px;
+        padding: 0 0 0 20px;
+        font-size: 13px;
+        font-weight: 400;
+        position: relative;
+    }
+    
+    .l-free:after {
+        content: "";
+        display: block;
+        width: 11px;
+        height: 11px;
+        background: #00CC33;
+        position: absolute;
+        top: 1px;
+        left: 0;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -o-border-radius: 10px;
+        -moz-border-radius: 10px;
+    }
+    
+    .l-reserved:after {
+        content: "";
+        display: block;
+        width: 11px;
+        height: 11px;
+        background: #cb00fe;
+        position: absolute;
+        top: 1px;
+        left: 0;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -o-border-radius: 10px;
+        -moz-border-radius: 10px;
+    }
+    
+    .l-sold:after {
+        content: "";
+        display: block;
+        width: 11px;
+        height: 11px;
+        background: #fa0032;
+        position: absolute;
+        top: 1px;
+        left: 0;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -o-border-radius: 10px;
+        -moz-border-radius: 10px;
+    }
+    
+    .l-action:after {
+        content: "";
+        display: block;
+        width: 17px;
+        height: 17px;
+        background: url('https://static.tildacdn.com/tild6333-6536-4264-b065-313163303136/star.png') no-repeat;
+        position: absolute;
+        top: -2px;
+        left: 0;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -o-border-radius: 10px;
+        -moz-border-radius: 10px;
+    }
+    
+    .search-form {
+        width: 100%;
+        height: 45px;
+        background: #f9fafb;
+        border-top: solid 1px #ecf1f5;
+    }
+    
+    .search-form div {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        padding: 0 0 0 45px;
+    }
+    
+    .search-form div:after {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 20px;
+        background: url('https://static.tildacdn.com/tild3135-6138-4639-b835-343366353636/search.png') no-repeat center center;
+        position: absolute;
+        top: 12px;
+        left: 18px;
+    }
+    
+    .search-form.success div:after {
+        background: url('http://s28092.h6.modhost.pro/assets/check.png') no-repeat center center !important;
+    }
+    
+    .search-form.error div:after {
+        background: url('http://s28092.h6.modhost.pro/assets/error.png') no-repeat center center !important;
+    }
+    
+    #search {
+        width: 100%;
+        height: 100%;
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
+        font-weight: 300;
+        border: 0;
+        padding: 0;
+        margin: 0;
+        background: #f9fafb;
+        outline: none;
+    }
+    
+    .clear-search {
+        display: none;
+        width: 45px;
+        height: 45px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: url('https://static.tildacdn.com/tild3636-3766-4366-b061-363732316264/close.png') no-repeat center center #282828;
+        cursor: pointer;
+    }
+    
+    .search-form.success .clear-search, .search-form.error .clear-search {display: block;}
+    
+    .gw-legend {
+        width: 100%;
+    }
+    
+    .gw-legend div {
+        display: inline-block;
+        width: 25%;
+        float: left;
+        padding: 6px 0 6px 0;
+        color: #fff;
+        font-size: 13px;
+        font-weight: 700;
+        text-align: center;
+    }
+    
+    .gwl-free {
+        background: #00CC33;
+    }
+    
+    .gwl-reserved {
+        background: #cb00fe;
+    }
+    
+    .gwl-sold {
+        background: #fa0032;
+    }
+    
+    .gwl-action {
+        background: #ff9933;
+    }
+    
+    .hp {
+        width: 100%;
+        max-height: calc(100vh - 59px - 20px);
+        overflow-y: auto;
+        transition: all 0.3s ease;
+    }
+    
+    .filter.hide .hp {
+        max-height: 1px;
+        opacity: 0;
+    }
+    
+    .plus {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        z-index: 100;
+        top: 50px;
+        right: 15vw;
+        background: url('https://static.tildacdn.com/tild6134-3862-4566-a138-373162616165/plus.png') no-repeat center center #fff;
+        border-radius: 40px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+        -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+        -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+        -o-box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    }
+    
+    .minus {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        z-index: 100;
+        top: 100px;
+            right: 15vw;
+        background: url('https://static.tildacdn.com/tild3763-3435-4331-b432-336134366132/minus.png') no-repeat center center #fff;
+        border-radius: 40px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+        -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+        -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+        -o-box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    }
+    
+    .plus:hover, .minus:hover {
+        opacity: 0.9;
+    }
+    
+    .btn-filter {
+        display: none;
+    }
+    
+    .btn-closeall {
+        display: none;
+    }
+    
+    .black {
+        display: none;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        z-index: 60;
+        top: 0;
+        left: 0;
+        background: #000;
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+    
+    .black.active {
+        display: block;
+        opacity: 0.6;
+        transition: all 0.3s ease;
+    }
+    
+    .close-form {
+        display: none;
+        width: 80px;
+        height: 80px;
+        position: fixed;
+        z-index: 75;
+        top: 0;
+        right: 0;
+        background: url('https://static.tildacdn.com/tild3636-3766-4366-b061-363732316264/close.png') no-repeat center center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .close-form:hover {
+        opacity: 0.8;
+    }
+    
+    .close-form.active {
+        display: block;
+    }
+    
+    .request-form {
+        width: 480px;
+        height: 616px;
+        background: #fff;
+        position: fixed;
+        z-index: 70;
+        top: 200%;
+        left: 50%;
+        margin: -300px 0 0 -240px;
+        opacity: 0;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+        -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+        -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+        -o-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+    }
+    
+    .request-form.active {
+        top: 50%;
+        opacity: 1;
+        transition: all 0.3s ease;
+    }
+    
+    .request-form img {
+        display: block;
+        width: 100%;
+    }
+    
+    .f-head {
+        display: inline-block;
+        width: 100%;
+        padding: 30px 0 20px 0;
+        font-size: 24px;
+        font-weight: 400;
+        text-align: center;
+    }
+    
+    .f-text {
+        display: inline-block;
+        width: 100%;
+        padding: 0 40px 20px 40px;
+        font-size: 13px;
+        font-weight: 300;
+        line-height: 16px;
+        text-align: center;
+    }
+    
+    .f-body {
+        display: inline-block;
+        width: 100%;
+        padding: 0 40px 20px 40px;
+    }
+    
+    .f-body input {
+        width: 100%;
+        padding: 20px 0 18px 0;
+        margin: 0 0 10px 0;
+        border-top: 0;
+        border-right: 0;
+        border-left: 0;
+        border-bottom: solid 1px #ccc;
+        font-family: "Roboto", sans-serif;
+        font-size: 16px;
+        font-weight: 300;
+        outline: none;
+    }
+    
+    .personal-data {
+        display: inline-block;
+        width: 100%;
+        padding: 0 40px 20px 40px;
+    }
+    
+    .sendform {
+        display: inline-block;
+        width: 100%;
+        padding: 0 40px;
+    }
+    
+    
+    .btn-send {
+        display: inline-block;
+        width: 100%;
+        padding: 14px 0 13px;;
+        margin: 0;
+        font-family: Roboto;
+        font-size: 16px;
+        font-weight: 400;
+        color: #fff;
+        border: 0;
+        outline: none;
+        cursor: pointer;
+        background: #0f7564;
+        transition: all 0.3s ease;
+    }
+    
+    .btn-send:hover {
+        opacity: 0.9;
+    }
+    
+    .btn-send:disabled {
+        opacity: 0.7;
+        cursor: default;
+    }
+    
+    .message {
+        display: inline-block;
+        width: 100%;
+        padding: 0 40px 20px 40px;
+        font-size: 13px;
+    }
+    
+    .s-message {
+        display: none;
+        width: 100%;
+        height: 100%;
+        padding: 280px 0 0 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: url('https://static.tildacdn.com/tild3434-3064-4962-a434-313662393931/big_check.png') no-repeat #fff;
+        background-position: center 200px;
+        text-align: center;
+        font-size: 24px;
+        line-height: 30px;
+    }
+    
+    .send-success .s-message {
+        display: inline-block;
+    }
+    
+    .tr-layer {
+        display: none;
+    }
+    
+    @media screen and (max-width: 1440px) {
+		.plus,.minus {
+			right: 4vw;
+		}
+		.filter {
+		   left: 6vw;
+		}
+    }
+	@media screen and (max-width: 1350px) {
+		.filter {
+			left: 50px;
+		}
+	}	
+	
+    @media screen and (max-width: 947px) {
+    
+        .only-m {
+            display: block;
+        }
+    
+        .only-d {
+            display: none !important;
+        }
+    
+        .filter {
+            display: block;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 100vh;
+			max-height: unset;
+			max-height: 100vh;
+			overflow-y: scroll;
+        }
+    
+        .filter.show {
+            display: block;
+        }
+    
+        .filter.hide {
+                height: 30px;
+				max-height: unset;
+        }
+    
+        .filter-title {
+            display: none;
+        }
+    
+        .hp, .filter.hide .hp {
+            height: auto;
+            max-height: none;
+            overflow: visible;
+            opacity: 1;
+        }
+    
+        .btn-filter {
+            display: block;
+            width: 130px;
+            height: 60px;
+            position: fixed;
+            z-index: 10;
+            bottom: 30px;
+            right: 30px;
+            background: #fff;
+            border-radius: 100px;
+            outline: none;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+            -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+            -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+            -o-box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+        }
+    
+        .btn-filter div {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            padding: 25px 0 0 50px;
+            position: relative;
+            font-size: 16px;
+            font-weight: 300;
+        }
+    
+        .btn-filter div:after {
+            content: "";
+            display: block;
+            width: 18px;
+            height: 18px;
+            background: url('https://static.tildacdn.com/tild3433-6139-4164-b435-653331623463/controls.png') no-repeat;
+            position: absolute;
+            top: 21px;
+            left: 21px;
+        }
+    
+        .plus {
+            width: 60px;
+            height: 60px;
+            
+            top: 30px;
+            right: 30px;
+        }
+    
+        .minus {
+            width: 60px;
+            
+            height: 60px;
+            top: 100px;
+            right: 30px;
+        }
+    
+        .btn-closeall {
+            display: none;
+            /*width: 60px;
+            height: 60px;
+            position: fixed;
+            z-index: 200;
+            bottom: 30px;
+            right: 30px;
+            background: url('http://s28092.h6.modhost.pro/assets/arrow-l.png') no-repeat center center #fff;
+            border-radius: 100px;
+            outline: none;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+            -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+            -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+            -o-box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+            */
+            position: absolute;
+            z-index: 200;
+            top: 0;
+            right: 0;
+            width: 50px;
+            height: 50px;
+            background: url(https://static.tildacdn.com/tild3636-3766-4366-b061-363732316264/close.png) no-repeat center center #000;
+        }
+    
+        .btn-closeall.show {
+            display: block;
+        }
+    
+    
+    
+        /*.mark-cont:after {
+            display: none !important;
+        }*/
+    
+        .request-form {
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            left: 0;
+            overflow-y: scroll;
+        }
+    
+        .request-form.active {
+            top: 0;
+        }
+    
+        .close-form {
+            width: 50px;
+            height: 50px;
+            background: url(https://static.tildacdn.com/tild3636-3766-4366-b061-363732316264/close.png) no-repeat center center #000;
+        }
+    
+        .personal-data {
+            font-size: 13px;
+        }
+    
+        /*.marks li.sold .about-object {
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }*/
+    
+        .marks li.sold .about-object .p-bc {
+            display: none;
+        }
+    
+        .p-btn {
+            margin: 20px 0 100px 0 !important;
+        }
+    
+        .sendform {
+            padding: 0 40px 100px 40px;
+        }
+    
+        .about-object-popup {
+    
+            width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        z-index: 101;
+        background: #fff;
+        overflow-y: scroll;
+        }
+    
+        .about-object-popup.active {
+            display: block !important;
+        }
+    
+        .about-object-popup .content {
+            width: 100%;
+            height: 100%;
+        }
+    
+        .about-object-popup .about-object {
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: static;
+            z-index: 61;
+            margin-left: 0;
+            visibility: visible;
+            opacity: 1;
+        }
+    
+        .gw-legend div {
+            margin: 0 0 120px 0;
+        }
+    
+        .tr-layer.hide {
+            display: none;
+        }
+    
+        .tr-layer {
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+        }
+    
+    }
+    .touch-alert-bg {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, .5);
+        z-index: 1000;
+    }
+    
+    .touch-alert-bg span {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-weight: bold;
+        text-align: center;
+    } 
+    </style>
+    <div style="position:relative">
+    <div class="touch-alert-bg">
+            <span>Нажмите на экран, чтобы активировать генплан</span>
+        </div>
+    
+        <div class="image-content minimal">
+            
+          <div class="genplan">
+            <!-- real size: 6260x3384 -->
+            <img src="https://static.tildacdn.com/tild6239-3764-4432-b836-393738363262/__2021-12-25__225102.png" width="1280px" height="720px" draggable="false" class="bg_img">
+    
+            <ul class="marks">
+                
+                
+    
+                
+            </ul>
+            
+            
+                <div class="marker m1" style="left: 24.96%;top: 88.422%;">
+                    <div class="marker-container">
+                        <div class="marker-wrap"><span>КПП</span></div>
+                    </div>
+                </div>
+                <div class="marker m1" style="left: 62.8%;top: 91%;">
+                    <div class="marker-container">
+                        <div class="marker-wrap"><span>Выход в лес</span></div>
+                    </div>
+                </div>
+                <div class="marker m2" style="left: 21%;top: 65%;">
+                    <div class="marker-container">
+                        <div class="marker-wrap"><span>Футбольное поле</span></div>
+                    </div>
+                </div>
+                <div class="marker m3" style="left: 12%;top: 65%;">
+                    <div class="marker-container">
+                        <div class="marker-wrap"><span>Детские площадки</span></div>
+                    </div>
+                </div>
+                    <div class="marker m3" style="left: 17%;top: 63%;">
+                        <div class="marker-container">
+                            <div class="marker-wrap"><span>Теннисный корт</span></div>
+                        </div>
+                </div>
+                <div class="marker m4" style="left: 4%;top: 67%;">
+                    <div class="marker-container">
+                        <div class="marker-wrap"><span>Озеро</span></div>
+                    </div>
+                </div>
+                <div class="marker m3" style="left: 9%;top: 67.422%;">
+                    <div class="marker-container">
+                        <div class="marker-wrap"><span>Пляжная зона</span></div>
+                    </div>
+                </div>
+                <div class="marker m3" style="left: 46.2%;top: 20.422%;">
+                    <div class="marker-container">
+                        <div class="marker-wrap"><span>Выход к реке</span></div>
+                    </div>
+                </div>
+    
+    
+    
+    
+    
+    
+          </div>
+        </div>
+    
+        <div class="plus"></div>
+        <div class="minus"></div>
+		<div class="filter hide">
+			
+			<div class="gw-legend">
+				<div class="gwl-free">Свободно</div>
+				<div class="gwl-reserved">Бронь</div>
+				<div class="gwl-sold">Продано</div>
+				<div class="gwl-action">Акция</div>
+			</div>
+
+		</div>
+       
+    
+    
+        <div class="btn-closeall"></div>
+    
+        <div class="black"></div>
+        <div class="close-form"></div>
+        <div class="request-form">
+            <form class="ajax-form" action="form.php" method="post">
+                
+                <div class="f-head">Оставить заявку</div>
+                <div class="f-text">Получите детальную консультацию по условиям покупки участка. Оставьте ваши контакты. Мы перезвоним вам в течение 5 минут.</div>
+                <div class="f-body">
+                    <input type="text" name="Name" placeholder="Имя">
+                    <input type="text" name="Phone" class="phone_num" placeholder="Телефон — обязательно" required="">
+                    <input type="text" name="Email" placeholder="Email">
+                </div>
+                <div class="personal-data">
+                    <input type="checkbox" id="person" class="switch">
+                    <label for="person">Согласен на обработку персональных данных</label>
+                </div>
+                <div class="message" style="display:none"></div>
+                <div class="sendform">
+                    <button type="submit" class="btn-send" disabled="">Отправить заявку</button>
+                </div>
+                <div class="s-message">Спасибо!<br>Ваша заявка принята.</div>
+                <input type="hidden" name="Number">
+                <input type="hidden" name="url">
+            </form>
+        </div>
+    
+        <div class="about-object-popup" style="display:none">
+            <div class="content"></div>
+        </div>
+    
+        <div class="tr-layer"></div>
+    </div>
+        <script>/*! modernizr 3.6.0 (Custom Build) | MIT *
+     * https://modernizr.com/download/?-touchevents-setclasses !*/
+    !function(e,n,t){function o(e,n){return typeof e===n}function s(){var e,n,t,s,a,i,r;for(var l in c)if(c.hasOwnProperty(l)){if(e=[],n=c[l],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(t=0;t<n.options.aliases.length;t++)e.push(n.options.aliases[t].toLowerCase());for(s=o(n.fn,"function")?n.fn():n.fn,a=0;a<e.length;a++)i=e[a],r=i.split("."),1===r.length?Modernizr[r[0]]=s:(!Modernizr[r[0]]||Modernizr[r[0]]instanceof Boolean||(Modernizr[r[0]]=new Boolean(Modernizr[r[0]])),Modernizr[r[0]][r[1]]=s),f.push((s?"":"no-")+r.join("-"))}}function a(e){var n=u.className,t=Modernizr._config.classPrefix||"";if(p&&(n=n.baseVal),Modernizr._config.enableJSClass){var o=new RegExp("(^|\\s)"+t+"no-js(\\s|$)");n=n.replace(o,"$1"+t+"js$2")}Modernizr._config.enableClasses&&(n+=" "+t+e.join(" "+t),p?u.className.baseVal=n:u.className=n)}function i(){return"function"!=typeof n.createElement?n.createElement(arguments[0]):p?n.createElementNS.call(n,"http://www.w3.org/2000/svg",arguments[0]):n.createElement.apply(n,arguments)}function r(){var e=n.body;return e||(e=i(p?"svg":"body"),e.fake=!0),e}function l(e,t,o,s){var a,l,f,c,d="modernizr",p=i("div"),h=r();if(parseInt(o,10))for(;o--;)f=i("div"),f.id=s?s[o]:d+(o+1),p.appendChild(f);return a=i("style"),a.type="text/css",a.id="s"+d,(h.fake?h:p).appendChild(a),h.appendChild(p),a.styleSheet?a.styleSheet.cssText=e:a.appendChild(n.createTextNode(e)),p.id=d,h.fake&&(h.style.background="",h.style.overflow="hidden",c=u.style.overflow,u.style.overflow="hidden",u.appendChild(h)),l=t(p,e),h.fake?(h.parentNode.removeChild(h),u.style.overflow=c,u.offsetHeight):p.parentNode.removeChild(p),!!l}var f=[],c=[],d={_version:"3.6.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,n){var t=this;setTimeout(function(){n(t[e])},0)},addTest:function(e,n,t){c.push({name:e,fn:n,options:t})},addAsyncTest:function(e){c.push({name:"",fn:e})}},Modernizr=function(){};Modernizr.prototype=d,Modernizr=new Modernizr;var u=n.documentElement,p="svg"===u.nodeName.toLowerCase(),h=d._config.usePrefixes?" -webkit- -moz- -o- -ms- ".split(" "):["",""];d._prefixes=h;var m=d.testStyles=l;Modernizr.addTest("touchevents",function(){var t;if("ontouchstart"in e||e.DocumentTouch&&n instanceof DocumentTouch)t=!0;else{var o=["@media (",h.join("touch-enabled),("),"heartz",")","{#modernizr{top:9px;position:absolute}}"].join("");m(o,function(e){t=9===e.offsetTop})}return t}),s(),a(f),delete d.addTest,delete d.addAsyncTest;for(var v=0;v<Modernizr._q.length;v++)Modernizr._q[v]();e.Modernizr=Modernizr}(window,document);</script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js" integrity="sha512-pXR0JHbYm9+EGib6xR/w+uYs/u2V84ofPrBpkgLYyKvhZYJtUUvKSy1pgi8tJZAacsPwgf1kbhI4zwgu8OKOqA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+       
+       <script>
+       var objects = [
+       {"id":"1",
+       "status":"reserved",
+       "price":"1 000 000 ₽",
+       "price_old":"1 200 000 ₽",
+       "location":"123",
+       "square":"1594 м2",
+       "style":"left: 27.33%;top: 81%;",
+       },
+    
+    {"id":"2",
+       "status":"reserved",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"1200 м2",
+       "style":"left: 27.33%;top: 76%;",
+       },
+    
+    {"id":"3",
+       "status":"sale",
+       "price":"1 940 676 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"1800 м2",
+       "style":"left: 27.33%;top: 71%;",
+       },
+    
+    {"id":"4",
+       "status":"sale",
+       "price":"2 180 336 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"2036 м2",
+       "style":"left: 27.33%;top: 65%;",
+       },
+    
+    {"id":"5",
+       "status":"sale",
+       "price":"2 384 336 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"2200 м2",
+       "style":"left: 27.33%;top: 60%;",
+       },
+    
+    {"id":"6",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"1800 м2",
+       "style":"left: 27.33%;top: 54%;",
+       },
+    
+    {"id":"7",
+       "status":"sold",
+       "price":"404 000 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"808 м2",
+       "style":"left: 33%;top: 76%;",
+       },
+    
+    {"id":"8",
+       "status":"sale",
+       "price":"1 100 980 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"1206 м2",
+       "style":"left: 33%;top: 70%;",
+       },
+    
+    {"id":"9",
+       "status":"sale",
+       "price":"837 000 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"1100 м2",
+       "style":"left: 36%;top: 70%;",
+       },
+    
+    {"id":"10",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"0 м2",
+       "style":"left: 33%;top: 63%;",
+       },
+    
+    {"id":"11",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"0 м2",
+       "style":"left: 36%;top: 63%;",
+       },
+    
+    {"id":"12",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"1619 м2",
+       "style":"left: 33%;top: 58%;",
+       },
+    
+    {"id":"13",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"1492 м2",
+       "style":"left: 35.98%;top: 58%;",
+       },
+    
+    {"id":"14",
+       "status":"sold",
+       "price":"1 790 676 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"1800 м2",
+       "style":"left: 33.1%;top: 53.5%;",
+       },
+           {"id":"15",
+       "status":"sale",
+       "price":"892 750 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"906 м2",
+       "style":"left: 36%;top: 53.4%;",
+       },
+    {"id":"16",
+       "status":"sale",
+       "price":"1 980 150 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"2259 м2",
+       "style":"left: 34.3%;top: 48%;",
+       },
+    
+    {"id":"17",
+       "status":"sale",
+       "price":"2 244 466 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"2257 м2",
+       "style":"left: 34.3%;top: 43%;",
+       },
+    
+    {"id":"18",
+       "status":"sale",
+       "price":"2 535 950 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"2266 м2",
+       "style":"left: 34.3%;top: 37.7%;",
+       },
+    
+    {"id":"19",
+       "status":"sale",
+       "price":"2 747 710 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"2263 м2",
+       "style":"left: 34.3%;top: 32%;",
+       },
+    
+    {"id":"20",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"947 м2",
+       "style":"left: 34.3%;top: 26.5%;",
+       },
+    
+    {"id":"21",
+       "status":"sold",
+       "price":"705 921 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"722 м2",
+       "style":"left: 34.3%;top: 21%;",
+       },
+    
+    
+    {"id":"22",
+       "status":"sold",
+       "price":"691 481 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"722 м2",
+       "style":"left: 34.3%;top: 15.5%;",
+       },
+    
+    
+    {"id":"23",
+       "status":"sold",
+       "price":"874 998 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"900 м2",
+       "style":"left: 40%;top: 21.5%;",
+       },
+    
+    {"id":"24",
+       "status":"sold",
+       "price":"858 150 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"900 м2",
+       "style":"left: 43.3%;top: 21.5%;",
+       },
+    
+    {"id":"25",
+       "status":"sold",
+       "price":"874 998 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"900 м2",
+       "style":"left: 40%;top: 27.3%;",
+       },
+    
+    {"id":"26",
+       "status":"reserved",
+       "price":"934 110 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"963 м2",
+       "style":"left: 43%;top: 27%;",
+       },
+    
+    {"id":"27",
+       "status":"reserved",
+       "price":"1 021 098 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"988 м2",
+       "style":"left: 40%;top: 32%;",
+       },
+    
+    {"id":"28",
+       "status":"sold",
+       "price":"810 491 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"1081 м2",
+       "style":"left: 43%;top: 32%;",
+       },
+    
+    {"id":"29",
+       "status":"sold",
+       "price":"542 750 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"835 м2",
+       "style":"left: 40%;top: 39.5%;",
+       },
+    
+    {"id":"30",
+       "status":"sold",
+       "price":"1 057 500 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"846 м2",
+       "style":"left: 43%;top: 39.5%;",
+       },
+    
+    {"id":"31",
+       "status":"sale",
+       "price":"775 921 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"722 м2",
+       "style":"left: 40%;top: 43.9%;",
+       },
+    
+    {"id":"32",
+       "status":"sale",
+       "price":"741 481 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"722 м2",
+       "style":"left: 43%;top: 43.9%;",
+       },
+    
+    {"id":"33",
+       "status":"sale",
+       "price":"894 998 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"900 м2",
+       "style":"left: 40%;top: 48.5%;",
+       },
+    
+    
+    {"id":"34",
+       "status":"sale",
+       "price":"878 150 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"900 м2",
+       "style":"left: 43%;top: 48.5%;",
+       },
+    
+    
+    {"id":"35",
+       "status":"sale",
+       "price":"874 998 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"900 м2",
+       "style":"left: 40%;top: 53.5%;",
+       },
+    
+    
+    {"id":"36",
+       "status":"sale",
+       "price":"858 150 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"900 м2",
+       "style":"left: 43%;top: 53.5%;",
+       },
+    
+    {"id":"37",
+       "status":"sale",
+       "price":"1 015 384 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"1200 м2",
+       "style":"left: 40%;top: 59.5%;",
+       },
+    
+    {"id":"38",
+       "status":"sale",
+       "price":"910 491 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"1081 м2",
+       "style":"left: 43%;top: 59.5%;",
+       },
+    
+    {"id":"39",
+       "status":"sale",
+       "price":"642 750 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"835 м2",
+       "style":"left: 39.6%;top: 64.5%;",
+       },
+    
+    
+    {"id":"40",
+       "status":"reserved",
+       "price":"1 057 500 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"846 м2",
+       "style":"left: 47.2%;top: 23.4%;",
+       },
+    
+    {"id":"41",
+       "status":"reserved",
+       "price":"810 400 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"800 м2",
+       "style":"left: 47.2%;top: 27.7%;",
+       },
+    
+    {"id":"42",
+       "status":"sale",
+       "price":"1 598 364 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"1668 м2",
+       "style":"left: 50.5%;top: 27%;",
+       },
+    
+    {"id":"43",
+       "status":"promo",
+       "price":"672 000 ₽",
+       "price_old":"810 400 ₽",
+       "location":"",
+       "square":"800 м2",
+       "style":"left: 47.2%;top: 32%;",
+       },
+    
+    {"id":"44",
+       "status":"sale",
+       "price":"885 150 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"931 м2",
+       "style":"left: 50.5%;top: 31.8%;",
+       },
+    
+    {"id":"45",
+       "status":"sold",
+       "price":"662 490 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"866 м2",
+       "style":"left: 47.3%;top: 36%;",
+       },
+    
+    {"id":"46",
+       "status":"sale",
+       "price":"877 324 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"921 м2",
+       "style":"left: 50.5%;top: 36%;",
+       },
+    
+    {"id":"47",
+       "status":"sold",
+       "price":"616 000 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"800 м2",
+       "style":"left: 47.3%;top: 40%;",
+       },
+    
+    
+    {"id":"48",
+       "status":"sale",
+       "price":"903 502 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"911 м2",
+       "style":"left: 50.5%;top: 40%;",
+       },
+    
+    {"id":"49",
+       "status":"sold",
+       "price":"739 970 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"961 м2",
+       "style":"left: 47.3%;top: 44.3%;",
+       },
+    
+    {"id":"50",
+       "status":"sale",
+       "price":"986 480 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"1024 м2",
+       "style":"left: 50.5%;top: 44.3%;",
+       },
+    
+    {"id":"51",
+       "status":"sale",
+       "price":"892 718 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"907 м2",
+       "style":"left: 47.3%;top: 49%;",
+       },
+    
+    {"id":"52",
+       "status":"sale",
+       "price":"776 400 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"920 м2",
+       "style":"left: 50.1%;top: 48.5%;",
+       },
+    
+    {"id":"53",
+       "status":"sale",
+       "price":"695 000 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"825 м2",
+       "style":"left: 47%;top: 54%;",
+       },
+    
+    
+    
+    {"id":"54",
+       "status":"sale",
+       "price":"844 590 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"967 м2",
+       "style":"left: 54.5%;top: 29%;",
+       },
+    
+    {"id":"55",
+       "status":"sold",
+       "price":"862 490 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"866 м2",
+       "style":"left: 54.8%;top: 33%;",
+       },
+    
+    {"id":"56",
+       "status":"sale",
+       "price":"1 540 000 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"1400 м2",
+       "style":"left: 58.3%;top: 32%;",
+       },
+    
+    {"id":"57",
+       "status":"sold",
+       "price":"716 000 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"800 м2",
+       "style":"left: 54.8%;top: 37%;",
+       },
+    
+    {"id":"58",
+       "status":"sale",
+       "price":"687 000 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"756 м2",
+       "style":"left: 58%;top: 37%;",
+       },
+    
+    {"id":"59",
+       "status":"sale",
+       "price":"839 970 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"961 м2",
+       "style":"left: 54.8%;top: 41.5%;",
+       },
+    
+    
+    {"id":"60",
+       "status":"sale",
+       "price":"1 481 700 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"1347 м2",
+       "style":"left: 62%;top: 35%;",
+       },
+    
+    
+    
+    {"id":"61",
+       "status":"sale",
+       "price":"1 941 600 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"1618 м2",
+       "style":"left: 65%;top: 40%;",
+       },
+    
+    {"id":"62",
+       "status":"sale",
+       "price":"813 460 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"890 м2",
+       "style":"left: 61.6%;top: 41%;",
+       },
+    
+    {"id":"63",
+       "status":"sale",
+       "price":"562 590 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"658 м2",
+       "style":"left: 59%;top: 42%;",
+       },
+    
+    {"id":"64",
+       "status":"sale",
+       "price":"682 156 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"749 м2",
+       "style":"left: 56%;top: 46.5%;",
+       },
+    
+    
+    {"id":"65",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"600 м2",
+       "style":"left: 58.8%;top: 46.3%;",
+       },
+    
+    {"id":"66",
+       "status":"sold",
+       "price":"1 036 300 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"1000 м2",
+       "style":"left: 61.8%;top: 46.2%;",
+       },
+    
+    {"id":"67",
+       "status":"sold",
+       "price":"1 011 136 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"976 м2",
+       "style":"left: 64.1%;top: 46%;",
+       },
+
+       {"id":"68",
+       "status":"sale",
+       "price":"752 658 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"779 м2",
+       "style":"left: 66.5%;top: 45.9%;",
+       },
+
+       {"id":"69",
+       "status":"sold",
+       "price":"1 011 136 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"976 м2",
+       "style":"left: 69.2%;top: 46%;",
+       },
+    
+    
+    {"id":"70",
+       "status":"promo",
+       "price":"1 566 200 ₽",
+       "price_old":"1 879 200 ₽",
+       "location":"null",
+       "square":"1566 м2",
+       "style":"left: 72%;top: 53%;",
+       },
+    
+    {"id":"71",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"791 м2",
+       "style":"left: 69%;top: 52.6%;",
+       },
+    
+    {"id":"72",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"841 м2",
+       "style":"left: 67%;top: 52.6%;",
+       },
+    
+    {"id":"73",
+       "status":"reserved",
+       "price":"898 710 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"870 м2",
+       "style":"left: 64.7%;top: 52.6%;",
+       },
+    
+    {"id":"74",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"1000 м2",
+       "style":"left: 62.3%;top: 52.7%;",
+       },
+    
+    {"id":"75",
+       "status":"sold",
+       "price":"740 400 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"600 м2",
+       "style":"left: 60.1%;top: 52.8%;",
+       },
+    
+    {"id":"76",
+       "status":"sale",
+       "price":"1 086 300 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"1000 м2",
+       "style":"left: 57.5%;top: 52.9%;",
+       },
+    
+    {"id":"77",
+       "status":"sale",
+       "price":"1 051 136 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"976 м2",
+       "style":"left: 54.3%;top: 53%;",
+       },
+    
+    {"id":"78",
+       "status":"sold",
+       "price":"618 342 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"600 м2",
+       "style":"left: 51.5%;top: 53.3%;",
+       },
+    
+    {"id":"79",
+       "status":"sold",
+       "price":"641 676 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"600 м2",
+       "style":"left: 49%;top: 58.7%;",
+       },
+    
+    {"id":"80",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"600 м2",
+       "style":"left: 51.3%;top: 58.5%;",
+       },
+    
+    {"id":"81",
+       "status":"sale",
+       "price":"1 071 136 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"976 м2",
+       "style":"left: 54.4%;top: 58.2%;",
+       },
+    
+    {"id":"82",
+       "status":"sold",
+       "price":"854 400 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"712 м2",
+       "style":"left: 57.8%;top: 58%;",
+       },
+    
+    
+    {"id":"83",
+       "status":"sold",
+       "price":"740 400 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"600 м2",
+       "style":"left: 60.2%;top: 57.9%;",
+       },
+    
+    {"id":"84",
+       "status":"sold",
+       "price":"740 400 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"600 м2",
+       "style":"left: 62.3%;top: 57.8%;",
+       },
+    
+    
+    {"id":"85",
+       "status":"reserved",
+       "price":"987 200 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"800 м2",
+       "style":"left: 64.7%;top: 57.6%;",
+       },
+    
+    {"id":"86",
+       "status":"sold",
+       "price":"727 890 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"600 м2",
+       "style":"left: 67%;top: 57.5%;",
+       },
+    
+    {"id":"87",
+       "status":"sold",
+       "price":"727 890 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"600 м2",
+       "style":"left: 69%;top: 57.5%;",
+       },
+    
+    {"id":"88",
+       "status":"sold",
+       "price":"727 890 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"600 м2",
+       "style":"left: 71.2%;top: 57.5%;",
+       },
+    
+    {"id":"89",
+       "status":"sold",
+       "price":"1 424 977 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"1333 м2",
+       "style":"left: 73.5%;top: 57.5%;",
+       },
+    
+    {"id":"90",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"1159 м2",
+       "style":"left: 76%;top: 57.5%;",
+       },
+    
+    
+    
+    {"id":"91",
+       "status":"sale",
+       "price":"1 948 000 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"1590 м2",
+       "style":"left: 78.5%;top: 63.5%;",
+       },
+    
+    {"id":"92",
+       "status":"sale",
+       "price":"757 890 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"600 м2",
+       "style":"left: 75.2%;top: 64.2%;",
+       },
+    
+    
+    {"id":"93",
+       "status":"sale",
+       "price":"784 253 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"630 м2",
+       "style":"left: 73.2%;top: 64.3%;",
+       },
+    
+    {"id":"94",
+       "status":"sale",
+       "price":"787 890 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"600 м2",
+       "style":"left: 71.1%;top: 64.3%;",
+       },
+    
+    {"id":"95",
+       "status":"sale",
+       "price":"787 890 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"600 м2",
+       "style":"left: 69.2%;top: 64.4%;",
+       },
+    
+    {"id":"96",
+       "status":"reserved",
+       "price":"787 890 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"600 м2",
+       "style":"left: 67.2%;top: 64.5%;",
+       },
+    
+    {"id":"97",
+       "status":"sold",
+       "price":"1 484 977 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"1333 м2",
+       "style":"left: 64.3%;top: 64.6%;",
+       },
+    
+    {"id":"98",
+       "status":"sold",
+       "price":"737 800 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"868 м2",
+       "style":"left: 59%;top: 64.9%;",
+       },
+    
+    {"id":"99",
+       "status":"sale",
+       "price":"783 645 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"705 м2",
+       "style":"left: 56%;top: 65%;",
+       },
+    
+    {"id":"100",
+       "status":"reserved",
+       "price":"564 000 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"705 м2",
+       "style":"left: 53.8%;top: 65.1%;",
+       },
+    
+    {"id":"101",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"705 м2",
+       "style":"left: 51.5%;top: 65.2%;",
+       },
+    
+    {"id":"102",
+       "status":"sale",
+       "price":"688 025 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"705 м2",
+       "style":"left: 48.88%;top: 65.3%;",
+       },
+    
+    {"id":"103",
+       "status":"sale",
+       "price":"770 425 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"785 м2",
+       "style":"left: 46.4%;top: 65.4%;",
+       },
+    
+    
+    {"id":"104",
+       "status":"sale",
+       "price":"397 530 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"631 м2",
+       "style":"left: 43.8%;top: 65.5%;",
+       },
+    
+    {"id":"105",
+       "status":"reserved",
+       "price":"563 250 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"751 м2",
+       "style":"left: 40.5%;top: 70.9%;",
+       },
+    
+    {"id":"106",
+       "status":"sale",
+       "price":"787 800 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"868 м2",
+       "style":"left: 43.6%;top: 70.5%;",
+       },
+    
+    {"id":"107",
+       "status":"sale",
+       "price":"719 800 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"788 м2",
+       "style":"left: 46.5%;top: 70.4%;",
+       },
+    
+    {"id":"108",
+       "status":"sold",
+       "price":"773 760 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"600 м2",
+       "style":"left: 49%;top: 70.3%;",
+       },
+    
+    {"id":"109",
+       "status":"sold",
+       "price":"710 700 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"600 м2",
+       "style":"left: 51.3%;top: 70.2%;",
+       },
+    
+    {"id":"110",
+       "status":"reserved",
+       "price":"528 750 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"705 м2",
+       "style":"left: 53.5%;top: 70.1%;",
+       },
+    
+    {"id":"111",
+       "status":"sale",
+       "price":"753 969 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"705 м2",
+       "style":"left: 56.1%;top: 70%;",
+       },
+    
+    {"id":"112",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"0 м2",
+       "style":"left: 59.1%;top: 69.8%;",
+       },
+    
+    {"id":"113",
+       "status":"sale",
+       "price":"1 424 521 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"1332 м2",
+       "style":"left: 64.16%;top: 69.78%;",
+       },
+    
+    {"id":"114",
+       "status":"sale",
+       "price":"2 993 400 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"1663 м2",
+       "style":"left: 68.5%;top: 71%;",
+       },
+    
+    {"id":"115",
+       "status":"sale",
+       "price":"3 060 000 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"1700 м2",
+       "style":"left: 72.5%;top: 71%;",
+       },
+    
+    {"id":"116",
+       "status":"reserved",
+       "price":"773 760 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"600 м2",
+       "style":"left: 75.1%;top: 69.5%;",
+       },
+    
+    {"id":"117",
+       "status":"reserved",
+       "price":"710 700 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"600 м2",
+       "style":"left: 77.3%;top: 69.5%;",
+       },
+    
+    {"id":"118",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"1080 м2",
+       "style":"left: 79.7%;top: 69.5%;",
+       },
+    
+    {"id":"119",
+       "status":"sold",
+       "price":"833 600 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"1042 м2",
+       "style":"left: 82.4%;top: 69.4%;",
+       },
+    
+    
+    
+    
+    {"id":"120",
+       "status":"sold",
+       "price":"1 380 000 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"1200 м2",
+       "style":"left: 86.6%;top: 77%;",
+       },
+    
+    {"id":"121",
+       "status":"sold",
+       "price":"847 450 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"997 м2",
+       "style":"left: 83.4%;top: 77%;",
+       },
+    
+    
+    {"id":"122",
+       "status":"sold",
+       "price":"829 368 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"800 м2",
+       "style":"left: 80.5%;top: 77%;",
+       },
+    
+    
+    {"id":"123",
+       "status":"reserved",
+       "price":"1 145 320 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"836 м2",
+       "style":"left: 76.8%;top: 77%;",
+       },
+    
+    {"id":"124",
+       "status":"reserved",
+       "price":"2 067 780 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"1446 м2",
+       "style":"left: 73%;top: 77%;",
+       },
+    
+    {"id":"125",
+       "status":"reserved",
+       "price":"2 057 770 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"1439 м2",
+       "style":"left: 68.3%;top: 77.2%;",
+       },
+    
+    {"id":"126",
+       "status":"sold",
+       "price":"695 520 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"966 м2",
+       "style":"left: 65%;top: 77.3%;",
+       },
+    
+    
+    {"id":"127",
+       "status":"sale",
+       "price":"933 600 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"1042 м2",
+       "style":"left: 59.4%;top: 77.6%;",
+       },
+    
+    
+    {"id":"128",
+       "status":"sale",
+       "price":"1 380 000 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"1200 м2",
+       "style":"left: 55.7%;top: 77.8%;",
+       },
+    
+    {"id":"129",
+       "status":"sale",
+       "price":"847 450 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"997 м2",
+       "style":"left: 52.1%;top: 78%;",
+       },
+    
+    {"id":"130",
+       "status":"sale",
+       "price":"829 368 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"800 м2",
+       "style":"left: 49.08%;top: 78.1%;",
+       },
+    
+    
+    {"id":"131",
+       "status":"sale",
+       "price":"1 059 960 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"968 м2",
+       "style":"left: 46.1%;top: 78.2%;",
+       },
+    
+    
+    
+    {"id":"132",
+       "status":"sale",
+       "price":"955 650 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"831 м2",
+       "style":"left: 43%;top: 78.3%;",
+       },
+    
+    
+    
+    
+    {"id":"133",
+       "status":"sold",
+       "price":"850 000 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"1000 м2",
+       "style":"left: 40%;top: 78.4%;",
+       },
+    
+    
+    {"id":"134",
+       "status":"sale",
+       "price":"695 520 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"966 м2",
+       "style":"left: 36.5%;top: 78.4%;",
+       },
+    
+    
+    
+    {"id":"135",
+       "status":"sale",
+       "price":"743 361 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"990 м2",
+       "style":"left: 33.1%;top: 83.7%;",
+       },
+    
+    {"id":"136",
+       "status":"sale",
+       "price":"825 792 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"1100 м2",
+       "style":"left: 36.5%;top: 83.6%;",
+       },
+    
+    {"id":"137",
+       "status":"sold",
+       "price":"1 4388 00 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"1200 м2",
+       "style":"left: 40%;top: 83.5%;",
+       }, 
+    
+    {"id":"138",
+       "status":"sale",
+       "price":"905 790 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"831 м2",
+       "style":"left: 43%;top: 83.4%;",
+       }, 
+    
+    {"id":"139",
+       "status":"sale",
+       "price":"1 061 055 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"969 м2",
+       "style":"left:46.15%;top: 83.3%;",
+       }, 
+    
+    {"id":"140",
+       "status":"sale",
+       "price":"823 344 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"800 м2",
+       "style":"left: 49.2%;top: 83.2%;",
+       }, 
+    
+    
+    {"id":"141",
+       "status":"reserved",
+       "price":"850 000 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"1000 м2",
+       "style":"left: 52.3%;top: 83.1%;",
+       }, 
+    
+    
+    {"id":"142",
+       "status":"reserved",
+       "price":"960 000 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"1200 м2",
+       "style":"left: 56%;top: 83%;",
+       }, 
+    
+    
+    {"id":"143",
+       "status":"sale",
+       "price":"1 033 560 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"1044 м2",
+       "style":"left: 59.7%;top: 82.8%;",
+       }, 
+    
+    
+    {"id":"144",
+       "status":"sale",
+       "price":"1 296 925 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"1069 м2",
+       "style":"left: 64.2%;top: 82.4%;",
+       }, 
+    
+    {"id":"145",
+       "status":"sale",
+       "price":"1 488 800 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"1200 м2",
+       "style":"left: 68%;top: 82.3%;",
+       }, 
+    
+    {"id":"146",
+       "status":"sale",
+       "price":"1 090 600 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"900 м2",
+       "style":"left: 71.4%;top: 82.2%;",
+       }, 
+    
+    {"id":"147",
+       "status":"sale",
+       "price":"940 262 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"793 м2",
+       "style":"left: 74.2%;top: 82.1%;",
+       }, 
+    
+    
+    
+    {"id":"148",
+       "status":"sale",
+       "price":"1 072 850 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"822 м2",
+       "style":"left: 77%;top: 82%;",
+       }, 
+    
+    
+    {"id":"149",
+       "status":"sale",
+       "price":"1 284 915 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"1062 м2",
+       "style":"left: 81.3%;top: 82%;",
+       }, 
+    
+    {"id":"150",
+       "status":"sale",
+       "price":"721 910 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"700 м2",
+       "style":"left: 84.1%;top: 82%;",
+       }, 
+    
+    {"id":"151",
+       "status":"sale",
+       "price":"767 480 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"740 м2",
+       "style":"left: 86.7%;top: 82%;",
+       }, 
+    
+    {"id":"152",
+       "status":"sold",
+       "price":"1 118 490 ₽",
+       "price_old":"",
+       "location":"",
+       "square":"800 м2",
+       "style":"left: 89.5%;top: 82%;",
+       },
+    
+    {"id":"153",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"1020 м2",
+       "style":"left: 91.5%;top: 87%;",
+       }, 
+    
+    {"id":"154",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"600 м2",
+       "style":"left: 87.5%;top: 88.2%;",
+       }, 
+    
+    {"id":"155",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"600 м2",
+       "style":"left: 84.5%;top: 88.3%;",
+       }, 
+    
+    {"id":"156",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"600 м2",
+       "style":"left: 81.6%;top: 88.4%;",
+       }, 
+    
+    {"id":"157",
+       "status":"sale",
+       "price":"921 390 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"600 м2",
+       "style":"left: 78.45%;top: 88.5%;",
+       }, 
+    
+    {"id":"158",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"600 м2",
+       "style":"left: 75.4%;top: 88.6%;",
+       }, 
+    
+    {"id":"159",
+       "status":"sale",
+       "price":"921 391 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"600 м2",
+       "style":"left: 72.4%;top: 88.7%;",
+       }, 
+    
+    {"id":"160",
+       "status":"sale",
+       "price":"921 391 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"600 м2",
+       "style":"left: 69.4%;top: 88.8%;",
+       }, 
+    
+    {"id":"161",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"600 м2",
+       "style":"left: 65.2%;top: 89%;",
+       }, 
+    
+    {"id":"162",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"600 м2",
+       "style":"left: 59.9%;top: 89.4%;",
+       }, 
+    
+    {"id":"163",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"600 м2",
+       "style":"left: 56.8%;top: 89.5%;",
+       }, 
+    
+    {"id":"164",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"1000 м2",
+       "style":"left: 53.8%;top: 89.6%;",
+       }, 
+    
+    {"id":"165",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"1000 м2",
+       "style":"left: 50.8%;top: 89.7%;",
+       }, 
+    
+    {"id":"166",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"1000 м2",
+       "style":"left: 47.7%;top: 89.8%;",
+       }, 
+    
+    {"id":"167",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"1000 м2",
+       "style":"left: 44.8%;top: 89.9%;",
+       },
+    
+     {"id":"168",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"1000 м2",
+       "style":"left: 41.7%;top: 90%;",
+       }, 
+    
+     {"id":"169",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"1000 м2",
+       "style":"left: 38.5%;top: 90.1%;",
+       },
+    
+     {"id":"170",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"1000 м2",
+       "style":"left: 35.4%;top: 90.2%;",
+       },
+    
+     {"id":"171",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"1000 м2",
+       "style":"left: 32.3%;top: 90.3%;",
+       },
+
+       {"id":"153а",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"1020 м2",
+       "style":"left: 90.8%;top: 92%;",
+       }, 
+    
+    {"id":"154а",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"600 м2",
+       "style":"left: 87.8%;top: 92.2%;",
+       }, 
+    
+    {"id":"155а",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"600 м2",
+       "style":"left: 84.8%;top: 92.3%;",
+       }, 
+    
+    {"id":"156а",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"600 м2",
+       "style":"left: 81.8%;top: 92.4%;",
+       }, 
+    
+    {"id":"157а",
+       "status":"sale",
+       "price":"С/Х",
+       "price_old":"",
+       "location":"null",
+       "square":"600 м2",
+       "style":"left: 78.7%;top: 92.5%;",
+       }, 
+    
+    {"id":"158а",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"600 м2",
+       "style":"left: 75.6%;top: 92.6%;",
+       }, 
+    
+    {"id":"159а",
+       "status":"sale",
+       "price":"С/Х ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"600 м2",
+       "style":"left: 72.5%;top: 92.7%;",
+       }, 
+    
+    {"id":"160а",
+       "status":"sale",
+       "price":"С/Х ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"600 м2",
+       "style":"left: 69.5%;top: 92.8%;",
+       }, 
+    
+    {"id":"161а",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"600 м2",
+       "style":"left: 65.2%;top: 93%;",
+       }, 
+    
+    {"id":"162а",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"600 м2",
+       "style":"left: 60%;top: 93.1%;",
+       }, 
+    
+    {"id":"163а",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"600 м2",
+       "style":"left: 57%;top: 93.2%;",
+       }, 
+    
+    {"id":"164а",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"1000 м2",
+       "style":"left: 54%;top: 93.3%;",
+       }, 
+    
+    {"id":"165а",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"1000 м2",
+       "style":"left: 51%;top: 93.4%;",
+       }, 
+    
+    {"id":"166а",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"1000 м2",
+       "style":"left: 48%;top: 93.58%;",
+       }, 
+    
+    {"id":"167а",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"1000 м2",
+       "style":"left: 45%;top: 93.65%;",
+       },
+    
+     {"id":"168а",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"1000 м2",
+       "style":"left: 41.8%;top: 93.7%;",
+       }, 
+    
+     {"id":"169а",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"1000 м2",
+       "style":"left: 38.6%;top: 93.8%;",
+       },
+    
+     {"id":"170а",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"1000 м2",
+       "style":"left: 35.5%;top: 93.9%;",
+       },
+    
+     {"id":"171а",
+       "status":"sold",
+       "price":"0 ₽",
+       "price_old":"",
+       "location":"null",
+       "square":"1000 м2",
+       "style":"left: 32.4%;top: 94%;",
+       },
+       ]
+       
+       for(var k in objects) {
+            if (objects[k]['status'] == 'sold'){
+            $(".marks").append(
+            $('<li class="sold u'+objects[k]['id']+'" data-id="'+objects[k]['id']+'" style="'+objects[k]['style']+'">', {})
+            .append('<div class="mark-cont"><div class="u-number"><div>'+objects[k]['id']+'</div></div><div class="about-object"><p class="title">Участок '+objects[k]['id']+'</p><p class="square">Площадь: <span>'+objects[k]['square']+' </span></p><p class="location">Расположение: <span>'+objects[k]['location']+'</span></p><p class="price">Стоимость: '+objects[k]['price']+'<span class="amount-old">'+objects[k]['price_old']+'</span> <span class="amount"></span></p><p class="status">Статус: <span>Продан</span></p><div class="p-bc"><div class="p-btn">Оставить заявку</div></div></div></div>')
+            );
+            }else{
+			$(".marks").append(
+            $('<li class="u'+objects[k]['id']+'" data-id="'+objects[k]['id']+'" style="'+objects[k]['style']+'">', {})
+            .append('<div class="mark-cont"><div class="u-number"><div>'+objects[k]['id']+'</div></div><div class="about-object"><p class="title">Участок '+objects[k]['id']+'</p><p class="square">Площадь: <span>'+objects[k]['square']+' </span></p><p class="location">Расположение: <span>'+objects[k]['location']+'</span></p><p class="price">Стоимость: '+objects[k]['price']+'<span class="amount-old">'+objects[k]['price_old']+'</span> <span class="amount"></span></p><p class="status">Статус: <span>Свободен</span></p><div class="p-bc"><div class="p-btn">Оставить заявку</div></div></div></div>')
+            );
+            
+            }
+            
+        
+         
+        }
+        
+                
+        </script>
+        <script>var czoom = 1;
+    
+    if (Modernizr.touchevents){
+        //alert('touch');
+        $('.touch-alert-bg').show();
+        $('.touch-alert-bg').click(function() {
+            $('.touch-alert-bg').fadeOut(300);
+            $(".tr-layer").hide();
+        });
+    } else {
+        $(".tr-layer").hide();
+    }
+    
+    function copyToClipboard(str) {
+        var area = document.createElement('textarea');
+    
+        document.body.appendChild(area);  
+        area.value = str;
+        area.select();
+        document.execCommand("copy");
+        document.body.removeChild(area);  
+    }
+        
+    
+    jQuery(function ($) {
+        
+        // формируем фильтр
+        var location_fc = "";
+        var location_values = [];
+        for (i=0; i<objects.length; i++) {
+            if (typeof location_values[ objects[i]['location'] ] === "undefined" && objects[i]['location'] != null && objects[i]['location'] != '"объект инфраструктуры' && objects[i]['location'] != 'объект  инфраструктуры') {
+                //console.log(objects[i]['location']);
+                location_values[ objects[i]['location'] ] = 1;
+                location_fc += '<p><input type="checkbox" name="" id="location-' + i + '" class="switch" data-filter="location" data-value="' + objects[i]['location'] + '"><label for="location-' + i + '">' + objects[i]['location'] + '</label></p>';
+            }
+        }
+        location_fc = '<div class="option-title">Расположение:</div>' + location_fc;
+        $('.filtr_location').html(location_fc);
+        $('.filtr_location').find('p:last').addClass('last');
+        
+        
+        function formatNumber (number, decimals, dec_point, thousands_sep) {
+            // original by: Jonas Raoni Soares Silva (http://www.jsfromhell.com)
+            // improved by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+            // bugfix by: Michael White (http://crestidg.com)
+            var i, j, kw, kd, km;
+    
+            // input sanitation & defaults
+            if (isNaN(decimals = Math.abs(decimals))) {
+                decimals = 2;
+            }
+            if (dec_point == undefined) {
+                dec_point = ",";
+            }
+            if (thousands_sep == undefined) {
+                thousands_sep = ".";
+            }
+    
+            i = parseInt(number = (+number || 0).toFixed(decimals)) + "";
+    
+            if ((j = i.length) > 3) {
+                j = j % 3;
+            }
+            else {
+                j = 0;
+            }
+    
+            km = (j
+                ? i.substr(0, j) + thousands_sep
+                : "");
+            kw = i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thousands_sep);
+            kd = (decimals
+                ? dec_point + Math.abs(number - i).toFixed(decimals).replace(/-/, '0').slice(2)
+                : '');
+    
+            return km + kw + kd;
+        }
+    
+        // es6 polyfill
+        if (!String.prototype.startsWith) {
+            String.prototype.startsWith = function(search, pos) {
+                return this.substr(!pos || pos < 0 ? 0 : +pos, search.length) === search;
+            };
+        }
+    
+        //Popups
+        $(".marks li").click(function () {
+            $(".marks li").removeClass("active");
+            $(".btn-closeall").addClass("show");
+            var $t = $(this);
+            $t.addClass("active");
+            $('.request-form input[name=Number]').val($t.data('id'));
+    
+            var aboutPopup = $('.about-object-popup'),
+                aboutPopupContent = aboutPopup.find('> .content');
+            aboutPopupContent.html($t.find('.about-object')[0].outerHTML);
+            aboutPopupContent.attr('class', 'content ' + $t.attr('class').match(/free|sold|reserved|is-action/)[0]);
+            aboutPopup.addClass('active');
+    
+            return false;
+        });
+    
+        $(".genplan").click(function () {
+            $(".marks li").removeClass("active");
+            return false;
+        });
+    
+        
+    
+        $(".tr-layer").click(function () {
+            $(this).addClass("hide");
+            return false;
+        });
+    
+        $(".btn-closeall").click(function () {
+            $(".filter").removeClass("show");
+            $(".marks li").removeClass("active");
+            $(".request-form").removeClass("active");
+            $(".close-form").removeClass("active");
+            $('.about-object-popup').removeClass('active');
+            $(".black").removeClass("active");
+            $(this).removeClass("show");
+            return false;
+        });
+    
+        
+    
+        //Request form
+        $('.p-btn').on('click', showRequestForm);
+        $('.about-object-popup').on('click', '.p-btn', function(e){
+            e.preventDefault();
+            let titleObject = $(this).parent().parent().find('.title').text();
+            $('#form381739516 input[name="objectName"]').val(titleObject);
+            $("a[href='#popup:consultation']").trigger('click');
+            
+            //$(".black").addClass("active");
+            //$(".close-form").addClass("active");
+            //$(".request-form").addClass("active");
+        });
+    
+        function showRequestForm(e) {
+            e.preventDefault();
+            let titleObject = $(this).parent().parent().find('.title').text();
+            $('#form381739516 input[name="objectName"]').val(titleObject);
+            $("a[href='#popup:consultation']").trigger('click');
+            
+            //$(".black").addClass("active");
+            //$(".close-form").addClass("active");
+            //$(".request-form").addClass("active");
+        }
+    
+        $(".close-form").click(function () {
+            $(".black").removeClass("active");
+            $(".request-form").removeClass("active");
+            $('.about-object-popup').removeClass('active');
+            $(".btn-closeall").removeClass('show');
+            $(".marks li").removeClass("active");
+            $(this).removeClass("active");
+            return false;
+        });
+    
+        $(".black").click(function () {
+            $(".close-form").removeClass("active");
+            $(".request-form").removeClass("active");
+            $(this).removeClass("active");
+            return false;
+        });
+    
+        $(".clear-search").on('click', function () {
+            searchBox.val('').trigger('change');
+        });
+    
+    
+        // load data
+    
+        function loadData(sourceData) {
+            var getStatus = function (status) {
+                if (status === 'Забронирован') {
+                    return 'reserved';
+                }
+                if (status === 'Продан') {
+                    return 'sold';
+                }
+                if (status === 'Снят с продажи' || status === 'Без документов') {
+                    return 'out';
+                }
+                if (status === 'Без документов') {
+                    return '';
+                }
+                return 'free';
+            };
+    
+            return sourceData.map(function(house) {
+                house.square_value = house.square_value * 1;
+                if (house.status == 'sale'){
+                var statusRus = 'Свободен';
+                }else if (house.status == 'sold'){
+                var statusRus = 'Продан';
+                }
+				else if (house.status == 'promo'){
+                var statusRus = 'Акция';
+                }
+				else{
+                var statusRus = 'Забронирован';
+                }
+                var element = $('.genplan [data-id="' + house.id + '"]'),
+                    status = statusRus || 'Свободен',
+                    statusName = getStatus(status),
+                    action = house.action || 'N',
+                    rawPrice = house.objectprice || 0,
+                    rawSquare = house.square || 0,
+                    oldPrice = house.price_old || 0,
+                    location = house.location || '';
+    
+                house.isSold = statusName === 'sold';
+                house.isOut = statusName === 'out'; // доб #3
+               
+                
+                
+    
+                if (element) {
+                    element.data('status', status);
+                    element.data('square', house.square || '');
+                    element.data('location', location);
+                    element.data('price', house.price);
+                    element.data('raw-price', rawPrice);
+    
+                    element.data('action', action);
+                    if (action === 'Y' && statusName !== 'sold') {
+                        element.addClass('is-action');
+                        element.find('.price .amount-old').text(formatPrice(oldPrice)).show();
+                    }
+					if (status == 'Акция') {
+						element.addClass('is-action');
+					}
+					if (status == 'Забронирован') {
+						element.addClass('reserved');
+					}
+                    element.find('.status span').text(status);
+                    element.find('.price .amount').text(formatPrice(rawPrice, true));
+                    
+                    element.find('.square span').text(rawSquare + ' ');
+                    element.find('.location span').text(location);
+                    element.addClass(statusName);
+    
+                    house.element = element;
+                }
+    
+                return house;
+            });
+        }
+    
+    
+        function formatPrice(price, withCurrency) {
+            if (!price) {
+                return '';
+            }
+            var affix = withCurrency ? ' руб.' : '';
+            return formatNumber(price, 0, ',', ' ') + affix;
+        }
+    
+        if (objects) {
+            objects = loadData(objects);
+        }
+    
+        $('.personal-data .switch').on('change', function() {
+            var form = $(this).closest('form');
+            form.find('[type=submit]').prop('disabled', !this.checked);
+        });
+    
+       
+    
+        $('.ajax-form').on('submit', function(e) {
+            e.preventDefault();
+            var form = $(this),
+                submitBtn = form.find('[type=submit]'),
+                messageBlock = form.find('.message');;
+    
+            messageBlock.hide();
+            submitBtn.prop('disabled', true);
+            form.removeClass('send-success send-error').addClass('send-sending');
+    
+            $.post(form.attr('action'), form.serialize(), function(result) {
+                var success, message;
+                if ('success' in result) {
+                    success = !!result.success;
+                    message = result.message;
+                } else {
+                    success = false;
+                    messsage = 'Что-то пошло не так, пожалуйста, перезагрузите страницу и попроуйте снова.';
+                }
+    
+                form.removeClass('send-sending');
+                form.toggleClass('send-success', success).toggleClass('send-error', !success);
+                submitBtn.prop('disabled', false);
+    
+                messageBlock.text(message);
+                messageBlock.show();
+            });
+        });
+    
+        // init map
+    
+        var $container = $('.image-content');
+        var $genplan = $('.image-content .genplan');
+        var cHeight = $container.height();
+        var cWidth = $container.width();
+        var iHeight = $genplan.height();
+        var iWidth = $genplan.width();
+    
+        var panner = new Panner($container, iWidth, iHeight);
+        var zoomer = new Zoomer($genplan, panner);
+    
+        /*panner.centerImage();*/
+        panner.panTo( 
+            (iWidth - cWidth) * 0.3,
+            (iHeight - cHeight) * 0.5
+        );
+    
+        // zoom in / zoom out buttons
+        $('.plus, .minus').on('click', function(e) {
+            e.preventDefault();
+            if ($(this).is('.plus')) {
+                zoomer.zoom(zoomer.zoomStep * 2);
+            } else {
+                zoomer.zoom(zoomer.zoomStep * -2);
+            }
+        });
+    
+        // assign class to container on zoom change
+        $genplan.on('zoomer:changed', function(e, zoom) {
+            if (zoom == zoomer.maxZoom) {
+                $container.addClass('max').removeClass('minimal middle');
+            } else if (zoom >= (zoomer.minZoom + zoomer.maxZoom) / 2) {
+                $container.addClass('middle').removeClass('minimal max');
+            } else {
+                $container.addClass('minimal').removeClass('middle max');
+                panner.centerImage();
+            }
+        });
+        
+        //$('.minus').trigger('click');
+        
+    });
+    
+    function Panner($container, iWidth, iHeight) {
+        var self = this;
+    
+        var cWidth = $container.width(),
+            cHeight = $container.height();
+    
+        this.getContainerWidth = function() {
+            return cWidth;
+        };
+    
+        this.getContainerHeight = function() {
+            return cHeight;
+        };
+    
+        this.getPan = function() {
+            return {
+                x: $container.scrollLeft(),
+                y: $container.scrollTop()
+            };
+        };
+    
+        this.pan = function(deltaX, deltaY) {
+            var current = self.getPan();
+            self.panTo(
+                current.x + deltaX,
+                current.y + deltaY
+            );
+        };
+    
+        this.panTo = function(x, y) {
+            $container.scrollLeft(x);
+            $container.scrollTop(y);
+        };
+    
+        this.centerImage = function() {
+            self.panTo(
+                (iWidth - cWidth) * 0.5,
+                (iHeight - cHeight) * 0.5
+            );
+        };
+    
+        // mouse panning
+    
+        var isPanning = false,
+            previousX,
+            previousY;
+    
+        $container.on('mousedown', function(e) {
+            previousX = e.clientX;
+            previousY = e.clientY;
+            isPanning = true;
+        });
+    
+        $container.on('touchstart', function(e) {
+            if (e.originalEvent.touches.length !== 1) {
+                return;
+            }
+            previousX = e.originalEvent.touches[0].clientX;
+            previousY = e.originalEvent.touches[0].clientY;
+            isPanning = true;
+        });
+    
+        $(document).on('mouseup touchend touchcancel', function() {
+            isPanning = false;
+        });
+    
+        $container.on('mouseleave touchend touchcancel', function() {
+            isPanning = false;
+        });
+    
+        $container.on('mousemove', function (e) {
+            if (!isPanning) {
+                return;
+            }
+            e.preventDefault();
+            self.pan(previousX - e.clientX, previousY - e.clientY);
+            previousX = e.clientX;
+            previousY = e.clientY;
+        });
+    
+        $container.on('touchmove', function (e) {
+            if (!isPanning || e.originalEvent.touches.length !== 1) {
+                return;
+            }
+            e.preventDefault();
+            var clientX = e.originalEvent.touches[0].clientX,
+                clientY = e.originalEvent.touches[0].clientY;
+            self.pan(previousX - clientX, previousY - clientY);
+            previousX = clientX;
+            previousY = clientY;
+        });
+    
+        // update container size on resize
+    
+        $(window).on('resize', function() {
+            cWidth = $container.width();
+            cHeight = $container.height();
+        });
+    }
+    
+    function Zoomer($genplan, panner) {
+        var self = this;
+    
+        var iHeight = $genplan.height();
+        var iWidth = $genplan.width();
+        var currentZoom = 1;
+    
+        this.maxZoom = 3;
+        this.minZoom = 1;
+        this.zoomStep = 0.5;
+    
+        this.zoom = function(delta, originX, originY) {
+            self.setZoom(currentZoom + delta, originX, originY);
+        };
+    
+        this.setZoom = function(zoom, originX, originY) {
+            zoom = adjustZoomValue(zoom);
+            if (zoom == currentZoom) {
+                return;
+            }
+    
+            const markerScale = 1.0 / zoom;
+            czoom = parseInt(zoom);
+            $genplan.css('transform', 'scale(' + zoom + ')');
+            $genplan.find('.marker').css('transform', 'scale(' + markerScale + ') translate(-' + 50*zoom + '%, -' + 90*zoom +'%)');
+            $genplan.find('.marks > li').css('transform', 'scale(' + markerScale + ')');
+    
+            // sync pan
+    
+            originX = originX || panner.getContainerWidth() * .5;
+            originY = originY || panner.getContainerHeight() * .5;
+    
+            const pan = panner.getPan();
+            const factor = (zoom * iWidth) / (currentZoom * iWidth);
+    
+            panner.panTo(
+                (pan.x + originX) * factor - originX,
+                (pan.y + originY) * factor - originY
+            );
+    
+            currentZoom = zoom;
+            $genplan.trigger('zoomer:changed', [currentZoom]);
+        };
+    
+        function adjustZoomValue(zoom) {
+            if (zoom > self.maxZoom) {
+                return self.maxZoom;
+            }
+            if (zoom < self.minZoom) {
+                return self.minZoom;
+            }
+            return zoom;
+        }
+    
+        // wheel down - zoom out, wheel up - zoom in
+        /*$genplan.on('mousewheel', function(e) {
+            e.preventDefault();
+            if (e.originalEvent.deltaY > 0) {
+                self.zoom(-self.zoomStep, e.clientX, e.clientY);
+            } else {
+                self.zoom(self.zoomStep, e.clientX, e.clientY);
+            }
+        });*/
+    }</script>

@@ -1,0 +1,160 @@
+.modal 
+    opacity: 0
+    visibility: hidden
+    position: fixed
+    z-index: 1
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    overflow: auto
+    background-color: #00000048
+    z-index: 10000
+    transition: .2s
+    padding: 0 20px
+
+    +mw(750)
+        padding: 0
+
+
+    &__content 
+        position: relative
+        background-color: #fefefe
+        margin: auto
+        padding: 0
+        max-width: 920px
+        min-width: 320px
+        margin: 20px auto
+        top: 10%
+        border-radius: 12px
+
+        +mw(750)
+            margin: auto
+            top: 0
+            border-radius: 0
+            height: 100%
+
+    &.opened 
+        opacity: 1
+        visibility: visible
+
+    &__close 
+        color: #000
+        position: absolute
+        top: 10px
+        right: 25px
+        font-size: 50px
+        cursor: pointer
+
+
+    .form
+
+        &__wrap
+            padding: 50px
+            border: none
+
+            +mw(750)
+                padding: 64px 20px 35px
+
+        &__title
+            font-size: 42px
+
+            +mw(750)
+                font-size: 18px
+                text-align: center
+                padding-bottom: 15px
+
+        &__subtitle
+            color: #8E8E8E
+            font-size: 20px
+            line-height: 140%
+            padding-bottom: 50px
+
+            +mw(750)
+                font-size: 12px
+                text-align: center
+                width: 70%
+                margin-inline: auto
+                padding-bottom: 25px
+
+        &__input
+            font-size: 24px
+            height: 64px
+
+            +mw(750)
+                font-size: 12px
+                height: 34px
+
+        &__textarea
+            font-size: 24px
+
+            +mw(750)
+                font-size: 12px
+
+        &__btn
+            height: 50px
+
+        &__attach
+            margin-bottom: 50px
+
+
+
+
+
+.mainForm__content
+
+.thanksWindow
+
+    &__info
+        
+    
+    &__content
+        padding: 50px 30px
+        max-width: 770px
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+
+    &__img
+        display: block
+        margin-inline: auto
+        margin-bottom: 50px
+
+    &__title
+        font-size: 42px
+        text-align: center
+        font-weight: 700
+        line-height: 140%
+        padding-bottom: 30px
+
+        +mw(1150)
+            font-size: 35px
+
+        +mw(750)
+            font-size: 18px
+
+
+
+    &__text
+        text-align: center
+        font-size: 38px
+        font-weight: 400
+        line-height: 140%
+
+        +mw(750)
+            font-size: 32px
+
+        +mw(750)
+            font-size: 16px
+
+    &__btn
+        width: 100%
+        width: 220px
+        height: 42px
+        margin-inline: auto
+        display: flex
+
+
+    
+    
+    

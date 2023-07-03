@@ -1,0 +1,299 @@
+.basketPage
+    display: flex
+    gap: 35px
+    justify-content: space-between
+
+    +mw(1000)
+        flex-direction: column
+
+.basketPage__form
+    +mw(1000)
+        width: 100%
+
+.basketPage__basket
+
+.basket__wrap
+
+.basket
+    border: 1px solid #A4A7B7
+    border-radius: 12px
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    justify-content: flex-start
+
+    &__title
+        padding: 30px 0
+
+        +mw(1150)
+            font-size: 20px
+
+        +mw(750)
+            padding: 15px 0 25px
+
+            
+
+    &__item
+        display: flex
+        align-items: center
+        gap: 40px
+        min-height: 140px
+        padding: 10px 20px
+        position: relative
+        width: 100%
+        justify-content: space-between
+
+        &:not(:last-child)
+            border-bottom: 1px solid #A4A7B7
+
+        +mw(1300)
+            gap: 28px
+            min-height: 100px
+
+        +mw(1000)
+            gap: 15px
+
+        +mw(750)
+            flex-direction: column
+            align-items: flex-start
+            padding: 20px 20px 30px
+
+    &__img
+        width: 136px
+        height: 137px
+        border-radius: 8px
+        overflow: hidden
+        flex-shrink: 0
+
+        +mw(1300)
+            width: 98px
+            height: 98px
+
+        +mw(750)
+            width: 100%
+            max-width: 100%
+            max-height: 250px
+            height: auto
+
+        img
+            width: 100%
+            height: 100%
+            object-fit: contain
+    &__info
+        flex: 1.2
+
+    &__name
+        font-size: 24px
+        font-weight: 700
+        line-height: 120%
+        padding-bottom: 10px
+
+        +mw(1150)
+            font-size: 18px
+            padding-bottom: 7px
+
+        +mw(750)
+            font-size: 20px
+            line-height: 130%
+            padding-bottom: 10px
+
+    &__art
+        color: #A4A7B7
+        font-size: 12px
+        font-weight: 600
+        line-height: 17px
+        padding-bottom: 6px
+
+        +mw(1150)
+            font-size: 8px
+            padding-bottom: 4px
+
+        +mw(750)
+            font-size: 12px
+            line-height: 12px
+            padding-bottom: 5px
+
+    &__art-name
+        color: #1F1F1F
+        padding-left: 5px
+
+    &__comp
+        color: #A4A7B7
+        font-size: 12px
+        font-weight: 600
+        line-height: 17px
+
+        +mw(1150)
+            font-size: 8px
+        +mw(750)
+            font-size: 12px
+            line-height: 12px
+
+    &__del
+        cursor: pointer
+        color: #C1482C
+        transition: .2s
+
+        &:hover
+            color: #cc6b55
+
+
+    &__quant
+        position: relative
+        display: flex
+        align-items: center
+        justify-content: space-between
+        padding-top: 30px
+
+        +mw(750)
+            width: 100%
+            padding-top: 0
+
+        &-inner
+            display: flex
+            justify-content: space-between
+            align-items: center
+            width: 100%
+            
+
+        .item-info__quant
+            padding: 0
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+            gap: 5px
+
+
+        .item-info__quant-input
+            padding: 2px 15px
+
+            .quant-sign
+                width: auto
+                font-size: 28px
+
+            .quant-num
+                font-size: 22px
+                max-width: 45px
+
+                +mw(1300)
+                    font-size: 16px
+                    max-width: 30px
+
+                +mw(750)
+                    max-width: 45px
+
+    &__priceOne
+        color: #A4A7B7
+        text-align: center
+        font-size: 12px
+        font-family: Montserrat
+        font-weight: 400
+        line-height: 120%
+        width: 100%
+        display: inline-block
+        // position: absolute
+        padding-top: 10px
+
+        +mw(1150)
+            font-size: 9px
+            padding-top: 7px
+
+    &__price
+        font-size: 24px
+        font-family: Montserrat
+        font-weight: 700
+        line-height: 100%
+        flex-shrink: 0
+
+        +mw(1150)
+            font-size: 18px
+
+        +mw(750)
+            font-size: 20px
+            line-height: 150%
+
+
+    &__price__mobWrap
+        display: none
+        +mw(750)
+            display: flex
+            align-items: center
+            gap: 10px
+            padding-bottom: 5px
+
+    &__mult
+        color: #8E8E8E
+        font-size: 12px
+        line-height: 140%
+    &__mult-quant
+    &__mult-sign
+    &__mult-price
+
+
+.basket__empty
+    display: none
+
+    &-content
+        font-size: 18px
+        font-weight: 400
+        line-height: 150%
+
+        a
+            text-decoration: underline
+            color: #2369ff
+
+.basketPage.empty
+
+    .basket
+        display: none
+
+    .basket__empty
+        display: block
+
+    .form__totalCostBlock
+        display: none
+
+    +mw(750)
+        .basketPage__form
+            display: none
+
+        .basket__empty-mob
+            width: 100%
+            height: 100%
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            
+        .basket__empty-mob__info
+            padding-top: 25px
+
+        .basket__empty-mob__img
+            display: block
+            margin-inline: auto
+            margin-bottom: 50px
+
+        .basket__empty-mob__title
+            font-size: 18px
+            font-weight: 700
+            line-height: 120%
+            text-align: center
+            width: 70%
+            margin-inline: auto
+            padding-bottom: 15px
+
+        .basket__empty-mob__text
+            text-align: center
+            font-size: 18px
+            font-weight: 400
+            line-height: 140%
+            padding-bottom: 55px
+
+        .basket__empty-mob__btn
+            text-decoration: none
+            color: #1F1F1F
+            width: 100%
+            width: 220px
+            height: 42px
+            margin-inline: auto
+            display: flex

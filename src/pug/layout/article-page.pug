@@ -1,0 +1,33 @@
+main.wrapper
+
+    .breadcrumbs
+        span.breadcrumbs-item Главная
+        span.breadcrumbs-divider /
+        span.breadcrumbs-item Блог
+        span.breadcrumbs-divider /
+        span.breadcrumbs-item Что такое погрузчик?
+
+    .articlePage
+
+        .articlePage__date-wrap
+            svg(width="20" height="20")
+                use(xlink:href="/images/sprite.svg#date")
+
+            span.articlePage__date 20.07.2020
+
+        h1.section-title.articlePage__title Что такое погрузчики?
+
+        .articlePage__text.articlePage__text-prev Погрузчики – это основное складское оборудование, которое значительно облегчает подъём и перевозку грузов на небольшие расстояния.
+
+        figure.articlePage__img
+            img(src="/images/articles/1.jpeg" alt="Трактор")
+            figcaption На фотографии изображен синий трактор
+
+        .articlePage__text.articlePage__text-main Погрузчики осуществляют захват и перевозку грузов при помощи вил, ковша, щипцов или иных приспособлений, предназначенных для определенных типов грузов. Погрузчики незаменимы для выполнения складских, сельскохозяйственных, коммунальных и некоторых строительных работ. В нашем интернет-магазине Вы можете приобрести запасные части для ремонта погрузчика.
+        
+    .section-subtitle.similarArticlesList-title Похожие статьи
+
+    .similarArticlesList
+        include ../layout/article.pug
+        include ../layout/article.pug
+        include ../layout/article.pug

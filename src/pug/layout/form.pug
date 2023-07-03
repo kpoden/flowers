@@ -1,0 +1,24 @@
+section.form__wrapper
+    .form__inner-wrap.container
+        h2.form__title Оставьте свой комментарий
+        form.form
+            .form__top-line
+                .input-wrap 
+                    input.form__name(type="text", name="name")
+                    span.form__placeholder Имя
+                .input-wrap
+                    input.form__email(type="text", name="email")
+                    span.form__placeholder E-mail
+                label.form__file-label
+                    input.form__file(type="file", name="file")
+                    span.form__file-icon 
+                        svg
+                            use(xlink:href="images/sprite.svg#clip")
+                    span.form__file-btn Прикрепить фото
+            .input-wrap
+                input.form__comment(type="text", name="comment")
+                span.form__placeholder Комментарий
+
+            input.btn.form__submit(type="submit", name="submit" value="Отправить")
+
+            .form-alert Сообщение об ошибке

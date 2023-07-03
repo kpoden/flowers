@@ -1,0 +1,41 @@
+.modal.popup-form
+    
+    .modal__content.mainForm__content
+        span.modal__close &times;
+        .form__wrap
+            .form__title.section-subtitle Оставить контакты для связи
+            p.form__subtitle Введите данные для связи. Мы свяжемся с Вами в ближайшее время
+            form.form(method="post") 
+                .form__input-line
+                    .form__input-wrap
+                        input.form__input(type="text" name="name" placeholder="Имя*")
+                    .form__input-wrap
+                        input.form__input(type="text" name="surname" placeholder="Фамилия")
+                .form__input-wrap
+                        input.form__input(type="text" name="company" placeholder="Название компании")
+                .form__input-wrap
+                        input.form__input(type="text" name="phone" placeholder="+7 (900) 000-00-00*")
+                .form__input-wrap
+                        input.form__input(type="text" name="email" placeholder="Адрес электронной почты")
+                
+
+                textarea.form__textarea(name="message" placeholder="Причина обращения")
+
+                label.form__attach
+                    input.form__attach-input(type="file" name="file")
+                    .form__attach-title 
+                        img(src="/images/form/clip.png")
+                        span Прикрепить документы
+                    span.form__attach-text
+                
+
+                input.form__btn.btn(type="submit" value="Оформить заказ")
+
+    .modal__content.thanksWindow__content.hidden
+        .thanksWindow__info
+            span.modal__close &times;
+            img.thanksWindow__img(src="/images/form/green.png")
+            h2.thanksWindow__title Заказ №129056
+            p.thanksWindow__text Благодарим Вас за оформление заказа. Менеджер свяжется с Вами в течение суток
+
+        a.btn.thanksWindow__btn(href="/catalog.html") Вернуться в каталог

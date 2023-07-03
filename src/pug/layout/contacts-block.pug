@@ -1,0 +1,83 @@
+main.wrapper
+
+    .breadcrumbs
+        span.breadcrumbs-item Главная
+        span.breadcrumbs-divider /
+        span.breadcrumbs-item Контакты
+
+    h1.section-title.contactsPage__title Контакты
+
+    .contactsPage
+
+        
+        .contactsPage__contacts
+            .contactsPage__contacts-title Данные для связи с нами
+            .contactsPage__contacts-inner 
+                .contactsPage__contacts-item
+                    .contactsPage__contacts-icon
+                        svg(width="24" height="24")
+                            use(xlink:href="images/sprite.svg#contactsPhone")
+                    .contactsPage__contacts-info
+                        .contactsPage__contacts-name Номер телефона: 
+                        .contactsPage__contacts-text 
+                            a(href="tel:+79227363636") +7 (922) 736-36-36
+
+                .contactsPage__contacts-item
+                    .contactsPage__contacts-icon
+                        svg(width="24" height="24")
+                            use(xlink:href="images/sprite.svg#contactsMail")
+                    .contactsPage__contacts-info
+                        .contactsPage__contacts-name Адрес электронной почты:
+                        .contactsPage__contacts-text 
+                            a(href="mailto:info@speczapchasti.com") info@speczapchasti.com
+
+                .contactsPage__contacts-item
+                    .contactsPage__contacts-icon
+                        svg(width="24" height="24")
+                            use(xlink:href="images/sprite.svg#contactsClock")
+                    .contactsPage__contacts-info
+                        .contactsPage__contacts-name Часы работы:
+                        .contactsPage__contacts-text Пн-вс: 9:00-18:00
+
+                .contactsPage__contacts-item
+                    .contactsPage__contacts-icon
+                        svg(width="24" height="24")
+                            use(xlink:href="images/sprite.svg#contactsMap")
+                    .contactsPage__contacts-info
+                        .contactsPage__contacts-name Пункт выдачи:
+                        .contactsPage__contacts-text г, Челябинск,ул. Рождественского, д.13, оф. 429 *
+
+            .contactsPage__contacts-footnote * По указанному адресу находится пункт выдачи заказов
+
+
+
+
+        .contactsPage__form.contacts-form
+
+            .form__wrap.mainForm__content
+                .form__title.section-subtitle Оставить контакты для связи
+                form.form(method="post")
+                    .form__input-line
+                        .form__input-wrap
+                            input.form__input(type="text" name="name" placeholder="Имя*")
+                        .form__input-wrap
+                            input.form__input(type="text" name="phone" placeholder="+7 (000) 000-00-00*")
+                    .form__input-wrap
+                            input.form__input(type="text" name="email" placeholder="Адрес электронной почты")
+
+                    
+
+                    textarea.form__textarea(name="message" placeholder="Причина обращения")
+
+                    label.form__attach
+                        input.form__attach-input(type="file" name="file")
+                        .form__attach-title 
+                            img(src="/images/form/clip.png")
+                            span Прикрепить документы
+                        span.form__attach-text
+                    input.form__btn.btn(type="submit" value="Заказать звонок")
+
+            .modal__content.thanksWindow__content.hidden
+                img.thanksWindow__img(src="/images/form/green.png")
+                h1.thanksWindow__title Заказ №129056
+                p.thanksWindow__text Благодарим Вас за оформление заказа. Менеджер свяжется с Вами в течение суток
