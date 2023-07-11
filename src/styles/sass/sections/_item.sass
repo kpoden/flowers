@@ -1,0 +1,405 @@
+.item
+    display: flex
+    align-items: flex-start
+    padding: 0 20px
+    padding-bottom: 130px
+
+
+    +mw(1000)
+        flex-direction: column
+        justify-content: space-between
+        align-items: center
+        gap: 50px
+
+    &__sliders
+        max-width: 670px
+        max-height: 670px
+
+        +mw(1350)
+            max-width: 550px
+
+        +mw(1200)
+            max-width: 450px
+
+        +mw(1100)
+            max-width: 350px
+
+        +mw(1000)
+            max-width: 550px
+
+        +mw(600)
+            max-width: 100%
+
+
+    &__slider-main-wrap
+        position: relative
+        
+
+    &__slider-main
+        width: 100%
+        height: 100%
+        position: relative
+        background: #1E2021
+        padding-left: 1px
+        z-index: 10
+
+
+        .slick-track
+            display: flex
+            align-items: center
+
+    &__slider-main-present
+        position: absolute
+        bottom: 20px
+        right: 20px
+        max-width: 130px
+        max-height: 130px
+        z-index: 100
+
+    &__slider-main-hit
+        position: absolute
+        top: 20px
+        left: -20px
+        max-width: 140px
+        max-height: 130px
+        z-index: 100
+
+    &__slider-arrows
+
+    &__slider-arrow
+        width: 48px
+        height: 48px
+        border-radius: 50px
+        border: 1px solid rgba(255, 255, 255, 0.40)
+        background: #1E2021
+        box-shadow: 0px 15px 20px -10px rgba(0, 0, 0, 0.80)
+        position: absolute
+        z-index: 100
+        top: 50%
+        cursor: pointer
+        transition: .2s
+        
+        &:hover
+            background: #303335
+
+        &:after
+            content: ''
+            position: absolute
+            top: 50%
+            left: 50%
+            width: 10px
+            height: 10px
+            border-top: 2px solid #fff
+            border-left: 2px solid #fff
+
+        &.arr-left
+            left: -25px
+
+            &:after
+                transform: translate(-50%, -50%) rotate(-45deg) 
+
+        &.arr-right
+            right: -25px
+
+            &:after
+                transform: translate(-50%, -50%) rotate(135deg)
+
+
+
+
+    &__slider-main-slide
+        width: 100%
+        height: 100%
+        display: flex !important
+        align-items: center
+        justify-content: center
+
+        img
+            max-width: 100%
+            max-height: 100%
+
+    &__slider-bottom
+        display: flex
+        align-items: flex-start
+        gap: 10px
+        margin-top: 10px
+        position: relative
+        overflow: hidden
+
+        +mw(1200)
+            flex-direction: column
+            align-items: flex-end
+            gap: 10px
+
+        +mw(1000)
+            
+
+    &__slider-add
+        display: flex
+        align-items: center
+        justify-content: center
+        padding: 9px 25px
+        gap: 18px
+        border: 1px solid #8A8A8A
+        background: #3C3C3C
+        box-shadow: 0px 15px 50px 0px rgba(0, 0, 0, 0.50)
+        cursor: pointer
+        transition: .2s
+        min-width: 150px
+
+        +mw(1350)
+            gap: 7px
+
+        +mw(1200)
+            min-width: 100px
+            padding: 9px 10px
+
+        &:hover
+            background: #525252
+
+    
+
+    &__slider-nav
+        height: 80px
+        width: 450px
+        padding-left: 2px
+
+        +mw(1350)
+            max-width: 390px
+
+        +mw(1200)
+            max-width: 100%
+            width: 100%
+            margin-bottom: 0 !important
+
+        .slick-slide
+            border: 1px transparent solid
+            background: #1E2021
+            cursor: pointer
+            transition: .2s
+
+            &:hover
+                background: #2f3233
+
+        .slick-current
+
+            border: 1px white solid
+
+        .slick-track 
+            display: flex
+            align-items: center
+            gap: 1rem
+            margin-left: -8px
+            padding-left: 2px
+        
+
+      
+    &__slider-nav-slide
+        display: flex !important
+        width: 80px
+        height: 80px
+        align-items: center
+        justify-content: center
+
+        +mw(600)
+            height: 60px
+
+        img
+            max-width: 80%
+            max-height: 80%
+
+
+    &__slider-art
+        padding-top: 15px
+        color: #A9A9A9
+        font-size: 14px
+        font-weight: 500
+
+        +mw(1200)
+            margin-top: -80px
+
+    .construct__panel
+        padding-top: 0
+
+        +mw(1000)
+            padding: 50px 0 0
+            width: 550px
+
+        +mw(600)
+            width: 100%
+
+    .construct__btn
+        margin-top: 20px
+
+    .construct__btn-wrap
+        padding-bottom: 30px
+        border-bottom: 1px solid #616161
+
+    .construct__footprint
+        color: #FFF
+        font-family: Roboto
+        font-size: 14px
+        font-style: italic
+        font-weight: 400
+        line-height: normal
+        opacity: 0.6
+        padding-top: 30px
+
+    &__title
+        color: #FFF
+        font-size: 40px
+        font-weight: 600
+        padding-bottom: 40px
+
+        +mw(1200)
+            font-size: 32px
+
+
+
+    .construct__delivery-under
+        color: #A9A9A9
+        font-size: 14px
+        font-style: italic
+        font-weight: 500
+
+
+    .construct__add
+        border-top: 1px solid #616161
+
+    .construct__order
+        +mw(1000)
+            width: 550px
+
+        +mw(600)
+            width: 100%
+
+
+.item__add
+    padding-bottom: 100px
+
+    &-filters
+        display: flex
+        flex-wrap: wrap
+        gap: 10px
+        padding-top: 60px
+        padding-bottom: 30px
+        position: relative
+
+        .item__slider-arrows
+            display: flex
+            gap: 10px
+            position: absolute
+            right: 0
+            width: 110px
+
+            +mw(1000)
+                display: none
+
+        .item__slider-arrow
+            position: relative
+            top: 0
+            left: 0
+            right: 0
+
+    &-filter
+        border-radius: 50px
+        border: 1px solid rgba(255, 255, 255, 0.40)
+        background: rgba(255, 255, 255, 0.10)
+        padding: 15px 30px
+        cursor: pointer
+        transition: .2s
+        text-transform: uppercase; 
+
+        &:hover
+            background: rgba(255, 255, 255, 0.20)
+
+        &.active-filter
+            background: #fff
+            color: #272727; 
+
+
+    &-items
+        width: 100%
+
+        .slick-list
+            padding-bottom: 20px
+        
+        .slick-track
+            display: flex !important
+            gap: 30px
+            justify-content: flex-start
+            margin: 0
+            padding: 0 5px
+
+            +mw(1000)
+                gap: 20px
+
+            
+        
+
+    &-item
+        border: 1px solid rgba(255, 255, 255, 0.20)
+        padding: 20px
+        width: 390px
+
+        
+
+
+        &-top
+            display: flex
+            align-items: flex-start
+            gap: 20px
+        &-img
+            width: 90px
+            height: 90px
+
+            img
+                max-width: 100%
+                max-height: 100%
+        &-info
+            padding-bottom: 27px
+            min-height: 150px
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+        &-name
+            font-size: 18px
+            font-weight: 500
+            padding-bottom: 10px
+
+        &-quant
+            font-size: 14px
+            font-weight: 400
+            height: 16px
+
+
+        &-price
+            padding-top: 20px
+            font-size: 28px
+            font-weight: 600
+
+        &-btn
+            color: #272727
+            display: flex
+            align-items: center
+            max-width: 237px
+            gap: 10px
+
+            &:hover
+                color: #272727
+
+    .slick-dots
+
+        button
+            background: #303030
+            border-radius: 50px
+            width: 10px
+            height: 10px
+            
+        .slick-active button
+            background: #fff
+            border-radius: 50px
+            width: 10px
+            height: 10px
+
+        

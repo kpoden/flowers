@@ -8,6 +8,7 @@
     background: var(--c-yellow)
     transition: .2s
     display: inline-flex
+    gap: 10px
     text-align: center
     position: relative
     align-items: center
@@ -24,6 +25,62 @@
 
     &:active
         background: var(--c-yellow--a)
+
+
+
+    &.btn--white
+        background: #fff
+        border: 1.5px solid #272727; 
+
+        &:hover
+            background: #d8d8d8
+
+
+
+.dot
+    width: 22px
+    height: 22px
+    display: inline-block
+    border: 2px solid #FFF
+    border-radius: 50px
+    cursor: pointer
+    position: relative
+    transition: .2s
+    flex-shrink: 0
+
+    &::after
+        content: ""
+        position: absolute
+        border-radius: 50px
+        width: 8px
+        height: 8px
+        display: none
+        background: #F9CC49
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+
+label input[type="radio"]
+    display: none
+
+input[type=radio]:checked ~ .dot
+    border: 2px solid #F9CC49
+
+input[type=radio]:checked ~ .dot::after
+    display: block
+
+
+
+.inp
+    border-radius: 500px;
+    border: 1px solid rgba(255, 255, 255, 0.40);
+    background: rgba(255, 255, 255, 0.10);
+    padding: 15px 30px
+    color: #fff
+    font-size: 16px
+    font-family: Raleway
+    font-weight: 500
+
 
         
 

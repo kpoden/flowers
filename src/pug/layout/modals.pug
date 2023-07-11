@@ -1,0 +1,255 @@
+.modal
+    .modal__content
+        .modal__close-cross.modal__close
+        .modal__content-inner
+            img.addedItemImg(src = "")
+            h2.modal__header Товар добавлен <br> в корзину
+
+            a.modal__btn.btn.addedItemBtn(href="/cart")
+                svg(width="20" height="20")
+                    use(xlink:href="images/sprite.svg#shop")
+                span Перейти в корзину
+            
+            a.modal__btn.btn.modal__close.addedItemBtn.btn--white
+                svg(width="20" height="20")
+                    use(xlink:href="images/sprite.svg#shop2")
+                span Продолжить покупки
+                
+                
+                
+
+
+
+.modal__templates.hidden
+
+    .delivery
+        img(src = "images/modal/1.png")
+        h2.modal__header Бесплатная доставка от 1&nbsp;500₽
+        p.modal__text Бесплатная доставка осуществляется только по городу. <br> Подробности уточняйте по телефону <a href="tel:+73432022106">+7 (343) 20-22-106</a>
+        a.modal__btn.btn.modal__close Вернуться к заказу
+
+        
+    .cashback
+        img(src = "images/modal/2.png")
+        h2.modal__header Вернём 10% на счёт
+        p.modal__text 10% от суммы каждого заказа на ваш счёт в личный кабинет
+        a.modal__btn.btn подробнее о бонусной программе
+
+
+    .photoBouqet
+        img(src = "images/modal/3.png")
+        h2.modal__header Фото букета
+        p.modal__text Перед доставкой мы сделаем и отправим вам фото готового букета
+        a.modal__btn.btn
+            svg(width="20" height="20")
+                use(xlink:href="images/sprite.svg#shop")
+            span добавить к заказу
+            
+    .feeding
+        img(src = "images/modal/4.png")
+        h2.modal__header Подкормка <br> для цветов
+        p.modal__text Бесплатно при покупке букета
+        a.modal__btn.btn
+            svg(width="20" height="20")
+                use(xlink:href="images/sprite.svg#shop")
+            span добавить к заказу
+
+
+    .card
+        img.cardSmall(src="images/modal/5.png")
+        img.cardBig.hidden(src="images/modal/6.png")
+        h2.modal__header Открытка
+
+        .modal__radios
+            
+            label.modal__radio
+                input(type="radio", name="lenght" data-cardsize="small")
+                span.modal__dot.dot
+                span.modal__name Открытка букетная (бесплатно)
+            label.modal__radio
+                input(type="radio", name="lenght"  data-cardsize="big" data-price=70)
+                span.modal__dot.dot
+                span.modal__name Открытка большая / +70 ₽
+
+        .modal__textareaWrap.textAreaBig
+            p Текст пожелания (не обязательно)
+            textarea.modal__textarea.textAreaSmall(noresize placeholder="Введите текст пожелания")
+            textarea.modal__textarea.textAreaBig.hidden(noresize placeholder="Введите текст пожелания")
+            span.modal__counter
+            
+
+
+        a.modal__btn.btn
+            svg(width="20" height="20")
+                use(xlink:href="images/sprite.svg#shop")
+            span добавить к заказу
+
+
+    .vase
+        h2.modal__header Добавить вазу
+        .item__slider-arrows
+            .item__slider-arrow.arr-left
+            .item__slider-arrow.arr-right
+        .item__add-items
+            .item__add-item(data-type='Популярное')
+                .item__add-item-top
+                    .item__add-item-img
+                        img(src="/images/item/add/1.png")
+                    .item__add-item-info
+                        .item__add-item-name  Конфеты Raffaello Конфеты Raffaello
+                        .item__add-item-quant 300 г
+                        .item__add-item-price 599 ₽
+                a.item__add-item-btn.btn
+                    svg(width="20" height="20")
+                        use(xlink:href="images/sprite.svg#shop")
+                    span В корзину
+
+            
+            .item__add-item(data-type='Игрушка')
+                .item__add-item-top
+                    .item__add-item-img
+                        img(src="/images/item/add/2.png")
+                    .item__add-item-info
+                        .item__add-item-name Медведь Плюша
+                        .item__add-item-quant 90 см
+                        .item__add-item-price 2 500 ₽
+                a.item__add-item-btn.btn
+                    svg(width="20" height="20")
+                        use(xlink:href="images/sprite.svg#shop")
+                    span В корзину
+
+            
+            .item__add-item(data-type='Шарик')
+                .item__add-item-top
+                    .item__add-item-img
+                        img(src="/images/item/add/3.png")
+                    .item__add-item-info
+                        .item__add-item-name Фольгированное "Сердце"
+                        .item__add-item-quant 
+                        .item__add-item-price 1 750 ₽
+                a.item__add-item-btn.btn
+                    svg(width="20" height="20")
+                        use(xlink:href="images/sprite.svg#shop")
+                    span В корзину
+
+            
+            .item__add-item(data-type='Ваза')
+                .item__add-item-top
+                    .item__add-item-img
+                        img(src="/images/item/add/4.png")
+                    .item__add-item-info
+                        .item__add-item-name Ваза прозрачная
+                        .item__add-item-quant 
+                        .item__add-item-price 550 ₽
+                a.item__add-item-btn.btn
+                    svg(width="20" height="20")
+                        use(xlink:href="images/sprite.svg#shop")
+                    span В корзину
+
+            
+            .item__add-item(data-type='Конфеты')
+                .item__add-item-top
+                    .item__add-item-img
+                        img(src="/images/item/add/3.png")
+                    .item__add-item-info
+                        .item__add-item-name Фольгированное "Сердце"
+                        .item__add-item-quant 
+                        .item__add-item-price 1 750 ₽
+                a.item__add-item-btn.btn
+                    svg(width="20" height="20")
+                        use(xlink:href="images/sprite.svg#shop")
+                    span В корзину
+
+
+                    
+    .topper
+        h2.modal__header Добавить топпер
+        .item__slider-arrows
+            .item__slider-arrow.arr-left
+            .item__slider-arrow.arr-right
+        .item__add-items
+            .item__add-item(data-type='Популярное')
+                .item__add-item-top
+                    .item__add-item-img
+                        img(src="/images/item/add/1.png")
+                    .item__add-item-info
+                        .item__add-item-name  Конфеты Raffaello Конфеты Raffaello
+                        .item__add-item-quant 300 г
+                        .item__add-item-price 599 ₽
+                a.item__add-item-btn.btn
+                    svg(width="20" height="20")
+                        use(xlink:href="images/sprite.svg#shop")
+                    span В корзину
+
+            
+            .item__add-item(data-type='Игрушка')
+                .item__add-item-top
+                    .item__add-item-img
+                        img(src="/images/item/add/2.png")
+                    .item__add-item-info
+                        .item__add-item-name Медведь Плюша
+                        .item__add-item-quant 90 см
+                        .item__add-item-price 2 500 ₽
+                a.item__add-item-btn.btn
+                    svg(width="20" height="20")
+                        use(xlink:href="images/sprite.svg#shop")
+                    span В корзину
+
+            
+            .item__add-item(data-type='Шарик')
+                .item__add-item-top
+                    .item__add-item-img
+                        img(src="/images/item/add/3.png")
+                    .item__add-item-info
+                        .item__add-item-name Фольгированное "Сердце"
+                        .item__add-item-quant 
+                        .item__add-item-price 1 750 ₽
+                a.item__add-item-btn.btn
+                    svg(width="20" height="20")
+                        use(xlink:href="images/sprite.svg#shop")
+                    span В корзину
+
+            
+            .item__add-item(data-type='Ваза')
+                .item__add-item-top
+                    .item__add-item-img
+                        img(src="/images/item/add/4.png")
+                    .item__add-item-info
+                        .item__add-item-name Ваза прозрачная
+                        .item__add-item-quant 
+                        .item__add-item-price 550 ₽
+                a.item__add-item-btn.btn
+                    svg(width="20" height="20")
+                        use(xlink:href="images/sprite.svg#shop")
+                    span В корзину
+
+            
+            .item__add-item(data-type='Конфеты')
+                .item__add-item-top
+                    .item__add-item-img
+                        img(src="/images/item/add/3.png")
+                    .item__add-item-info
+                        .item__add-item-name Фольгированное "Сердце"
+                        .item__add-item-quant 
+                        .item__add-item-price 1 750 ₽
+                a.item__add-item-btn.btn
+                    svg(width="20" height="20")
+                        use(xlink:href="images/sprite.svg#shop")
+                    span В корзину
+
+
+
+
+    .addedItem
+        img.addedItemImg(src = "")
+        h2.modal__header Товар добавлен <br> в корзину
+
+        a.modal__btn.btn.addedItemBtn(href="/cart")
+            svg(width="20" height="20")
+                use(xlink:href="images/sprite.svg#shop")
+            span Перейти в корзину
+        
+        a.modal__btn.btn.modal__close.addedItemBtn.btn--white
+            svg(width="20" height="20")
+                use(xlink:href="images/sprite.svg#shop2")
+            span Продолжить покупки

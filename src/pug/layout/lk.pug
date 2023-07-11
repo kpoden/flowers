@@ -1,0 +1,67 @@
+main.wrapper
+
+    .breadcrumbs
+        span.breadcrumbs__item Главная
+        span.breadcrumbs__separator >
+        span.breadcrumbs__item Личный кабинет
+
+
+    h1.section-title Личный кабинет
+
+    .lk
+
+        .lk__tabs
+
+            .lk__tab.tab-active(data-tab="Профиль") Профиль
+            .lk__tab(data-tab="Мои заказы") Мои заказы
+            .lk__tab(data-tab="Адреса доставки") Адреса доставки
+            .lk__tab(data-tab="Выйти") Выйти
+
+
+        .lk__pages
+
+            .lk__page.profile(data-page="Профиль")
+                form.profile__form
+
+                    .lk__title Мои данные
+                    .profile__input-line
+                        label.profile__input-wrap
+                            span.profile__input-name.inp-name Имя
+                            input.profile__input.inp(type="text")
+                        label.profile__input-wrap
+                            span.profile__input-name.inp-name Фамилия
+                            input.profile__input.inp(type="text")
+                        .profile__radios
+                            label.profile__radio-wrap
+                                input(type="radio", name="sex")
+                                span.dot
+                                span Мужской
+                            label.profile__radio-wrap
+                                input(type="radio", name="sex")
+                                span.dot
+                                span Мужской
+
+                    .profile__input-line
+                        label.profile__input-wrap
+                            span.profile__input-name.inp-name Телефон
+                            input.profile__input.inp(type="text")
+                        label.profile__input-wrap
+                            span.profile__input-name.inp-name E-mail
+                            input.profile__input.inp(type="text")
+                        label.profile__input-wrap
+                            span.profile__input-name.inp-name День рождения
+                            input.profile__input.inp(type="text")
+
+
+            .lk__page.hidden.orders(data-page="Мои заказы")
+
+                .lk__title Мои заказы
+
+
+            .lk__page.hidden.addresses(data-page="Адреса доставки")
+
+                .lk__title Адреса доставки
+
+
+            .lk__page.hidden.logout(data-page="Выйти")
+

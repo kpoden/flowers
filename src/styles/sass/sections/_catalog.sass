@@ -1,0 +1,185 @@
+.catalog
+    padding-top: 130px
+    padding-bottom: 130px
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    gap: 30px
+
+    +mw(700)
+        padding-top: 100px
+        padding-bottom: 100px
+        gap: 15px
+
+    &__item
+        border: 1px solid rgba(255, 255, 255, 0.20)
+        max-width: 530px
+        width: calc( 33% - 30px)
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        position: relative
+        gap: 40px
+        padding: 20px
+        transition: .2s
+        min-height: 165px
+
+        &:last-child
+            margin-right: auto
+
+        +mw(1000)
+            gap: 30px
+            width: calc(50% - 20px)
+
+        +mw(750)
+            width: 100%
+            max-width: 100%
+
+
+        &.once
+            width: 100%
+            max-width: 100%
+
+            .catalog__item-bottomWrap
+                display: flex
+                align-items: center
+                justify-content: space-between
+
+
+
+            .catalog__item-order
+            .catalog__item-btn
+
+        &.second
+            width: calc(50% - 20px)
+
+            +mw(700)
+                width: calc(50% - 10px)
+            .catalog__item-present
+
+                +mw(500)
+                    max-height: 65px
+
+        &.third
+            width: calc(33% - 20px)
+            .catalog__item-present
+                +mw(800)
+                    max-height: 70px
+
+        &.fourth
+            width: calc(25% - 25px)
+
+            .catalog__item-present
+                +mw(1150)
+                    max-height: 75px
+
+
+
+            
+
+        &:hover
+            background: #323232
+            cursor: pointer
+            border: 1px solid #fff
+            box-shadow: 0 0 5px #ffffff
+
+        &-img
+            width: 100%
+            height: 100%
+            text-align: center
+            position: relative
+            height: 490px
+            display: flex
+            align-items: center
+            justify-content: center
+            display: inline-block
+
+            +mw(1250)
+                height: 350px
+
+            +mw(900)
+                height: 250px
+
+            &-img
+                width: 100%
+                height: 100%
+                object-fit: contain
+                object-position: center
+        &-info
+        &-name
+            font-size: 18px
+            font-weight: 500
+            padding-bottom: 10px
+            display: inline-block
+
+            +mw(1150)
+                font-size: 15px
+
+        &-lenght
+            font-size: 14px
+            font-weight: 400
+            padding-bottom: 20px
+
+            +mw(1150)
+                font-size: 12px
+
+        &-price
+            font-size: 28px
+            font-weight: 600
+            padding-bottom: 25px
+            white-space: nowrap
+
+            +mw(1150)
+                font-size: 22px
+                padding-bottom: 20px
+
+        &-order
+            display: flex
+            align-items: center
+            gap: 30px
+
+            +mw(1350)
+                gap: 20px
+
+            +mw(1150)
+                flex-direction: column
+
+            svg
+
+            span
+                padding-left: 10px
+                color: var(--c-dark-font)
+                
+                
+        &-btn
+            white-space: nowrap
+
+            +mw(750)
+                font-size: 10px
+                height: 34px
+        &-fast
+            font-size: 14px
+            text-decoration: underline
+
+            +mw(750)
+                font-size: 12px
+
+        &-present
+            position: absolute
+            right: 0px
+            bottom: 0px
+            max-height: 130px
+
+            +mw(1150)
+                max-height: 90px
+
+
+        &-hit
+            position: absolute
+            left: -20px
+            top: 5px
+
+            +mw(1150)
+                top: -10px
+                left: -15px
+                height: 70px

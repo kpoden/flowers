@@ -13,8 +13,6 @@
     transition: .2s
     padding: 0 20px
 
-    +mw(750)
-        padding: 0
 
 
     &__content 
@@ -22,28 +20,214 @@
         background-color: #fefefe
         margin: auto
         padding: 0
-        max-width: 920px
+        width: fit-content
         min-width: 320px
+        min-height: 480px
         margin: 20px auto
         top: 10%
-        border-radius: 12px
+        color: #1E2021
 
-        +mw(750)
-            margin: auto
-            top: 0
-            border-radius: 0
-            height: 100%
+
 
     &.opened 
         opacity: 1
         visibility: visible
 
-    &__close 
-        color: #000
+    &__close-cross
         position: absolute
-        top: 10px
-        right: 25px
-        font-size: 50px
+        top: 30px
+        right: 20px
         cursor: pointer
+        width: 40px
+        height: 40px
+
+        
+        &::after
+            content: ""
+            display: block
+            position: absolute
+            width: 28px
+            height: 2px
+            background: #666666
+            transform: rotate(45deg)
+
+        &::before
+            content: ""
+            display: block
+            position: absolute
+            width: 28px
+            height: 2px
+            background: #666666
+            transform: rotate(-45deg)
+        
+
+
+    &__content-inner
+        padding: 70px 50px 60px
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+
+        +mw(1000)
+            padding: 40px 10px 60px
+
+    &__header
+        color: #1E2021
+        text-align: center
+        font-size: 50px
+        font-weight: 700
+        line-height: 60px
+        padding-bottom: 50px
+        
+        +mw(1000)
+            font-size: 32px
+            line-height: 42px
+            padding-bottom: 30px
+
+    &__text
+        color: #1E2021
+        text-align: center
+        font-family: Raleway
+        font-size: 18px
+        font-weight: 500
+        line-height: 28px
+        padding-bottom: 30px
+
+        +mw(1000)
+            font-size: 16px
+
+        a
+            color: #E0B330
+            text-decoration: underline
+
+    &__btn
+        
+        &:hover
+            color: #1E2021
+
+
+
+
+
+
+    .dot
+        border-color: #1E2021
+
+    &__radios
+
+    &__radio
+        display: flex
+        align-items: center
+        cursor: pointer
+        gap: 12px
+        padding-bottom: 13px
+
+    &__textareaWrap
+        padding-top: 30px
+        margin-bottom: 30px
+        position: relative
+
+        p
+            color: #1E2021
+            font-family: Raleway
+            font-size: 12px
+            font-weight: 500
+            padding-bottom: 5px
+
+    &__textarea
+        border-radius: 15px
+        border: 1.5px solid #DFDFDF
+        max-width: 430px
+        width: 430px
+        display: block
+        height: 120px
+        padding: 20px 30px
+        resize: none
+        color: #1E2021
+        font-family: Raleway
+        font-size: 16px
+        font-weight: 500
+
+        &::placeholder
+            color: #78797A
+            font-family: Raleway
+            font-size: 16px
+            font-weight: 500
+
+        +mw(600)
+            width: 300px
+
+    &__counter
+        position: absolute
+        right: 10px
+        bottom: 10px
+
+    .item__add-items
+        max-width: 1370px
+
+
+        +mw(1500)
+            max-width: 1000px
+
+        +mw(1130)
+            max-width: 700px
+
+        +mw(760)
+            max-width: 350px
+
+
+
+    .item__add-item
+        border: 1px solid rgba(39, 39, 39, 0.20)
+
+
+    .item__slider-arrow
+        background: #fff
+
+        &:hover
+            background: #d6d6d6
+
+        &:after
+            border-color: #1E2021
+
+        &.arr-left
+            left: 40px
+
+            +mw(1130)
+                left: 10px
+
+            +mw(760)
+                left: -5px
+
+        &.arr-right
+            right: 40px
+
+            +mw(1130)
+                right: 10px
+
+            +mw(760)
+                right: -5px
+
+    .slick-dots li button::before
+        transition: .2s
+        color: #afafaf
+
+    .slick-active
+        button::before
+            color: #F9CC49 !important
+
+
+
+    .addedItemBtn
+        width: 267px
+        margin-bottom: 10px
+
+    .addedItemImg
+        width: 170px
+        height: 170px
+        border-radius: 100px
+        margin-bottom: 40px
+
 
 

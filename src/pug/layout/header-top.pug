@@ -1,0 +1,43 @@
+header.header.header-page
+    //- video.header__bgVideo(autobuffer="" playsinline="" webkit-playsinline="" loop="" muted="muted" id="bgvid" preload="auto" src="" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;")   
+    .header-top.wrapper
+        .header-top__burger.burger
+            span.burger__line 
+            span.burger__line 
+            span.burger__line 
+        a(href="/")
+            img.header-top__logo(src="/images/header/logo.png")
+
+        .header-top__findInput.desktopBig
+            input(type="text" name="search" placeholder="Поиск")
+            .header-top__findBtn
+                svg(width="20" height="20")
+                    use(xlink:href="images/sprite.svg#find")
+
+        nav.header-top__nav.desktopBig
+            ul.header-top__nav-list
+                li.header-top__nav-item
+                    a(href="/") Оплата
+                li.header-top__nav-item
+                    a(href="/") Доставка
+                li.header-top__nav-item
+                    a(href="/") Контакты
+                li.header-top__nav-item
+                    a(href="/") Скидки
+                li.header-top__nav-item
+                    a(href="/") Бонусы
+
+        a.header-top__phone.desktopBig(href="tel: +73432022106")
+            svg(width="20" height="20")
+                use(xlink:href="images/sprite.svg#phone")
+            span +7 (343) 20-22-106
+
+        button.header-top__callback.btn.desktopBig(type="button") Заказать звонок
+
+        .header-top__personal
+            a.header-top__personal-item
+                svg(width="20" height="20")
+                    use(xlink:href="images/sprite.svg#shop")
+            a.header-top__personal-item
+                svg(width="20" height="20")
+                    use(xlink:href="images/sprite.svg#pers")

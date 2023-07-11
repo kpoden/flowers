@@ -1,0 +1,141 @@
+.construct
+    .construct__title-wrap 
+        h2.construct__title Соберите свой идеальный МОНО букет из
+        .construct__select(data-selected = "Роз")
+            .construct__select-input Роз
+            .construct__select-options
+                span.construct__select-item Роз
+                span.construct__select-item Хризантем
+                span.construct__select-item Гербер
+                span.construct__select-item Ирисов
+                span.construct__select-item Лилий
+                span.construct__select-item Альстромерий
+
+    .construct__window
+
+        .construct__img
+            img(src="/images/construct/img.png")
+
+        form.construct__panel
+            h3.color__title Выберите цвет:
+            .construct__color.color
+                
+                label.color__input-wrap.selected-color
+                    input(type="radio", name="color")
+                    span.color__circle.color-white
+                    span.color__name Белый
+                label.color__input-wrap
+                    input(type="radio", name="color")
+                    span.color__circle.color-pink
+                    span.color__name Розовый
+                label.color__input-wrap
+                    input(type="radio", name="color")
+                    span.color__circle.color-red
+                    span.color__name Красный
+                label.color__input-wrap
+                    input(type="radio", name="color")
+                    span.color__circle.color-mix
+                    span.color__name Микс
+
+            h3.construct__subtitle Длина стебля, см:
+            .construct__radio.lenght
+                
+                label.lenght__radio
+                    input(type="radio", name="lenght")
+                    span.lenght__dot.dot
+                    span.lenght__name 40 см
+                label.lenght__radio
+                    input(type="radio", name="lenght")
+                    span.lenght__dot.dot
+                    span.lenght__name 50 см
+                label.lenght__radio
+                    input(type="radio", name="lenght")
+                    span.lenght__dot.dot
+                    span.lenght__name 60 см
+                label.lenght__radio
+                    input(type="radio", name="lenght")
+                    span.lenght__dot.dot
+                    span.lenght__name 70 см
+
+            .construct__range.quant
+                input.quant__input.inp(type="text", name="quant" value="1" disabled)
+                input.quant__range(type="range" min="1" max="101" value="5")
+
+
+            h3.construct__subtitle Вид упаковки:
+            .construct__radio.package
+                label.package__radio
+                    input(type="radio", name="package")
+                    span.radio__dot.dot
+                    span.package__name Лента / +0 ₽
+                label.package__radio
+                    input(type="radio", name="package")
+                    span.radio__dot.dot
+                    span.package__name Крафт / +250 ₽
+                label.package__radio
+                    input(type="radio", name="package")
+                    span.radio__dot.dot
+                    span.package__name Плёнка / +350 ₽
+
+
+            h3.construct__subtitle Зелень:
+            .construct__radio.green
+                
+                label.green__radio
+                    input(type="radio", name="lenght")
+                    span.green__dot.dot
+                    span.green__name Без
+                label.green__radio
+                    input(type="radio", name="lenght")
+                    span.green__dot.dot
+                    span.green__name +500 ₽
+                label.green__radio
+                    input(type="radio", name="lenght")
+                    span.green__dot.dot
+                    span.lenght__name +750 ₽
+                label.green__radio
+                    input(type="radio", name="lenght")
+                    span.green__dot.dot
+                    span.green__name +1 000 ₽
+
+        .construct__order
+
+            .construct__price 3 500 ₽
+            .construct__delivery
+                svg(width="20" height="20")
+                    use(xlink:href="images/sprite.svg#read")
+                span Бесплатная доставка *
+
+            .construct__add
+                p.construct__add-title Добавить к заказу:
+
+                a.construct__add-item
+                    img(src="images/construct/delivery.png")
+                    span.construct__add-item-text Бесплатная доставка от 1 500₽ *
+                a.construct__add-item
+                    img(src="images/construct/card.png")
+                    span.construct__add-item-text Вернём 10% на счёт
+                a.construct__add-item
+                    img(src="images/construct/camera.png")
+                    span.construct__add-item-text Фото букета перед доставкой
+                a.construct__add-item
+                    img(src="images/construct/fert.png")
+                    span.construct__add-item-text Подкормка для цветов в подарок
+                a.construct__add-item
+                    img(src="images/construct/postcard.png")
+                    span.construct__add-item-text Открытка для букета в подарок
+                a.construct__add-item
+                    img(src="images/construct/love.png")
+                    span.construct__add-item-text Топпер для букета
+                a.construct__add-item
+                    img(src="images/construct/vase.png")
+                    span.construct__add-item-text Ваза для букета
+
+
+            .construct__btn-wrap
+                a.construct__btn.btn(type="submit")
+                    svg(width="20" height="20")
+                        use(xlink:href="images/sprite.svg#shop")
+                    span В корзину
+
+                a.construct__fast Быстрый заказ

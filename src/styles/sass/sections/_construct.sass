@@ -1,0 +1,360 @@
+.construct
+    width: 100%
+    padding-top: 130px
+    padding-bottom: 130px
+    
+
+    &__title-wrap
+        display: flex
+        align-items: center
+        padding-bottom: 55px
+
+        +mw(1150)
+            flex-direction: column
+            align-items: flex-start
+            
+
+    &__title
+        padding-right: 40px
+        font-size: 40px
+        font-family: Raleway
+        font-weight: 600
+
+        +mw(1150)
+            font-size: 32px
+            padding-bottom: 40px
+
+    &__select-input
+        border: 1px solid rgba(255, 255, 255, 0.40);
+        background: rgba(255, 255, 255, 0.10);
+        width: 360px
+        height: 48px
+        padding: 15px 30px
+        color: #FFF
+        font-size: 16px
+        font-family: Raleway, Arial, Helvetica, sans-serif
+        font-weight: 600
+        border-radius: 50px
+        position: relative
+        cursor: pointer
+        transition: .2s
+
+        &:hover
+            border: 1px solid #F9CC49
+
+            &::after
+                transform: rotate(-45deg)
+
+            
+
+        &:after
+            content: ''
+            display: block
+            width: 8px
+            height: 8px
+            position: absolute
+            top: 45%
+            right: 20px
+            border: none
+            border-top: 2px solid #fff
+            border-right: 2px solid #fff
+            transition: .2s
+            transform: rotate(135deg)
+
+    &__subtitle
+        color: #FFF
+        font-size: 18px
+        font-weight: 700
+        padding-bottom: 20px
+
+    &__select-options
+        opacity: 0
+        visibility: hidden
+        width: 100%
+        border-radius: 10px
+        border: 1px solid rgba(255, 255, 255, 0.40)
+        background: #3C3C3C
+        box-shadow: 0px 15px 50px 0px rgba(0, 0, 0, 0.60)
+        padding: 20px 30px 10px
+        margin-top: 5px
+        transition: .2s
+        position: absolute
+        max-width: 360px
+        z-index: 100
+
+    &__select-item
+        display: block
+        padding-top: 5px
+        padding-bottom: 5px
+        cursor: pointer
+        transition: .2s
+
+        &.option-selected
+            font-weight: 900
+
+
+        &:hover
+            color: #8f8f8f
+
+    .options-show
+        opacity: 1
+        visibility: visible
+
+    &__color
+        display: flex
+        gap: 20px
+
+
+        
+
+    &__window
+        display: flex
+        justify-content: space-between
+        background: #272727
+        box-shadow: 0px 15px 50px 0px rgba(0, 0, 0, 0.60)
+
+        +mw(1150)
+            flex-direction: column
+
+    &__img
+        text-align: center
+
+        +mw(1150)
+            max-height: 350px
+
+        img
+            height: 100%
+            object-fit: cover
+
+    &__panel
+        padding: 50px 30px
+
+    &__radio
+        display: flex
+        justify-content: space-between
+        gap: 20px
+        padding-bottom: 40px
+        font-size: 16px
+
+        +mw(1150)
+            font-size: 14px
+            justify-content: flex-start
+
+
+
+        label
+            display: flex
+            align-items: center
+            gap: 12px
+            cursor: pointer
+
+            +mw(1150)
+                flex-direction: column
+
+            input[type=radio]
+                display: none
+
+    &__range
+        padding-bottom: 40px
+        display: flex
+        gap: 40px
+        align-items: center
+
+        .quant__input
+            width: 90px
+            text-align: center
+            
+        .quant__range
+            -webkit-appearance: none;
+            appearance: none; 
+            width: 100%;
+            cursor: pointer;
+            outline: none;
+            border-radius: 15px;
+            height: 6px;
+            background: #ccc;
+            max-width: 400px
+
+        input[type="range"]::-webkit-slider-runnable-track 
+            height: 8px;
+            background: #555555
+            border-radius: 16px;
+            
+
+        input[type="range"]::-moz-range-track 
+            height: 8px;
+            background: #555555
+            border-radius: 16px;
+        
+
+        input[type="range"]::-webkit-slider-thumb 
+            /* removing default appearance */
+            -webkit-appearance: none;
+            appearance: none; 
+            /* creating a custom design */
+            height: 15px;
+            width: 15px;
+            background: #F9CC49;
+            box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.40); 
+            border-radius: 50%;
+            border: none;
+        
+
+
+        input[type="range"]::-moz-range-thumb 
+            height: 15px;
+            width: 15px;
+            background: #F9CC49;
+            box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.40); 
+            border-radius: 50%;
+            border: none;
+                    
+
+
+    &__order
+        padding: 50px 30px
+        background: #1E2021
+
+    
+
+    &__price
+        color: #FFF
+        font-size: 40px
+        font-family: Raleway
+        font-weight: 700
+        padding-bottom: 15px
+
+    &__delivery
+        display: flex
+        align-items: center
+        gap: 10px
+        padding-bottom: 32px
+        position: relative
+        color: #F9CC49;
+
+        &:after
+            content: ""
+            width: 100%
+            height: 1px
+            display: block
+            position: absolute
+            bottom: 0
+            background: rgba(255, 255, 255, 0.2)
+
+    &__add
+        padding-top: 30px
+
+    &__add-title
+        padding-bottom: 20px
+        color: #F9CC49
+        font-size: 18px
+        font-weight: 700
+
+    &__add-item
+        display: flex
+        align-items: center
+        gap: 15px
+        padding-bottom: 15px
+        cursor: pointer
+
+    &__add-item-text
+        border-bottom: 1px dashed #ffffff;
+
+    &__btn-wrap
+        
+
+    &__btn
+        width: 100%
+        color: #272727
+        display: flex
+        align-items: center
+        gap: 10px
+        margin-top: 90px
+        margin-bottom: 20px
+
+        &:hover
+            color: #272727
+
+        +mw(1150)
+            margin-top: 50px
+
+
+    &__fast
+        color: #FFF
+        text-align: center
+        font-size: 16px
+        font-family: Raleway
+        font-weight: 500
+        text-decoration-line: underline
+        display: block
+        margin: 0 auto
+    
+
+.color
+
+
+    &__title
+        padding-bottom: 25px
+
+    &__input-wrap
+        display: flex
+        flex-direction: column
+        align-items: center
+        gap: 10px
+        padding-bottom: 40px
+
+    &__circle
+        width: 70px
+        height: 70px
+        display: block
+        border-radius: 70px
+        cursor: pointer
+        box-shadow: 5px 5px 13px 0px rgba(0, 0, 0, 0.60) inset
+        position: relative
+
+        +mw(1150)
+            width: 60px
+            height: 60px
+
+
+        &.color-white
+            background: #ffffff
+        &.color-pink
+            background: #EB809A
+        &.color-red
+            background: #E02F2F
+        &.color-mix
+            background: url(../images/construct/mix.png) 50% 50% no-repeat
+
+        &::after
+            content: ""
+            width: 100%
+            height: 100%
+            border: none
+            display: none
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+            background: url(../images/construct/check.png) 50% 50% no-repeat
+            background-size: 24px
+
+    &__name
+        color: #FFF
+        text-align: center
+        font-size: 14px
+        font-weight: 500
+        
+    input[type=radio]
+        display: none
+
+    input[type=radio]:checked
+        & ~ .color__circle
+            border: 2px solid #F9CC49
+
+        & ~ .color__circle:after
+            display: block
+
+        & ~ .color__name
+            color: #F9CC49
+

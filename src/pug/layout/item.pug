@@ -1,0 +1,314 @@
+main.wrapper
+
+    .breadcrumbs
+        span.breadcrumbs__item Главная
+        span.breadcrumbs__separator >
+        span.breadcrumbs__item 101 роза
+
+
+    .item
+
+        .item__sliders
+            .item__slider-main-wrap
+                img.item__slider-main-present(src="/images/item/present.png")
+                img.item__slider-main-hit(src="/images/item/hit.png")
+
+                .item__slider-arrows
+                    .item__slider-arrow.arr-left
+                    .item__slider-arrow.arr-right
+
+                .item__slider-main
+                    .item__slider-main-slide
+                        img(src="/images/item/1.png")
+                    .item__slider-main-slide
+                        img(src="/images/item/2.png")
+                    .item__slider-main-slide 
+                        img(src="/images/item/3.png")
+                    .item__slider-main-slide 
+                        img(src="/images/item/4.png")
+                    .item__slider-main-slide 
+                        img(src="/images/item/5.png")
+                    .item__slider-main-slide 
+                        img(src="/images/item/6.png")
+            .item__slider-bottom
+
+                .item__slider-nav
+                    .item__slider-nav-slide 
+                        img(src="/images/item/1.png")
+                    .item__slider-nav-slide 
+                        img(src="/images/item/2.png")
+                    .item__slider-nav-slide 
+                        img(src="/images/item/3.png")
+                    .item__slider-nav-slide 
+                        img(src="/images/item/4.png")
+                    .item__slider-nav-slide 
+                        img(src="/images/item/5.png")
+                    .item__slider-nav-slide 
+                        img(src="/images/item/6.png")
+
+                .item__slider-add
+                    img(src="/images/item/bear.png")
+                    span Добавить <br> подарок
+
+            .item__slider-art Код товара: 4589
+
+
+        form.construct__panel
+            h1.item__title  Букет белых роз
+            h3.color__title Выберите цвет:
+            .construct__color.color
+                
+                label.color__input-wrap.selected-color
+                    input(type="radio", name="color")
+                    span.color__circle.color-white
+                    span.color__name Белый
+                label.color__input-wrap
+                    input(type="radio", name="color")
+                    span.color__circle.color-pink
+                    span.color__name Розовый
+                label.color__input-wrap
+                    input(type="radio", name="color")
+                    span.color__circle.color-red
+                    span.color__name Красный
+                label.color__input-wrap
+                    input(type="radio", name="color")
+                    span.color__circle.color-mix
+                    span.color__name Микс
+
+            h3.construct__subtitle Длина стебля, см:
+            .construct__radio.lenght
+                
+                label.lenght__radio
+                    input(type="radio", name="lenght")
+                    span.lenght__dot.dot
+                    span.lenght__name 40 см
+                label.lenght__radio
+                    input(type="radio", name="lenght")
+                    span.lenght__dot.dot
+                    span.lenght__name 50 см
+                label.lenght__radio
+                    input(type="radio", name="lenght")
+                    span.lenght__dot.dot
+                    span.lenght__name 60 см
+                label.lenght__radio
+                    input(type="radio", name="lenght")
+                    span.lenght__dot.dot
+                    span.lenght__name 70 см
+
+            h3.construct__subtitle Количество роз в букете, шт.:
+            .construct__radio.lenght
+                
+                label.lenght__radio
+                    input(type="radio", name="lenght")
+                    span.lenght__dot.dot
+                    span.lenght__name 15 шт.
+                label.lenght__radio
+                    input(type="radio", name="lenght")
+                    span.lenght__dot.dot
+                    span.lenght__name 25 шт.
+                label.lenght__radio
+                    input(type="radio", name="lenght")
+                    span.lenght__dot.dot
+                    span.lenght__name 51 шт.
+                label.lenght__radio
+                    input(type="radio", name="lenght")
+                    span.lenght__dot.dot
+                    span.lenght__name 101 шт.
+
+
+            h3.construct__subtitle Вид упаковки:
+            .construct__radio.package
+                label.package__radio
+                    input(type="radio", name="package")
+                    span.radio__dot.dot
+                    span.package__name Лента / +0 ₽
+                label.package__radio
+                    input(type="radio", name="package")
+                    span.radio__dot.dot
+                    span.package__name Крафт / +250 ₽
+                label.package__radio
+                    input(type="radio", name="package")
+                    span.radio__dot.dot
+                    span.package__name Плёнка / +350 ₽
+
+
+            h3.construct__subtitle Зелень:
+            .construct__radio.green
+                
+                label.green__radio
+                    input(type="radio", name="lenght")
+                    span.green__dot.dot
+                    span.green__name Без
+                label.green__radio
+                    input(type="radio", name="lenght")
+                    span.green__dot.dot
+                    span.green__name +500 ₽
+                label.green__radio
+                    input(type="radio", name="lenght")
+                    span.green__dot.dot
+                    span.lenght__name +750 ₽
+                label.green__radio
+                    input(type="radio", name="lenght")
+                    span.green__dot.dot
+                    span.green__name +1 000 ₽
+
+        .construct__order
+
+            .construct__price 3 500 ₽
+            .construct__delivery
+                svg(width="20" height="20")
+                    use(xlink:href="images/sprite.svg#read")
+                span Бесплатная доставка *
+
+            .construct__delivery-under.hidden
+                span.construct__delivery-under До бесплатной доставки <br> нехватает 
+                span.construct__delivery-num 100 ₽
+            .construct__add
+                p.construct__add-title Добавить к заказу:
+
+                a.construct__add-item(data-modal="delivery")
+                    img(src="images/construct/delivery.png")
+                    span.construct__add-item-text Бесплатная доставка от 1 500₽ *
+                a.construct__add-item(data-modal="cashback")
+                    img(src="images/construct/card.png")
+                    span.construct__add-item-text Вернём 10% на счёт
+                a.construct__add-item(data-modal="photoBouqet")
+                    img(src="images/construct/camera.png")
+                    span.construct__add-item-text Фото букета перед доставкой
+                a.construct__add-item(data-modal="feeding")
+                    img(src="images/construct/fert.png")
+                    span.construct__add-item-text Подкормка для цветов в подарок
+                a.construct__add-item(data-modal="card")
+                    img(src="images/construct/postcard.png")
+                    span.construct__add-item-text Открытка для букета в подарок
+                a.construct__add-item(data-modal="topper")
+                    img(src="images/construct/love.png")
+                    span.construct__add-item-text Топпер для букета
+                a.construct__add-item(data-modal="vase")
+                    img(src="images/construct/vase.png")
+                    span.construct__add-item-text Ваза для букета
+
+
+            .construct__btn-wrap
+                a.construct__btn.btn(type="submit" data-modal="addedItem")
+                    svg(width="20" height="20")
+                        use(xlink:href="images/sprite.svg#shop")
+                    span В корзину
+
+                a.construct__fast Быстрый заказ
+
+            p.construct__footprint * Бесплатная доставка осуществляется только по городу. Подробности уточняйте по телефону +7 (343) 20-22-106
+
+
+    .item__add
+        h2.item__add-title Добавить к заказу
+
+        .item__add-filters
+            .item__slider-arrows
+                .item__slider-arrow.arr-left
+                .item__slider-arrow.arr-right
+            .item__add-filter(data-filter='').active-filter Популярное
+            .item__add-filter(data-filter='Игрушка') Игрушка
+            .item__add-filter(data-filter='Шарик') Шарик
+            .item__add-filter(data-filter='Конфеты') Конфеты
+            .item__add-filter(data-filter='Ваза') Ваза
+
+        .item__add-items
+            .item__add-item(data-type='Популярное')
+                .item__add-item-top
+                    .item__add-item-img
+                        img(src="/images/item/add/1.png")
+                    .item__add-item-info
+                        .item__add-item-name  Конфеты Raffaello Конфеты Raffaello
+                        .item__add-item-quant 300 г
+                        .item__add-item-price 599 ₽
+                a.item__add-item-btn.btn
+                    svg(width="20" height="20")
+                        use(xlink:href="images/sprite.svg#shop")
+                    span В корзину
+
+            
+            .item__add-item(data-type='Игрушка')
+                .item__add-item-top
+                    .item__add-item-img
+                        img(src="/images/item/add/2.png")
+                    .item__add-item-info
+                        .item__add-item-name Медведь Плюша
+                        .item__add-item-quant 90 см
+                        .item__add-item-price 2 500 ₽
+                a.item__add-item-btn.btn
+                    svg(width="20" height="20")
+                        use(xlink:href="images/sprite.svg#shop")
+                    span В корзину
+
+            
+            .item__add-item(data-type='Шарик')
+                .item__add-item-top
+                    .item__add-item-img
+                        img(src="/images/item/add/3.png")
+                    .item__add-item-info
+                        .item__add-item-name Фольгированное "Сердце"
+                        .item__add-item-quant 
+                        .item__add-item-price 1 750 ₽
+                a.item__add-item-btn.btn
+                    svg(width="20" height="20")
+                        use(xlink:href="images/sprite.svg#shop")
+                    span В корзину
+
+            
+            .item__add-item(data-type='Ваза')
+                .item__add-item-top
+                    .item__add-item-img
+                        img(src="/images/item/add/4.png")
+                    .item__add-item-info
+                        .item__add-item-name Ваза прозрачная
+                        .item__add-item-quant 
+                        .item__add-item-price 550 ₽
+                a.item__add-item-btn.btn
+                    svg(width="20" height="20")
+                        use(xlink:href="images/sprite.svg#shop")
+                    span В корзину
+
+            
+            .item__add-item(data-type='Конфеты')
+                .item__add-item-top
+                    .item__add-item-img
+                        img(src="/images/item/add/3.png")
+                    .item__add-item-info
+                        .item__add-item-name Фольгированное "Сердце"
+                        .item__add-item-quant 
+                        .item__add-item-price 1 750 ₽
+                a.item__add-item-btn.btn
+                    svg(width="20" height="20")
+                        use(xlink:href="images/sprite.svg#shop")
+                    span В корзину
+
+            
+            .item__add-item(data-type='Популярное')
+                .item__add-item-top
+                    .item__add-item-img
+                        img(src="/images/item/add/2.png")
+                    .item__add-item-info
+                        .item__add-item-name Медведь Плюша
+                        .item__add-item-quant 90 см
+                        .item__add-item-price 2 500 ₽
+                a.item__add-item-btn.btn
+                    svg(width="20" height="20")
+                        use(xlink:href="images/sprite.svg#shop")
+                    span В корзину
+
+            
+            .item__add-item(data-type='Популярное')
+                .item__add-item-top
+                    .item__add-item-img
+                        img(src="/images/item/add/3.png")
+                    .item__add-item-info
+                        .item__add-item-name Фольгированное "Сердце"
+                        .item__add-item-quant 
+                        .item__add-item-price 1 750 ₽
+                a.item__add-item-btn.btn
+                    svg(width="20" height="20")
+                        use(xlink:href="images/sprite.svg#shop")
+                    span В корзину
+
+            
