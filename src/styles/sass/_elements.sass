@@ -23,10 +23,20 @@
 
 
 .breadcrumbs
-    padding: 30px 0
+    padding: 30px 0px
+    font-size: 14px
+    max-width: 1650px
+    margin: 0 auto
+
+    +mw(750)
+        font-size: 12px
 
     &__separator
         padding: 0 5px
+
+.item-page
+    .breadcrumbs
+        padding: 30px 15px
 
 
 .mob
@@ -41,6 +51,11 @@
     +mw(1150)
         display: none !important
 
+.headerDesktop
+    +mw(1150)
+        display: none
+
+
 .bolder
     font-weight: bolder
 
@@ -48,6 +63,46 @@
 .hidden
     display: none !important
 
+.red
+    color: red
+
+.yellow
+    color: #F9CC49
 
 
-    
+.unvis
+    opacity: 0
+    visibility: hidden
+
+
+
+.eyes
+    position: absolute
+    z-index: 10
+    right: 26px
+    top: 18px
+    width: 22px
+    height: 22px
+    cursor: pointer
+
+    +mw(750)
+        top: 13px
+
+    svg
+        position: absolute
+        transition: .2s
+        
+
+    .eye
+        opacity: 1
+
+    .eye-y
+        opacity: 0
+
+    &.active
+
+        .eye
+            opacity: 0
+
+        .eye-y
+            opacity: 1

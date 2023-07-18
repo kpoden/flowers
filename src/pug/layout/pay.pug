@@ -1,0 +1,62 @@
+main.wrapper
+
+    .breadcrumbs
+        a.breadcrumbs__item(href="/") Главная
+        span.breadcrumbs__separator >
+        a.breadcrumbs__item Оплата
+
+
+    .pay
+        .pay__attention.attention
+            .attention__icon
+                svg(width="63" height="63")
+                    use(xlink:href="images/sprite.svg#attention")
+
+            .attention__text
+                p.attention__bigtext  Заказы оплачиваются <span class="yellow">только после</span> звонка администратора и подтверждения заказа
+
+
+        p.bonus__title Как осуществляется оплата?
+
+        .pay__iconline.iconlines
+            img.arr1.iconlines__arr(src="images/bonus/right-arrow.png")
+            img.arr2.iconlines__arr(src="images/bonus/right-arrow2.png")
+            img.arr3.iconlines__arr(src="images/bonus/right-arrow.png")
+            .iconline
+                img(src="images/pay/1.png")
+                p.iconline__title Вы оформляете заказ на сайте
+            .iconline
+                img(src="images/pay/2.png")
+                p.iconline__title Администратор получает вашу заявку и перезванивает для подтверждения заказа
+            .iconline
+                img(src="images/pay/3.png")
+                p.iconline__title После подтверждения заказа администратор отправляет вам смс смс ссылкой для оплаты через
+                .iconline__svg
+                    svg(width="65px" height="36px" )
+                        use(xlink:href="images/sprite.svg#sbp")
+            .iconline
+                img(src="images/pay/4.png")
+                p.iconline__title Вы оплачиваете свой заказ, мы собираем букет и отправляем
+
+        p.pay__smalltext Для оплаты онлайн можно воспользоваться несколькими дополнительными сервисами:
+
+        .pay__line
+            svg(width="40" height="40" )
+                use(xlink:href="images/sprite.svg#money")
+            p Вызов курьера для оплаты (оплачивается на условиях раздела «Доставка»);
+        .pay__line
+            svg(width="60" height="20" )
+                use(xlink:href="images/sprite.svg#visa")
+            p Вызов курьера для оплаты (оплачивается на условиях раздела «Доставка»);
+
+        p.pay__text Для выбора оплаты товара с помощью банковской карты на соответствующей странице необходимо нажать кнопку Оплата заказа банковской картой. Оплата происходит через ПАО СБЕРБАНК с использованием банковских карт следующих платёжных систем:
+
+        ul.pay__list
+            li.pay__list-item МИР;
+            li.pay__list-item VISA International;
+            li.pay__list-item Mastercard Worldwide; 
+            li.pay__list-item JCB.
+
+        p.pay__text Для оплаты (ввода реквизитов Вашей карты) Вы будете перенаправлены на платёжный шлюз ПАО СБЕРБАНК. Соединение с платёжным шлюзом и передача информации осуществляется в защищённом режиме с использованием протокола шифрования SSL. В случае если Ваш банк поддерживает технологию безопасного проведения интернет-платежей Verified By Visa, MasterCard SecureCode, MIR Accept, J-Secure, для проведения платежа также может потребоваться ввод специального пароля.
+        p.pay__text Настоящий сайт поддерживает 256-битное шифрование. Конфиденциальность сообщаемой персональной информации обеспечивается ПАО СБЕРБАНК. Введённая информация не будет предоставлена третьим лицам за исключением случаев, предусмотренных законодательством РФ. Проведение платежей по банковским картам осуществляется в строгом соответствии с требованиями платёжных систем МИР, Visa Int., MasterCard Europe Sprl, JCB.
+            

@@ -1,49 +1,89 @@
 footer.footer
     .footer__wrapper.wrapper
-        img.footer__logo(src="/images/header/logo.png")
+        .footer__top
+            a(href="/")
+                svg.header-top__logo
+                    use(xlink:href="images/sprite.svg#logo")
+            .footer__mob-info
+                .footer__mob-info-contacts
+                    a.footer__contact.footer__phone(href="tel:+79090022106") +7 (909) 00-22-106
+                    a.footer__contact.footer__phone(href="tel:+73432022106") +7 (343) 20-22-106
+                    a.footer__contact.footer__address(href="https://yandex.ru/maps/org/vbukete_rf/1626904109/?ll=60.543764%2C56.821410&z=17" target="_blank") 620043, г. Екатеринбург. ул. Репина 99
+                .footer__mob-info-messangers 
+                    a(href="viber://chat?number=+79090022106" target="_blank")
+                        svg(width="30" height="30")
+                            use(xlink:href="images/sprite.svg#viber")
+                    a(href="https://wa.me/79090022106" target="_blank")
+                        svg(width="30" height="30")
+                            use(xlink:href="images/sprite.svg#wa")
 
         .footer__links-block
             ul.footer__links-col
                 li.footer__link 
-                    a Оплата
+                    a(href="pay.html") Оплата
                 li.footer__link 
-                    a Доставка
+                    a(href="delivery.html") Доставка
                 li.footer__link 
-                    a Контакты
+                    a(href="contacts.html") Контакты
 
             ul.footer__links-col
                 li.footer__link 
-                    a Скидки
+                    a(href="bonus.html") Скидки
                 li.footer__link 
-                    a Бонусы
+                    a(href="bonus.html") Бонусы
 
             ul.footer__links-col
                 li.footer__link 
-                    a Правила компании
+                    a(href="rules.html") Правила компании
                 li.footer__link 
-                    a Политика конфиденциальности
+                    a(href="policy.html") Политика конфиденциальности
+
+            .footer__pay-mob
+                img(src="images/footer/visa.svg")
+                img(src="images/footer/ms.svg")
+                img(src="images/footer/sber.svg")
 
         .footer__contacts
-            a.footer__contact.footer__phone(href="+79090022106") +7 (909) 00-22-106
-            a.footer__contact.footer__phone(href="+73432022106") +7 (343) 20-22-106
-            a.footer__contact.footer__address 620043, г. Екатеринбург. ул. Репина 99
+            a.footer__contact.footer__phone(href="tel:+79090022106") +7 (909) 00-22-106
+            a.footer__contact.footer__phone(href="tel:+73432022106") +7 (343) 20-22-106
+            a.footer__contact.footer__address(href="https://yandex.ru/maps/org/vbukete_rf/1626904109/?ll=60.543764%2C56.821410&z=17" target="_blank") 620043, г. Екатеринбург. ул. Репина 99
 
             .footer__icons
 
                 .footer__pay
-                    img(src="/images/footer/visa.png")
-                    img(src="/images/footer/mc.png")
-                    img(src="/images/footer/sber.png")
+                    img(src="images/footer/visa.svg")
+                    img(src="images/footer/ms.svg")
+                    img(src="images/footer/sber.svg")
                 .footer__messenger
-                    svg(width="30" height="30")
-                        use(xlink:href="images/sprite.svg#viber")
-                    svg(width="30" height="30")
-                        use(xlink:href="images/sprite.svg#wa")
+                    a(href="viber://chat?number=+79090022106" target="_blank")
+                        svg(width="30" height="30")
+                            use(xlink:href="images/sprite.svg#viber")
+                    a(href="https://wa.me/79090022106" target="_blank")
+                        svg(width="30" height="30")
+                            use(xlink:href="images/sprite.svg#wa")
 
-        p.footer__copyright © 2009 - 2023г. «Любимый-цветочный.рф»
+    p.footer__copyright © 2009 - 2023г. «Любимый-цветочный.рф»
+
+.float__footer
+    a.float__footer-col(href="/")
+        svg(width="16" height="16")
+            use(xlink:href="images/sprite.svg#home")
+        span Главная
+    a.float__footer-col(href="mono.html")
+        svg(width="16" height="16")
+            use(xlink:href="images/sprite.svg#bouqet")
+        span Собрать букет
+    a.float__footer-col(href="https://wa.me/79090022106" target="_blank")
+        img(src="images/footer/wa.svg")
+        span Написать
+
+.linksHidden
+    a(data-modal="regThanks")
+    a(data-modal="callbackThanks")
 
 
 include ../layout/modals.pug
+include ../layout/mob.pug
 
 
 script(src="libs/jquery.min.js")

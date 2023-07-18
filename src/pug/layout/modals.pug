@@ -2,19 +2,6 @@
     .modal__content
         .modal__close-cross.modal__close
         .modal__content-inner
-            img.addedItemImg(src = "")
-            h2.modal__header Товар добавлен <br> в корзину
-
-            a.modal__btn.btn.addedItemBtn(href="/cart")
-                svg(width="20" height="20")
-                    use(xlink:href="images/sprite.svg#shop")
-                span Перейти в корзину
-            
-            a.modal__btn.btn.modal__close.addedItemBtn.btn--white
-                svg(width="20" height="20")
-                    use(xlink:href="images/sprite.svg#shop2")
-                span Продолжить покупки
-                
                 
                 
 
@@ -73,8 +60,8 @@
 
         .modal__textareaWrap.textAreaBig
             p Текст пожелания (не обязательно)
-            textarea.modal__textarea.textAreaSmall(noresize placeholder="Введите текст пожелания")
-            textarea.modal__textarea.textAreaBig.hidden(noresize placeholder="Введите текст пожелания")
+            textarea.modal__textarea.textAreaSmall(noresize name="cardText" placeholder="Введите текст пожелания")
+            textarea.modal__textarea.textAreaBig.hidden(noresize name="cardText" placeholder="Введите текст пожелания")
             span.modal__counter
             
 
@@ -94,7 +81,7 @@
             .item__add-item(data-type='Популярное')
                 .item__add-item-top
                     .item__add-item-img
-                        img(src="/images/item/add/1.png")
+                        img(src="images/item/add/1.png")
                     .item__add-item-info
                         .item__add-item-name  Конфеты Raffaello Конфеты Raffaello
                         .item__add-item-quant 300 г
@@ -108,7 +95,7 @@
             .item__add-item(data-type='Игрушка')
                 .item__add-item-top
                     .item__add-item-img
-                        img(src="/images/item/add/2.png")
+                        img(src="images/item/add/2.png")
                     .item__add-item-info
                         .item__add-item-name Медведь Плюша
                         .item__add-item-quant 90 см
@@ -122,7 +109,7 @@
             .item__add-item(data-type='Шарик')
                 .item__add-item-top
                     .item__add-item-img
-                        img(src="/images/item/add/3.png")
+                        img(src="images/item/add/3.png")
                     .item__add-item-info
                         .item__add-item-name Фольгированное "Сердце"
                         .item__add-item-quant 
@@ -136,7 +123,7 @@
             .item__add-item(data-type='Ваза')
                 .item__add-item-top
                     .item__add-item-img
-                        img(src="/images/item/add/4.png")
+                        img(src="images/item/add/4.png")
                     .item__add-item-info
                         .item__add-item-name Ваза прозрачная
                         .item__add-item-quant 
@@ -150,7 +137,7 @@
             .item__add-item(data-type='Конфеты')
                 .item__add-item-top
                     .item__add-item-img
-                        img(src="/images/item/add/3.png")
+                        img(src="images/item/add/3.png")
                     .item__add-item-info
                         .item__add-item-name Фольгированное "Сердце"
                         .item__add-item-quant 
@@ -171,7 +158,7 @@
             .item__add-item(data-type='Популярное')
                 .item__add-item-top
                     .item__add-item-img
-                        img(src="/images/item/add/1.png")
+                        img(src="images/item/add/1.png")
                     .item__add-item-info
                         .item__add-item-name  Конфеты Raffaello Конфеты Raffaello
                         .item__add-item-quant 300 г
@@ -185,7 +172,7 @@
             .item__add-item(data-type='Игрушка')
                 .item__add-item-top
                     .item__add-item-img
-                        img(src="/images/item/add/2.png")
+                        img(src="images/item/add/2.png")
                     .item__add-item-info
                         .item__add-item-name Медведь Плюша
                         .item__add-item-quant 90 см
@@ -199,7 +186,7 @@
             .item__add-item(data-type='Шарик')
                 .item__add-item-top
                     .item__add-item-img
-                        img(src="/images/item/add/3.png")
+                        img(src="images/item/add/3.png")
                     .item__add-item-info
                         .item__add-item-name Фольгированное "Сердце"
                         .item__add-item-quant 
@@ -213,7 +200,7 @@
             .item__add-item(data-type='Ваза')
                 .item__add-item-top
                     .item__add-item-img
-                        img(src="/images/item/add/4.png")
+                        img(src="images/item/add/4.png")
                     .item__add-item-info
                         .item__add-item-name Ваза прозрачная
                         .item__add-item-quant 
@@ -227,7 +214,7 @@
             .item__add-item(data-type='Конфеты')
                 .item__add-item-top
                     .item__add-item-img
-                        img(src="/images/item/add/3.png")
+                        img(src="images/item/add/3.png")
                     .item__add-item-info
                         .item__add-item-name Фольгированное "Сердце"
                         .item__add-item-quant 
@@ -253,3 +240,148 @@
             svg(width="20" height="20")
                 use(xlink:href="images/sprite.svg#shop2")
             span Продолжить покупки
+
+
+    .auth
+        .auth__modal
+            h2.modal__header Авторизация
+
+            form.modal__form(id="auth-form" method="post")
+
+                label.modal__input-wrap.input-wrap
+                    span.modal__input-name.inp-name Логин
+                    input.modal__input.inp(type="text"  placeholder="Логин")
+                label.modal__input-wrap.input-wrap
+                    span.modal__input-name.inp-name Пароль
+                    input.modal__input.inp(type="text"  placeholder="Пароль")
+
+                input.modal__submit.modal__btn.btn(type="submit" value="Войти")
+
+                p.modal__smalltext. 
+                    Нажимая кнопку “Войти”, Вы соглашаетесь на обработку персональных
+                    данных, получение рассылок, а так же с <a href="policy.html">политикой конфиденциальности</a>
+
+
+                a.modal__link(href="restore.html") Забыли пароль?
+                a.modal__link(data-modal="reg") Зарегистрироваться
+
+
+
+    .reg
+        .reg__modal
+            h2.modal__header Регистрация
+            form(id="reg-form")
+                .reg__line-one
+                    label.modal__input-wrap.input-wrap
+                        span.modal__input-name.inp-name Имя
+                        input.modal__input.inp(type="text"  placeholder="Введите имя")
+                    label.modal__input-wrap.input-wrap
+                        span.modal__input-name.inp-name Фамилия
+                        input.modal__input.inp(type="text"  placeholder="Введите фамилию")
+                .reg__line
+                    .reg__col
+                        label.modal__input-wrap.input-wrap
+                            span.modal__input-name.inp-name Логин <span class="red">*</span>
+                            input.modal__input.inp(type="text"  placeholder="Введите логин (min 3 символа) *")
+                        label.modal__input-wrap.input-wrap
+                            span.modal__input-name.inp-name E-mail
+                            input.modal__input.inp(type="text"  placeholder="Введите e-mail")
+                    .reg__col
+                        label.modal__input-wrap.input-wrap
+                            span.modal__input-name.inp-name Пароль <span class="red">*</span>
+                            input.modal__input.inp(type="password"  placeholder="Введите пароль")
+                            .eyes
+                                svg.eye(width="22" height="22")
+                                    use(xlink:href="images/sprite.svg#eye")
+                                svg.eye-y(width="22" height="22")
+                                    use(xlink:href="images/sprite.svg#eye-y")
+                        label.modal__input-wrap.input-wrap
+                            span.modal__input-name.inp-name Подтвердите пароль <span class="red">*</span>
+                            input.modal__input.inp(type="password"  placeholder="Подтвердите пароль")
+                            .eyes
+                                svg.eye(width="22" height="22")
+                                    use(xlink:href="images/sprite.svg#eye")
+                                svg.eye-y(width="22" height="22")
+                                    use(xlink:href="images/sprite.svg#eye-y")
+
+                .reg__line-one
+                    label.modal__input-wrap.input-wrap
+                        input.modal__input.inp(type="text"  placeholder="Введите имя")
+                    label.modal__input-wrap.input-wrap
+                        span.modal__input-name.inp-name Слово на картинке <span class="red">*</span>
+                        input.modal__input.inp(type="text"  placeholder="Введите слово на картинке *")
+
+                input.reg__submit.modal__submit.modal__btn.btn(type="submit" value="зарегистрироваться")
+
+                p.modal__smalltext. 
+                    Нажимая кнопку “Зарегистрироваться”, Вы соглашаетесь на обработку персональных
+                    данных, получение рассылок, а так же с <a href="policy.html">политикой конфиденциальности</a>
+
+
+                a.modal__link(data-modal="auth") Уже зарегистрированы? Войти
+
+
+    .regThanks
+        svg( width="170" height="180")
+            use(xlink:href="images/sprite.svg#plane")
+        h2.modal__header Благодарим <br> за регистрацию
+        p.modal__text Вы зарегистрированы и успешно авторизовались
+        
+        a.modal__btn.btn(href="/")
+            span На главную
+
+        a.modal__link(href="/lk.html") В личный кабинет
+
+
+    .callbackThanks
+        svg( width="170" height="180")
+            use(xlink:href="images/sprite.svg#plane")
+        h2.modal__header Спасибо!
+        p.modal__text Менеджер свяжется с Вами в течение 15 минут
+        
+        a.modal__btn.btn(href="/")
+            span На главную
+
+
+
+    .callback
+        .callback__modal
+            h2.modal__header Заказать звонок
+            p.modal__text Оставьте свои контакты и мы свяжемся с вами в течение 15 минут
+
+            form.modal__form(id="callback-form" method="post")
+
+                label.modal__input-wrap.input-wrap
+                    span.modal__input-name.inp-name Ваше имя
+                    input.modal__input.inp(type="text"  placeholder="Введите имя")
+                label.modal__input-wrap.input-wrap
+                    span.modal__input-name.inp-name Телефон <span class="red">*</span>
+                    input.modal__input.inp(type="text"  placeholder="Введите телефон *")
+
+                input.modal__submit.modal__btn.btn(type="submit" value="Перезвоните мне")
+
+                p.modal__smalltext. 
+                    Нажимая кнопку “Перезвоните мне”, Вы соглашаетесь на обработку персональных
+                    данных, получение рассылок, а так же с <a href="policy.html">политикой конфиденциальности</a>
+
+
+    .instant
+        .instant__modal
+            h2.modal__header Быстрый заказ
+            p.modal__text Пожалуйста, укажите Ваши имя и телефон. И с Вами свяжется наш менеджер. Спасибо!
+
+
+            form.modal__form(id="instant-form" method="post")
+
+                label.modal__input-wrap.input-wrap
+                    span.modal__input-name.inp-name Имя <span class="red">*</span>
+                    input.modal__input.inp(type="text"  placeholder="Введите имя *")
+                label.modal__input-wrap.input-wrap
+                    span.modal__input-name.inp-name Телефон <span class="red">*</span>
+                    input.modal__input.inp(type="text"  placeholder="Введите телефон *")
+
+                input.modal__submit.modal__btn.btn(type="submit" value="Оформить заказ")
+
+                p.modal__smalltext. 
+                    Нажимая кнопку “Оформить заказ”, Вы соглашаетесь на обработку персональных
+                    данных, получение рассылок, а так же с <a href="policy.html">политикой конфиденциальности</a>

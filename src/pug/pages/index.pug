@@ -25,15 +25,18 @@ html(lang="ru-RU")
 
         <!--assets block-->
 
-        link(rel="stylesheet" href="libs/swiper-bundle.min.css")
+        link(rel="stylesheet" href="libs/slick.css")
+        link(rel="stylesheet" href="libs/slick-theme.css")
         link(rel="stylesheet", href="styles/app.css")
 
         <!--/assets block-->
     body
-        .container
+        .container.main-page
             include ../layout/header.pug
                 
             include ../layout/main.pug
+
+            include ../layout/cat-bottom.pug
 
             include ../layout/footer.pug
 

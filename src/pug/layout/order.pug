@@ -1,0 +1,196 @@
+main.wrapper
+
+    .breadcrumbs
+        a.breadcrumbs__item(href="/") Главная
+        span.breadcrumbs__separator >
+        a.breadcrumbs__item(href="/basket.html") Моя корзина
+        span.breadcrumbs__separator >
+        a.breadcrumbs__item Оформление заказа
+
+    h1.section-title Оформление заказа
+
+    form.order
+        .order__info
+            p.order__claim.
+                Все заказы обрабатываются в порядке очереди, в ближайшее время с вами свяжется администратор.
+                Оплата производится только после согласования всех деталей заказа с администратором.
+                Нажимая на кнопку оформить заказ вы соглашаетесь на <a href="/policy">политику конфиденциальности.</a>
+
+            .order__buyer
+
+                h4.order__subtitle Покупатель и получатель
+
+                p.order__text Покупатель
+
+                .order__line 
+                    label.order__input-wrap.input-wrap
+                        span.order__input-name.inp-name Имя <span class="red">*</span>
+                        input.order__input.inp(type="text" placeholder="Имя *")
+                    label.order__input-wrap.input-wrap
+                        span.order__input-name.inp-name Телефон <span class="red">*</span>
+                        input.order__input.inp(type="text" placeholder="Телефон *")
+                    label.order__input-wrap.input-wrap
+                        span.order__input-name.inp-name E-mail <span class="red">*</span>
+                        input.order__input.inp(type="text" placeholder="E-mail *")
+
+                .order__radio
+                    label.order__radio-wrap
+                        input(type="radio", name="other")
+                        span.dot
+                        span Получать будет другой человек
+            
+            .order__delivery-wrap
+                h4.order__subtitle Подробности доставки
+                p.order__claim Заказы на дневное время, оформленные в ночной период (21:00 -09:00), будут обработаны в порядке очереди с 09:00.
+
+                .order__delivery
+                    .order__delivery-filters
+                        .order__delivery-filter.inp.active-filter(data-delivery="Доставка курьером")
+                            svg(width="20px" height="20px")
+                                use(xlink:href="images/sprite.svg#courier")
+                            span Доставка курьером
+                        .order__delivery-filter.inp(data-delivery="Самовывоз")
+                            svg(width="20px" height="20px")
+                                use(xlink:href="images/sprite.svg#sam")
+                            span Самовывоз
+
+
+                    .order__courier
+                        .order__line 
+                            label.order__input-wrap.input-wrap
+                                span.order__input-name.inp-name Населенный пункт, улица, дом <span class="red">*</span>
+                                input.order__input.inp(type="text" placeholder="Введите адрес")
+                            label.order__input-wrap.input-wrap
+                                span.order__input-name.inp-name Квартира / офис
+                                input.order__input.inp(type="text" placeholder="Введите квартиру / офис")
+                            label.order__input-wrap.input-wrap
+                                span.order__input-name.inp-name Подъезд
+                                input.order__input.inp(type="text" placeholder="Введите подъезд")
+                            label.order__input-wrap.input-wrap
+                                span.order__input-name.inp-name Этаж
+                                input.order__input.inp(type="text" placeholder="Введите этаж")
+                        .order__line 
+                            label.order__input-wrap.input-wrap.w100
+                                span.order__input-name.inp-name Дополнительная информация
+                                input.order__input.inp(type="text" placeholder="Ваш комментарий")
+
+                    .order__pickup
+                        .order__line 
+                            label.order__input-wrap.input-wrap.w100
+                                span.order__input-name.inp-name Магазин <span class="red">*</span>
+                                .pickup__select(data-selected = "")
+                                    .pickup__select-input Выберите магазин для самовывоза *
+                                    .pickup__select-options
+                                        span.pickup__select-item 620043, г. Екатеринбург. ул. Репина 99
+                                        span.pickup__select-item 454043, г. Челябинск. ул. Ленина 99
+                                        span.pickup__select-item 620043, г. Екатеринбург. ул. Репина 99
+                                        span.pickup__select-item 620043, г. Пермь. ул. Советская 99
+                                        span.pickup__select-item 620043, г. Екатеринбург. ул. Репина 99
+                                        span.pickup__select-item 620043, г. Екатеринбург. ул. Репина 99
+
+
+
+                    
+                    p.order__text Дата и время
+                    .order__date
+                        label.order__input-wrap.input-wrap
+                            span.order__input-name.inp-name Дата доставки <span class="red">*</span>
+                            input.order__input.inp(type="text" placeholder="Выберите дату *")
+                            svg(width="20px" height="20px")
+                                use(xlink:href="images/sprite.svg#date")
+                        label.order__input-wrap.input-wrap
+                            span.order__input-name.inp-name Время доставки <span class="red">*</span>
+                            input.order__input.inp(type="text" placeholder="Выберите время *")
+                            svg(width="20px" height="20px")
+                                use(xlink:href="images/sprite.svg#clock")
+
+                        .order__date-freeDelivery.inp
+                            svg(width="20px" height="20px")
+                                use(xlink:href="images/sprite.svg#doublecheck")
+                            span Бесплатная доставка
+
+                .order__attention.attention
+                    .attention__icon
+                        svg(width="63" height="63")
+                            use(xlink:href="images/sprite.svg#attention")
+
+                    .attention__text
+                        p.attention__bigtext  Внимание!
+                        p.attention__smalltext Для расчёта доставки укажите населенный пункт, улицу и дом! <a href="/delivery/">Условия и стоимость доставки</a>
+
+            h4.order__subtitle Способ оплаты
+            .order__pay
+                label.order__radio-wrap.order__pay-2line
+                    input(type="radio", name="other")
+                    span.dot
+                    .order__pay-text 
+                        .order__pay-mainText Оплата наличными или картой в магазине
+
+                p.order__pay-subtext.
+                    Репина, 99 / 8 Марта 52 / Машиностроителей 10 / Вильгельма де Геннина 40
+                    Оплата производится после согласования всех деталей заказа с администратором
+                label.order__radio-wrap
+                    input(type="radio", name="other")
+                    span.dot
+                    .order__pay-text 
+                        .order__pay-mainText Оплата наличными курьеру
+
+                label.order__radio-wrap
+                    input(type="radio", name="other")
+                    span.dot
+                    .order__pay-text 
+                        .order__pay-mainText Оплата картой на сайте
+
+                p.order__pay-subtext.
+                    Оплата производится после согласования всех деталей заказа с администратором
+                label.order__radio-wrap
+                    input(type="radio", name="other")
+                    span.dot
+                    .order__pay-text
+                        .order__pay-mainText Оплата по &nbsp;
+                            svg(width="65" height="36")
+                                use(xlink:href="images/sprite.svg#sbp")
+                p.order__pay-subtext.
+                    Оплата производится после согласования всех деталей заказа с администратором
+
+
+
+
+
+
+
+
+        .basket__total
+
+            .total-top
+                .total__price
+                    .total__price-text Итого:
+                    .total__price-num 9 520 ₽
+
+                .total__basketTotal
+                    .total__basketTotal-text В корзине 4 товара:
+                    .total__basketTotal-num 9 520 ₽
+
+                .total__delivery
+                    .total__delivery-text Доставка:
+                    .total__delivery-num 0 ₽
+
+            .total__bottom
+                .total__bonus
+                    .total__bonus-text Бонусы за покупку:
+                    .total__bonus-num +409 баллов
+
+                input.total__submit.btn(type="submit" value="Оформить заказ")
+                .total__callback(data-modal="instant") Купить в 1 клик
+
+
+    .orderDone.hidden
+        img(src="images/basket/done.png")
+        .orderDone__title Заказ сформирован
+        .orderDone__info Ваш заказ <span class="yellow">№164942</span> от 31.05.2023 15:02:26 успешно создан
+        p.orderDone__subtext.
+            Все заказы обрабатываются в порядке очереди, в ближайшее время с вами свяжется администратор.
+            Заказы на дневное время, оформленные в ночной период (21:00 -09:00), будут обработаны в порядке очереди с 09:00.
+            Оплата производится только после согласования всех деталей заказа с администратором.
+        a.orderDone__btn.btn(href="/lk.html") в личный кабинет
+        a.orderDone__callback(href="/") На главную

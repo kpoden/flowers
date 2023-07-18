@@ -14,7 +14,7 @@
     .construct__window
 
         .construct__img
-            img(src="/images/construct/img.png")
+            img(src="images/construct/img.png")
 
         form.construct__panel
             h3.color__title Выберите цвет:
@@ -109,25 +109,25 @@
             .construct__add
                 p.construct__add-title Добавить к заказу:
 
-                a.construct__add-item
+                a.construct__add-item(data-modal="delivery")
                     img(src="images/construct/delivery.png")
                     span.construct__add-item-text Бесплатная доставка от 1 500₽ *
-                a.construct__add-item
+                a.construct__add-item(data-modal="cashback")
                     img(src="images/construct/card.png")
                     span.construct__add-item-text Вернём 10% на счёт
-                a.construct__add-item
+                a.construct__add-item(data-modal="photoBouqet")
                     img(src="images/construct/camera.png")
                     span.construct__add-item-text Фото букета перед доставкой
-                a.construct__add-item
+                a.construct__add-item(data-modal="feeding")
                     img(src="images/construct/fert.png")
                     span.construct__add-item-text Подкормка для цветов в подарок
-                a.construct__add-item
+                a.construct__add-item(data-modal="card")
                     img(src="images/construct/postcard.png")
                     span.construct__add-item-text Открытка для букета в подарок
-                a.construct__add-item
+                a.construct__add-item(data-modal="topper")
                     img(src="images/construct/love.png")
                     span.construct__add-item-text Топпер для букета
-                a.construct__add-item
+                a.construct__add-item(data-modal="vase")
                     img(src="images/construct/vase.png")
                     span.construct__add-item-text Ваза для букета
 
@@ -138,4 +138,4 @@
                         use(xlink:href="images/sprite.svg#shop")
                     span В корзину
 
-                a.construct__fast Быстрый заказ
+                a.construct__fast(data-modal="instant") Быстрый заказ

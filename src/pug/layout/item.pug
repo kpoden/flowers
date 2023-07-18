@@ -1,54 +1,58 @@
-main.wrapper
+main.item-page
 
     .breadcrumbs
-        span.breadcrumbs__item Главная
+        a.breadcrumbs__item(href="/") Главная
         span.breadcrumbs__separator >
-        span.breadcrumbs__item 101 роза
+        a.breadcrumbs__item 101 роза
 
 
-    .item
+    .item.wrapper
 
         .item__sliders
             .item__slider-main-wrap
-                img.item__slider-main-present(src="/images/item/present.png")
-                img.item__slider-main-hit(src="/images/item/hit.png")
+                img.item__slider-main-present(src="images/item/candies.svg")
+                img.item__slider-main-hit(src="images/item/hit.svg")
 
                 .item__slider-arrows
                     .item__slider-arrow.arr-left
                     .item__slider-arrow.arr-right
 
                 .item__slider-main
+                    .item__slider-main-slide.video
+                        svg.play-btn(width="50" height="50")
+                            use(xlink:href="images/sprite.svg#play")
+                        video(src="1.mp4" preload="auto")
                     .item__slider-main-slide
-                        img(src="/images/item/1.png")
-                    .item__slider-main-slide
-                        img(src="/images/item/2.png")
+                        img(src="images/item/2.png")
                     .item__slider-main-slide 
-                        img(src="/images/item/3.png")
+                        img(src="images/item/3.png")
                     .item__slider-main-slide 
-                        img(src="/images/item/4.png")
+                        img(src="images/item/4.png")
                     .item__slider-main-slide 
-                        img(src="/images/item/5.png")
+                        img(src="images/item/5.png")
                     .item__slider-main-slide 
-                        img(src="/images/item/6.png")
+                        img(src="images/item/6.png")
             .item__slider-bottom
 
                 .item__slider-nav
+                    .item__slider-nav-slide.video
+                        svg.play-btn(width="36" height="36")
+                            use(xlink:href="images/sprite.svg#play")
+                        video(src="1.mp4")
                     .item__slider-nav-slide 
-                        img(src="/images/item/1.png")
+                        img(src="images/item/2.png")
                     .item__slider-nav-slide 
-                        img(src="/images/item/2.png")
+                        img(src="images/item/3.png")
                     .item__slider-nav-slide 
-                        img(src="/images/item/3.png")
+                        img(src="images/item/4.png")
                     .item__slider-nav-slide 
-                        img(src="/images/item/4.png")
+                        img(src="images/item/5.png")
                     .item__slider-nav-slide 
-                        img(src="/images/item/5.png")
-                    .item__slider-nav-slide 
-                        img(src="/images/item/6.png")
+                        img(src="images/item/6.png")
 
                 .item__slider-add
-                    img(src="/images/item/bear.png")
-                    span Добавить <br> подарок
+                    img(src="images/item/bear.png")
+                    span Добавить подарок
 
             .item__slider-art Код товара: 4589
 
@@ -154,7 +158,9 @@ main.wrapper
 
         .construct__order
 
-            .construct__price 3 500 ₽
+            .construct__price 
+                .construct__price-top 
+                .construct__price-num 3 500 ₽
             .construct__delivery
                 svg(width="20" height="20")
                     use(xlink:href="images/sprite.svg#read")
@@ -167,25 +173,25 @@ main.wrapper
                 p.construct__add-title Добавить к заказу:
 
                 a.construct__add-item(data-modal="delivery")
-                    img(src="images/construct/delivery.png")
+                    img(src="images/construct/delivery.svg")
                     span.construct__add-item-text Бесплатная доставка от 1 500₽ *
                 a.construct__add-item(data-modal="cashback")
-                    img(src="images/construct/card.png")
+                    img(src="images/construct/credit-card.svg")
                     span.construct__add-item-text Вернём 10% на счёт
                 a.construct__add-item(data-modal="photoBouqet")
-                    img(src="images/construct/camera.png")
+                    img(src="images/construct/camera.svg")
                     span.construct__add-item-text Фото букета перед доставкой
                 a.construct__add-item(data-modal="feeding")
-                    img(src="images/construct/fert.png")
+                    img(src="images/construct/fert.svg")
                     span.construct__add-item-text Подкормка для цветов в подарок
                 a.construct__add-item(data-modal="card")
-                    img(src="images/construct/postcard.png")
+                    img(src="images/construct/postcard.svg")
                     span.construct__add-item-text Открытка для букета в подарок
                 a.construct__add-item(data-modal="topper")
-                    img(src="images/construct/love.png")
+                    img(src="images/construct/love.svg")
                     span.construct__add-item-text Топпер для букета
                 a.construct__add-item(data-modal="vase")
-                    img(src="images/construct/vase.png")
+                    img(src="images/construct/vase.svg")
                     span.construct__add-item-text Ваза для букета
 
 
@@ -217,21 +223,21 @@ main.wrapper
             .item__add-item(data-type='Популярное')
                 .item__add-item-top
                     .item__add-item-img
-                        img(src="/images/item/add/1.png")
+                        img(src="images/item/add/1.png")
                     .item__add-item-info
-                        .item__add-item-name  Конфеты Raffaello Конфеты Raffaello
+                        .item__add-item-name  Конфеты Raffaello
                         .item__add-item-quant 300 г
                         .item__add-item-price 599 ₽
                 a.item__add-item-btn.btn
                     svg(width="20" height="20")
                         use(xlink:href="images/sprite.svg#shop")
-                    span В корзину
+                    span Добавить к заказу
 
             
             .item__add-item(data-type='Игрушка')
                 .item__add-item-top
                     .item__add-item-img
-                        img(src="/images/item/add/2.png")
+                        img(src="images/item/add/2.png")
                     .item__add-item-info
                         .item__add-item-name Медведь Плюша
                         .item__add-item-quant 90 см
@@ -239,13 +245,13 @@ main.wrapper
                 a.item__add-item-btn.btn
                     svg(width="20" height="20")
                         use(xlink:href="images/sprite.svg#shop")
-                    span В корзину
+                    span Добавить к заказу
 
             
             .item__add-item(data-type='Шарик')
                 .item__add-item-top
                     .item__add-item-img
-                        img(src="/images/item/add/3.png")
+                        img(src="images/item/add/3.png")
                     .item__add-item-info
                         .item__add-item-name Фольгированное "Сердце"
                         .item__add-item-quant 
@@ -253,13 +259,13 @@ main.wrapper
                 a.item__add-item-btn.btn
                     svg(width="20" height="20")
                         use(xlink:href="images/sprite.svg#shop")
-                    span В корзину
+                    span Добавить к заказу
 
             
             .item__add-item(data-type='Ваза')
                 .item__add-item-top
                     .item__add-item-img
-                        img(src="/images/item/add/4.png")
+                        img(src="images/item/add/4.png")
                     .item__add-item-info
                         .item__add-item-name Ваза прозрачная
                         .item__add-item-quant 
@@ -267,13 +273,13 @@ main.wrapper
                 a.item__add-item-btn.btn
                     svg(width="20" height="20")
                         use(xlink:href="images/sprite.svg#shop")
-                    span В корзину
+                    span Добавить к заказу
 
             
             .item__add-item(data-type='Конфеты')
                 .item__add-item-top
                     .item__add-item-img
-                        img(src="/images/item/add/3.png")
+                        img(src="images/item/add/3.png")
                     .item__add-item-info
                         .item__add-item-name Фольгированное "Сердце"
                         .item__add-item-quant 
@@ -281,13 +287,13 @@ main.wrapper
                 a.item__add-item-btn.btn
                     svg(width="20" height="20")
                         use(xlink:href="images/sprite.svg#shop")
-                    span В корзину
+                    span Добавить к заказу
 
             
             .item__add-item(data-type='Популярное')
                 .item__add-item-top
                     .item__add-item-img
-                        img(src="/images/item/add/2.png")
+                        img(src="images/item/add/2.png")
                     .item__add-item-info
                         .item__add-item-name Медведь Плюша
                         .item__add-item-quant 90 см
@@ -295,13 +301,13 @@ main.wrapper
                 a.item__add-item-btn.btn
                     svg(width="20" height="20")
                         use(xlink:href="images/sprite.svg#shop")
-                    span В корзину
+                    span Добавить к заказу
 
             
             .item__add-item(data-type='Популярное')
                 .item__add-item-top
                     .item__add-item-img
-                        img(src="/images/item/add/3.png")
+                        img(src="images/item/add/3.png")
                     .item__add-item-info
                         .item__add-item-name Фольгированное "Сердце"
                         .item__add-item-quant 
@@ -309,6 +315,12 @@ main.wrapper
                 a.item__add-item-btn.btn
                     svg(width="20" height="20")
                         use(xlink:href="images/sprite.svg#shop")
-                    span В корзину
+                    span Добавить к заказу
 
             
+    .item__seo.wrapper
+        p SEO SEO SEO SEO SEO SEO SEO SEO SEO SEO SEO SEO SEO SEO SEO SEO SEO 
+        p Хотите произвести по-настоящему неизгладимое впечатление? Ищете стопроцентный презент? Шикарный букет роз - именно то, что вам нужно! В нашем интернет-магазине вы сможете заказать его в большом многообразии оттенков. 101 роза гарантированно покорит самое искушённое женское сердце. Чтобы убедиться в правдивости этих слов, достаточно оформить заказ любым удобным для вас способом. Сделайте это прямо сейчас!
+        p Огромный букет всегда действует безотказно, хотите ли вы порадовать любимую, произвести впечатление на незнакомку или загладить вину перед супругой. Наши флористы соберут красивый букет роз из свежесрезанных цветов с учётом ваших пожеланий и эстетических предпочтений особы, для которой он предназначен. Цветовая гамма обсуждается (доступны лиловые, розовые, красные, белые розы), готовый результат можно увидеть на фото до отправки заказа.
+        p Оперативная доставка по городу и близлежащим населённым пунктам, профессиональные консультации, лучшие цены в регионе, различные способы оплаты. Звоните!
+        p Цвет роз выбирается из наличия на усмотрение флориста и может отличаться от фото. Букет не включает розы красного и белого цвета. На розу 40 см скидки по дисконтным картам не действуют, РОЗА 40 СМ ОФОРМЛЯЕТСЯ С БУМАЖНОЙ ЛЕНТОЙ. ДОСТАВКА НА РОЗУ 40 СМ ВСЕГДА ПЛАТНАЯ. Количество товара ограничено. При желании букет можно дополнительно оформить с зеленью и в упаковку. Стоимость дополнительного оформления можно уточнить у администратора.

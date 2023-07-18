@@ -1,5 +1,6 @@
 .footer
     background: #1E2021
+    padding-bottom: 70px
     
     &__wrapper
         display: flex
@@ -10,11 +11,17 @@
         position: relative
         gap: 20px
 
-        +mw(750)
+        +mw(600)
             flex-direction: column
+
+    &__top
+        flex-shrink: 0
 
     &__logo
         margin-top: -10px
+
+        +mw(1000)
+            padding-bottom: 50px
 
     &__links-block
         display: flex
@@ -22,8 +29,20 @@
         width: 40%
         min-width: 440px
 
-        // +mw(1100)
-        //     flex-direction: column
+        +mw(1000)
+            flex-direction: column
+            align-items: flex-end
+            min-width: auto
+
+            .footer__link
+                text-align: end
+
+        +mw(600)
+            align-items: flex-start
+            width: 100%
+
+            .footer__link
+                text-align: start
 
 
     &__links-col
@@ -37,6 +56,9 @@
         display: flex
         flex-direction: column
         align-items: flex-end
+
+        +mw(1000)
+            display: none
 
     &__contact
         display: block
@@ -68,11 +90,61 @@
 
 
     &__copyright
-        position: absolute
-        bottom: 21px
-        left: 50%
-        transform: translateX(-50%)
         font-size: 14px
         font-weight: 500
         line-height: 24px
         opacity: .4
+        text-align: center
+
+        +mw(600)
+            text-align: left
+            padding-left: 15px
+
+
+.footer__pay-mob
+    display: none
+
+    +mw(1000)
+        display: flex
+        padding-top: 40px
+        gap: 10px
+
+        img
+            flex-shrink: 0
+
+.footer__mob-info
+    display: none
+
+    +mw(1000)
+        display: flex
+
+        &-messangers
+            display: flex
+            gap: 10px
+
+.float__footer
+    display: none
+    position: fixed
+    bottom: 0
+    width: 100%
+    justify-content: space-between
+    background: #323232
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.60)
+    padding: 10px 16px
+    min-width: 360px
+    z-index: 110
+
+    +mw(750)
+        display: flex
+
+    &-col
+        display: flex
+        flex-direction: column
+        align-items: center
+        gap: 5px
+        height: 36px
+
+    span
+        font-size: 12px
+        font-style: normal
+        font-weight: 500

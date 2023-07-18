@@ -1,0 +1,295 @@
+.lk
+    position: relative
+
+    &__tabs
+        width: 100%
+        display: flex
+        justify-content: space-between
+        padding-bottom: 60px
+
+    &__tab
+        color: #A9A9A9
+        text-align: center
+        font-size: 16px
+        font-weight: 600
+        text-transform: uppercase
+        display: block
+        width: 100%
+        padding-bottom: 12px
+        cursor: pointer
+        transition: .2s
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2)
+
+        &.tab-active
+            color: #F9CC49
+            border-bottom: 2px solid #F9CC49
+
+        +mw(725)
+            font-size: 14px
+
+        +mw(450)
+            font-size: 12px
+
+
+    &__tab[data-tab="Выйти"]
+
+        +mw(725)
+            display: none
+
+    &__quit
+        display: none
+        align-items: center
+        gap: 10px
+        position: absolute
+        right: 0
+        top: 95px
+
+        +mw(725)
+            display: flex
+
+
+    &__pages
+
+
+    &__page
+        width: 100%
+        height: 100%
+        padding-bottom: 130px
+
+    &__title
+        font-size: 28px
+        font-weight: 600
+        line-height: 28px
+        padding-bottom: 50px
+
+        +mw(725)
+            font-size: 26px
+
+    .profile
+
+        &__form
+
+        &__input-line
+            padding-bottom: 40px
+            display: flex
+            gap: 30px
+
+            +mw(725)
+                flex-direction: column
+
+        &__radios
+            display: flex
+            align-items: center
+            position: relative
+            gap: 30px
+
+        &__radio-wrap
+            display: flex
+            align-items: center
+            gap: 12px
+
+        .inp
+            background: #272727
+            border: 1.5px solid #FFF
+            width: 390px
+
+            +mw(1270)
+                width: 250px
+
+            +mw(840)
+                width: 200px
+
+            +mw(725)
+                width: 100%
+
+        &__submit
+            width: 390px
+
+            +mw(1000)
+                width: 300px
+
+
+        &__checkbox
+            padding-bottom: 20px
+            display: flex
+            align-items: center
+            gap: 15px
+
+            &-input
+                display: none
+
+                &:checked ~ .profile__checkbox-square::after
+                    display: block
+                        
+
+            &-square
+                width: 20px
+                height: 20px
+                background: #F9CC49
+                border-radius: 2px
+                position: relative
+
+                &::after
+                    content: ""
+                    display: none
+                    width: 7px
+                    height: 12px
+                    border-bottom: 3px solid #272727
+                    border-right: 3px solid #272727
+                    position: absolute
+                    top: 50%
+                    left: 50%
+                    transform: translate(-50%, -50%) rotate(45deg)
+
+            &-text
+                font-size: 12px
+                font-weight: 500
+
+                a
+                    text-decoration: underline
+
+.input-wrap
+    position: relative
+
+.inp-name
+    position: absolute
+    top: -20px
+    font-size: 12px
+    font-weight: 500
+
+
+
+.lk__orders-empty
+    display: flex
+    flex-direction: column
+    text-align: center
+    justify-content: center
+    align-items: center
+
+    img
+        padding-top: 100px
+        display: block
+
+    &-text
+        text-align: center
+        font-size: 28px
+        font-weight: 600
+        padding-top: 50px
+        padding-bottom: 40px
+
+        +mw(725)
+            font-size: 26px
+
+    &-btn
+        color: #272727
+        width: 207px
+
+        &:hover
+            color: #272727
+
+
+.orders
+
+    &__tabs
+        display: flex
+        gap: 10px
+        padding-bottom: 30px
+
+        
+
+    &__tab
+        color: #fff
+        font-size: 16px
+        font-weight: 600
+        text-transform: uppercase
+        cursor: pointer
+        background: rgba(255, 255, 255, 0.10)
+        transition: .2s
+
+
+        &:hover
+            background: #fff
+            color: #272727
+
+        &.active-orders
+            background: #fff
+            color: #272727
+
+            &:hover
+                background: rgba(255, 255, 255, 0.10)
+                color: #fff
+
+
+    &__current
+    &__status
+        font-size: 22px
+        font-weight: 600
+        line-height: 32px
+        padding-bottom: 0px
+
+    .order
+        display: flex
+        justify-content: space-between
+        padding-top: 30px
+        padding-bottom: 30px
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2)
+
+        +mw(900)
+            flex-direction: column
+            gap: 30px
+
+        &__info
+            width: 35%
+
+            +mw(900)
+                width: 100%
+        &__id
+            font-size: 18px
+            font-weight: 600
+            padding-bottom: 20px
+            
+        &__line
+            display: flex
+            justify-content: space-between
+            gap: 10px
+            padding-bottom: 10px
+
+            +mw(900)
+                gap: 30px
+
+        &__text
+            font-size: 14px
+            font-weight: 400
+
+        &__value
+            font-size: 14px
+            font-weight: 400
+
+        &__list
+            width: 35%  
+            +mw(900)
+                width: 100%
+
+        &__list-title
+            font-size: 18px
+            font-weight: 600
+            padding-bottom: 20px
+
+        &__actions
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+            gap: 20px
+
+        &__btn
+            color: #272727
+
+            &:hover
+                color: #272727
+            
+        &__remove
+            text-align: center
+            font-size: 16px
+            font-weight: 500
+            text-decoration-line: underline

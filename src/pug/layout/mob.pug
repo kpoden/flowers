@@ -1,0 +1,22 @@
+.mob-wrap
+
+    .overlay
+
+    .mob-menu
+        .header-top__findInput
+            input(type="text" name="search" placeholder="Поиск")
+            .header-top__findBtn
+                svg(width="20" height="20")
+                    use(xlink:href="images/sprite.svg#find")
+
+        .mob-menu__links
+            a.mob-menu__link(href="pay.html") Оплата
+            a.mob-menu__link(href="delivery.html") Доставка
+            a.mob-menu__link(href="contacts.html") Контакты
+            a.mob-menu__link(href="bonus.html") Бонусы
+
+        a.header-top__phone(href="tel: +73432022106")
+            img(src="images/header/phone.svg")
+            span +7 (343) 20-22-106
+
+        span.mob-menu__callback.btn(data-modal="callback") Заказать звонок

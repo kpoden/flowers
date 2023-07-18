@@ -17,14 +17,19 @@
 <!--favicon block-->
 <!--/favicon block-->
 <!--assets block-->
-    <link rel="stylesheet" href="libs/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="libs/slick.css"/>
+    <link rel="stylesheet" href="libs/slick-theme.css"/>
     <link rel="stylesheet" href="styles/app.css"/><!--/assets block-->
   </head>
   <body>
-    <div class="container">
-      <header class="header"><img class="header__bg" src="images/header/bg.png"/>
+    <div class="container main-page">
+      <div class="header-top__burger burger burger-abs"><span class="burger__line"> </span><span class="burger__line"> </span><span class="burger__line"> </span></div>
+      <header class="header header-page headerMob">
         <div class="header-top wrapper">
-          <div class="header-top__burger burger"><span class="burger__line"> </span><span class="burger__line"> </span><span class="burger__line"> </span></div><a href="/"><img class="header-top__logo" src="/images/header/logo.png"/></a>
+          <div class="header-top__burger burger burger-rel"><span class="burger__line"> </span><span class="burger__line"> </span><span class="burger__line"> </span></div><a href="/">
+            <svg class="header-top__logo">
+              <use xlink:href="images/sprite.svg#logo"></use>
+            </svg></a>
           <div class="header-top__findInput desktopBig">
             <input type="text" name="search" placeholder="Поиск"/>
             <div class="header-top__findBtn">
@@ -35,21 +40,59 @@
           </div>
           <nav class="header-top__nav desktopBig">
             <ul class="header-top__nav-list">
-              <li class="header-top__nav-item"><a href="/">Оплата</a></li>
-              <li class="header-top__nav-item"><a href="/">Доставка</a></li>
-              <li class="header-top__nav-item"><a href="/">Контакты</a></li>
-              <li class="header-top__nav-item"><a href="/">Скидки</a></li>
-              <li class="header-top__nav-item"><a href="/">Бонусы</a></li>
+              <li class="header-top__nav-item"><a href="/pay.html">Оплата</a></li>
+              <li class="header-top__nav-item"><a href="/delivery.html">Доставка</a></li>
+              <li class="header-top__nav-item"><a href="/contacts.html">Контакты</a></li>
+              <li class="header-top__nav-item"><a href="/bonus.html">Бонусы</a></li>
             </ul>
           </nav><a class="header-top__phone desktopBig" href="tel: +73432022106">
             <svg width="20" height="20">
               <use xlink:href="images/sprite.svg#phone"></use>
             </svg><span>+7 (343) 20-22-106</span></a>
           <button class="header-top__callback btn desktopBig" type="button">Заказать звонок</button>
-          <div class="header-top__personal"><a class="header-top__personal-item">
+          <div class="header-top__personal"><a class="header-top__personal-item" data-modal="callback"><img src="images/header/phone.svg"/></a><a class="header-top__personal-item" href="basket.html">
               <svg width="20" height="20">
                 <use xlink:href="images/sprite.svg#shop"></use>
-              </svg></a><a class="header-top__personal-item">
+              </svg></a><a class="header-top__personal-item" data-modal="auth">
+              <svg width="20" height="20">
+                <use xlink:href="images/sprite.svg#pers"></use>
+              </svg></a></div>
+        </div>
+      </header>
+      <div class="header__buttons wrapper"><a class="header-main__btn btn" href="mono.html">собрать свой букет</a>
+        <button class="header-main__btn btn btn--white btnMobBouqetScroll">Выбрать готовый букет</button>
+      </div>
+      <header class="header headerDesktop">
+        <video class="header__bgVideo" src="1.mp4" autobuffer="" playsinline="" autoplay="autoplay" webkit-playsinline="" loop="" muted="muted" id="bgvid" preload="auto" type="video/mp4; codecs=&amp;quot;avc1.42E01E, mp4a.40.2&amp;quot;">  </video>
+        <div class="header-top wrapper">
+          <div class="header-top__burger burger burger-rel"><span class="burger__line"> </span><span class="burger__line"> </span><span class="burger__line"> </span></div><a href="/">
+            <svg class="header-top__logo">
+              <use xlink:href="images/sprite.svg#logo"></use>
+            </svg></a>
+          <div class="header-top__findInput desktopBig">
+            <input type="text" name="search" placeholder="Поиск"/>
+            <div class="header-top__findBtn">
+              <svg width="20" height="20">
+                <use xlink:href="images/sprite.svg#find"></use>
+              </svg>
+            </div>
+          </div>
+          <nav class="header-top__nav desktopBig">
+            <ul class="header-top__nav-list">
+              <li class="header-top__nav-item"><a href="/pay.html">Оплата</a></li>
+              <li class="header-top__nav-item"><a href="/delivery.html">Доставка</a></li>
+              <li class="header-top__nav-item"><a href="/contacts.html">Контакты</a></li>
+              <li class="header-top__nav-item"><a href="/bonus.html">Бонусы</a></li>
+            </ul>
+          </nav><a class="header-top__phone desktopBig" href="tel: +73432022106">
+            <svg width="20" height="20">
+              <use xlink:href="images/sprite.svg#phone"></use>
+            </svg><span>+7 (343) 20-22-106</span></a>
+          <button class="header-top__callback btn desktopBig" type="button" data-modal="callback">Заказать звонок</button>
+          <div class="header-top__personal"><a class="header-top__personal-item" href="basket.html">
+              <svg width="20" height="20">
+                <use xlink:href="images/sprite.svg#shop"></use>
+              </svg></a><a class="header-top__personal-item" data-modal="auth">
               <svg width="20" height="20">
                 <use xlink:href="images/sprite.svg#pers"></use>
               </svg></a></div>
@@ -57,11 +100,96 @@
         <div class="header-main wrapper">
           <h1 class="header-main__title">Только свежие цветы</h1>
           <p class="header-main__subtitle">Ежедневно получаем цветы от поставщиков. Гарантируем качество</p>
-          <button class="header-main__btn btn" type="button">собрать свой букет</button>
+          <button class="header-main__btn btn btnConstructScroll" type="button">собрать свой букет</button>
+          <button class="header-main__btn btn btn--white btnBouqetScroll" type="button">собрать свой букет</button>
         </div>
       </header>
       <main class="wrapper">
         <div class="catalog">
+          <div class="catalog__item"><img class="catalog__item-hit" src="images/catalog/2.svg"/><a class="catalog__item-img" href="item.html"><img class="catalog__item-img-img" src="images/catalog/1.png"/><img class="catalog__item-present" src="images/catalog/candies.svg"/></a>
+            <div class="catalog__item-info"><a class="catalog__item-name" href="item.html" data-crop="data-crop">101 роза микс с лентой 101 роза микс с лентой 101 роза микс с лентой 101 роза микс с лентой</a>
+              <div class="catalog__item-lenght">Длина цветка: 40 см</div>
+              <div class="catalog__item-bottomWrap">
+                <div class="catalog__item-price">9 999 ₽</div>
+                <div class="catalog__item-order"><a class="catalog__item-btn btn">
+                    <svg>
+                      <use xlink:href="images/sprite.svg#bask"></use>
+                    </svg><span>В корзину</span></a><a class="catalog__item-fast" data-modal="instant">Быстрый заказ</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="catalog__item"><a class="catalog__item-img" href="item.html"><img class="catalog__item-img-img" src="images/catalog/2.png"/><img class="catalog__item-present" src="images/catalog/3.svg"/></a>
+            <div class="catalog__item-info"><a class="catalog__item-name" href="item.html" data-crop="data-crop">15 кустовых роз микс с атласной лентой</a>
+              <div class="catalog__item-lenght">Длина цветка: 40 см</div>
+              <div class="catalog__item-bottomWrap">
+                <div class="catalog__item-price">9 999 ₽</div>
+                <div class="catalog__item-order"><a class="catalog__item-btn btn">
+                    <svg>
+                      <use xlink:href="images/sprite.svg#bask"></use>
+                    </svg><span>В корзину</span></a><a class="catalog__item-fast" data-modal="instant">Быстрый заказ</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="catalog__item"><a class="catalog__item-img" href="item.html"><img class="catalog__item-img-img" src="images/catalog/3.png"/></a>
+            <div class="catalog__item-info"><a class="catalog__item-name" href="item.html" data-crop="data-crop">101 роза микс с лентой</a>
+              <div class="catalog__item-lenght">Длина цветка: 40 см</div>
+              <div class="catalog__item-bottomWrap">
+                <div class="catalog__item-price">9 999 ₽</div>
+                <div class="catalog__item-order"><a class="catalog__item-btn btn">
+                    <svg>
+                      <use xlink:href="images/sprite.svg#bask"></use>
+                    </svg><span>В корзину</span></a><a class="catalog__item-fast" data-modal="instant">Быстрый заказ</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="catalog__item"><a class="catalog__item-img" href="item.html"><img class="catalog__item-img-img" src="images/catalog/4.png"/><img class="catalog__item-present" src="images/catalog/candies.svg"/></a>
+            <div class="catalog__item-info"><a class="catalog__item-name" href="item.html" data-crop="data-crop">101 роза микс с лентой</a>
+              <div class="catalog__item-lenght">Длина цветка: 40 см</div>
+              <div class="catalog__item-bottomWrap">
+                <div class="catalog__item-price">9 999 ₽</div>
+                <div class="catalog__item-order"><a class="catalog__item-btn btn">
+                    <svg>
+                      <use xlink:href="images/sprite.svg#bask"></use>
+                    </svg><span>В корзину</span></a><a class="catalog__item-fast" data-modal="instant">Быстрый заказ</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="catalog__item"><img class="catalog__item-hit" src="images/catalog/2.svg"/><a class="catalog__item-img" href="item.html"><img class="catalog__item-img-img" src="images/catalog/5.png"/></a>
+            <div class="catalog__item-info"><a class="catalog__item-name" href="item.html" data-crop="data-crop">15 кустовых роз микс с атласной лентой</a>
+              <div class="catalog__item-lenght">Длина цветка: 40 см</div>
+              <div class="catalog__item-bottomWrap">
+                <div class="catalog__item-price">9 999 ₽</div>
+                <div class="catalog__item-order"><a class="catalog__item-btn btn">
+                    <svg>
+                      <use xlink:href="images/sprite.svg#bask"></use>
+                    </svg><span>В корзину</span></a><a class="catalog__item-fast" data-modal="instant">Быстрый заказ</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="catalog__item"><a class="catalog__item-img" href="item.html"><img class="catalog__item-img-img catalog__item-img-img" src="images/catalog/6.png"/><img class="catalog__item-present" src="images/catalog/3.svg"/></a>
+            <div class="catalog__item-info"><a class="catalog__item-name" href="item.html" data-crop="data-crop">101 роза микс с лентой</a>
+              <div class="catalog__item-lenght">Длина цветка: 40 см</div>
+              <div class="catalog__item-bottomWrap">
+                <div class="catalog__item-price">9 999 ₽</div>
+                <div class="catalog__item-order"><a class="catalog__item-btn btn">
+                    <svg>
+                      <use xlink:href="images/sprite.svg#bask"></use>
+                    </svg><span>В корзину</span></a><a class="catalog__item-fast" data-modal="instant">Быстрый заказ</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="catalog__item"><a class="catalog__item-img" href="item.html"><img class="catalog__item-img-img" src="images/catalog/7.png"/></a>
+            <div class="catalog__item-info"><a class="catalog__item-name" href="item.html" data-crop="data-crop">101 роза микс с лентой</a>
+              <div class="catalog__item-lenght">Длина цветка: 40 см</div>
+              <div class="catalog__item-bottomWrap">
+                <div class="catalog__item-price">9 999 ₽</div>
+                <div class="catalog__item-order"><a class="catalog__item-btn btn">
+                    <svg>
+                      <use xlink:href="images/sprite.svg#bask"></use>
+                    </svg><span>В корзину</span></a><a class="catalog__item-fast" data-modal="instant">Быстрый заказ</a></div>
+              </div>
+            </div>
+          </div>
           <div class="construct">
             <div class="construct__title-wrap"> 
               <h2 class="construct__title">Соберите свой идеальный МОНО букет из</h2>
@@ -71,7 +199,7 @@
               </div>
             </div>
             <div class="construct__window">
-              <div class="construct__img"><img src="/images/construct/img.png"/></div>
+              <div class="construct__img"><img src="images/construct/img.png"/></div>
               <form class="construct__panel">
                 <h3 class="color__title">Выберите цвет:</h3>
                 <div class="construct__color color">
@@ -143,230 +271,188 @@
                   </svg><span>Бесплатная доставка *</span>
                 </div>
                 <div class="construct__add">
-                  <p class="construct__add-title">Добавить к заказу:</p><a class="construct__add-item"><img src="images/construct/delivery.png"/><span class="construct__add-item-text">Бесплатная доставка от 1 500₽ *</span></a><a class="construct__add-item"><img src="images/construct/card.png"/><span class="construct__add-item-text">Вернём 10% на счёт</span></a><a class="construct__add-item"><img src="images/construct/camera.png"/><span class="construct__add-item-text">Фото букета перед доставкой</span></a><a class="construct__add-item"><img src="images/construct/fert.png"/><span class="construct__add-item-text">Подкормка для цветов в подарок</span></a><a class="construct__add-item"><img src="images/construct/postcard.png"/><span class="construct__add-item-text">Открытка для букета в подарок</span></a><a class="construct__add-item"><img src="images/construct/love.png"/><span class="construct__add-item-text">Топпер для букета</span></a><a class="construct__add-item"><img src="images/construct/vase.png"/><span class="construct__add-item-text">Ваза для букета</span></a>
+                  <p class="construct__add-title">Добавить к заказу:</p><a class="construct__add-item" data-modal="delivery"><img src="images/construct/delivery.png"/><span class="construct__add-item-text">Бесплатная доставка от 1 500₽ *</span></a><a class="construct__add-item" data-modal="cashback"><img src="images/construct/card.png"/><span class="construct__add-item-text">Вернём 10% на счёт</span></a><a class="construct__add-item" data-modal="photoBouqet"><img src="images/construct/camera.png"/><span class="construct__add-item-text">Фото букета перед доставкой</span></a><a class="construct__add-item" data-modal="feeding"><img src="images/construct/fert.png"/><span class="construct__add-item-text">Подкормка для цветов в подарок</span></a><a class="construct__add-item" data-modal="card"><img src="images/construct/postcard.png"/><span class="construct__add-item-text">Открытка для букета в подарок</span></a><a class="construct__add-item" data-modal="topper"><img src="images/construct/love.png"/><span class="construct__add-item-text">Топпер для букета</span></a><a class="construct__add-item" data-modal="vase"><img src="images/construct/vase.png"/><span class="construct__add-item-text">Ваза для букета</span></a>
                 </div>
                 <div class="construct__btn-wrap"><a class="construct__btn btn" type="submit">
                     <svg width="20" height="20">
                       <use xlink:href="images/sprite.svg#shop"></use>
-                    </svg><span>В корзину</span></a><a class="construct__fast">Быстрый заказ</a></div>
+                    </svg><span>В корзину</span></a><a class="construct__fast" data-modal="instant">Быстрый заказ</a></div>
               </div>
             </div>
           </div>
-          <div class="catalog__item"><img class="catalog__item-hit" src="/images/catalog/presents/hit.png"/><a class="catalog__item-img"><img class="catalog__item-img-img" src="/images/catalog/1.png"/><img class="catalog__item-present" src="/images/catalog/presents/candies.png"/></a>
-            <div class="catalog__item-info"><a class="catalog__item-name">101 роза микс с лентой</a>
+          <div class="catalog__item"><img class="catalog__item-hit" src="images/catalog/2.svg"/><a class="catalog__item-img" href="item.html"><img class="catalog__item-img-img" src="images/catalog/1.png"/><img class="catalog__item-present" src="images/catalog/candies.svg"/></a>
+            <div class="catalog__item-info"><a class="catalog__item-name" href="item.html" data-crop="data-crop">101 роза микс с лентой</a>
               <div class="catalog__item-lenght">Длина цветка: 40 см</div>
               <div class="catalog__item-bottomWrap">
                 <div class="catalog__item-price">9 999 ₽</div>
                 <div class="catalog__item-order"><a class="catalog__item-btn btn">
-                    <svg width="20" height="20">
+                    <svg>
                       <use xlink:href="images/sprite.svg#bask"></use>
-                    </svg><span>В корзину</span></a><a class="catalog__item-fast">Быстрый заказ</a></div>
+                    </svg><span>В корзину</span></a><a class="catalog__item-fast" data-modal="instant">Быстрый заказ</a></div>
               </div>
             </div>
           </div>
-          <div class="catalog__item"><a class="catalog__item-img"><img class="catalog__item-img-img" src="/images/catalog/2.png"/><img class="catalog__item-present" src="/images/catalog/presents/baloons.png"/></a>
-            <div class="catalog__item-info"><a class="catalog__item-name">15 кустовых роз микс с атласной лентой 15 кустовых роз микс с атласной лентой 15 кустовых роз микс </a>
+          <div class="catalog__item"><a class="catalog__item-img" href="item.html"><img class="catalog__item-img-img" src="images/catalog/2.png"/></a>
+            <div class="catalog__item-info"><a class="catalog__item-name" href="item.html" data-crop="data-crop">15 кустовых роз микс с атласной лентой</a>
               <div class="catalog__item-lenght">Длина цветка: 40 см</div>
               <div class="catalog__item-bottomWrap">
                 <div class="catalog__item-price">9 999 ₽</div>
                 <div class="catalog__item-order"><a class="catalog__item-btn btn">
-                    <svg width="20" height="20">
+                    <svg>
                       <use xlink:href="images/sprite.svg#bask"></use>
-                    </svg><span>В корзину</span></a><a class="catalog__item-fast">Быстрый заказ</a></div>
+                    </svg><span>В корзину</span></a><a class="catalog__item-fast" data-modal="instant">Быстрый заказ</a></div>
               </div>
             </div>
           </div>
-          <div class="catalog__item"><a class="catalog__item-img"><img class="catalog__item-img-img" src="/images/catalog/3.png"/></a>
-            <div class="catalog__item-info"><a class="catalog__item-name">101 роза микс с лентой</a>
+          <div class="catalog__item"><a class="catalog__item-img" href="item.html"><img class="catalog__item-img-img" src="images/catalog/3.png"/></a>
+            <div class="catalog__item-info"><a class="catalog__item-name" href="item.html" data-crop="data-crop">101 роза микс с лентой</a>
               <div class="catalog__item-lenght">Длина цветка: 40 см</div>
               <div class="catalog__item-bottomWrap">
                 <div class="catalog__item-price">9 999 ₽</div>
                 <div class="catalog__item-order"><a class="catalog__item-btn btn">
-                    <svg width="20" height="20">
+                    <svg>
                       <use xlink:href="images/sprite.svg#bask"></use>
-                    </svg><span>В корзину</span></a><a class="catalog__item-fast">Быстрый заказ</a></div>
+                    </svg><span>В корзину</span></a><a class="catalog__item-fast" data-modal="instant">Быстрый заказ</a></div>
               </div>
             </div>
           </div>
-          <div class="catalog__item"><a class="catalog__item-img"><img class="catalog__item-img-img" src="/images/catalog/4.png"/><img class="catalog__item-present" src="/images/catalog/presents/candies.png"/></a>
-            <div class="catalog__item-info"><a class="catalog__item-name">101 роза микс с лентой</a>
+          <div class="catalog__item"><a class="catalog__item-img" href="item.html"><img class="catalog__item-img-img" src="images/catalog/4.png"/></a>
+            <div class="catalog__item-info"><a class="catalog__item-name" href="item.html" data-crop="data-crop">101 роза микс с лентой</a>
               <div class="catalog__item-lenght">Длина цветка: 40 см</div>
               <div class="catalog__item-bottomWrap">
                 <div class="catalog__item-price">9 999 ₽</div>
                 <div class="catalog__item-order"><a class="catalog__item-btn btn">
-                    <svg width="20" height="20">
+                    <svg>
                       <use xlink:href="images/sprite.svg#bask"></use>
-                    </svg><span>В корзину</span></a><a class="catalog__item-fast">Быстрый заказ</a></div>
+                    </svg><span>В корзину</span></a><a class="catalog__item-fast" data-modal="instant">Быстрый заказ</a></div>
               </div>
             </div>
           </div>
-          <div class="catalog__item"><img class="catalog__item-hit" src="/images/catalog/presents/hit.png"/><a class="catalog__item-img"><img class="catalog__item-img-img" src="/images/catalog/5.png"/></a>
-            <div class="catalog__item-info"><a class="catalog__item-name">15 кустовых роз микс с атласной лентой</a>
+          <div class="catalog__item"><img class="catalog__item-hit" src="images/catalog/2.svg"/><a class="catalog__item-img" href="item.html"><img class="catalog__item-img-img" src="images/catalog/5.png"/></a>
+            <div class="catalog__item-info"><a class="catalog__item-name" href="item.html" data-crop="data-crop">101 роза микс с лентой</a>
               <div class="catalog__item-lenght">Длина цветка: 40 см</div>
               <div class="catalog__item-bottomWrap">
                 <div class="catalog__item-price">9 999 ₽</div>
                 <div class="catalog__item-order"><a class="catalog__item-btn btn">
-                    <svg width="20" height="20">
+                    <svg>
                       <use xlink:href="images/sprite.svg#bask"></use>
-                    </svg><span>В корзину</span></a><a class="catalog__item-fast">Быстрый заказ</a></div>
+                    </svg><span>В корзину</span></a><a class="catalog__item-fast" data-modal="instant">Быстрый заказ</a></div>
               </div>
             </div>
           </div>
-          <div class="catalog__item"><a class="catalog__item-img"><img class="catalog__item-img-img catalog__item-img-img" src="/images/catalog/6.png"/><img class="catalog__item-present" src="/images/catalog/presents/baloons.png"/></a>
-            <div class="catalog__item-info"><a class="catalog__item-name">101 роза микс с лентой</a>
+          <div class="catalog__item"><a class="catalog__item-img" href="item.html"><img class="catalog__item-img-img" src="images/catalog/6.png"/></a>
+            <div class="catalog__item-info"><a class="catalog__item-name" href="item.html" data-crop="data-crop">101 роза микс с лентой</a>
               <div class="catalog__item-lenght">Длина цветка: 40 см</div>
               <div class="catalog__item-bottomWrap">
                 <div class="catalog__item-price">9 999 ₽</div>
                 <div class="catalog__item-order"><a class="catalog__item-btn btn">
-                    <svg width="20" height="20">
+                    <svg>
                       <use xlink:href="images/sprite.svg#bask"></use>
-                    </svg><span>В корзину</span></a><a class="catalog__item-fast">Быстрый заказ</a></div>
+                    </svg><span>В корзину</span></a><a class="catalog__item-fast" data-modal="instant">Быстрый заказ</a></div>
               </div>
             </div>
           </div>
-          <div class="catalog__item"><a class="catalog__item-img"><img class="catalog__item-img-img" src="/images/catalog/7.png"/></a>
-            <div class="catalog__item-info"><a class="catalog__item-name">101 роза микс с лентой</a>
+          <div class="catalog__item"><a class="catalog__item-img" href="item.html"><img class="catalog__item-img-img" src="images/catalog/7.png"/></a>
+            <div class="catalog__item-info"><a class="catalog__item-name" href="item.html" data-crop="data-crop">101 роза микс с лентой</a>
               <div class="catalog__item-lenght">Длина цветка: 40 см</div>
               <div class="catalog__item-bottomWrap">
                 <div class="catalog__item-price">9 999 ₽</div>
                 <div class="catalog__item-order"><a class="catalog__item-btn btn">
-                    <svg width="20" height="20">
+                    <svg>
                       <use xlink:href="images/sprite.svg#bask"></use>
-                    </svg><span>В корзину</span></a><a class="catalog__item-fast">Быстрый заказ</a></div>
-              </div>
-            </div>
-          </div>
-          <div class="catalog__item"><img class="catalog__item-hit" src="/images/catalog/presents/hit.png"/><a class="catalog__item-img"><img class="catalog__item-img-img" src="/images/catalog/1.png"/><img class="catalog__item-present" src="/images/catalog/presents/candies.png"/></a>
-            <div class="catalog__item-info"><a class="catalog__item-name">101 роза микс с лентой</a>
-              <div class="catalog__item-lenght">Длина цветка: 40 см</div>
-              <div class="catalog__item-bottomWrap">
-                <div class="catalog__item-price">9 999 ₽</div>
-                <div class="catalog__item-order"><a class="catalog__item-btn btn">
-                    <svg width="20" height="20">
-                      <use xlink:href="images/sprite.svg#bask"></use>
-                    </svg><span>В корзину</span></a><a class="catalog__item-fast">Быстрый заказ</a></div>
-              </div>
-            </div>
-          </div>
-          <div class="catalog__item"><a class="catalog__item-img"><img class="catalog__item-img-img" src="/images/catalog/2.png"/></a>
-            <div class="catalog__item-info"><a class="catalog__item-name">15 кустовых роз микс с атласной лентой 15 кустовых роз микс с атласной лентой 15 кустовых роз микс </a>
-              <div class="catalog__item-lenght">Длина цветка: 40 см</div>
-              <div class="catalog__item-bottomWrap">
-                <div class="catalog__item-price">9 999 ₽</div>
-                <div class="catalog__item-order"><a class="catalog__item-btn btn">
-                    <svg width="20" height="20">
-                      <use xlink:href="images/sprite.svg#bask"></use>
-                    </svg><span>В корзину</span></a><a class="catalog__item-fast">Быстрый заказ</a></div>
-              </div>
-            </div>
-          </div>
-          <div class="catalog__item"><a class="catalog__item-img"><img class="catalog__item-img-img" src="/images/catalog/3.png"/></a>
-            <div class="catalog__item-info"><a class="catalog__item-name">101 роза микс с лентой</a>
-              <div class="catalog__item-lenght">Длина цветка: 40 см</div>
-              <div class="catalog__item-bottomWrap">
-                <div class="catalog__item-price">9 999 ₽</div>
-                <div class="catalog__item-order"><a class="catalog__item-btn btn">
-                    <svg width="20" height="20">
-                      <use xlink:href="images/sprite.svg#bask"></use>
-                    </svg><span>В корзину</span></a><a class="catalog__item-fast">Быстрый заказ</a></div>
-              </div>
-            </div>
-          </div>
-          <div class="catalog__item"><a class="catalog__item-img"><img class="catalog__item-img-img" src="/images/catalog/4.png"/></a>
-            <div class="catalog__item-info"><a class="catalog__item-name">101 роза микс с лентой</a>
-              <div class="catalog__item-lenght">Длина цветка: 40 см</div>
-              <div class="catalog__item-bottomWrap">
-                <div class="catalog__item-price">9 999 ₽</div>
-                <div class="catalog__item-order"><a class="catalog__item-btn btn">
-                    <svg width="20" height="20">
-                      <use xlink:href="images/sprite.svg#bask"></use>
-                    </svg><span>В корзину</span></a><a class="catalog__item-fast">Быстрый заказ</a></div>
-              </div>
-            </div>
-          </div>
-          <div class="catalog__item"><img class="catalog__item-hit" src="/images/catalog/presents/hit.png"/><a class="catalog__item-img"><img class="catalog__item-img-img" src="/images/catalog/5.png"/></a>
-            <div class="catalog__item-info"><a class="catalog__item-name">101 роза микс с лентой</a>
-              <div class="catalog__item-lenght">Длина цветка: 40 см</div>
-              <div class="catalog__item-bottomWrap">
-                <div class="catalog__item-price">9 999 ₽</div>
-                <div class="catalog__item-order"><a class="catalog__item-btn btn">
-                    <svg width="20" height="20">
-                      <use xlink:href="images/sprite.svg#bask"></use>
-                    </svg><span>В корзину</span></a><a class="catalog__item-fast">Быстрый заказ</a></div>
-              </div>
-            </div>
-          </div>
-          <div class="catalog__item"><a class="catalog__item-img"><img class="catalog__item-img-img" src="/images/catalog/6.png"/></a>
-            <div class="catalog__item-info"><a class="catalog__item-name">101 роза микс с лентой</a>
-              <div class="catalog__item-lenght">Длина цветка: 40 см</div>
-              <div class="catalog__item-bottomWrap">
-                <div class="catalog__item-price">9 999 ₽</div>
-                <div class="catalog__item-order"><a class="catalog__item-btn btn">
-                    <svg width="20" height="20">
-                      <use xlink:href="images/sprite.svg#bask"></use>
-                    </svg><span>В корзину</span></a><a class="catalog__item-fast">Быстрый заказ</a></div>
-              </div>
-            </div>
-          </div>
-          <div class="catalog__item"><a class="catalog__item-img"><img class="catalog__item-img-img" src="/images/catalog/7.png"/></a>
-            <div class="catalog__item-info"><a class="catalog__item-name">101 роза микс с лентой</a>
-              <div class="catalog__item-lenght">Длина цветка: 40 см</div>
-              <div class="catalog__item-bottomWrap">
-                <div class="catalog__item-price">9 999 ₽</div>
-                <div class="catalog__item-order"><a class="catalog__item-btn btn">
-                    <svg width="20" height="20">
-                      <use xlink:href="images/sprite.svg#bask"></use>
-                    </svg><span>В корзину</span></a><a class="catalog__item-fast">Быстрый заказ</a></div>
+                    </svg><span>В корзину</span></a><a class="catalog__item-fast" data-modal="instant">Быстрый заказ</a></div>
               </div>
             </div>
           </div>
         </div>
       </main>
+      <div class="wrapper cat-bootom">
+        <h1 class="section-title">Как оплатить</h1>
+        <p class="pay__smalltext">Заказы оплачиваются только после звонка администратора и подтверждения заказа</p>
+        <p class="pay__text"><b>ВНИМАНИЕ!</b> Если у Вас после нажатия кнопки "ОПЛАТИТЬ" не переходит на окно оплаты, то вам нужно произвести оплату в браузере Яндекс или установить сертификаты от сбербанка на ваше мобильное устройство или ПК. Нововведение от Сбербанка, переход на отечественные сертификаты безопасности. Ссылка с инструкцией: <a href="https://www.sberbank.com/ru/certificates" target="_blank">https://www.sberbank.com/ru/certificates</a></p>
+        <p class="pay__smalltext">Для оплаты онлайн можно воспользоваться несколькими дополнительными сервисами:</p>
+        <div class="pay__line">
+          <svg width="40" height="40">
+            <use xlink:href="images/sprite.svg#money"></use>
+          </svg>
+          <p>Вызов курьера для оплаты (оплачивается на условиях раздела «Доставка»);</p>
+        </div>
+        <div class="pay__line">
+          <svg width="60" height="20">
+            <use xlink:href="images/sprite.svg#visa"></use>
+          </svg>
+          <p>Вызов курьера для оплаты (оплачивается на условиях раздела «Доставка»);</p>
+        </div>
+        <p class="pay__text">Для выбора оплаты товара с помощью банковской карты на соответствующей странице необходимо нажать кнопку Оплата заказа банковской картой. Оплата происходит через ПАО СБЕРБАНК с использованием банковских карт следующих платёжных систем:</p>
+        <ul class="pay__list">
+          <li class="pay__list-item">МИР;</li>
+          <li class="pay__list-item">VISA International;</li>
+          <li class="pay__list-item">Mastercard Worldwide; </li>
+          <li class="pay__list-item">JCB.</li>
+        </ul>
+        <p class="pay__text">Для оплаты (ввода реквизитов Вашей карты) Вы будете перенаправлены на платёжный шлюз ПАО СБЕРБАНК. Соединение с платёжным шлюзом и передача информации осуществляется в защищённом режиме с использованием протокола шифрования SSL. В случае если Ваш банк поддерживает технологию безопасного проведения интернет-платежей Verified By Visa, MasterCard SecureCode, MIR Accept, J-Secure, для проведения платежа также может потребоваться ввод специального пароля.</p>
+        <p class="pay__text">Настоящий сайт поддерживает 256-битное шифрование. Конфиденциальность сообщаемой персональной информации обеспечивается ПАО СБЕРБАНК. Введённая информация не будет предоставлена третьим лицам за исключением случаев, предусмотренных законодательством РФ. Проведение платежей по банковским картам осуществляется в строгом соответствии с требованиями платёжных систем МИР, Visa Int., MasterCard Europe Sprl, JCB.</p>
+      </div>
       <footer class="footer">
-        <div class="footer__wrapper wrapper"><img class="footer__logo" src="/images/header/logo.png"/>
-          <div class="footer__links-block">
-            <ul class="footer__links-col">
-              <li class="footer__link"> <a>Оплата</a></li>
-              <li class="footer__link"> <a>Доставка</a></li>
-              <li class="footer__link"> <a>Контакты</a></li>
-            </ul>
-            <ul class="footer__links-col">
-              <li class="footer__link"> <a>Скидки</a></li>
-              <li class="footer__link"> <a>Бонусы</a></li>
-            </ul>
-            <ul class="footer__links-col">
-              <li class="footer__link"> <a>Правила компании</a></li>
-              <li class="footer__link"> <a>Политика конфиденциальности</a></li>
-            </ul>
-          </div>
-          <div class="footer__contacts"><a class="footer__contact footer__phone" href="+79090022106">+7 (909) 00-22-106</a><a class="footer__contact footer__phone" href="+73432022106">+7 (343) 20-22-106</a><a class="footer__contact footer__address">620043, г. Екатеринбург. ул. Репина 99</a>
-            <div class="footer__icons">
-              <div class="footer__pay"><img src="/images/footer/visa.png"/><img src="/images/footer/mc.png"/><img src="/images/footer/sber.png"/></div>
-              <div class="footer__messenger">
-                <svg width="30" height="30">
-                  <use xlink:href="images/sprite.svg#viber"></use>
-                </svg>
-                <svg width="30" height="30">
-                  <use xlink:href="images/sprite.svg#wa"></use>
-                </svg>
-              </div>
+        <div class="footer__wrapper wrapper">
+          <div class="footer__top"><a href="/">
+              <svg class="header-top__logo">
+                <use xlink:href="images/sprite.svg#logo"></use>
+              </svg></a>
+            <div class="footer__mob-info">
+              <div class="footer__mob-info-contacts"><a class="footer__contact footer__phone" href="tel:+79090022106">+7 (909) 00-22-106</a><a class="footer__contact footer__phone" href="tel:+73432022106">+7 (343) 20-22-106</a><a class="footer__contact footer__address" href="https://yandex.ru/maps/org/vbukete_rf/1626904109/?ll=60.543764%2C56.821410&amp;z=17" target="_blank">620043, г. Екатеринбург. ул. Репина 99</a></div>
+              <div class="footer__mob-info-messangers"> <a href="viber://chat?number=+79090022106" target="_blank">
+                  <svg width="30" height="30">
+                    <use xlink:href="images/sprite.svg#viber"></use>
+                  </svg></a><a href="https://wa.me/79090022106" target="_blank">
+                  <svg width="30" height="30">
+                    <use xlink:href="images/sprite.svg#wa"></use>
+                  </svg></a></div>
             </div>
           </div>
-          <p class="footer__copyright">© 2009 - 2023г. «Любимый-цветочный.рф»</p>
+          <div class="footer__links-block">
+            <ul class="footer__links-col">
+              <li class="footer__link"> <a href="pay.html">Оплата</a></li>
+              <li class="footer__link"> <a href="delivery.html">Доставка</a></li>
+              <li class="footer__link"> <a href="contacts.html">Контакты</a></li>
+            </ul>
+            <ul class="footer__links-col">
+              <li class="footer__link"> <a href="bonus.html">Скидки</a></li>
+              <li class="footer__link"> <a href="bonus.html">Бонусы</a></li>
+            </ul>
+            <ul class="footer__links-col">
+              <li class="footer__link"> <a href="rules.html">Правила компании</a></li>
+              <li class="footer__link"> <a href="policy.html">Политика конфиденциальности</a></li>
+            </ul>
+            <div class="footer__pay-mob"><img src="images/footer/visa.svg"/><img src="images/footer/ms.svg"/><img src="images/footer/sber.svg"/></div>
+          </div>
+          <div class="footer__contacts"><a class="footer__contact footer__phone" href="tel:+79090022106">+7 (909) 00-22-106</a><a class="footer__contact footer__phone" href="tel:+73432022106">+7 (343) 20-22-106</a><a class="footer__contact footer__address" href="https://yandex.ru/maps/org/vbukete_rf/1626904109/?ll=60.543764%2C56.821410&amp;z=17" target="_blank">620043, г. Екатеринбург. ул. Репина 99</a>
+            <div class="footer__icons">
+              <div class="footer__pay"><img src="images/footer/visa.svg"/><img src="images/footer/ms.svg"/><img src="images/footer/sber.svg"/></div>
+              <div class="footer__messenger"><a href="viber://chat?number=+79090022106" target="_blank">
+                  <svg width="30" height="30">
+                    <use xlink:href="images/sprite.svg#viber"></use>
+                  </svg></a><a href="https://wa.me/79090022106" target="_blank">
+                  <svg width="30" height="30">
+                    <use xlink:href="images/sprite.svg#wa"></use>
+                  </svg></a></div>
+            </div>
+          </div>
         </div>
+        <p class="footer__copyright">© 2009 - 2023г. «Любимый-цветочный.рф»</p>
       </footer>
+      <div class="float__footer"><a class="float__footer-col" href="/">
+          <svg width="16" height="16">
+            <use xlink:href="images/sprite.svg#home"></use>
+          </svg><span>Главная</span></a><a class="float__footer-col" href="mono.html">
+          <svg width="16" height="16">
+            <use xlink:href="images/sprite.svg#bouqet"></use>
+          </svg><span>Собрать букет</span></a><a class="float__footer-col" href="https://wa.me/79090022106" target="_blank"><img src="images/footer/wa.svg"/><span>Написать</span></a></div>
+      <div class="linksHidden"><a data-modal="regThanks"></a><a data-modal="callbackThanks"></a></div>
       <div class="modal">
         <div class="modal__content">
           <div class="modal__close-cross modal__close"></div>
-          <div class="modal__content-inner"><img class="addedItemImg" src=""/>
-            <h2 class="modal__header">Товар добавлен <br> в корзину</h2><a class="modal__btn btn addedItemBtn" href="/cart">
-              <svg width="20" height="20">
-                <use xlink:href="images/sprite.svg#shop"></use>
-              </svg><span>Перейти в корзину</span></a><a class="modal__btn btn modal__close addedItemBtn btn--white">
-              <svg width="20" height="20">
-                <use xlink:href="images/sprite.svg#shop2"></use>
-              </svg><span>Продолжить покупки</span></a>
-          </div>
+          <div class="modal__content-inner"></div>
         </div>
       </div>
       <div class="modal__templates hidden">
@@ -404,8 +490,8 @@
           </div>
           <div class="modal__textareaWrap textAreaBig">
             <p>Текст пожелания (не обязательно)</p>
-            <textarea class="modal__textarea textAreaSmall" noresize="noresize" placeholder="Введите текст пожелания"></textarea>
-            <textarea class="modal__textarea textAreaBig hidden" noresize="noresize" placeholder="Введите текст пожелания"></textarea><span class="modal__counter"></span>
+            <textarea class="modal__textarea textAreaSmall" noresize="noresize" name="cardText" placeholder="Введите текст пожелания"></textarea>
+            <textarea class="modal__textarea textAreaBig hidden" noresize="noresize" name="cardText" placeholder="Введите текст пожелания"></textarea><span class="modal__counter"></span>
           </div><a class="modal__btn btn">
             <svg width="20" height="20">
               <use xlink:href="images/sprite.svg#shop"></use>
@@ -420,7 +506,7 @@
           <div class="item__add-items">
             <div class="item__add-item" data-type="Популярное">
               <div class="item__add-item-top">
-                <div class="item__add-item-img"><img src="/images/item/add/1.png"/></div>
+                <div class="item__add-item-img"><img src="images/item/add/1.png"/></div>
                 <div class="item__add-item-info">
                   <div class="item__add-item-name"> Конфеты Raffaello Конфеты Raffaello</div>
                   <div class="item__add-item-quant">300 г</div>
@@ -433,7 +519,7 @@
             </div>
             <div class="item__add-item" data-type="Игрушка">
               <div class="item__add-item-top">
-                <div class="item__add-item-img"><img src="/images/item/add/2.png"/></div>
+                <div class="item__add-item-img"><img src="images/item/add/2.png"/></div>
                 <div class="item__add-item-info">
                   <div class="item__add-item-name">Медведь Плюша</div>
                   <div class="item__add-item-quant">90 см</div>
@@ -446,7 +532,7 @@
             </div>
             <div class="item__add-item" data-type="Шарик">
               <div class="item__add-item-top">
-                <div class="item__add-item-img"><img src="/images/item/add/3.png"/></div>
+                <div class="item__add-item-img"><img src="images/item/add/3.png"/></div>
                 <div class="item__add-item-info">
                   <div class="item__add-item-name">Фольгированное "Сердце"</div>
                   <div class="item__add-item-quant"> </div>
@@ -459,7 +545,7 @@
             </div>
             <div class="item__add-item" data-type="Ваза">
               <div class="item__add-item-top">
-                <div class="item__add-item-img"><img src="/images/item/add/4.png"/></div>
+                <div class="item__add-item-img"><img src="images/item/add/4.png"/></div>
                 <div class="item__add-item-info">
                   <div class="item__add-item-name">Ваза прозрачная</div>
                   <div class="item__add-item-quant"> </div>
@@ -472,7 +558,7 @@
             </div>
             <div class="item__add-item" data-type="Конфеты">
               <div class="item__add-item-top">
-                <div class="item__add-item-img"><img src="/images/item/add/3.png"/></div>
+                <div class="item__add-item-img"><img src="images/item/add/3.png"/></div>
                 <div class="item__add-item-info">
                   <div class="item__add-item-name">Фольгированное "Сердце"</div>
                   <div class="item__add-item-quant"> </div>
@@ -494,7 +580,7 @@
           <div class="item__add-items">
             <div class="item__add-item" data-type="Популярное">
               <div class="item__add-item-top">
-                <div class="item__add-item-img"><img src="/images/item/add/1.png"/></div>
+                <div class="item__add-item-img"><img src="images/item/add/1.png"/></div>
                 <div class="item__add-item-info">
                   <div class="item__add-item-name"> Конфеты Raffaello Конфеты Raffaello</div>
                   <div class="item__add-item-quant">300 г</div>
@@ -507,7 +593,7 @@
             </div>
             <div class="item__add-item" data-type="Игрушка">
               <div class="item__add-item-top">
-                <div class="item__add-item-img"><img src="/images/item/add/2.png"/></div>
+                <div class="item__add-item-img"><img src="images/item/add/2.png"/></div>
                 <div class="item__add-item-info">
                   <div class="item__add-item-name">Медведь Плюша</div>
                   <div class="item__add-item-quant">90 см</div>
@@ -520,7 +606,7 @@
             </div>
             <div class="item__add-item" data-type="Шарик">
               <div class="item__add-item-top">
-                <div class="item__add-item-img"><img src="/images/item/add/3.png"/></div>
+                <div class="item__add-item-img"><img src="images/item/add/3.png"/></div>
                 <div class="item__add-item-info">
                   <div class="item__add-item-name">Фольгированное "Сердце"</div>
                   <div class="item__add-item-quant"> </div>
@@ -533,7 +619,7 @@
             </div>
             <div class="item__add-item" data-type="Ваза">
               <div class="item__add-item-top">
-                <div class="item__add-item-img"><img src="/images/item/add/4.png"/></div>
+                <div class="item__add-item-img"><img src="images/item/add/4.png"/></div>
                 <div class="item__add-item-info">
                   <div class="item__add-item-name">Ваза прозрачная</div>
                   <div class="item__add-item-quant"> </div>
@@ -546,7 +632,7 @@
             </div>
             <div class="item__add-item" data-type="Конфеты">
               <div class="item__add-item-top">
-                <div class="item__add-item-img"><img src="/images/item/add/3.png"/></div>
+                <div class="item__add-item-img"><img src="images/item/add/3.png"/></div>
                 <div class="item__add-item-info">
                   <div class="item__add-item-name">Фольгированное "Сердце"</div>
                   <div class="item__add-item-quant"> </div>
@@ -567,6 +653,158 @@
             <svg width="20" height="20">
               <use xlink:href="images/sprite.svg#shop2"></use>
             </svg><span>Продолжить покупки</span></a>
+        </div>
+        <div class="auth">
+          <div class="auth__modal">
+            <h2 class="modal__header">Авторизация</h2>
+            <form class="modal__form" id="auth-form" method="post">
+              <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Логин</span>
+                <input class="modal__input inp" type="text" placeholder="Логин"/>
+              </label>
+              <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Пароль</span>
+                <input class="modal__input inp" type="text" placeholder="Пароль"/>
+              </label>
+              <input class="modal__submit modal__btn btn" type="submit" value="Войти"/>
+              <p class="modal__smalltext">
+                Нажимая кнопку “Войти”, Вы соглашаетесь на обработку персональных
+                данных, получение рассылок, а так же с <a href="policy.html">политикой конфиденциальности</a>
+                
+                
+              </p><a class="modal__link" href="restore.html">Забыли пароль?</a><a class="modal__link" data-modal="reg">Зарегистрироваться</a>
+            </form>
+          </div>
+        </div>
+        <div class="reg">
+          <div class="reg__modal">
+            <h2 class="modal__header">Регистрация</h2>
+            <form id="reg-form">
+              <div class="reg__line-one">
+                <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Имя</span>
+                  <input class="modal__input inp" type="text" placeholder="Введите имя"/>
+                </label>
+                <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Фамилия</span>
+                  <input class="modal__input inp" type="text" placeholder="Введите фамилию"/>
+                </label>
+              </div>
+              <div class="reg__line">
+                <div class="reg__col">
+                  <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Логин <span class="red">*</span></span>
+                    <input class="modal__input inp" type="text" placeholder="Введите логин (min 3 символа) *"/>
+                  </label>
+                  <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">E-mail</span>
+                    <input class="modal__input inp" type="text" placeholder="Введите e-mail"/>
+                  </label>
+                </div>
+                <div class="reg__col">
+                  <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Пароль <span class="red">*</span></span>
+                    <input class="modal__input inp" type="password" placeholder="Введите пароль"/>
+                    <div class="eyes">
+                      <svg class="eye" width="22" height="22">
+                        <use xlink:href="images/sprite.svg#eye"></use>
+                      </svg>
+                      <svg class="eye-y" width="22" height="22">
+                        <use xlink:href="images/sprite.svg#eye-y"></use>
+                      </svg>
+                    </div>
+                  </label>
+                  <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Подтвердите пароль <span class="red">*</span></span>
+                    <input class="modal__input inp" type="password" placeholder="Подтвердите пароль"/>
+                    <div class="eyes">
+                      <svg class="eye" width="22" height="22">
+                        <use xlink:href="images/sprite.svg#eye"></use>
+                      </svg>
+                      <svg class="eye-y" width="22" height="22">
+                        <use xlink:href="images/sprite.svg#eye-y"></use>
+                      </svg>
+                    </div>
+                  </label>
+                </div>
+              </div>
+              <div class="reg__line-one">
+                <label class="modal__input-wrap input-wrap">
+                  <input class="modal__input inp" type="text" placeholder="Введите имя"/>
+                </label>
+                <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Слово на картинке <span class="red">*</span></span>
+                  <input class="modal__input inp" type="text" placeholder="Введите слово на картинке *"/>
+                </label>
+              </div>
+              <input class="reg__submit modal__submit modal__btn btn" type="submit" value="зарегистрироваться"/>
+              <p class="modal__smalltext">
+                Нажимая кнопку “Зарегистрироваться”, Вы соглашаетесь на обработку персональных
+                данных, получение рассылок, а так же с <a href="policy.html">политикой конфиденциальности</a>
+                
+                
+              </p><a class="modal__link" data-modal="auth">Уже зарегистрированы? Войти</a>
+            </form>
+          </div>
+        </div>
+        <div class="regThanks">
+          <svg width="170" height="180">
+            <use xlink:href="images/sprite.svg#plane"></use>
+          </svg>
+          <h2 class="modal__header">Благодарим <br> за регистрацию</h2>
+          <p class="modal__text">Вы зарегистрированы и успешно авторизовались</p><a class="modal__btn btn" href="/"><span>На главную</span></a><a class="modal__link" href="/lk.html">В личный кабинет</a>
+        </div>
+        <div class="callbackThanks">
+          <svg width="170" height="180">
+            <use xlink:href="images/sprite.svg#plane"></use>
+          </svg>
+          <h2 class="modal__header">Спасибо!</h2>
+          <p class="modal__text">Менеджер свяжется с Вами в течение 15 минут</p><a class="modal__btn btn" href="/"><span>На главную</span></a>
+        </div>
+        <div class="callback">
+          <div class="callback__modal">
+            <h2 class="modal__header">Заказать звонок</h2>
+            <p class="modal__text">Оставьте свои контакты и мы свяжемся с вами в течение 15 минут</p>
+            <form class="modal__form" id="callback-form" method="post">
+              <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Ваше имя</span>
+                <input class="modal__input inp" type="text" placeholder="Введите имя"/>
+              </label>
+              <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Телефон <span class="red">*</span></span>
+                <input class="modal__input inp" type="text" placeholder="Введите телефон *"/>
+              </label>
+              <input class="modal__submit modal__btn btn" type="submit" value="Перезвоните мне"/>
+              <p class="modal__smalltext">
+                Нажимая кнопку “Перезвоните мне”, Вы соглашаетесь на обработку персональных
+                данных, получение рассылок, а так же с <a href="policy.html">политикой конфиденциальности</a>
+                
+                
+              </p>
+            </form>
+          </div>
+        </div>
+        <div class="instant">
+          <div class="instant__modal">
+            <h2 class="modal__header">Быстрый заказ</h2>
+            <p class="modal__text">Пожалуйста, укажите Ваши имя и телефон. И с Вами свяжется наш менеджер. Спасибо!</p>
+            <form class="modal__form" id="instant-form" method="post">
+              <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Имя <span class="red">*</span></span>
+                <input class="modal__input inp" type="text" placeholder="Введите имя *"/>
+              </label>
+              <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Телефон <span class="red">*</span></span>
+                <input class="modal__input inp" type="text" placeholder="Введите телефон *"/>
+              </label>
+              <input class="modal__submit modal__btn btn" type="submit" value="Оформить заказ"/>
+              <p class="modal__smalltext">
+                Нажимая кнопку “Оформить заказ”, Вы соглашаетесь на обработку персональных
+                данных, получение рассылок, а так же с <a href="policy.html">политикой конфиденциальности</a>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="mob-wrap">
+        <div class="overlay"></div>
+        <div class="mob-menu">
+          <div class="header-top__findInput">
+            <input type="text" name="search" placeholder="Поиск"/>
+            <div class="header-top__findBtn">
+              <svg width="20" height="20">
+                <use xlink:href="images/sprite.svg#find"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="mob-menu__links"><a class="mob-menu__link" href="pay.html">Оплата</a><a class="mob-menu__link" href="delivery.html">Доставка</a><a class="mob-menu__link" href="contacts.html">Контакты</a><a class="mob-menu__link" href="bonus.html">Бонусы</a></div><a class="header-top__phone" href="tel: +73432022106"><img src="images/header/phone.svg"/><span>+7 (343) 20-22-106</span></a><span class="mob-menu__callback btn" data-modal="callback">Заказать звонок</span>
         </div>
       </div>
       <script src="libs/jquery.min.js"></script>

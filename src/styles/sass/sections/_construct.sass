@@ -24,6 +24,9 @@
             font-size: 32px
             padding-bottom: 40px
 
+    &__select
+        width: 100%
+
     &__select-input
         border: 1px solid rgba(255, 255, 255, 0.40);
         background: rgba(255, 255, 255, 0.10);
@@ -39,11 +42,17 @@
         cursor: pointer
         transition: .2s
 
+        +mw(1150)
+            width: 100%
+            max-width: 600px
+
+
         &:hover
             border: 1px solid #F9CC49
 
             &::after
                 transform: rotate(-45deg)
+                top: 45%
 
             
 
@@ -53,7 +62,7 @@
             width: 8px
             height: 8px
             position: absolute
-            top: 45%
+            top: 40%
             right: 20px
             border: none
             border-top: 2px solid #fff
@@ -179,6 +188,7 @@
             height: 8px;
             background: #555555
             border-radius: 16px;
+            position: relative
             
 
         input[type="range"]::-moz-range-track 
@@ -198,6 +208,8 @@
             box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.40); 
             border-radius: 50%;
             border: none;
+            top: -50%;
+            position: relative
         
 
 
@@ -214,6 +226,10 @@
     &__order
         padding: 50px 30px
         background: #1E2021
+        max-width: 390px
+
+        +mw(1000)
+            max-width: none
 
     
 
@@ -256,7 +272,11 @@
         gap: 15px
         padding-bottom: 15px
         cursor: pointer
+        font-size: 16px
 
+        +mw(1000)
+            font-size: 14px
+ 
     &__add-item-text
         border-bottom: 1px dashed #ffffff;
 
@@ -358,3 +378,12 @@
         & ~ .color__name
             color: #F9CC49
 
+.mono-page
+    .construct
+        padding-top: 0
+
+
+.main-page
+    .construct
+        +mw(1150)
+            display: none

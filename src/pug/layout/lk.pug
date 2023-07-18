@@ -1,21 +1,26 @@
 main.wrapper
 
     .breadcrumbs
-        span.breadcrumbs__item Главная
+        a.breadcrumbs__item(href="/") Главная
         span.breadcrumbs__separator >
-        span.breadcrumbs__item Личный кабинет
+        a.breadcrumbs__item Личный кабинет
 
 
     h1.section-title Личный кабинет
 
-    .lk
+    form.lk
 
         .lk__tabs
 
             .lk__tab.tab-active(data-tab="Профиль") Профиль
             .lk__tab(data-tab="Мои заказы") Мои заказы
-            .lk__tab(data-tab="Адреса доставки") Адреса доставки
+            .lk__tab(data-tab="Адреса доставки") Адреса&nbsp;доставки
             .lk__tab(data-tab="Выйти") Выйти
+
+            a.lk__quit
+                svg(width="20" height="20")
+                    use(xlink:href="images/sprite.svg#quit")
+                span Выйти
 
 
         .lk__pages
@@ -25,37 +30,177 @@ main.wrapper
 
                     .lk__title Мои данные
                     .profile__input-line
-                        label.profile__input-wrap
+                        label.profile__input-wrap.input-wrap
                             span.profile__input-name.inp-name Имя
-                            input.profile__input.inp(type="text")
-                        label.profile__input-wrap
+                            input.profile__input.inp(type="text" placeholder="Александр")
+                        label.profile__input-wrap.input-wrap
                             span.profile__input-name.inp-name Фамилия
-                            input.profile__input.inp(type="text")
+                            input.profile__input.inp(type="text"  placeholder="Иванов")
                         .profile__radios
+                            span.inp-name Пол
                             label.profile__radio-wrap
                                 input(type="radio", name="sex")
                                 span.dot
                                 span Мужской
                             label.profile__radio-wrap
+                                
                                 input(type="radio", name="sex")
                                 span.dot
-                                span Мужской
+                                span Женский
 
                     .profile__input-line
-                        label.profile__input-wrap
+                        label.profile__input-wrap.input-wrap
                             span.profile__input-name.inp-name Телефон
-                            input.profile__input.inp(type="text")
-                        label.profile__input-wrap
+                            input.profile__input.inp(type="text"  placeholder="+7 (495) 458-89-89")
+                        label.profile__input-wrap.input-wrap
                             span.profile__input-name.inp-name E-mail
-                            input.profile__input.inp(type="text")
-                        label.profile__input-wrap
+                            input.profile__input.inp(type="text"   placeholder="info@gmail.com")
+                        label.profile__input-wrap.input-wrap
                             span.profile__input-name.inp-name День рождения
-                            input.profile__input.inp(type="text")
+                            input.profile__input.inp(type="text"   placeholder="01.01.1987")
 
 
-            .lk__page.hidden.orders(data-page="Мои заказы")
+                    .lk__title Изменить пароль
+                    .profile__input-line
+                        label.profile__input-wrap.input-wrap
+                            span.profile__input-name.inp-name Старый пароль <span class="red">*</span>
+                            input.profile__input.inp(type="text" placeholder="Введите пароль *")
+                        label.profile__input-wrap.input-wrap
+                            span.profile__input-name.inp-name Пароль <span class="red">*</span>
+                            input.profile__input.inp(type="text"  placeholder="Введите пароль *")
+                        label.profile__input-wrap.input-wrap
+                            span.profile__input-name.inp-name Повторите пароль <span class="red">*</span>
+                            input.profile__input.inp(type="text"  placeholder="Введите пароль *")
+
+                    label.profile__checkbox
+                        input.profile__checkbox-input(type="checkbox")
+                        .profile__checkbox-square
+                        .profile__checkbox-text Я ознакомлен(-а) с <a href="/policy.html">Политикой конфиденциальности</a>
+
+                    input.profile__submit.btn(type="submit" value="Сохранить изменения")
+
+
+            .lk__page.orders.hidden(data-page="Мои заказы")
 
                 .lk__title Мои заказы
+
+                .lk__orders-empty.hidden
+                    img(src="images/lk/empty.png")
+                    p.lk__orders-empty-text Заказы не найдены
+                    a.lk__orders-empty-btn.btn(href="/") Начать покупки 
+
+                .lk__orders
+                    .orders
+                        .orders__tabs
+                            .orders__tab.inp.active-orders(data-order="Текущие заказы") Текущие заказы
+                            .orders__tab.inp(data-order="Архив") Архив
+
+                        .orders__current.order__page(data-order="Текущие заказы")
+                            p.orders__status Заказы в статусе «Принят, ожидается оплата»
+
+                            .order
+                                .order__info
+                                    .order__id Заказ <span class="yellow">№164942</span> от 31.05.2023 15:02:26
+                                    .order__line
+                                        .order__line-text Сумма:
+                                        .order__line-value 13 199 руб.
+                                    .order__line
+                                        .order__line-text Способ оплаты:
+                                        .order__line-value Оплата наличными или картой в магазине
+                                    .order__line
+                                        .order__line-text Статус:
+                                        .order__line-value Принят, ожидается оплата от 31.05.2023 15:02:25
+                                    .order__line
+                                        .order__line-text Способ доставки:
+                                        .order__line-value Доставка курьером
+                                .order__list
+                                    .order__list-title Состав заказа:
+                                    .order__line
+                                        .order__line-text АКЦИЯ! 11 белых Хризантем в упаковке
+                                        .order__line-value 1 шт.
+                                    .order__line
+                                        .order__line-text Киндеры в коробочке 15 шт.
+                                        .order__line-value 2 шт.
+                                    .order__line
+                                        .order__line-text Фольгированное "Сердце" 7 шт.
+                                        .order__line-value 1 шт.
+                                    .order__line
+                                        .order__line-text Фруктовая корзина 9 кг №2
+                                        .order__line-value 1 шт.
+                                .order__actions
+                                    a.order__btn.btn повторить заказ
+                                    a.order__remove Отменить заказ
+                            .order
+                                .order__info
+                                    .order__id Заказ <span class="yellow">№164942</span> от 31.05.2023 15:02:26
+                                    .order__line
+                                        .order__line-text Сумма:
+                                        .order__line-value 13 199 руб.
+                                    .order__line
+                                        .order__line-text Способ оплаты:
+                                        .order__line-value Оплата наличными или картой в магазине
+                                    .order__line
+                                        .order__line-text Статус:
+                                        .order__line-value Принят, ожидается оплата от 31.05.2023 15:02:25
+                                    .order__line
+                                        .order__line-text Способ доставки:
+                                        .order__line-value Доставка курьером
+                                .order__list
+                                    .order__list-title Состав заказа:
+                                    .order__line
+                                        .order__line-text АКЦИЯ! 11 белых Хризантем в упаковке
+                                        .order__line-value 1 шт.
+                                    .order__line
+                                        .order__line-text Киндеры в коробочке 15 шт.
+                                        .order__line-value 2 шт.
+                                    .order__line
+                                        .order__line-text Фольгированное "Сердце" 7 шт.
+                                        .order__line-value 1 шт.
+                                    .order__line
+                                        .order__line-text Фруктовая корзина 9 кг №2
+                                        .order__line-value 1 шт.
+                                .order__actions
+                                    a.order__btn.btn повторить заказ
+                                    a.order__remove Отменить заказ
+
+
+
+                        .order__archive.order__page.hidden(data-order="Архив")
+                            p.orders__status Заказы в статусе «Оплачено»
+                            .order
+                                .order__info
+                                    .order__id Заказ <span class="yellow">№164942</span> от 31.05.2023 15:02:26
+                                    .order__line
+                                        .order__line-text Сумма:
+                                        .order__line-value 13 199 руб.
+                                    .order__line
+                                        .order__line-text Способ оплаты:
+                                        .order__line-value Оплата наличными или картой в магазине
+                                    .order__line
+                                        .order__line-text Статус:
+                                        .order__line-value Принят, ожидается оплата от 31.05.2023 15:02:25
+                                    .order__line
+                                        .order__line-text Способ доставки:
+                                        .order__line-value Доставка курьером
+                                .order__list
+                                    .order__list-title Состав заказа:
+                                    .order__line
+                                        .order__line-text АКЦИЯ! 11 белых Хризантем в упаковке
+                                        .order__line-value 1 шт.
+                                    .order__line
+                                        .order__line-text Киндеры в коробочке 15 шт.
+                                        .order__line-value 2 шт.
+                                    .order__line
+                                        .order__line-text Фольгированное "Сердце" 7 шт.
+                                        .order__line-value 1 шт.
+                                    .order__line
+                                        .order__line-text Фруктовая корзина 9 кг №2
+                                        .order__line-value 1 шт.
+                                .order__actions
+                                    a.order__btn.btn повторить заказ
+                                    a.order__remove Отменить заказ
+
+
 
 
             .lk__page.hidden.addresses(data-page="Адреса доставки")

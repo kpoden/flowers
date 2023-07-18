@@ -1,0 +1,296 @@
+.order
+    display: flex
+    justify-content: space-between
+    gap: 30px
+
+    .inp
+        height: 60px
+        background: #272727
+
+    &__claim
+        color: #A9A9A9
+        font-size: 16px
+        font-weight: 500
+        line-height: 26px
+        max-width: 850px
+        a
+            text-decoration-line: underline
+
+    &__buyer
+        padding-bottom: 50px
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2)
+
+    &__subtitle
+        font-size: 28px
+        font-weight: 600
+        padding-bottom: 30px
+        padding-top: 50px
+
+    &__text
+        font-size: 18px
+        font-weight: 600
+        padding-bottom: 20px
+
+    &__line
+        display: flex
+        gap: 30px
+        padding-top: 15px
+        padding-bottom: 30px
+
+    .inp
+        border: 1.5px solid #FFF
+
+        
+
+    .inp-name
+        font-size: 12px
+        font-weight: 500
+
+    .input-wrap
+        svg
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+            right: 20px
+            cursor: pointer
+
+
+    &__radio-wrap
+        display: inline-flex
+        align-items: center
+        gap: 12px
+
+
+    &__delivery-wrap
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2)
+
+
+    &__delivery-filters
+        display: flex
+        gap: 30px
+        padding-bottom: 50px
+        padding-top: 30px
+
+    &__delivery-filter
+        display: inline-flex
+        align-items: center
+        gap: 10px
+        font-size: 16px
+        font-weight: 600
+        text-transform: uppercase
+        cursor: pointer
+        background: #272727
+        height: 50px !important
+
+        &:hover
+            background: #fff
+            color: #272727
+
+    .active-filter
+        background: #fff
+        color: #272727
+        
+
+        &:hover
+            background: #272727
+            color: #fff
+
+    .w100
+        width: 100%
+
+        .inp
+            width: 100%
+
+    &__date
+        display: flex
+        align-items: center
+        gap: 30px
+        padding-top: 40px
+
+        .inp
+            width: 390px
+            cursor: pointer
+
+        &-freeDelivery
+            width: 260px !important
+            display: inline-flex
+            gap: 10px
+            align-items: center
+            border: 1.5px solid #F9CC49 !important
+            background: rgba(249, 204, 73, 0.10) !important
+            color: #F9CC49
+
+    &__attention
+        max-width: 780px
+        
+        a
+            color: #F9CC49
+            font-size: 14px
+            font-weight: 500
+            text-decoration-line: underline
+
+
+    &__pay
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        padding-bottom: 130px
+
+        &-subtext
+            padding-top: 15px
+            color: #A9A9A9
+            font-size: 14px
+            font-weight: 500
+            max-width: 700px
+            line-height: 20px
+
+        label
+            display: flex
+            align-items: center
+
+            &:not(:first-child)
+                padding-top: 30px
+
+            span
+                display: flex
+                align-items: center
+
+        &-text
+            font-size: 20px
+            font-weight: 600
+
+        &-mainText
+            display: flex
+            align-items: center
+
+        &-subtext
+            padding-left: 35px
+
+
+    .pickup
+        &__select-input
+            border: 1.5px solid #FFF; 
+            background: #272727
+            width: 100%
+            height: 60px
+            padding: 15px 30px
+            color: #FFF
+            font-size: 16px
+            font-family: Raleway, Arial, Helvetica, sans-serif
+            font-weight: 600
+            border-radius: 50px
+            position: relative
+            cursor: pointer
+            transition: .2s
+            display: inline-flex
+            align-items: center
+
+            &:hover
+                border: 1px solid #F9CC49
+
+                &::after
+                    transform: rotate(-45deg)
+
+                
+
+            &:after
+                content: ''
+                display: block
+                width: 8px
+                height: 8px
+                position: absolute
+                top: 45%
+                right: 20px
+                border: none
+                border-top: 2px solid #fff
+                border-right: 2px solid #fff
+                transition: .2s
+                transform: rotate(135deg)
+
+        &__select-options
+            opacity: 0
+            visibility: hidden
+            width: 100%
+            border-radius: 10px
+            border: 1px solid rgba(255, 255, 255, 0.40)
+            background: #3C3C3C
+            box-shadow: 0px 15px 50px 0px rgba(0, 0, 0, 0.60)
+            padding: 20px 30px 10px
+            margin-top: 5px
+            transition: .2s
+            position: absolute
+            z-index: 100
+
+            &.options-show
+                opacity: 1 !important
+                visibility: visible !important
+
+        &__select-item
+            display: block
+            padding-top: 5px
+            padding-bottom: 5px
+            cursor: pointer
+            transition: .2s
+
+            &.option-selected
+                font-weight: 900
+
+
+            &:hover
+                color: #8f8f8f
+
+.done
+    display: none
+
+.orderDone
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    padding-bottom: 130px
+
+    img
+        padding-bottom: 50px
+        display: block
+
+    &__title
+        font-size: 28px
+        font-style: normal
+        font-weight: 600
+        padding-bottom: 30px
+
+    &__info
+        color: #FFF
+        text-align: center
+        font-size: 18px
+        font-weight: 600
+        line-height: 28px
+        padding-bottom: 20px
+        
+    &__subtext
+        color: #A9A9A9
+        text-align: center
+        font-family: Raleway
+        font-size: 16px
+        font-weight: 500
+        max-width: 1000px
+        padding-bottom: 40px
+
+    &__btn
+        color: #272727
+        margin-bottom: 20px
+        width: 207px
+
+        &:hover
+            color: #272727
+
+    &__callback
+        text-align: center
+        font-size: 16px
+        font-weight: 500
+        text-decoration-line: underline
+        
+
+            
+
+        

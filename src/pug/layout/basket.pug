@@ -1,0 +1,345 @@
+main.wrapper
+
+    .breadcrumbs
+        a.breadcrumbs__item(href="/") Главная
+        span.breadcrumbs__separator >
+        a.breadcrumbs__item Моя корзина
+
+    h1.section-title Моя корзина
+    .basket__wrap 
+        .basket__empty
+            img(src="images/basket/empty.png")
+            p.lk__orders-empty-text Ваша корзина пуста
+            a.lk__orders-empty-btn.btn(href="/") Начать покупки 
+        .basket
+            .basket__info
+                .basket__authorize Пожалуйста, <a id="authorizeLink" href="/">авторизируйтесь</a>, чтобы получить 409 баллов с этого заказа
+
+                .basket__attention.attention
+                    .attention__icon
+                        svg(width="63" height="63")
+                            use(xlink:href="images/sprite.svg#attention")
+
+                    .attention__text
+                        p.attention__bigtext  Внимание!
+                        p.attention__smalltext Оплата производится только после согласования всех деталей заказа с администратором
+
+
+                .basket__list
+
+                    .basket__item
+                        .basket__item-img
+                            img(src="images/basket/1.png")
+                        .basket__item-info
+                            p.basket__item-info-name Букет белых роз
+                            p.basket__item-info-char 40 штук
+                            p.basket__item-info-char Длина цветка: 50 см
+                        .basket__item-priceBlock
+                            .basket__item-price 8 800 ₽
+
+                            .basket__item-priceBlockBottom
+
+                                .basket__item-quantity.quantity.inp
+                                    .quantity__btn -
+                                    input.quantity__num(type="text" value="1")
+                                    .quantity__btn +
+
+
+                                .basket__item-del
+                                    svg(width="20" height="20")
+                                        use(xlink:href="images/sprite.svg#del")
+
+                    .basket__item
+                        .basket__item-img
+                            img(src="images/basket/2.png")
+                        .basket__item-info
+                            p.basket__item-info-name Открытка для букета
+                            p.basket__item-info-char Открытка большая, до 300 символов
+                            p.basket__item-info-char Текст пожелания: Тут текст, который указал покупатель до 300 символов Текст пожелания: Тут текст, который указал покупатель до 300 символов Текст пожелания: Тут текст, который указал покупатель до 300 символов
+                        .basket__item-priceBlock
+                            .basket__item-price 70 ₽
+
+                            .basket__item-priceBlockBottom
+
+                                .basket__item-quantity.quantity.inp
+                                    .quantity__btn -
+                                    input.quantity__num(type="text" value="1")
+                                    .quantity__btn +
+
+
+                                .basket__item-del
+                                    svg(width="20" height="20")
+                                        use(xlink:href="images/sprite.svg#del")
+
+                    .basket__item
+                        .basket__item-img
+                            img(src="images/basket/3.png")
+                        .basket__item-info
+                            p.basket__item-info-name Топпер с Днём Рождения
+                        .basket__item-priceBlock
+                            .basket__item-price 100 ₽
+
+                            .basket__item-priceBlockBottom
+
+                                .basket__item-quantity.quantity.inp
+                                    .quantity__btn -
+                                    input.quantity__num(type="text" value="1")
+                                    .quantity__btn +
+
+
+                                .basket__item-del
+                                    svg(width="20" height="20")
+                                        use(xlink:href="images/sprite.svg#del")
+
+                    .basket__item
+                        .basket__item-img
+                            img(src="images/basket/4.png")
+                        .basket__item-info
+                            p.basket__item-info-name Ваза прозрачная
+                            p.basket__item-info-char Ваза №1
+
+                        .basket__item-priceBlock
+                            .basket__item-price 550 ₽
+
+                            .basket__item-priceBlockBottom
+
+                                .basket__item-quantity.quantity.inp
+                                    .quantity__btn -
+                                    input.quantity__num(type="text" value="1")
+                                    .quantity__btn +
+
+
+                                .basket__item-del
+                                    svg(width="20" height="20")
+                                        use(xlink:href="images/sprite.svg#del")
+
+                    .basket__item
+                        .basket__item-img
+                            img(src="images/basket/5.png")
+                        .basket__item-info
+                            p.basket__item-info-name Подкормка для цветов
+                            p.basket__item-info-char В подарок к вашему заказу
+                        .basket__item-priceBlock
+                            .basket__item-price 0 ₽
+
+                            .basket__item-priceBlockBottom
+
+                                
+
+
+                                .basket__item-del
+                                    svg(width="20" height="20")
+                                        use(xlink:href="images/sprite.svg#del")
+
+                    .basket__item
+                        .basket__item-img
+                            img(src="images/basket/6.png")
+                        .basket__item-info
+                            p.basket__item-info-name Открытка для букета
+                            p.basket__item-info-char Открытка букетная, до 80 символов
+                            p.basket__item-info-char Текст пожелания: Тут текст, который указал покупатель до 80 символов Текст пожелания: Тут текст, который указал покупатель до 80 символов
+                        .basket__item-priceBlock
+                            .basket__item-price 0 ₽
+
+                            .basket__item-priceBlockBottom
+
+                                
+
+
+                                .basket__item-del
+                                    svg(width="20" height="20")
+                                        use(xlink:href="images/sprite.svg#del")
+
+                    //- noPhoto класс если фотки нет у товара
+                    .basket__item.noPhoto
+                        .basket__item-img
+                        .basket__item-info
+                            p.basket__item-info-name Фото букета перед доставкой
+                        .basket__item-priceBlock
+                            .basket__item-price 0 ₽
+
+                            //- вот этот элемент delNoPhoto нужен если нету количества и фото у товара
+                            .basket__item-del.delNoPhoto
+                                svg(width="20" height="20")
+                                    use(xlink:href="images/sprite.svg#del")
+
+                            .basket__item-priceBlockBottom
+
+                                .basket__item-del
+                                    svg(width="20" height="20")
+                                        use(xlink:href="images/sprite.svg#del")
+
+
+                .basket__add
+                    .basket__add-card
+                        .basket__add-radios
+                    
+                            label.basket__add-radio(data-radio="small")
+                                input(type="radio", name="lenght" data-cardsize="small")
+                                span.basket__add-dot.dot
+                                span.basket__add-name Открытка букетная (бесплатно)
+                            label.basket__add-radio(data-radio="big")
+                                input(type="radio", name="lenght"  data-cardsize="big" data-price=70)
+                                span.basket__add-dot.dot
+                                span.basket__add-name Открытка большая / +70 ₽
+
+                        .basket__add-textAreas.hidden
+                            p Текст пожелания (не обязательно)
+                            input.basket__add-textArea.textAreaSmall.inp(type="text" maxlength="80" name="cardText" placeholder="Введите текст пожелания")
+                            input.basket__add-textArea.textAreaBig.inp.hidden(type="text" maxlength="300"  name="cardText" placeholder="Введите текст пожелания")
+                            span.basket__add-counter 
+                    .basket__add-fert
+                        label.basket__add-radio
+                            input(type="radio", name="addFert"  data-fert="true")
+                            span.basket__add-dot.dot
+                            span.basket__add-name Добавить подкормку для цветов (бесплатно)
+
+
+                
+
+
+
+
+
+
+
+
+            .basket__total
+
+                .total-top
+                    .total__price
+                        .total__price-text Итого:
+                        .total__price-num 9 520 ₽
+
+                    .total__basketTotal
+                        .total__basketTotal-text В корзине 4 товара:
+                        .total__basketTotal-num 9 520 ₽
+
+                    .total__delivery
+                        .total__delivery-text Доставка:
+                        .total__delivery-num 0 ₽
+
+                .total__bottom
+                    .total__bonus
+                        .total__bonus-text Бонусы за покупку:
+                        .total__bonus-num +409 баллов
+
+                    input.total__submit.btn(type="submit" value="Оформить заказ")
+                    .total__callback(data-modal="instant") Купить в 1 клик
+
+                    
+
+
+
+
+        .basket__addItems
+            h2.item__add-title Добавить к заказу
+
+            .item__add-filters
+                .item__slider-arrows
+                    .item__slider-arrow.arr-left
+                    .item__slider-arrow.arr-right
+                .item__add-filter(data-filter='').active-filter Популярное
+                .item__add-filter(data-filter='Игрушка') Игрушка
+                .item__add-filter(data-filter='Шарик') Шарик
+                .item__add-filter(data-filter='Конфеты') Конфеты
+                .item__add-filter(data-filter='Ваза') Ваза
+
+            .item__add-items.basketAddItems
+                .item__add-item(data-type='Популярное')
+                    .item__add-item-top
+                        .item__add-item-img
+                            img(src="images/item/add/1.png")
+                        .item__add-item-info
+                            .item__add-item-name  Конфеты Raffaello Конфеты Raffaello
+                            .item__add-item-quant 300 г
+                            .item__add-item-price 599 ₽
+                    a.item__add-item-btn.btn
+                        svg(width="20" height="20")
+                            use(xlink:href="images/sprite.svg#shop")
+                        span В корзину
+
+                
+                .item__add-item(data-type='Игрушка')
+                    .item__add-item-top
+                        .item__add-item-img
+                            img(src="images/item/add/2.png")
+                        .item__add-item-info
+                            .item__add-item-name Медведь Плюша
+                            .item__add-item-quant 90 см
+                            .item__add-item-price 2 500 ₽
+                    a.item__add-item-btn.btn
+                        svg(width="20" height="20")
+                            use(xlink:href="images/sprite.svg#shop")
+                        span В корзину
+
+                
+                .item__add-item(data-type='Шарик')
+                    .item__add-item-top
+                        .item__add-item-img
+                            img(src="images/item/add/3.png")
+                        .item__add-item-info
+                            .item__add-item-name Фольгированное "Сердце"
+                            .item__add-item-quant 
+                            .item__add-item-price 1 750 ₽
+                    a.item__add-item-btn.btn
+                        svg(width="20" height="20")
+                            use(xlink:href="images/sprite.svg#shop")
+                        span В корзину
+
+                
+                .item__add-item(data-type='Ваза')
+                    .item__add-item-top
+                        .item__add-item-img
+                            img(src="images/item/add/4.png")
+                        .item__add-item-info
+                            .item__add-item-name Ваза прозрачная
+                            .item__add-item-quant 
+                            .item__add-item-price 550 ₽
+                    a.item__add-item-btn.btn
+                        svg(width="20" height="20")
+                            use(xlink:href="images/sprite.svg#shop")
+                        span В корзину
+
+                
+                .item__add-item(data-type='Конфеты')
+                    .item__add-item-top
+                        .item__add-item-img
+                            img(src="images/item/add/3.png")
+                        .item__add-item-info
+                            .item__add-item-name Фольгированное "Сердце"
+                            .item__add-item-quant 
+                            .item__add-item-price 1 750 ₽
+                    a.item__add-item-btn.btn
+                        svg(width="20" height="20")
+                            use(xlink:href="images/sprite.svg#shop")
+                        span В корзину
+
+                
+                .item__add-item(data-type='Популярное')
+                    .item__add-item-top
+                        .item__add-item-img
+                            img(src="images/item/add/2.png")
+                        .item__add-item-info
+                            .item__add-item-name Медведь Плюша
+                            .item__add-item-quant 90 см
+                            .item__add-item-price 2 500 ₽
+                    a.item__add-item-btn.btn
+                        svg(width="20" height="20")
+                            use(xlink:href="images/sprite.svg#shop")
+                        span В корзину
+
+                
+                .item__add-item(data-type='Популярное')
+                    .item__add-item-top
+                        .item__add-item-img
+                            img(src="images/item/add/3.png")
+                        .item__add-item-info
+                            .item__add-item-name Фольгированное "Сердце"
+                            .item__add-item-quant 
+                            .item__add-item-price 1 750 ₽
+                    a.item__add-item-btn.btn
+                        svg(width="20" height="20")
+                            use(xlink:href="images/sprite.svg#shop")
+                        span В корзину
+                

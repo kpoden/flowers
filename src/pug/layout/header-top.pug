@@ -1,12 +1,16 @@
+.header-top__burger.burger.burger-abs
+    span.burger__line 
+    span.burger__line 
+    span.burger__line 
 header.header.header-page
-    //- video.header__bgVideo(autobuffer="" playsinline="" webkit-playsinline="" loop="" muted="muted" id="bgvid" preload="auto" src="" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;")   
     .header-top.wrapper
-        .header-top__burger.burger
+        .header-top__burger.burger.burger-rel
             span.burger__line 
             span.burger__line 
             span.burger__line 
         a(href="/")
-            img.header-top__logo(src="/images/header/logo.png")
+            svg.header-top__logo
+                use(xlink:href="images/sprite.svg#logo")
 
         .header-top__findInput.desktopBig
             input(type="text" name="search" placeholder="Поиск")
@@ -17,27 +21,27 @@ header.header.header-page
         nav.header-top__nav.desktopBig
             ul.header-top__nav-list
                 li.header-top__nav-item
-                    a(href="/") Оплата
+                    a(href="/pay.html") Оплата
                 li.header-top__nav-item
-                    a(href="/") Доставка
+                    a(href="/delivery.html") Доставка
                 li.header-top__nav-item
-                    a(href="/") Контакты
+                    a(href="/contacts.html") Контакты
                 li.header-top__nav-item
-                    a(href="/") Скидки
-                li.header-top__nav-item
-                    a(href="/") Бонусы
+                    a(href="/bonus.html") Бонусы
 
         a.header-top__phone.desktopBig(href="tel: +73432022106")
             svg(width="20" height="20")
                 use(xlink:href="images/sprite.svg#phone")
             span +7 (343) 20-22-106
 
-        button.header-top__callback.btn.desktopBig(type="button") Заказать звонок
+        button.header-top__callback.btn.desktopBig(type="button" data-modal="callback") Заказать звонок
 
         .header-top__personal
-            a.header-top__personal-item
+            a.header-top__personal-item.callback-mob
+                img(src="images/header/phone.svg")
+            a.header-top__personal-item(href="basket.html")
                 svg(width="20" height="20")
                     use(xlink:href="images/sprite.svg#shop")
-            a.header-top__personal-item
+            a.header-top__personal-item(data-modal="auth")
                 svg(width="20" height="20")
                     use(xlink:href="images/sprite.svg#pers")

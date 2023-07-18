@@ -24,9 +24,13 @@
   </head>
   <body>
     <div class="container">
+      <div class="header-top__burger burger burger-abs"><span class="burger__line"> </span><span class="burger__line"> </span><span class="burger__line"> </span></div>
       <header class="header header-page">
         <div class="header-top wrapper">
-          <div class="header-top__burger burger"><span class="burger__line"> </span><span class="burger__line"> </span><span class="burger__line"> </span></div><a href="/"><img class="header-top__logo" src="/images/header/logo.png"/></a>
+          <div class="header-top__burger burger burger-rel"><span class="burger__line"> </span><span class="burger__line"> </span><span class="burger__line"> </span></div><a href="/">
+            <svg class="header-top__logo">
+              <use xlink:href="images/sprite.svg#logo"></use>
+            </svg></a>
           <div class="header-top__findInput desktopBig">
             <input type="text" name="search" placeholder="Поиск"/>
             <div class="header-top__findBtn">
@@ -37,124 +41,299 @@
           </div>
           <nav class="header-top__nav desktopBig">
             <ul class="header-top__nav-list">
-              <li class="header-top__nav-item"><a href="/">Оплата</a></li>
-              <li class="header-top__nav-item"><a href="/">Доставка</a></li>
-              <li class="header-top__nav-item"><a href="/">Контакты</a></li>
-              <li class="header-top__nav-item"><a href="/">Скидки</a></li>
-              <li class="header-top__nav-item"><a href="/">Бонусы</a></li>
+              <li class="header-top__nav-item"><a href="/pay.html">Оплата</a></li>
+              <li class="header-top__nav-item"><a href="/delivery.html">Доставка</a></li>
+              <li class="header-top__nav-item"><a href="/contacts.html">Контакты</a></li>
+              <li class="header-top__nav-item"><a href="/bonus.html">Бонусы</a></li>
             </ul>
           </nav><a class="header-top__phone desktopBig" href="tel: +73432022106">
             <svg width="20" height="20">
               <use xlink:href="images/sprite.svg#phone"></use>
             </svg><span>+7 (343) 20-22-106</span></a>
-          <button class="header-top__callback btn desktopBig" type="button">Заказать звонок</button>
-          <div class="header-top__personal"><a class="header-top__personal-item">
+          <button class="header-top__callback btn desktopBig" type="button" data-modal="callback">Заказать звонок</button>
+          <div class="header-top__personal"><a class="header-top__personal-item callback-mob"><img src="images/header/phone.svg"/></a><a class="header-top__personal-item" href="basket.html">
               <svg width="20" height="20">
                 <use xlink:href="images/sprite.svg#shop"></use>
-              </svg></a><a class="header-top__personal-item">
+              </svg></a><a class="header-top__personal-item" data-modal="auth">
               <svg width="20" height="20">
                 <use xlink:href="images/sprite.svg#pers"></use>
               </svg></a></div>
         </div>
       </header>
       <main class="wrapper">
-        <div class="breadcrumbs"><span class="breadcrumbs__item">Главная</span><span class="breadcrumbs__separator">></span><span class="breadcrumbs__item">Личный кабинет</span></div>
+        <div class="breadcrumbs"><a class="breadcrumbs__item" href="/">Главная</a><span class="breadcrumbs__separator">></span><a class="breadcrumbs__item">Личный кабинет</a></div>
         <h1 class="section-title">Личный кабинет</h1>
-        <div class="lk">
+        <form class="lk">
           <div class="lk__tabs">
             <div class="lk__tab tab-active" data-tab="Профиль">Профиль</div>
             <div class="lk__tab" data-tab="Мои заказы">Мои заказы</div>
-            <div class="lk__tab" data-tab="Адреса доставки">Адреса доставки</div>
-            <div class="lk__tab" data-tab="Выйти">Выйти</div>
+            <div class="lk__tab" data-tab="Адреса доставки">Адреса&nbsp;доставки</div>
+            <div class="lk__tab" data-tab="Выйти">Выйти</div><a class="lk__quit">
+              <svg width="20" height="20">
+                <use xlink:href="images/sprite.svg#quit"></use>
+              </svg><span>Выйти</span></a>
           </div>
           <div class="lk__pages">
             <div class="lk__page profile" data-page="Профиль">
               <form class="profile__form">
                 <div class="lk__title">Мои данные</div>
                 <div class="profile__input-line">
-                  <label class="profile__input-wrap"><span class="profile__input-name inp-name">Имя</span>
-                    <input class="profile__input inp" type="text"/>
+                  <label class="profile__input-wrap input-wrap"><span class="profile__input-name inp-name">Имя</span>
+                    <input class="profile__input inp" type="text" placeholder="Александр"/>
                   </label>
-                  <label class="profile__input-wrap"><span class="profile__input-name inp-name">Фамилия</span>
-                    <input class="profile__input inp" type="text"/>
+                  <label class="profile__input-wrap input-wrap"><span class="profile__input-name inp-name">Фамилия</span>
+                    <input class="profile__input inp" type="text" placeholder="Иванов"/>
                   </label>
-                  <div class="profile__radios">
+                  <div class="profile__radios"><span class="inp-name">Пол</span>
                     <label class="profile__radio-wrap">
                       <input type="radio" name="sex"/><span class="dot"></span><span>Мужской</span>
                     </label>
                     <label class="profile__radio-wrap">
-                      <input type="radio" name="sex"/><span class="dot"></span><span>Мужской</span>
+                      <input type="radio" name="sex"/><span class="dot"></span><span>Женский</span>
                     </label>
                   </div>
                 </div>
                 <div class="profile__input-line">
-                  <label class="profile__input-wrap"><span class="profile__input-name inp-name">Телефон</span>
-                    <input class="profile__input inp" type="text"/>
+                  <label class="profile__input-wrap input-wrap"><span class="profile__input-name inp-name">Телефон</span>
+                    <input class="profile__input inp" type="text" placeholder="+7 (495) 458-89-89"/>
                   </label>
-                  <label class="profile__input-wrap"><span class="profile__input-name inp-name">E-mail</span>
-                    <input class="profile__input inp" type="text"/>
+                  <label class="profile__input-wrap input-wrap"><span class="profile__input-name inp-name">E-mail</span>
+                    <input class="profile__input inp" type="text" placeholder="info@gmail.com"/>
                   </label>
-                  <label class="profile__input-wrap"><span class="profile__input-name inp-name">День рождения</span>
-                    <input class="profile__input inp" type="text"/>
+                  <label class="profile__input-wrap input-wrap"><span class="profile__input-name inp-name">День рождения</span>
+                    <input class="profile__input inp" type="text" placeholder="01.01.1987"/>
                   </label>
                 </div>
+                <div class="lk__title">Изменить пароль</div>
+                <div class="profile__input-line">
+                  <label class="profile__input-wrap input-wrap"><span class="profile__input-name inp-name">Старый пароль <span class="red">*</span></span>
+                    <input class="profile__input inp" type="text" placeholder="Введите пароль *"/>
+                  </label>
+                  <label class="profile__input-wrap input-wrap"><span class="profile__input-name inp-name">Пароль <span class="red">*</span></span>
+                    <input class="profile__input inp" type="text" placeholder="Введите пароль *"/>
+                  </label>
+                  <label class="profile__input-wrap input-wrap"><span class="profile__input-name inp-name">Повторите пароль <span class="red">*</span></span>
+                    <input class="profile__input inp" type="text" placeholder="Введите пароль *"/>
+                  </label>
+                </div>
+                <label class="profile__checkbox">
+                  <input class="profile__checkbox-input" type="checkbox"/>
+                  <div class="profile__checkbox-square"></div>
+                  <div class="profile__checkbox-text">Я ознакомлен(-а) с <a href="/policy.html">Политикой конфиденциальности</a></div>
+                </label>
+                <input class="profile__submit btn" type="submit" value="Сохранить изменения"/>
               </form>
             </div>
-            <div class="lk__page hidden orders" data-page="Мои заказы">
+            <div class="lk__page orders hidden" data-page="Мои заказы">
               <div class="lk__title">Мои заказы</div>
+              <div class="lk__orders-empty hidden"><img src="images/lk/empty.png"/>
+                <p class="lk__orders-empty-text">Заказы не найдены</p><a class="lk__orders-empty-btn btn" href="/">Начать покупки </a>
+              </div>
+              <div class="lk__orders">
+                <div class="orders">
+                  <div class="orders__tabs">
+                    <div class="orders__tab inp active-orders" data-order="Текущие заказы">Текущие заказы</div>
+                    <div class="orders__tab inp" data-order="Архив">Архив</div>
+                  </div>
+                  <div class="orders__current order__page" data-order="Текущие заказы">
+                    <p class="orders__status">Заказы в статусе «Принят, ожидается оплата»</p>
+                    <div class="order">
+                      <div class="order__info">
+                        <div class="order__id">Заказ <span class="yellow">№164942</span> от 31.05.2023 15:02:26</div>
+                        <div class="order__line">
+                          <div class="order__line-text">Сумма:</div>
+                          <div class="order__line-value">13 199 руб.</div>
+                        </div>
+                        <div class="order__line">
+                          <div class="order__line-text">Способ оплаты:</div>
+                          <div class="order__line-value">Оплата наличными или картой в магазине</div>
+                        </div>
+                        <div class="order__line">
+                          <div class="order__line-text">Статус:</div>
+                          <div class="order__line-value">Принят, ожидается оплата от 31.05.2023 15:02:25</div>
+                        </div>
+                        <div class="order__line">
+                          <div class="order__line-text">Способ доставки:</div>
+                          <div class="order__line-value">Доставка курьером</div>
+                        </div>
+                      </div>
+                      <div class="order__list">
+                        <div class="order__list-title">Состав заказа:</div>
+                        <div class="order__line">
+                          <div class="order__line-text">АКЦИЯ! 11 белых Хризантем в упаковке</div>
+                          <div class="order__line-value">1 шт.</div>
+                        </div>
+                        <div class="order__line">
+                          <div class="order__line-text">Киндеры в коробочке 15 шт.</div>
+                          <div class="order__line-value">2 шт.</div>
+                        </div>
+                        <div class="order__line">
+                          <div class="order__line-text">Фольгированное "Сердце" 7 шт.</div>
+                          <div class="order__line-value">1 шт.</div>
+                        </div>
+                        <div class="order__line">
+                          <div class="order__line-text">Фруктовая корзина 9 кг №2</div>
+                          <div class="order__line-value">1 шт.</div>
+                        </div>
+                      </div>
+                      <div class="order__actions"><a class="order__btn btn">повторить заказ</a><a class="order__remove">Отменить заказ</a></div>
+                    </div>
+                    <div class="order">
+                      <div class="order__info">
+                        <div class="order__id">Заказ <span class="yellow">№164942</span> от 31.05.2023 15:02:26</div>
+                        <div class="order__line">
+                          <div class="order__line-text">Сумма:</div>
+                          <div class="order__line-value">13 199 руб.</div>
+                        </div>
+                        <div class="order__line">
+                          <div class="order__line-text">Способ оплаты:</div>
+                          <div class="order__line-value">Оплата наличными или картой в магазине</div>
+                        </div>
+                        <div class="order__line">
+                          <div class="order__line-text">Статус:</div>
+                          <div class="order__line-value">Принят, ожидается оплата от 31.05.2023 15:02:25</div>
+                        </div>
+                        <div class="order__line">
+                          <div class="order__line-text">Способ доставки:</div>
+                          <div class="order__line-value">Доставка курьером</div>
+                        </div>
+                      </div>
+                      <div class="order__list">
+                        <div class="order__list-title">Состав заказа:</div>
+                        <div class="order__line">
+                          <div class="order__line-text">АКЦИЯ! 11 белых Хризантем в упаковке</div>
+                          <div class="order__line-value">1 шт.</div>
+                        </div>
+                        <div class="order__line">
+                          <div class="order__line-text">Киндеры в коробочке 15 шт.</div>
+                          <div class="order__line-value">2 шт.</div>
+                        </div>
+                        <div class="order__line">
+                          <div class="order__line-text">Фольгированное "Сердце" 7 шт.</div>
+                          <div class="order__line-value">1 шт.</div>
+                        </div>
+                        <div class="order__line">
+                          <div class="order__line-text">Фруктовая корзина 9 кг №2</div>
+                          <div class="order__line-value">1 шт.</div>
+                        </div>
+                      </div>
+                      <div class="order__actions"><a class="order__btn btn">повторить заказ</a><a class="order__remove">Отменить заказ</a></div>
+                    </div>
+                  </div>
+                  <div class="order__archive order__page hidden" data-order="Архив">
+                    <p class="orders__status">Заказы в статусе «Оплачено»</p>
+                    <div class="order">
+                      <div class="order__info">
+                        <div class="order__id">Заказ <span class="yellow">№164942</span> от 31.05.2023 15:02:26</div>
+                        <div class="order__line">
+                          <div class="order__line-text">Сумма:</div>
+                          <div class="order__line-value">13 199 руб.</div>
+                        </div>
+                        <div class="order__line">
+                          <div class="order__line-text">Способ оплаты:</div>
+                          <div class="order__line-value">Оплата наличными или картой в магазине</div>
+                        </div>
+                        <div class="order__line">
+                          <div class="order__line-text">Статус:</div>
+                          <div class="order__line-value">Принят, ожидается оплата от 31.05.2023 15:02:25</div>
+                        </div>
+                        <div class="order__line">
+                          <div class="order__line-text">Способ доставки:</div>
+                          <div class="order__line-value">Доставка курьером</div>
+                        </div>
+                      </div>
+                      <div class="order__list">
+                        <div class="order__list-title">Состав заказа:</div>
+                        <div class="order__line">
+                          <div class="order__line-text">АКЦИЯ! 11 белых Хризантем в упаковке</div>
+                          <div class="order__line-value">1 шт.</div>
+                        </div>
+                        <div class="order__line">
+                          <div class="order__line-text">Киндеры в коробочке 15 шт.</div>
+                          <div class="order__line-value">2 шт.</div>
+                        </div>
+                        <div class="order__line">
+                          <div class="order__line-text">Фольгированное "Сердце" 7 шт.</div>
+                          <div class="order__line-value">1 шт.</div>
+                        </div>
+                        <div class="order__line">
+                          <div class="order__line-text">Фруктовая корзина 9 кг №2</div>
+                          <div class="order__line-value">1 шт.</div>
+                        </div>
+                      </div>
+                      <div class="order__actions"><a class="order__btn btn">повторить заказ</a><a class="order__remove">Отменить заказ</a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="lk__page hidden addresses" data-page="Адреса доставки">
               <div class="lk__title">Адреса доставки</div>
             </div>
             <div class="lk__page hidden logout" data-page="Выйти"></div>
           </div>
-        </div>
+        </form>
       </main>
       <footer class="footer">
-        <div class="footer__wrapper wrapper"><img class="footer__logo" src="/images/header/logo.png"/>
-          <div class="footer__links-block">
-            <ul class="footer__links-col">
-              <li class="footer__link"> <a>Оплата</a></li>
-              <li class="footer__link"> <a>Доставка</a></li>
-              <li class="footer__link"> <a>Контакты</a></li>
-            </ul>
-            <ul class="footer__links-col">
-              <li class="footer__link"> <a>Скидки</a></li>
-              <li class="footer__link"> <a>Бонусы</a></li>
-            </ul>
-            <ul class="footer__links-col">
-              <li class="footer__link"> <a>Правила компании</a></li>
-              <li class="footer__link"> <a>Политика конфиденциальности</a></li>
-            </ul>
-          </div>
-          <div class="footer__contacts"><a class="footer__contact footer__phone" href="+79090022106">+7 (909) 00-22-106</a><a class="footer__contact footer__phone" href="+73432022106">+7 (343) 20-22-106</a><a class="footer__contact footer__address">620043, г. Екатеринбург. ул. Репина 99</a>
-            <div class="footer__icons">
-              <div class="footer__pay"><img src="/images/footer/visa.png"/><img src="/images/footer/mc.png"/><img src="/images/footer/sber.png"/></div>
-              <div class="footer__messenger">
-                <svg width="30" height="30">
-                  <use xlink:href="images/sprite.svg#viber"></use>
-                </svg>
-                <svg width="30" height="30">
-                  <use xlink:href="images/sprite.svg#wa"></use>
-                </svg>
-              </div>
+        <div class="footer__wrapper wrapper">
+          <div class="footer__top"><a href="/">
+              <svg class="header-top__logo">
+                <use xlink:href="images/sprite.svg#logo"></use>
+              </svg></a>
+            <div class="footer__mob-info">
+              <div class="footer__mob-info-contacts"><a class="footer__contact footer__phone" href="tel:+79090022106">+7 (909) 00-22-106</a><a class="footer__contact footer__phone" href="tel:+73432022106">+7 (343) 20-22-106</a><a class="footer__contact footer__address" href="https://yandex.ru/maps/org/vbukete_rf/1626904109/?ll=60.543764%2C56.821410&amp;z=17" target="_blank">620043, г. Екатеринбург. ул. Репина 99</a></div>
+              <div class="footer__mob-info-messangers"> <a href="viber://chat?number=+79090022106" target="_blank">
+                  <svg width="30" height="30">
+                    <use xlink:href="images/sprite.svg#viber"></use>
+                  </svg></a><a href="https://wa.me/79090022106" target="_blank">
+                  <svg width="30" height="30">
+                    <use xlink:href="images/sprite.svg#wa"></use>
+                  </svg></a></div>
             </div>
           </div>
-          <p class="footer__copyright">© 2009 - 2023г. «Любимый-цветочный.рф»</p>
+          <div class="footer__links-block">
+            <ul class="footer__links-col">
+              <li class="footer__link"> <a href="pay.html">Оплата</a></li>
+              <li class="footer__link"> <a href="delivery.html">Доставка</a></li>
+              <li class="footer__link"> <a href="contacts.html">Контакты</a></li>
+            </ul>
+            <ul class="footer__links-col">
+              <li class="footer__link"> <a href="bonus.html">Скидки</a></li>
+              <li class="footer__link"> <a href="bonus.html">Бонусы</a></li>
+            </ul>
+            <ul class="footer__links-col">
+              <li class="footer__link"> <a href="rules.html">Правила компании</a></li>
+              <li class="footer__link"> <a href="policy.html">Политика конфиденциальности</a></li>
+            </ul>
+            <div class="footer__pay-mob"><img src="images/footer/visa.svg"/><img src="images/footer/ms.svg"/><img src="images/footer/sber.svg"/></div>
+          </div>
+          <div class="footer__contacts"><a class="footer__contact footer__phone" href="tel:+79090022106">+7 (909) 00-22-106</a><a class="footer__contact footer__phone" href="tel:+73432022106">+7 (343) 20-22-106</a><a class="footer__contact footer__address" href="https://yandex.ru/maps/org/vbukete_rf/1626904109/?ll=60.543764%2C56.821410&amp;z=17" target="_blank">620043, г. Екатеринбург. ул. Репина 99</a>
+            <div class="footer__icons">
+              <div class="footer__pay"><img src="images/footer/visa.svg"/><img src="images/footer/ms.svg"/><img src="images/footer/sber.svg"/></div>
+              <div class="footer__messenger"><a href="viber://chat?number=+79090022106" target="_blank">
+                  <svg width="30" height="30">
+                    <use xlink:href="images/sprite.svg#viber"></use>
+                  </svg></a><a href="https://wa.me/79090022106" target="_blank">
+                  <svg width="30" height="30">
+                    <use xlink:href="images/sprite.svg#wa"></use>
+                  </svg></a></div>
+            </div>
+          </div>
         </div>
+        <p class="footer__copyright">© 2009 - 2023г. «Любимый-цветочный.рф»</p>
       </footer>
+      <div class="float__footer"><a class="float__footer-col" href="/">
+          <svg width="16" height="16">
+            <use xlink:href="images/sprite.svg#home"></use>
+          </svg><span>Главная</span></a><a class="float__footer-col" href="mono.html">
+          <svg width="16" height="16">
+            <use xlink:href="images/sprite.svg#bouqet"></use>
+          </svg><span>Собрать букет</span></a><a class="float__footer-col" href="https://wa.me/79090022106" target="_blank"><img src="images/footer/wa.svg"/><span>Написать</span></a></div>
+      <div class="linksHidden"><a data-modal="regThanks"></a><a data-modal="callbackThanks"></a></div>
       <div class="modal">
         <div class="modal__content">
           <div class="modal__close-cross modal__close"></div>
-          <div class="modal__content-inner"><img class="addedItemImg" src=""/>
-            <h2 class="modal__header">Товар добавлен <br> в корзину</h2><a class="modal__btn btn addedItemBtn" href="/cart">
-              <svg width="20" height="20">
-                <use xlink:href="images/sprite.svg#shop"></use>
-              </svg><span>Перейти в корзину</span></a><a class="modal__btn btn modal__close addedItemBtn btn--white">
-              <svg width="20" height="20">
-                <use xlink:href="images/sprite.svg#shop2"></use>
-              </svg><span>Продолжить покупки</span></a>
-          </div>
+          <div class="modal__content-inner"></div>
         </div>
       </div>
       <div class="modal__templates hidden">
@@ -192,8 +371,8 @@
           </div>
           <div class="modal__textareaWrap textAreaBig">
             <p>Текст пожелания (не обязательно)</p>
-            <textarea class="modal__textarea textAreaSmall" noresize="noresize" placeholder="Введите текст пожелания"></textarea>
-            <textarea class="modal__textarea textAreaBig hidden" noresize="noresize" placeholder="Введите текст пожелания"></textarea><span class="modal__counter"></span>
+            <textarea class="modal__textarea textAreaSmall" noresize="noresize" name="cardText" placeholder="Введите текст пожелания"></textarea>
+            <textarea class="modal__textarea textAreaBig hidden" noresize="noresize" name="cardText" placeholder="Введите текст пожелания"></textarea><span class="modal__counter"></span>
           </div><a class="modal__btn btn">
             <svg width="20" height="20">
               <use xlink:href="images/sprite.svg#shop"></use>
@@ -208,7 +387,7 @@
           <div class="item__add-items">
             <div class="item__add-item" data-type="Популярное">
               <div class="item__add-item-top">
-                <div class="item__add-item-img"><img src="/images/item/add/1.png"/></div>
+                <div class="item__add-item-img"><img src="images/item/add/1.png"/></div>
                 <div class="item__add-item-info">
                   <div class="item__add-item-name"> Конфеты Raffaello Конфеты Raffaello</div>
                   <div class="item__add-item-quant">300 г</div>
@@ -221,7 +400,7 @@
             </div>
             <div class="item__add-item" data-type="Игрушка">
               <div class="item__add-item-top">
-                <div class="item__add-item-img"><img src="/images/item/add/2.png"/></div>
+                <div class="item__add-item-img"><img src="images/item/add/2.png"/></div>
                 <div class="item__add-item-info">
                   <div class="item__add-item-name">Медведь Плюша</div>
                   <div class="item__add-item-quant">90 см</div>
@@ -234,7 +413,7 @@
             </div>
             <div class="item__add-item" data-type="Шарик">
               <div class="item__add-item-top">
-                <div class="item__add-item-img"><img src="/images/item/add/3.png"/></div>
+                <div class="item__add-item-img"><img src="images/item/add/3.png"/></div>
                 <div class="item__add-item-info">
                   <div class="item__add-item-name">Фольгированное "Сердце"</div>
                   <div class="item__add-item-quant"> </div>
@@ -247,7 +426,7 @@
             </div>
             <div class="item__add-item" data-type="Ваза">
               <div class="item__add-item-top">
-                <div class="item__add-item-img"><img src="/images/item/add/4.png"/></div>
+                <div class="item__add-item-img"><img src="images/item/add/4.png"/></div>
                 <div class="item__add-item-info">
                   <div class="item__add-item-name">Ваза прозрачная</div>
                   <div class="item__add-item-quant"> </div>
@@ -260,7 +439,7 @@
             </div>
             <div class="item__add-item" data-type="Конфеты">
               <div class="item__add-item-top">
-                <div class="item__add-item-img"><img src="/images/item/add/3.png"/></div>
+                <div class="item__add-item-img"><img src="images/item/add/3.png"/></div>
                 <div class="item__add-item-info">
                   <div class="item__add-item-name">Фольгированное "Сердце"</div>
                   <div class="item__add-item-quant"> </div>
@@ -282,7 +461,7 @@
           <div class="item__add-items">
             <div class="item__add-item" data-type="Популярное">
               <div class="item__add-item-top">
-                <div class="item__add-item-img"><img src="/images/item/add/1.png"/></div>
+                <div class="item__add-item-img"><img src="images/item/add/1.png"/></div>
                 <div class="item__add-item-info">
                   <div class="item__add-item-name"> Конфеты Raffaello Конфеты Raffaello</div>
                   <div class="item__add-item-quant">300 г</div>
@@ -295,7 +474,7 @@
             </div>
             <div class="item__add-item" data-type="Игрушка">
               <div class="item__add-item-top">
-                <div class="item__add-item-img"><img src="/images/item/add/2.png"/></div>
+                <div class="item__add-item-img"><img src="images/item/add/2.png"/></div>
                 <div class="item__add-item-info">
                   <div class="item__add-item-name">Медведь Плюша</div>
                   <div class="item__add-item-quant">90 см</div>
@@ -308,7 +487,7 @@
             </div>
             <div class="item__add-item" data-type="Шарик">
               <div class="item__add-item-top">
-                <div class="item__add-item-img"><img src="/images/item/add/3.png"/></div>
+                <div class="item__add-item-img"><img src="images/item/add/3.png"/></div>
                 <div class="item__add-item-info">
                   <div class="item__add-item-name">Фольгированное "Сердце"</div>
                   <div class="item__add-item-quant"> </div>
@@ -321,7 +500,7 @@
             </div>
             <div class="item__add-item" data-type="Ваза">
               <div class="item__add-item-top">
-                <div class="item__add-item-img"><img src="/images/item/add/4.png"/></div>
+                <div class="item__add-item-img"><img src="images/item/add/4.png"/></div>
                 <div class="item__add-item-info">
                   <div class="item__add-item-name">Ваза прозрачная</div>
                   <div class="item__add-item-quant"> </div>
@@ -334,7 +513,7 @@
             </div>
             <div class="item__add-item" data-type="Конфеты">
               <div class="item__add-item-top">
-                <div class="item__add-item-img"><img src="/images/item/add/3.png"/></div>
+                <div class="item__add-item-img"><img src="images/item/add/3.png"/></div>
                 <div class="item__add-item-info">
                   <div class="item__add-item-name">Фольгированное "Сердце"</div>
                   <div class="item__add-item-quant"> </div>
@@ -355,6 +534,158 @@
             <svg width="20" height="20">
               <use xlink:href="images/sprite.svg#shop2"></use>
             </svg><span>Продолжить покупки</span></a>
+        </div>
+        <div class="auth">
+          <div class="auth__modal">
+            <h2 class="modal__header">Авторизация</h2>
+            <form class="modal__form" id="auth-form" method="post">
+              <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Логин</span>
+                <input class="modal__input inp" type="text" placeholder="Логин"/>
+              </label>
+              <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Пароль</span>
+                <input class="modal__input inp" type="text" placeholder="Пароль"/>
+              </label>
+              <input class="modal__submit modal__btn btn" type="submit" value="Войти"/>
+              <p class="modal__smalltext">
+                Нажимая кнопку “Войти”, Вы соглашаетесь на обработку персональных
+                данных, получение рассылок, а так же с <a href="policy.html">политикой конфиденциальности</a>
+                
+                
+              </p><a class="modal__link" href="restore.html">Забыли пароль?</a><a class="modal__link" data-modal="reg">Зарегистрироваться</a>
+            </form>
+          </div>
+        </div>
+        <div class="reg">
+          <div class="reg__modal">
+            <h2 class="modal__header">Регистрация</h2>
+            <form id="reg-form">
+              <div class="reg__line-one">
+                <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Имя</span>
+                  <input class="modal__input inp" type="text" placeholder="Введите имя"/>
+                </label>
+                <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Фамилия</span>
+                  <input class="modal__input inp" type="text" placeholder="Введите фамилию"/>
+                </label>
+              </div>
+              <div class="reg__line">
+                <div class="reg__col">
+                  <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Логин <span class="red">*</span></span>
+                    <input class="modal__input inp" type="text" placeholder="Введите логин (min 3 символа) *"/>
+                  </label>
+                  <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">E-mail</span>
+                    <input class="modal__input inp" type="text" placeholder="Введите e-mail"/>
+                  </label>
+                </div>
+                <div class="reg__col">
+                  <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Пароль <span class="red">*</span></span>
+                    <input class="modal__input inp" type="password" placeholder="Введите пароль"/>
+                    <div class="eyes">
+                      <svg class="eye" width="22" height="22">
+                        <use xlink:href="images/sprite.svg#eye"></use>
+                      </svg>
+                      <svg class="eye-y" width="22" height="22">
+                        <use xlink:href="images/sprite.svg#eye-y"></use>
+                      </svg>
+                    </div>
+                  </label>
+                  <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Подтвердите пароль <span class="red">*</span></span>
+                    <input class="modal__input inp" type="password" placeholder="Подтвердите пароль"/>
+                    <div class="eyes">
+                      <svg class="eye" width="22" height="22">
+                        <use xlink:href="images/sprite.svg#eye"></use>
+                      </svg>
+                      <svg class="eye-y" width="22" height="22">
+                        <use xlink:href="images/sprite.svg#eye-y"></use>
+                      </svg>
+                    </div>
+                  </label>
+                </div>
+              </div>
+              <div class="reg__line-one">
+                <label class="modal__input-wrap input-wrap">
+                  <input class="modal__input inp" type="text" placeholder="Введите имя"/>
+                </label>
+                <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Слово на картинке <span class="red">*</span></span>
+                  <input class="modal__input inp" type="text" placeholder="Введите слово на картинке *"/>
+                </label>
+              </div>
+              <input class="reg__submit modal__submit modal__btn btn" type="submit" value="зарегистрироваться"/>
+              <p class="modal__smalltext">
+                Нажимая кнопку “Зарегистрироваться”, Вы соглашаетесь на обработку персональных
+                данных, получение рассылок, а так же с <a href="policy.html">политикой конфиденциальности</a>
+                
+                
+              </p><a class="modal__link" data-modal="auth">Уже зарегистрированы? Войти</a>
+            </form>
+          </div>
+        </div>
+        <div class="regThanks">
+          <svg width="170" height="180">
+            <use xlink:href="images/sprite.svg#plane"></use>
+          </svg>
+          <h2 class="modal__header">Благодарим <br> за регистрацию</h2>
+          <p class="modal__text">Вы зарегистрированы и успешно авторизовались</p><a class="modal__btn btn" href="/"><span>На главную</span></a><a class="modal__link" href="/lk.html">В личный кабинет</a>
+        </div>
+        <div class="callbackThanks">
+          <svg width="170" height="180">
+            <use xlink:href="images/sprite.svg#plane"></use>
+          </svg>
+          <h2 class="modal__header">Спасибо!</h2>
+          <p class="modal__text">Менеджер свяжется с Вами в течение 15 минут</p><a class="modal__btn btn" href="/"><span>На главную</span></a>
+        </div>
+        <div class="callback">
+          <div class="callback__modal">
+            <h2 class="modal__header">Заказать звонок</h2>
+            <p class="modal__text">Оставьте свои контакты и мы свяжемся с вами в течение 15 минут</p>
+            <form class="modal__form" id="callback-form" method="post">
+              <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Ваше имя</span>
+                <input class="modal__input inp" type="text" placeholder="Введите имя"/>
+              </label>
+              <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Телефон <span class="red">*</span></span>
+                <input class="modal__input inp" type="text" placeholder="Введите телефон *"/>
+              </label>
+              <input class="modal__submit modal__btn btn" type="submit" value="Перезвоните мне"/>
+              <p class="modal__smalltext">
+                Нажимая кнопку “Перезвоните мне”, Вы соглашаетесь на обработку персональных
+                данных, получение рассылок, а так же с <a href="policy.html">политикой конфиденциальности</a>
+                
+                
+              </p>
+            </form>
+          </div>
+        </div>
+        <div class="instant">
+          <div class="instant__modal">
+            <h2 class="modal__header">Быстрый заказ</h2>
+            <p class="modal__text">Пожалуйста, укажите Ваши имя и телефон. И с Вами свяжется наш менеджер. Спасибо!</p>
+            <form class="modal__form" id="instant-form" method="post">
+              <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Имя <span class="red">*</span></span>
+                <input class="modal__input inp" type="text" placeholder="Введите имя *"/>
+              </label>
+              <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Телефон <span class="red">*</span></span>
+                <input class="modal__input inp" type="text" placeholder="Введите телефон *"/>
+              </label>
+              <input class="modal__submit modal__btn btn" type="submit" value="Оформить заказ"/>
+              <p class="modal__smalltext">
+                Нажимая кнопку “Оформить заказ”, Вы соглашаетесь на обработку персональных
+                данных, получение рассылок, а так же с <a href="policy.html">политикой конфиденциальности</a>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="mob-wrap">
+        <div class="overlay"></div>
+        <div class="mob-menu">
+          <div class="header-top__findInput">
+            <input type="text" name="search" placeholder="Поиск"/>
+            <div class="header-top__findBtn">
+              <svg width="20" height="20">
+                <use xlink:href="images/sprite.svg#find"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="mob-menu__links"><a class="mob-menu__link" href="pay.html">Оплата</a><a class="mob-menu__link" href="delivery.html">Доставка</a><a class="mob-menu__link" href="contacts.html">Контакты</a><a class="mob-menu__link" href="bonus.html">Бонусы</a></div><a class="header-top__phone" href="tel: +73432022106"><img src="images/header/phone.svg"/><span>+7 (343) 20-22-106</span></a><span class="mob-menu__callback btn" data-modal="callback">Заказать звонок</span>
         </div>
       </div>
       <script src="libs/jquery.min.js"></script>

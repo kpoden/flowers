@@ -1,0 +1,375 @@
+.basket
+
+    display: flex
+    justify-content: space-between
+    gap: 20px
+
+    +mw(1000)
+        flex-direction: column
+        align-items: center
+
+    &__info
+        width: 100%
+        max-width: 1030px
+
+    &__authorize
+        font-size: 18px
+        font-weight: 600
+        line-height: 28px
+
+        a
+            color: #F9CC49
+            text-decoration: underline
+
+    &__attention
+        
+
+    
+
+
+
+
+
+    &__total
+        width: 390px
+        height: 432px
+        background: #1E2021
+        margin-top: -70px
+        padding: 50px 20px
+        flex-shrink: 0
+        margin-bottom: 50px
+
+        +mw(1000)
+            width: 80%
+            min-width: 350px
+
+
+    
+
+
+    &__list
+        margin-bottom: 60px
+
+    &__item
+        display: flex
+        justify-content: space-between
+        gap: 30px
+        padding-bottom: 20px
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2)
+        margin-bottom: 20px
+
+        +mw(650)
+            flex-direction: column
+            align-items: center
+
+        &-img
+            
+            
+            display: flex
+            align-items: center
+            justify-content: center
+            flex-shrink: 0
+            width: 110px
+
+            img
+                width: 110px
+                height: 110px
+                object-fit: cover
+                background: #1E2021
+                
+
+
+        &-info
+            margin-right: auto
+            max-width: 60%
+
+            +mw(650)
+                margin-right: 0
+
+
+            &-name
+                font-size: 18px
+                font-weight: 600
+                padding-bottom: 10px
+
+            &-char
+                font-size: 14px
+                font-weight: 400
+                padding-bottom: 10px
+
+        &-priceBlock
+            width: 218px
+            position: relative
+            flex-shrink: 0
+
+        &-priceBlockBottom
+            display: flex
+            align-items: center
+            justify-content: flex-end
+            gap: 30px
+
+        &-price
+            text-align: center
+            color: #FFF
+            font-size: 28px
+            font-weight: 600
+            padding-bottom: 30px
+
+        .quantity
+            display: flex
+            justify-content: space-between
+            width: 140px
+            padding: 5px 18px
+            
+
+            &:hover
+                border: 1px solid rgba(255, 255, 255, 0.6)
+
+            &__btn
+                height: 100%
+                width: 10px
+                font-size: 30px
+                font-weight: 100
+                cursor: pointer
+
+                &:hover
+                    color: #dfdfdf
+
+            &__num
+                background: transparent
+                font-size: 16px
+                font-weight: 500
+                width: 20px
+                color: #FFF
+                text-align: center
+                font-family: Raleway
+
+        
+                
+        &-del
+            width: 48px
+            height: 48px
+            border-radius: 500px
+            border: 1px solid rgba(255, 255, 255, 0.40)
+            background: rgba(255, 255, 255, 0.10)
+            position: relative
+            cursor: pointer
+            transition: .2s
+
+            &:hover
+                border: 1px solid rgba(255, 0, 0, 0.6)
+                color: red
+                
+
+            svg
+                position: absolute
+                top: 50%
+                left: 50%
+                transform: translate(-50%, -50%)
+        .delNoPhoto
+            display: none
+
+        &.noPhoto
+            .basket__item-price
+                padding-bottom: 0
+
+            .basket__item-del
+                display: none
+
+            .delNoPhoto
+                position: absolute
+                right: 0
+                top: 50%
+                transform: translateY(-50%)
+                display: block
+
+    &__add
+        display: flex
+        justify-content: space-between
+        padding-bottom: 130px
+
+        +mw(650)
+            flex-direction: column
+            gap: 30px
+
+        &-card
+            width: 50%
+
+            +mw(650)
+                width: 100%
+
+        &-radios
+            display: flex
+            flex-direction: column
+            gap: 13px
+            padding-bottom: 30px
+
+        &-radio
+            display: flex
+            align-items: center
+            gap: 12px
+
+        &-dot
+
+        &-name
+
+        &-textAreas
+            position: relative
+
+            p
+                font-size: 12px
+                font-weight: 500
+                padding-bottom: 5px
+
+        &-textArea
+            resize: none
+            max-width: 455px
+            width: 100%
+            background: #272727; 
+
+        &-counter
+            color: #fff
+            position: absolute
+            bottom: 5px
+            right: 80px
+            font-size: 12px
+
+        &-card
+
+
+        &-fert
+            width: 50%
+
+            +mw(650)
+                width: 100%
+
+.basket__addItems
+    padding-bottom: 130px
+
+.basket__empty
+    display: none
+
+
+.total
+    font-size: 16px
+    font-weight: 500
+
+    &-top
+        padding-bottom: 30px
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2)
+
+    &__price
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding-bottom: 15px
+    &__price-text
+        font-size: 18px
+        font-weight: 700
+        
+
+    &__price-num
+        text-align: right
+        font-size: 40px
+        font-weight: 700
+
+    &__basketTotal
+        display: flex
+        justify-content: space-between
+        padding-bottom: 15px
+
+    &__basketTotal-text
+        font-size: 16px
+        font-weight: 500
+
+    &__basketTotal-num
+        font-size: 16px
+        font-weight: 500
+
+    &__delivery
+        display: flex
+        justify-content: space-between
+        
+
+    &__delivery-text
+        font-size: 16px
+        font-weight: 500
+
+    &__delivery-num
+        font-size: 16px
+        font-weight: 500
+
+    &__bottom
+        padding-top: 50px
+
+    &__bonus
+        display: flex
+        justify-content: space-between
+
+
+    &__bonus-text
+        font-size: 16px
+        font-weight: 500
+
+    &__bonus-num
+        font-size: 16px
+        font-weight: 500
+
+    &__submit
+        margin-top: 50px
+        margin-bottom: 20px
+        width: 100%
+
+    &__callback
+        font-size: 16px
+        font-weight: 500
+        text-decoration-line: underline
+        text-align: center
+        cursor: pointer
+
+
+.empty
+    .basket
+        display: none
+
+    .basket__empty
+        height: 80vh
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-direction: column
+
+
+.attention
+    margin: 30px 0 50px
+    padding: 11px 25px 8px
+    border: 1px solid #8A8A8A
+    background: #3C3C3C
+    box-shadow: 0px 15px 50px 0px rgba(0, 0, 0, 0.50)
+    max-width: 752px
+    display: flex
+    gap: 18px
+
+
+    &__icon
+        padding-top: 0px
+        display: flex
+        align-items: center
+
+    &__text
+
+    &__bigtext
+        padding-top: 5px
+        font-size: 18px
+        font-weight: 600
+        padding-bottom: 7px
+
+    &__smalltext
+        font-size: 14px
+        font-weight: 500
+
+        
+
+
+
+        

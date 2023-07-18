@@ -5,6 +5,8 @@
     padding-bottom: 130px
 
 
+
+
     +mw(1000)
         flex-direction: column
         justify-content: space-between
@@ -42,9 +44,35 @@
         background: #1E2021
         padding-left: 1px
         z-index: 10
+        width: 670px
+        height: 670px
+
+        +mw(1350)
+            width: 550px
+            height: 550px
+
+        +mw(1200)
+            width: 450px
+            height: 450px
+
+        +mw(1100)
+            width: 350px
+            height: 350px
+
+        +mw(1000)
+            width: 550px
+            height: 550px
+
+        +mw(600)
+            width: 100%
+            height: 100%
+
+        .slick-list
+            height: 100%
 
 
         .slick-track
+            height: 100%
             display: flex
             align-items: center
 
@@ -56,13 +84,21 @@
         max-height: 130px
         z-index: 100
 
+        +mw(700)
+            max-width: 100px
+
     &__slider-main-hit
         position: absolute
-        top: 20px
+        top: -10px
         left: -20px
         max-width: 140px
         max-height: 130px
         z-index: 100
+
+        +mw(700)
+            max-width: 100px
+            left: -15px
+            top: 0
 
     &__slider-arrows
 
@@ -71,13 +107,15 @@
         height: 48px
         border-radius: 50px
         border: 1px solid rgba(255, 255, 255, 0.40)
-        background: #1E2021
-        box-shadow: 0px 15px 20px -10px rgba(0, 0, 0, 0.80)
+        background: #272727
         position: absolute
         z-index: 100
         top: 50%
         cursor: pointer
         transition: .2s
+
+        +mw(750)
+            display: none
         
         &:hover
             background: #303335
@@ -113,8 +151,13 @@
         display: flex !important
         align-items: center
         justify-content: center
+        position: relative
 
         img
+            max-width: 100%
+            max-height: 100%
+
+        video
             max-width: 100%
             max-height: 100%
 
@@ -147,18 +190,39 @@
         transition: .2s
         min-width: 150px
 
+
+
         +mw(1350)
             gap: 7px
 
         +mw(1200)
-            min-width: 100px
+            min-width: 200px
             padding: 9px 10px
+
+        +mw(420)
+            min-width: auto
+            width: 190px
+            padding: 5px 5px
+            white-space: nowrap
+            font-size: 12px
+
+            
+
+            img
+                width: 50px
+                height: 50px
+
+            span
+                font-size: 14px
+
 
         &:hover
             background: #525252
 
     
-
+    &__art
+        +mw(390)
+            font-size: 12px
     &__slider-nav
         height: 80px
         width: 450px
@@ -200,13 +264,18 @@
         height: 80px
         align-items: center
         justify-content: center
+        position: relative
 
         +mw(600)
-            height: 60px
+            max-height: 60px
 
         img
             max-width: 80%
             max-height: 80%
+
+        video
+            max-width: 100%
+            max-height: 100%
 
 
     &__slider-art
@@ -217,6 +286,16 @@
 
         +mw(1200)
             margin-top: -80px
+
+    &__seo
+        padding-bottom: 130px
+        color: #A9A9A9
+        font-size: 16px
+        font-weight: 400
+        line-height: 26px
+
+        +mw(750)
+            padding-bottom: 90px
 
     .construct__panel
         padding-top: 0
@@ -275,7 +354,16 @@
 
 
 .item__add
-    padding-bottom: 100px
+    max-width: 1650px
+    margin: 0 auto
+    padding: 0 0 100px 15px
+
+    &-title
+        font-size: 40px
+        font-weight: 600
+
+        +mw(750)
+            font-size: 32px
 
     &-filters
         display: flex
@@ -284,6 +372,9 @@
         padding-top: 60px
         padding-bottom: 30px
         position: relative
+
+        +mw(750)
+            padding-top: 40px
 
         .item__slider-arrows
             display: flex
@@ -308,7 +399,13 @@
         padding: 15px 30px
         cursor: pointer
         transition: .2s
-        text-transform: uppercase; 
+        text-transform: uppercase
+        height: 48px
+
+        +mw(750)
+            height: 37px
+            padding: 10px 15px
+            font-size: 14px
 
         &:hover
             background: rgba(255, 255, 255, 0.20)
@@ -319,7 +416,8 @@
 
 
     &-items
-        width: 100%
+        width: calc(100% + 25px)
+        margin-left: -25px
 
         .slick-list
             padding-bottom: 20px
@@ -402,4 +500,18 @@
             width: 10px
             height: 10px
 
+.item__add .slick-dots
+    display: none !important
+    +mw(600)
+        display: block !important
+.item__add .slick-dots li button::before
+    opacity: 0
+
         
+.play-btn
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    cursor: pointer
+    transition: .2s

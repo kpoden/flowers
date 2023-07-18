@@ -1,0 +1,785 @@
+<!DOCTYPE html >
+<html lang="ru-RU">
+  <head>
+     <!--metatextblock-->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta property="og:url" content=""/>
+    <meta property="og:title" content=""/>
+    <meta property="og:description" content=""/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content=""/>
+    <link rel="canonical" href=""/>
+    <title>Вбукете</title><!--metatextblock-->
+<!--favicon block-->
+<!--/favicon block-->
+<!--assets block-->
+    <link rel="stylesheet" href="libs/slick.css"/>
+    <link rel="stylesheet" href="libs/slick-theme.css"/>
+    <link rel="stylesheet" href="libs/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="styles/app.css"/><!--/assets block-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="header-top__burger burger burger-abs"><span class="burger__line"> </span><span class="burger__line"> </span><span class="burger__line"> </span></div>
+      <header class="header header-page">
+        <div class="header-top wrapper">
+          <div class="header-top__burger burger burger-rel"><span class="burger__line"> </span><span class="burger__line"> </span><span class="burger__line"> </span></div><a href="/">
+            <svg class="header-top__logo">
+              <use xlink:href="images/sprite.svg#logo"></use>
+            </svg></a>
+          <div class="header-top__findInput desktopBig">
+            <input type="text" name="search" placeholder="Поиск"/>
+            <div class="header-top__findBtn">
+              <svg width="20" height="20">
+                <use xlink:href="images/sprite.svg#find"></use>
+              </svg>
+            </div>
+          </div>
+          <nav class="header-top__nav desktopBig">
+            <ul class="header-top__nav-list">
+              <li class="header-top__nav-item"><a href="/pay.html">Оплата</a></li>
+              <li class="header-top__nav-item"><a href="/delivery.html">Доставка</a></li>
+              <li class="header-top__nav-item"><a href="/contacts.html">Контакты</a></li>
+              <li class="header-top__nav-item"><a href="/bonus.html">Бонусы</a></li>
+            </ul>
+          </nav><a class="header-top__phone desktopBig" href="tel: +73432022106">
+            <svg width="20" height="20">
+              <use xlink:href="images/sprite.svg#phone"></use>
+            </svg><span>+7 (343) 20-22-106</span></a>
+          <button class="header-top__callback btn desktopBig" type="button" data-modal="callback">Заказать звонок</button>
+          <div class="header-top__personal"><a class="header-top__personal-item callback-mob"><img src="images/header/phone.svg"/></a><a class="header-top__personal-item" href="basket.html">
+              <svg width="20" height="20">
+                <use xlink:href="images/sprite.svg#shop"></use>
+              </svg></a><a class="header-top__personal-item" data-modal="auth">
+              <svg width="20" height="20">
+                <use xlink:href="images/sprite.svg#pers"></use>
+              </svg></a></div>
+        </div>
+      </header>
+      <main class="wrapper">
+        <div class="breadcrumbs"><a class="breadcrumbs__item" href="/">Главная</a><span class="breadcrumbs__separator">></span><a class="breadcrumbs__item">Доставка</a>
+          <h1 class="section-title">Доставка</h1>
+          <div class="delivery">
+            <div class="delivery__columns">
+              <div class="delivery__column">
+                <p class="delivery__column-title">Стоимость доставки с 09:00 до 22:00 не в отдалённые районы:</p>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Сумма заказа до 1 500 ₽</div>
+                  <div class="delivery__line-price inp">250 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Сумма заказа до 1 500 ₽</div>
+                  <div class="delivery__line-price inp">0 ₽</div>
+                </div>
+              </div>
+              <div class="delivery__column">
+                <p class="delivery__column-title">Стоимость доставки с 09:00 до 22:00 в отдаленные районы:</p>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Сумма заказа до 2 500 ₽</div>
+                  <div class="delivery__line-price inp">350 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Сумма заказа от 2 500 ₽</div>
+                  <div class="delivery__line-price inp">0 ₽</div>
+                </div>
+              </div>
+              <div class="delivery__column">
+                <p class="delivery__column-title">Стоимость доставки с 22:00 до 09:00 по Екатеринбургу (кроме пригорода):</p>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Сумма заказа до 5 000 ₽</div>
+                  <div class="delivery__line-price inp">300 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Сумма заказа от 5 000 ₽</div>
+                  <div class="delivery__line-price inp">0 ₽</div>
+                </div>
+              </div>
+            </div>
+            <p class="delivery__text">* Условия бесплатной доставки на некоторые акционные позиции не распространяются, подробности уточняйте у консультантов. В пригороды доставка оплачивается в индивидуальном порядке, стоимость и условия можно узнать у менеджеров нашей компании. </p>
+            <p class="delivery__text">Доставка ночным курьером осуществляется с 22:00 вечера, до 9:00 утра. В этот временной промежуток все доставки независимо от суммы заказа осуществляются только по предварительной оплате. Доставка в пригород оплачивается согласно таблице, приведенной ниже, если Вы не нашли нужный населенный пункт, то стоимость можно уточнить у наших администраторов 8-909-00-22-106. </p>
+            <p class="delivery__text">Условия доставки воздушных шаров, цветочных композиций крупногабаритных размеров и некоторых акционных предложений отличаются от стандартных, все подробности Вы всегда можете выяснить у администраторов нашей компании по телефону 8-909-00-22-106 или непосредственно в магазинах. Например, доставка на минимальные акционные позиции, шары (от 30 штук) — всегда платная, стоимость доставки не в отдаленные районы - 250 рублей (в период с 9-22:00), в отдаленные районы — 350 рублей (в период с 9-22:00). </p>
+            <p class="delivery__text">* Под отдалёнными районами понимаются: Химмаш, Светлый, Нижнеисетский, Сосновый бор, Птицефабрика, Компрессорный, Вторчермет (частично), Елизавет, Широкая речка, Конный полуостров, 7 ключей, Палникс, Галактика, Образцово, Мичуринский, Керамика, Южная Подстанция, Солнечный, Малый Исток, Лечебный, Шарташ.</p>
+            <p class="delivery__text">** Под пригородами понимается: Большой Исток**, Исток**, Арамиль, Верхняя Пышма**, оз. Шарташ**, Новоберёзовский**, Берёзовский**, Среднеуральск**, Медный**, Северка**, Первоуральск**. </p>
+            <p class="delivery__text">** По предоплате.</p>
+            <div class="delivery__hr"></div>
+            <div class="delivery__title">Доставка по городам спутникам:</div>
+            <div class="delivery__cities delivery__columns">
+              <div class="delivery__column">
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Арамиль</div>
+                  <div class="delivery__line-price inp">650 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Оз. Балтым</div>
+                  <div class="delivery__line-price inp">650 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Берёзовский</div>
+                  <div class="delivery__line-price inp">500 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Белоярский</div>
+                  <div class="delivery__line-price inp">1 300 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Б. Седельниково</div>
+                  <div class="delivery__line-price inp">850 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Бобровский</div>
+                  <div class="delivery__line-price inp">850 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Большой Исток</div>
+                  <div class="delivery__line-price inp">650 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Верхнее Дуброво</div>
+                  <div class="delivery__line-price inp">850 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Верхняя Пышма</div>
+                  <div class="delivery__line-price inp">500 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Верхняя Сысерть</div>
+                  <div class="delivery__line-price inp">1 600 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Горный Щит</div>
+                  <div class="delivery__line-price inp">650 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Двуреченск</div>
+                  <div class="delivery__line-price inp">1 500 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Дегтярск</div>
+                  <div class="delivery__line-price inp">1 600 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Заречный</div>
+                  <div class="delivery__line-price inp">1 600 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Зелёный Бор</div>
+                  <div class="delivery__line-price inp">650 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Изоплит</div>
+                  <div class="delivery__line-price inp">450 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Исток</div>
+                  <div class="delivery__line-price inp">650 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Карасьеозёрский</div>
+                  <div class="delivery__line-price inp">450 ₽</div>
+                </div>
+              </div>
+              <div class="delivery__column">
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Карасьеозёрский 2</div>
+                  <div class="delivery__line-price inp">450 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Кашино</div>
+                  <div class="delivery__line-price inp">1 200 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Кедровка</div>
+                  <div class="delivery__line-price inp">650 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Коптяки</div>
+                  <div class="delivery__line-price inp">650 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Косулино</div>
+                  <div class="delivery__line-price inp">950 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Курганово</div>
+                  <div class="delivery__line-price inp">850 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Малый Исток</div>
+                  <div class="delivery__line-price inp">450 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Медный</div>
+                  <div class="delivery__line-price inp">450 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Монетный</div>
+                  <div class="delivery__line-price inp">1 200 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Новоуральск</div>
+                  <div class="delivery__line-price inp">2 500 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Октябрьский</div>
+                  <div class="delivery__line-price inp">950 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Палкинский торфяник</div>
+                  <div class="delivery__line-price inp">450 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Патруши</div>
+                  <div class="delivery__line-price inp">650 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Первоуральск</div>
+                  <div class="delivery__line-price inp">1 200 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Ул.Перспективная</div>
+                  <div class="delivery__line-price inp">450 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Полеводство</div>
+                  <div class="delivery__line-price inp">650 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Полевской</div>
+                  <div class="delivery__line-price inp">1 500 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Прохладный</div>
+                  <div class="delivery__line-price inp">850 ₽</div>
+                </div>
+              </div>
+              <div class="delivery__column">
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Растущий</div>
+                  <div class="delivery__line-price inp">850 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Ревда</div>
+                  <div class="delivery__line-price inp">1 200 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Решёты</div>
+                  <div class="delivery__line-price inp">750 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Рудный</div>
+                  <div class="delivery__line-price inp">450 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Садовый</div>
+                  <div class="delivery__line-price inp">750 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Санаторный</div>
+                  <div class="delivery__line-price inp">650 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Северка</div>
+                  <div class="delivery__line-price inp">750 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Среднеуральск</div>
+                  <div class="delivery__line-price inp">650 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Становая</div>
+                  <div class="delivery__line-price inp">750 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Старопышминск</div>
+                  <div class="delivery__line-price inp">750 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Сысерть</div>
+                  <div class="delivery__line-price inp">1 200 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Чусовское озеро</div>
+                  <div class="delivery__line-price inp">650 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Шабровский</div>
+                  <div class="delivery__line-price inp">850 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Шишкино</div>
+                  <div class="delivery__line-price inp">750 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Шувакиш</div>
+                  <div class="delivery__line-price inp">500 ₽</div>
+                </div>
+                <div class="delivery__line">
+                  <div class="delivery__line-city inp">Кольцово</div>
+                  <div class="delivery__line-price inp">450 ₽</div>
+                </div>
+              </div>
+            </div>
+            <p class="delivery__text">В праздничные дни все доставки платные, тарифы уточняйте у менеджеров компании. Временной интервал с 1 часа, может быть увеличен до 3 часов. Для осуществления доставки, в праздничные дни, сумма заказа должна быть не менее 2000 руб., без учета суммы доставки. (Праздничными днями являются: Новый Год (период с 28 декабря по 01 января), День Святого Валентина(период с 13 по 14 февраля), 8 Марта ( период с 05 по 09 марта), 1 сентября (31 августа-1 сентября), день Матери (последние сб и вс ноября).</p>
+            <p class="delivery__text">Нашей компанией ежедневно круглосуточно осуществляется доставка цветов и подарков по Екатеринбургу и пригородам в радиусе 50 км. Чтобы своевременно получить свой заказ, Вы должны точно указывать временной интервал, который составляет 1 час, т.е., например, Вы выбираете время с 15-16 часов — в течение этого часа, получателю/заказчику необходимо находиться по указанному адресу, чтобы принять заказ. Время ожидания курьера на адресе не более 15 минут. Курьер может подъехать в любое время в течение оговоренного Вами часа. В противном случае, если в указанное время по указанному адресу не будет получателя/заказчика, то курьер будет вынужден забрать заказ обратно в салон. Далее судьбу заказа решает заказчик, необходимо либо оплатить повторную доставку, либо Вы можете забрать заказ самостоятельно, с адреса салона, в который его отвезли. Адрес, куда именно был привезен не доставленный заказ и всю информацию Вы можете уточнить по нашему круглосуточному номеру 8-909-00-22-106. При оплате повторной доставки, время ее осуществления обсуждается вместе с администратором, в зависимости от маршрутного листа курьера. Обратите Ваше внимание, что мы не звоним предварительно получателю перед доставкой, чтобы не портить сюрприз, исключение составляют лишь случаи, когда заказчик сам просит осуществить предварительный звонок. Наш цветок проходит осмотр менеджером по качеству, прежде чем попадает на доставку, тем не менее, обязательно проводите самостоятельный осмотр цветка при принятии заказа, если возникают какие-либо вопросы, немедленно сообщите о них администратору/курьеру по нашему телефону 8-909-00-22-106. </p>
+            <p class="delivery__text">К каждому заказу курьеру выдаётся фирменный бланк о вручении. В данном бланке получатель проставляет время, когда был доставлен заказ, проверяет качество и расписывается в получении. </p>
+            <p class="delivery__text">Доставка цветов по Екатеринбургу возможна при заказе на сумму не менее 500 рублей, без учета суммы доставки. Если сумма заказа не превышает 500 рублей, то в этом случае Вы сможете забрать букет только самовывозом из наших магазинов.</p>
+            <p class="delivery__text">Цветы являются универсальным подарком. Их дарят на любые праздники и торжества, а также просто как знак внимания, уважения и признательности. С помощью роскошного букета можно завоевать сердце возлюбленной, вернуть расположение к себе, поблагодарить человека и проявить свое почтение. </p>
+            <p class="delivery__text">Наш магазин доставки цветов Любимый-цветочный.рф помогает своим клиентам реализовать свои самые сокровенные цели. У нас можно оформить заказ любых цветов с доставкой по Екатеринбургу. Кроме того, мы бережем время своих покупателей и предлагаем выбрать цветы через интернет магазин. Это очень удобно, так как позволяет купить свежие цветы с доставкой по городу. </p>
+            <p class="delivery__text">В нашем магазине доставки цветов представлен широчайший ассортимент разнообразных букетов и композиций. Некоторые из них величественны и помпезны, другие скромны и нежны. В самый торжественный день своей жизни не потребуется суетиться и искать цветы, служба доставки цветов Любимый-цветочный.рф привезет Вам ее по указанному адресу. </p>
+            <p class="delivery__text">Оформить заказ цветов с доставкой по Екатеринбургу очень просто, достаточно позвонить по телефону 8-909-00-22-106. Обговорить заявку и все нюансы с нашим менеджером. </p>
+            <p class="delivery__text">Также заказ можно оформить по нашим адресам:</p>
+            <div class="delivery__addressLines">
+              <div class="delivery__addressLine">
+                <svg width="20" height="20">
+                  <use xlink:href="images/sprite.svg#mapDot"></use>
+                </svg>
+                <p>Репина, 99 — круглосуточный гипермаркет цветов</p>
+              </div>
+              <div class="delivery__addressLine">
+                <svg width="20" height="20">
+                  <use xlink:href="images/sprite.svg#mapDot"></use>
+                </svg>
+                <p>8 Марта, 57 — круглосуточный салон</p>
+              </div>
+              <div class="delivery__addressLine">
+                <svg width="20" height="20">
+                  <use xlink:href="images/sprite.svg#mapDot"></use>
+                </svg>
+                <p>Машиностроителей, 10 — салон цветов (9:00 - 21:00)</p>
+              </div>
+              <div class="delivery__addressLine">
+                <svg width="20" height="20">
+                  <use xlink:href="images/sprite.svg#mapDot"></use>
+                </svg>
+                <p>Вильгельма де Геннина, 40 — салон цветов (8:00 - 21:00)</p>
+              </div>
+            </div>
+            <p class="delivery__text">Богатый ассортимент позволит всем желающим купить цветы с доставкой оперативно и выгодно. Красивая композиция окажется по указанному адресу в назначенное время, потому что компания Любимый-цветочный.рф работает эффективно и без перебоев. Гибкая политика ценообразования приятно удивит наших клиентов теплыми ценниками — у нас можно дешево заказать доставку цветов.</p>
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="footer__wrapper wrapper">
+          <div class="footer__top"><a href="/">
+              <svg class="header-top__logo">
+                <use xlink:href="images/sprite.svg#logo"></use>
+              </svg></a>
+            <div class="footer__mob-info">
+              <div class="footer__mob-info-contacts"><a class="footer__contact footer__phone" href="tel:+79090022106">+7 (909) 00-22-106</a><a class="footer__contact footer__phone" href="tel:+73432022106">+7 (343) 20-22-106</a><a class="footer__contact footer__address" href="https://yandex.ru/maps/org/vbukete_rf/1626904109/?ll=60.543764%2C56.821410&amp;z=17" target="_blank">620043, г. Екатеринбург. ул. Репина 99</a></div>
+              <div class="footer__mob-info-messangers"> <a href="viber://chat?number=+79090022106" target="_blank">
+                  <svg width="30" height="30">
+                    <use xlink:href="images/sprite.svg#viber"></use>
+                  </svg></a><a href="https://wa.me/79090022106" target="_blank">
+                  <svg width="30" height="30">
+                    <use xlink:href="images/sprite.svg#wa"></use>
+                  </svg></a></div>
+            </div>
+          </div>
+          <div class="footer__links-block">
+            <ul class="footer__links-col">
+              <li class="footer__link"> <a href="pay.html">Оплата</a></li>
+              <li class="footer__link"> <a href="delivery.html">Доставка</a></li>
+              <li class="footer__link"> <a href="contacts.html">Контакты</a></li>
+            </ul>
+            <ul class="footer__links-col">
+              <li class="footer__link"> <a href="bonus.html">Скидки</a></li>
+              <li class="footer__link"> <a href="bonus.html">Бонусы</a></li>
+            </ul>
+            <ul class="footer__links-col">
+              <li class="footer__link"> <a href="rules.html">Правила компании</a></li>
+              <li class="footer__link"> <a href="policy.html">Политика конфиденциальности</a></li>
+            </ul>
+            <div class="footer__pay-mob"><img src="images/footer/visa.svg"/><img src="images/footer/ms.svg"/><img src="images/footer/sber.svg"/></div>
+          </div>
+          <div class="footer__contacts"><a class="footer__contact footer__phone" href="tel:+79090022106">+7 (909) 00-22-106</a><a class="footer__contact footer__phone" href="tel:+73432022106">+7 (343) 20-22-106</a><a class="footer__contact footer__address" href="https://yandex.ru/maps/org/vbukete_rf/1626904109/?ll=60.543764%2C56.821410&amp;z=17" target="_blank">620043, г. Екатеринбург. ул. Репина 99</a>
+            <div class="footer__icons">
+              <div class="footer__pay"><img src="images/footer/visa.svg"/><img src="images/footer/ms.svg"/><img src="images/footer/sber.svg"/></div>
+              <div class="footer__messenger"><a href="viber://chat?number=+79090022106" target="_blank">
+                  <svg width="30" height="30">
+                    <use xlink:href="images/sprite.svg#viber"></use>
+                  </svg></a><a href="https://wa.me/79090022106" target="_blank">
+                  <svg width="30" height="30">
+                    <use xlink:href="images/sprite.svg#wa"></use>
+                  </svg></a></div>
+            </div>
+          </div>
+        </div>
+        <p class="footer__copyright">© 2009 - 2023г. «Любимый-цветочный.рф»</p>
+      </footer>
+      <div class="float__footer"><a class="float__footer-col" href="/">
+          <svg width="16" height="16">
+            <use xlink:href="images/sprite.svg#home"></use>
+          </svg><span>Главная</span></a><a class="float__footer-col" href="mono.html">
+          <svg width="16" height="16">
+            <use xlink:href="images/sprite.svg#bouqet"></use>
+          </svg><span>Собрать букет</span></a><a class="float__footer-col" href="https://wa.me/79090022106" target="_blank"><img src="images/footer/wa.svg"/><span>Написать</span></a></div>
+      <div class="linksHidden"><a data-modal="regThanks"></a><a data-modal="callbackThanks"></a></div>
+      <div class="modal">
+        <div class="modal__content">
+          <div class="modal__close-cross modal__close"></div>
+          <div class="modal__content-inner"></div>
+        </div>
+      </div>
+      <div class="modal__templates hidden">
+        <div class="delivery"><img src="images/modal/1.png"/>
+          <h2 class="modal__header">Бесплатная доставка от 1&nbsp;500₽</h2>
+          <p class="modal__text">Бесплатная доставка осуществляется только по городу. <br> Подробности уточняйте по телефону <a href="tel:+73432022106">+7 (343) 20-22-106</a></p><a class="modal__btn btn modal__close">Вернуться к заказу</a>
+        </div>
+        <div class="cashback"><img src="images/modal/2.png"/>
+          <h2 class="modal__header">Вернём 10% на счёт</h2>
+          <p class="modal__text">10% от суммы каждого заказа на ваш счёт в личный кабинет</p><a class="modal__btn btn">подробнее о бонусной программе</a>
+        </div>
+        <div class="photoBouqet"><img src="images/modal/3.png"/>
+          <h2 class="modal__header">Фото букета</h2>
+          <p class="modal__text">Перед доставкой мы сделаем и отправим вам фото готового букета</p><a class="modal__btn btn">
+            <svg width="20" height="20">
+              <use xlink:href="images/sprite.svg#shop"></use>
+            </svg><span>добавить к заказу</span></a>
+        </div>
+        <div class="feeding"><img src="images/modal/4.png"/>
+          <h2 class="modal__header">Подкормка <br> для цветов</h2>
+          <p class="modal__text">Бесплатно при покупке букета</p><a class="modal__btn btn">
+            <svg width="20" height="20">
+              <use xlink:href="images/sprite.svg#shop"></use>
+            </svg><span>добавить к заказу</span></a>
+        </div>
+        <div class="card"><img class="cardSmall" src="images/modal/5.png"/><img class="cardBig hidden" src="images/modal/6.png"/>
+          <h2 class="modal__header">Открытка</h2>
+          <div class="modal__radios">
+            <label class="modal__radio">
+              <input type="radio" name="lenght" data-cardsize="small"/><span class="modal__dot dot"></span><span class="modal__name">Открытка букетная (бесплатно)</span>
+            </label>
+            <label class="modal__radio">
+              <input type="radio" name="lenght" data-cardsize="big" data-price="70"/><span class="modal__dot dot"></span><span class="modal__name">Открытка большая / +70 ₽</span>
+            </label>
+          </div>
+          <div class="modal__textareaWrap textAreaBig">
+            <p>Текст пожелания (не обязательно)</p>
+            <textarea class="modal__textarea textAreaSmall" noresize="noresize" name="cardText" placeholder="Введите текст пожелания"></textarea>
+            <textarea class="modal__textarea textAreaBig hidden" noresize="noresize" name="cardText" placeholder="Введите текст пожелания"></textarea><span class="modal__counter"></span>
+          </div><a class="modal__btn btn">
+            <svg width="20" height="20">
+              <use xlink:href="images/sprite.svg#shop"></use>
+            </svg><span>добавить к заказу</span></a>
+        </div>
+        <div class="vase">
+          <h2 class="modal__header">Добавить вазу</h2>
+          <div class="item__slider-arrows">
+            <div class="item__slider-arrow arr-left"></div>
+            <div class="item__slider-arrow arr-right"></div>
+          </div>
+          <div class="item__add-items">
+            <div class="item__add-item" data-type="Популярное">
+              <div class="item__add-item-top">
+                <div class="item__add-item-img"><img src="images/item/add/1.png"/></div>
+                <div class="item__add-item-info">
+                  <div class="item__add-item-name"> Конфеты Raffaello Конфеты Raffaello</div>
+                  <div class="item__add-item-quant">300 г</div>
+                  <div class="item__add-item-price">599 ₽</div>
+                </div>
+              </div><a class="item__add-item-btn btn">
+                <svg width="20" height="20">
+                  <use xlink:href="images/sprite.svg#shop"></use>
+                </svg><span>В корзину</span></a>
+            </div>
+            <div class="item__add-item" data-type="Игрушка">
+              <div class="item__add-item-top">
+                <div class="item__add-item-img"><img src="images/item/add/2.png"/></div>
+                <div class="item__add-item-info">
+                  <div class="item__add-item-name">Медведь Плюша</div>
+                  <div class="item__add-item-quant">90 см</div>
+                  <div class="item__add-item-price">2 500 ₽</div>
+                </div>
+              </div><a class="item__add-item-btn btn">
+                <svg width="20" height="20">
+                  <use xlink:href="images/sprite.svg#shop"></use>
+                </svg><span>В корзину</span></a>
+            </div>
+            <div class="item__add-item" data-type="Шарик">
+              <div class="item__add-item-top">
+                <div class="item__add-item-img"><img src="images/item/add/3.png"/></div>
+                <div class="item__add-item-info">
+                  <div class="item__add-item-name">Фольгированное "Сердце"</div>
+                  <div class="item__add-item-quant"> </div>
+                  <div class="item__add-item-price">1 750 ₽</div>
+                </div>
+              </div><a class="item__add-item-btn btn">
+                <svg width="20" height="20">
+                  <use xlink:href="images/sprite.svg#shop"></use>
+                </svg><span>В корзину</span></a>
+            </div>
+            <div class="item__add-item" data-type="Ваза">
+              <div class="item__add-item-top">
+                <div class="item__add-item-img"><img src="images/item/add/4.png"/></div>
+                <div class="item__add-item-info">
+                  <div class="item__add-item-name">Ваза прозрачная</div>
+                  <div class="item__add-item-quant"> </div>
+                  <div class="item__add-item-price">550 ₽</div>
+                </div>
+              </div><a class="item__add-item-btn btn">
+                <svg width="20" height="20">
+                  <use xlink:href="images/sprite.svg#shop"></use>
+                </svg><span>В корзину</span></a>
+            </div>
+            <div class="item__add-item" data-type="Конфеты">
+              <div class="item__add-item-top">
+                <div class="item__add-item-img"><img src="images/item/add/3.png"/></div>
+                <div class="item__add-item-info">
+                  <div class="item__add-item-name">Фольгированное "Сердце"</div>
+                  <div class="item__add-item-quant"> </div>
+                  <div class="item__add-item-price">1 750 ₽</div>
+                </div>
+              </div><a class="item__add-item-btn btn">
+                <svg width="20" height="20">
+                  <use xlink:href="images/sprite.svg#shop"></use>
+                </svg><span>В корзину</span></a>
+            </div>
+          </div>
+        </div>
+        <div class="topper">
+          <h2 class="modal__header">Добавить топпер</h2>
+          <div class="item__slider-arrows">
+            <div class="item__slider-arrow arr-left"></div>
+            <div class="item__slider-arrow arr-right"></div>
+          </div>
+          <div class="item__add-items">
+            <div class="item__add-item" data-type="Популярное">
+              <div class="item__add-item-top">
+                <div class="item__add-item-img"><img src="images/item/add/1.png"/></div>
+                <div class="item__add-item-info">
+                  <div class="item__add-item-name"> Конфеты Raffaello Конфеты Raffaello</div>
+                  <div class="item__add-item-quant">300 г</div>
+                  <div class="item__add-item-price">599 ₽</div>
+                </div>
+              </div><a class="item__add-item-btn btn">
+                <svg width="20" height="20">
+                  <use xlink:href="images/sprite.svg#shop"></use>
+                </svg><span>В корзину</span></a>
+            </div>
+            <div class="item__add-item" data-type="Игрушка">
+              <div class="item__add-item-top">
+                <div class="item__add-item-img"><img src="images/item/add/2.png"/></div>
+                <div class="item__add-item-info">
+                  <div class="item__add-item-name">Медведь Плюша</div>
+                  <div class="item__add-item-quant">90 см</div>
+                  <div class="item__add-item-price">2 500 ₽</div>
+                </div>
+              </div><a class="item__add-item-btn btn">
+                <svg width="20" height="20">
+                  <use xlink:href="images/sprite.svg#shop"></use>
+                </svg><span>В корзину</span></a>
+            </div>
+            <div class="item__add-item" data-type="Шарик">
+              <div class="item__add-item-top">
+                <div class="item__add-item-img"><img src="images/item/add/3.png"/></div>
+                <div class="item__add-item-info">
+                  <div class="item__add-item-name">Фольгированное "Сердце"</div>
+                  <div class="item__add-item-quant"> </div>
+                  <div class="item__add-item-price">1 750 ₽</div>
+                </div>
+              </div><a class="item__add-item-btn btn">
+                <svg width="20" height="20">
+                  <use xlink:href="images/sprite.svg#shop"></use>
+                </svg><span>В корзину</span></a>
+            </div>
+            <div class="item__add-item" data-type="Ваза">
+              <div class="item__add-item-top">
+                <div class="item__add-item-img"><img src="images/item/add/4.png"/></div>
+                <div class="item__add-item-info">
+                  <div class="item__add-item-name">Ваза прозрачная</div>
+                  <div class="item__add-item-quant"> </div>
+                  <div class="item__add-item-price">550 ₽</div>
+                </div>
+              </div><a class="item__add-item-btn btn">
+                <svg width="20" height="20">
+                  <use xlink:href="images/sprite.svg#shop"></use>
+                </svg><span>В корзину</span></a>
+            </div>
+            <div class="item__add-item" data-type="Конфеты">
+              <div class="item__add-item-top">
+                <div class="item__add-item-img"><img src="images/item/add/3.png"/></div>
+                <div class="item__add-item-info">
+                  <div class="item__add-item-name">Фольгированное "Сердце"</div>
+                  <div class="item__add-item-quant"> </div>
+                  <div class="item__add-item-price">1 750 ₽</div>
+                </div>
+              </div><a class="item__add-item-btn btn">
+                <svg width="20" height="20">
+                  <use xlink:href="images/sprite.svg#shop"></use>
+                </svg><span>В корзину</span></a>
+            </div>
+          </div>
+        </div>
+        <div class="addedItem"><img class="addedItemImg" src=""/>
+          <h2 class="modal__header">Товар добавлен <br> в корзину</h2><a class="modal__btn btn addedItemBtn" href="/cart">
+            <svg width="20" height="20">
+              <use xlink:href="images/sprite.svg#shop"></use>
+            </svg><span>Перейти в корзину</span></a><a class="modal__btn btn modal__close addedItemBtn btn--white">
+            <svg width="20" height="20">
+              <use xlink:href="images/sprite.svg#shop2"></use>
+            </svg><span>Продолжить покупки</span></a>
+        </div>
+        <div class="auth">
+          <div class="auth__modal">
+            <h2 class="modal__header">Авторизация</h2>
+            <form class="modal__form" id="auth-form" method="post">
+              <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Логин</span>
+                <input class="modal__input inp" type="text" placeholder="Логин"/>
+              </label>
+              <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Пароль</span>
+                <input class="modal__input inp" type="text" placeholder="Пароль"/>
+              </label>
+              <input class="modal__submit modal__btn btn" type="submit" value="Войти"/>
+              <p class="modal__smalltext">
+                Нажимая кнопку “Войти”, Вы соглашаетесь на обработку персональных
+                данных, получение рассылок, а так же с <a href="policy.html">политикой конфиденциальности</a>
+                
+                
+              </p><a class="modal__link" href="restore.html">Забыли пароль?</a><a class="modal__link" data-modal="reg">Зарегистрироваться</a>
+            </form>
+          </div>
+        </div>
+        <div class="reg">
+          <div class="reg__modal">
+            <h2 class="modal__header">Регистрация</h2>
+            <form id="reg-form">
+              <div class="reg__line-one">
+                <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Имя</span>
+                  <input class="modal__input inp" type="text" placeholder="Введите имя"/>
+                </label>
+                <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Фамилия</span>
+                  <input class="modal__input inp" type="text" placeholder="Введите фамилию"/>
+                </label>
+              </div>
+              <div class="reg__line">
+                <div class="reg__col">
+                  <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Логин <span class="red">*</span></span>
+                    <input class="modal__input inp" type="text" placeholder="Введите логин (min 3 символа) *"/>
+                  </label>
+                  <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">E-mail</span>
+                    <input class="modal__input inp" type="text" placeholder="Введите e-mail"/>
+                  </label>
+                </div>
+                <div class="reg__col">
+                  <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Пароль <span class="red">*</span></span>
+                    <input class="modal__input inp" type="password" placeholder="Введите пароль"/>
+                    <div class="eyes">
+                      <svg class="eye" width="22" height="22">
+                        <use xlink:href="images/sprite.svg#eye"></use>
+                      </svg>
+                      <svg class="eye-y" width="22" height="22">
+                        <use xlink:href="images/sprite.svg#eye-y"></use>
+                      </svg>
+                    </div>
+                  </label>
+                  <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Подтвердите пароль <span class="red">*</span></span>
+                    <input class="modal__input inp" type="password" placeholder="Подтвердите пароль"/>
+                    <div class="eyes">
+                      <svg class="eye" width="22" height="22">
+                        <use xlink:href="images/sprite.svg#eye"></use>
+                      </svg>
+                      <svg class="eye-y" width="22" height="22">
+                        <use xlink:href="images/sprite.svg#eye-y"></use>
+                      </svg>
+                    </div>
+                  </label>
+                </div>
+              </div>
+              <div class="reg__line-one">
+                <label class="modal__input-wrap input-wrap">
+                  <input class="modal__input inp" type="text" placeholder="Введите имя"/>
+                </label>
+                <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Слово на картинке <span class="red">*</span></span>
+                  <input class="modal__input inp" type="text" placeholder="Введите слово на картинке *"/>
+                </label>
+              </div>
+              <input class="reg__submit modal__submit modal__btn btn" type="submit" value="зарегистрироваться"/>
+              <p class="modal__smalltext">
+                Нажимая кнопку “Зарегистрироваться”, Вы соглашаетесь на обработку персональных
+                данных, получение рассылок, а так же с <a href="policy.html">политикой конфиденциальности</a>
+                
+                
+              </p><a class="modal__link" data-modal="auth">Уже зарегистрированы? Войти</a>
+            </form>
+          </div>
+        </div>
+        <div class="regThanks">
+          <svg width="170" height="180">
+            <use xlink:href="images/sprite.svg#plane"></use>
+          </svg>
+          <h2 class="modal__header">Благодарим <br> за регистрацию</h2>
+          <p class="modal__text">Вы зарегистрированы и успешно авторизовались</p><a class="modal__btn btn" href="/"><span>На главную</span></a><a class="modal__link" href="/lk.html">В личный кабинет</a>
+        </div>
+        <div class="callbackThanks">
+          <svg width="170" height="180">
+            <use xlink:href="images/sprite.svg#plane"></use>
+          </svg>
+          <h2 class="modal__header">Спасибо!</h2>
+          <p class="modal__text">Менеджер свяжется с Вами в течение 15 минут</p><a class="modal__btn btn" href="/"><span>На главную</span></a>
+        </div>
+        <div class="callback">
+          <div class="callback__modal">
+            <h2 class="modal__header">Заказать звонок</h2>
+            <p class="modal__text">Оставьте свои контакты и мы свяжемся с вами в течение 15 минут</p>
+            <form class="modal__form" id="callback-form" method="post">
+              <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Ваше имя</span>
+                <input class="modal__input inp" type="text" placeholder="Введите имя"/>
+              </label>
+              <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Телефон <span class="red">*</span></span>
+                <input class="modal__input inp" type="text" placeholder="Введите телефон *"/>
+              </label>
+              <input class="modal__submit modal__btn btn" type="submit" value="Перезвоните мне"/>
+              <p class="modal__smalltext">
+                Нажимая кнопку “Перезвоните мне”, Вы соглашаетесь на обработку персональных
+                данных, получение рассылок, а так же с <a href="policy.html">политикой конфиденциальности</a>
+                
+                
+              </p>
+            </form>
+          </div>
+        </div>
+        <div class="instant">
+          <div class="instant__modal">
+            <h2 class="modal__header">Быстрый заказ</h2>
+            <p class="modal__text">Пожалуйста, укажите Ваши имя и телефон. И с Вами свяжется наш менеджер. Спасибо!</p>
+            <form class="modal__form" id="instant-form" method="post">
+              <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Имя <span class="red">*</span></span>
+                <input class="modal__input inp" type="text" placeholder="Введите имя *"/>
+              </label>
+              <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Телефон <span class="red">*</span></span>
+                <input class="modal__input inp" type="text" placeholder="Введите телефон *"/>
+              </label>
+              <input class="modal__submit modal__btn btn" type="submit" value="Оформить заказ"/>
+              <p class="modal__smalltext">
+                Нажимая кнопку “Оформить заказ”, Вы соглашаетесь на обработку персональных
+                данных, получение рассылок, а так же с <a href="policy.html">политикой конфиденциальности</a>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="mob-wrap">
+        <div class="overlay"></div>
+        <div class="mob-menu">
+          <div class="header-top__findInput">
+            <input type="text" name="search" placeholder="Поиск"/>
+            <div class="header-top__findBtn">
+              <svg width="20" height="20">
+                <use xlink:href="images/sprite.svg#find"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="mob-menu__links"><a class="mob-menu__link" href="pay.html">Оплата</a><a class="mob-menu__link" href="delivery.html">Доставка</a><a class="mob-menu__link" href="contacts.html">Контакты</a><a class="mob-menu__link" href="bonus.html">Бонусы</a></div><a class="header-top__phone" href="tel: +73432022106"><img src="images/header/phone.svg"/><span>+7 (343) 20-22-106</span></a><span class="mob-menu__callback btn" data-modal="callback">Заказать звонок</span>
+        </div>
+      </div>
+      <script src="libs/jquery.min.js"></script>
+      <script src="libs/slick.min.js"></script>
+      <script src="libs/swiper-bundle.min.js"></script>
+      <script src="scripts/main.js"></script>
+    </div>
+  </body>
+</html>

@@ -4,6 +4,23 @@
     max-height: 1200px
     position: relative
 
+    &__buttons
+        display: none
+        flex-direction: column
+        align-items: center
+        gap: 15px
+        padding: 40px 15px
+
+        .header-main__btn
+            width: 293px
+
+        +mw(1150)
+            display: flex
+
+        +mw(750)
+            padding-top: 40px
+
+
     &__bg
         position: absolute
         top: 0
@@ -14,29 +31,45 @@
         z-index: -1
         opacity: .5
 
+    &__bgVideo
+        width: 100%
+        height: 100%
+        object-fit: cover
+        position: absolute
+        top: 0
+        left: 0
+        z-index: -1
+
     &-top
         display: flex
         justify-content: space-between
         align-items: center
-        padding-top: 15px
+        padding-top: 23px
+        padding-bottom: 23px
 
-        +mw(750)
+        +mw(1150)
             padding-top: 10px
+            padding-bottom: 10px
 
         &__logo
+            width: 200px
+            height: 27px
 
-            +mw(1350)
-                height: 70px
-                padding-bottom: 0
+            +mw(1150)
+                width: 150px
+                height: 21px
 
-            +mw(750)
-                height: 43px
-                
 
         &__findInput
             display: flex
             align-items: center
             position: relative
+            margin-left: 30px
+
+            +mw(1490)
+                margin-left: 10px
+
+            
 
             input
                 border-radius: 50px
@@ -59,6 +92,7 @@
             cursor: pointer
             height: 100%
             width: 30px
+            
 
             svg
                 position: absolute
@@ -77,6 +111,12 @@
 
         &__nav
             width: 30%
+            max-width: 345px
+            margin-right: auto
+            padding-left: 40px
+
+            +mw(1490)
+                padding-left: 10px
 
 
 
@@ -85,6 +125,7 @@
             align-items: center
             justify-content: space-between
             width: 100%
+            gap: 30px
 
             
         &__nav-item
@@ -107,7 +148,14 @@
                 font-weight: 600
                 line-height: normal
 
-            &__callback
+        &__callback
+            margin-left: 50px
+            width: 192px
+            margin-right: 20px
+
+            +mw(1490)
+                margin-right: 10px
+                margin-left: 10px
 
         &__personal
             display: flex
@@ -137,7 +185,7 @@
                 border-color: var(--c-link--a)
 
 
-            svg
+            svg, img
                 position: absolute
                 top: 50%
                 left: 50%
@@ -175,10 +223,40 @@
             font-size: 16px
             width: 257px
             height: 60px
+            color: #272727
+            margin-right: 20px
+            border-color: transparent !important
+
+            &:hover
+                color: #272727
 
 .header-page
     min-height: 0
     height: auto
     background: #272727;
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.60);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.60)
+
+    +mw(1150)
+        position: fixed
+        width: 100%
+        top: 0
+        z-index: 100
+
+
+
+.headerMob
+    display: none !important
+
+    +mw(1150)
+        display: block !important
+        position: fixed
+        width: 100%
+        top: 0
+        z-index: 200
+
+.callback-mob
+    display: none
+    +mw(1150)
+        display: block
+
 

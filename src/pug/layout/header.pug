@@ -1,13 +1,16 @@
-header.header
-    //- video.header__bgVideo(autobuffer="" playsinline="" webkit-playsinline="" loop="" muted="muted" id="bgvid" preload="auto" src="" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;")   
-    img.header__bg(src="images/header/bg.png")
+.header-top__burger.burger.burger-abs
+    span.burger__line 
+    span.burger__line 
+    span.burger__line 
+header.header.header-page.headerMob
     .header-top.wrapper
-        .header-top__burger.burger
+        .header-top__burger.burger.burger-rel
             span.burger__line 
             span.burger__line 
             span.burger__line 
         a(href="/")
-            img.header-top__logo(src="/images/header/logo.png")
+            svg.header-top__logo
+                use(xlink:href="images/sprite.svg#logo")
 
         .header-top__findInput.desktopBig
             input(type="text" name="search" placeholder="Поиск")
@@ -18,15 +21,13 @@ header.header
         nav.header-top__nav.desktopBig
             ul.header-top__nav-list
                 li.header-top__nav-item
-                    a(href="/") Оплата
+                    a(href="/pay.html") Оплата
                 li.header-top__nav-item
-                    a(href="/") Доставка
+                    a(href="/delivery.html") Доставка
                 li.header-top__nav-item
-                    a(href="/") Контакты
+                    a(href="/contacts.html") Контакты
                 li.header-top__nav-item
-                    a(href="/") Скидки
-                li.header-top__nav-item
-                    a(href="/") Бонусы
+                    a(href="/bonus.html") Бонусы
 
         a.header-top__phone.desktopBig(href="tel: +73432022106")
             svg(width="20" height="20")
@@ -36,10 +37,61 @@ header.header
         button.header-top__callback.btn.desktopBig(type="button") Заказать звонок
 
         .header-top__personal
-            a.header-top__personal-item
+            a.header-top__personal-item(data-modal="callback")
+                img(src="images/header/phone.svg")
+            a.header-top__personal-item(href="basket.html")
                 svg(width="20" height="20")
                     use(xlink:href="images/sprite.svg#shop")
-            a.header-top__personal-item
+            a.header-top__personal-item(data-modal="auth")
+                svg(width="20" height="20")
+                    use(xlink:href="images/sprite.svg#pers")
+
+.header__buttons.wrapper
+    a.header-main__btn.btn(href="mono.html") собрать свой букет
+    button.header-main__btn.btn.btn--white.btnMobBouqetScroll Выбрать готовый букет
+
+
+header.header.headerDesktop
+    video.header__bgVideo(src="1.mp4" autobuffer="" playsinline="" autoplay webkit-playsinline="" loop="" muted="muted" id="bgvid" preload="auto" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;")   
+    //- img.header__bg(src="images/header/bg.png")
+    .header-top.wrapper
+        .header-top__burger.burger.burger-rel
+            span.burger__line 
+            span.burger__line 
+            span.burger__line 
+        a(href="/")
+            svg.header-top__logo
+                use(xlink:href="images/sprite.svg#logo")
+
+        .header-top__findInput.desktopBig
+            input(type="text" name="search" placeholder="Поиск")
+            .header-top__findBtn
+                svg(width="20" height="20")
+                    use(xlink:href="images/sprite.svg#find")
+
+        nav.header-top__nav.desktopBig
+            ul.header-top__nav-list
+                li.header-top__nav-item
+                    a(href="/pay.html") Оплата
+                li.header-top__nav-item
+                    a(href="/delivery.html") Доставка
+                li.header-top__nav-item
+                    a(href="/contacts.html") Контакты
+                li.header-top__nav-item
+                    a(href="/bonus.html") Бонусы
+
+        a.header-top__phone.desktopBig(href="tel: +73432022106")
+            svg(width="20" height="20")
+                use(xlink:href="images/sprite.svg#phone")
+            span +7 (343) 20-22-106
+
+        button.header-top__callback.btn.desktopBig(type="button" data-modal="callback") Заказать звонок
+
+        .header-top__personal
+            a.header-top__personal-item(href="basket.html")
+                svg(width="20" height="20")
+                    use(xlink:href="images/sprite.svg#shop")
+            a.header-top__personal-item(data-modal="auth")
                 svg(width="20" height="20")
                     use(xlink:href="images/sprite.svg#pers")
 
@@ -47,7 +99,8 @@ header.header
     .header-main.wrapper
         h1.header-main__title Только свежие цветы
         p.header-main__subtitle Ежедневно получаем цветы от поставщиков. Гарантируем качество
-        button.header-main__btn.btn(type="button") собрать свой букет
+        button.header-main__btn.btn.btnConstructScroll(type="button") собрать свой букет
+        button.header-main__btn.btn.btn--white.btnBouqetScroll(type="button") собрать свой букет
 
 
 

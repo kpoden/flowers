@@ -1,0 +1,18 @@
+main.wrapper
+
+    .breadcrumbs
+        a.breadcrumbs__item(href="/") Главная
+        span.breadcrumbs__separator >
+        a.breadcrumbs__item Восстановление пароля
+
+    h1.section-title Восстановление пароля
+
+    .restore
+        form(id="restore-form" method="post")
+            p.restore__text Если вы забыли пароль, введите логин или E-Mail. Контрольная строка для смены пароля, а также ваши регистрационные данные, будут высланы вам по E-Mail.
+
+            label.restore__input-wrap.input-wrap
+                span.restore__input-name.inp-name Логин или E-mail <span class="red">*</span>
+                input.restore__input.inp(type="text"  placeholder="Введите логин или E-mail *")
+
+            input.restore__submit.btn(type="submit" value="Восстановить пароль") 
