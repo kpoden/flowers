@@ -51,7 +51,7 @@
               <use xlink:href="images/sprite.svg#phone"></use>
             </svg><span>+7 (343) 20-22-106</span></a>
           <button class="header-top__callback btn desktopBig" type="button" data-modal="callback">Заказать звонок</button>
-          <div class="header-top__personal"><a class="header-top__personal-item callback-mob"><img src="images/header/phone.svg"/></a><a class="header-top__personal-item" href="basket.html">
+          <div class="header-top__personal"><a class="header-top__personal-item callback-mob" href="https://wa.me/79090022106" target="_blank"><img src="images/header/phone.svg"/></a><a class="header-top__personal-item" href="basket.html">
               <svg width="20" height="20">
                 <use xlink:href="images/sprite.svg#shop"></use>
               </svg></a><a class="header-top__personal-item" data-modal="auth">
@@ -63,19 +63,17 @@
       <main class="wrapper">
         <div class="breadcrumbs"><a class="breadcrumbs__item" href="/">Главная</a><span class="breadcrumbs__separator">></span><a class="breadcrumbs__item">Личный кабинет</a></div>
         <h1 class="section-title">Личный кабинет</h1>
-        <form class="lk">
+        <div class="lk">
           <div class="lk__tabs">
             <div class="lk__tab tab-active" data-tab="Профиль">Профиль</div>
-            <div class="lk__tab" data-tab="Мои заказы">Мои заказы</div>
-            <div class="lk__tab" data-tab="Адреса доставки">Адреса&nbsp;доставки</div>
-            <div class="lk__tab" data-tab="Выйти">Выйти</div><a class="lk__quit">
+            <div class="lk__tab" data-tab="Мои заказы">Мои заказы</div><a class="lk__tab" data-tab="Выйти" href="/logout">Выйти</a><a class="lk__quit" href="/logout">
               <svg width="20" height="20">
                 <use xlink:href="images/sprite.svg#quit"></use>
               </svg><span>Выйти</span></a>
           </div>
           <div class="lk__pages">
             <div class="lk__page profile" data-page="Профиль">
-              <form class="profile__form">
+              <form class="profile__form" id="lk-form">
                 <div class="lk__title">Мои данные</div>
                 <div class="profile__input-line">
                   <label class="profile__input-wrap input-wrap"><span class="profile__input-name inp-name">Имя</span>
@@ -86,42 +84,44 @@
                   </label>
                   <div class="profile__radios"><span class="inp-name">Пол</span>
                     <label class="profile__radio-wrap">
-                      <input type="radio" name="sex"/><span class="dot"></span><span>Мужской</span>
+                      <input type="radio" name="sex" value="male"/><span class="dot"></span><span>Мужской</span>
                     </label>
                     <label class="profile__radio-wrap">
-                      <input type="radio" name="sex"/><span class="dot"></span><span>Женский</span>
+                      <input type="radio" name="sex" value="female"/><span class="dot"></span><span>Женский</span>
                     </label>
                   </div>
                 </div>
                 <div class="profile__input-line">
                   <label class="profile__input-wrap input-wrap"><span class="profile__input-name inp-name">Телефон</span>
-                    <input class="profile__input inp" type="text" placeholder="+7 (495) 458-89-89"/>
+                    <input class="profile__input inp" type="text" name="phone" placeholder="+7 (495) 458-89-89"/>
                   </label>
                   <label class="profile__input-wrap input-wrap"><span class="profile__input-name inp-name">E-mail</span>
-                    <input class="profile__input inp" type="text" placeholder="info@gmail.com"/>
+                    <input class="profile__input inp" type="text" name="email" placeholder="info@gmail.com"/>
                   </label>
                   <label class="profile__input-wrap input-wrap"><span class="profile__input-name inp-name">День рождения</span>
-                    <input class="profile__input inp" type="text" placeholder="01.01.1987"/>
+                    <input class="profile__input inp" type="text" name="date" placeholder="01.01.1987"/>
                   </label>
                 </div>
                 <div class="lk__title">Изменить пароль</div>
                 <div class="profile__input-line">
                   <label class="profile__input-wrap input-wrap"><span class="profile__input-name inp-name">Старый пароль <span class="red">*</span></span>
-                    <input class="profile__input inp" type="text" placeholder="Введите пароль *"/>
+                    <input class="profile__input inp" type="text" placeholder="Введите пароль *" data-required="data-required"/><span class="oldpass-error-wrap"></span>
                   </label>
                   <label class="profile__input-wrap input-wrap"><span class="profile__input-name inp-name">Пароль <span class="red">*</span></span>
-                    <input class="profile__input inp" type="text" placeholder="Введите пароль *"/>
+                    <input class="profile__input inp" type="text" placeholder="Введите пароль *" data-required="data-required" data-newpass="data-newpass"/><span class="pass-error-wrap"></span>
                   </label>
                   <label class="profile__input-wrap input-wrap"><span class="profile__input-name inp-name">Повторите пароль <span class="red">*</span></span>
-                    <input class="profile__input inp" type="text" placeholder="Введите пароль *"/>
+                    <input class="profile__input inp" type="text" placeholder="Введите пароль *" data-required="data-required" data-newpass="data-newpass"/>
                   </label>
                 </div>
                 <label class="profile__checkbox">
                   <input class="profile__checkbox-input" type="checkbox"/>
                   <div class="profile__checkbox-square"></div>
-                  <div class="profile__checkbox-text">Я ознакомлен(-а) с <a href="/policy.html">Политикой конфиденциальности</a></div>
+                  <div class="profile__checkbox-text">Я ознакомлен(-а) с <a href="/policy.html">Политикой конфиденциальности</a></div><span class="policy-err"></span>
                 </label>
-                <input class="profile__submit btn" type="submit" value="Сохранить изменения"/>
+                <div class="profile__submit-wrap">
+                  <input class="profile__submit btn" type="submit" value="Сохранить изменения"/><span class="profile-succsess-msg"> </span>
+                </div>
               </form>
             </div>
             <div class="lk__page orders hidden" data-page="Мои заказы">
@@ -267,12 +267,9 @@
                 </div>
               </div>
             </div>
-            <div class="lk__page hidden addresses" data-page="Адреса доставки">
-              <div class="lk__title">Адреса доставки</div>
-            </div>
             <div class="lk__page hidden logout" data-page="Выйти"></div>
           </div>
-        </form>
+        </div>
       </main>
       <footer class="footer">
         <div class="footer__wrapper wrapper">
@@ -329,7 +326,7 @@
           <svg width="16" height="16">
             <use xlink:href="images/sprite.svg#bouqet"></use>
           </svg><span>Собрать букет</span></a><a class="float__footer-col" href="https://wa.me/79090022106" target="_blank"><img src="images/footer/wa.svg"/><span>Написать</span></a></div>
-      <div class="linksHidden"><a data-modal="regThanks"></a><a data-modal="callbackThanks"></a></div>
+      <div class="linksHidden"><a class="regThanksLink" data-modal="regThanks"></a><a class="callbackThanksLink" data-modal="callbackThanks"></a></div>
       <div class="modal">
         <div class="modal__content">
           <div class="modal__close-cross modal__close"></div>
@@ -540,10 +537,18 @@
             <h2 class="modal__header">Авторизация</h2>
             <form class="modal__form" id="auth-form" method="post">
               <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Логин</span>
-                <input class="modal__input inp" type="text" placeholder="Логин"/>
+                <input class="modal__input inp" type="text" name="login" placeholder="Логин" data-required="data-required"/>
               </label>
               <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Пароль</span>
-                <input class="modal__input inp" type="text" placeholder="Пароль"/>
+                <input class="modal__input inp" type="password" name="password" placeholder="Пароль" data-required="data-required"/><span class="error-wrap"></span>
+                <div class="eyes">
+                  <svg class="eye" width="22" height="22">
+                    <use xlink:href="images/sprite.svg#eye"></use>
+                  </svg>
+                  <svg class="eye-y" width="22" height="22">
+                    <use xlink:href="images/sprite.svg#eye-y"></use>
+                  </svg>
+                </div>
               </label>
               <input class="modal__submit modal__btn btn" type="submit" value="Войти"/>
               <p class="modal__smalltext">
@@ -561,24 +566,24 @@
             <form id="reg-form">
               <div class="reg__line-one">
                 <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Имя</span>
-                  <input class="modal__input inp" type="text" placeholder="Введите имя"/>
+                  <input class="modal__input inp" type="text" name="name" placeholder="Введите имя"/>
                 </label>
                 <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Фамилия</span>
-                  <input class="modal__input inp" type="text" placeholder="Введите фамилию"/>
+                  <input class="modal__input inp" type="text" name="surname" placeholder="Введите фамилию"/>
                 </label>
               </div>
               <div class="reg__line">
                 <div class="reg__col">
                   <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Логин <span class="red">*</span></span>
-                    <input class="modal__input inp" type="text" placeholder="Введите логин (min 3 символа) *"/>
+                    <input class="modal__input inp" type="text" name="login" placeholder="Введите логин (min 3 символа) *" data-required="data-required"/>
                   </label>
                   <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">E-mail</span>
-                    <input class="modal__input inp" type="text" placeholder="Введите e-mail"/>
+                    <input class="modal__input inp" type="text" name="email" placeholder="Введите e-mail"/>
                   </label>
                 </div>
                 <div class="reg__col">
                   <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Пароль <span class="red">*</span></span>
-                    <input class="modal__input inp" type="password" placeholder="Введите пароль"/>
+                    <input class="modal__input inp" type="password" name="password" placeholder="Введите пароль" data-required="data-required" data-newpass="data-newpass"/>
                     <div class="eyes">
                       <svg class="eye" width="22" height="22">
                         <use xlink:href="images/sprite.svg#eye"></use>
@@ -589,7 +594,7 @@
                     </div>
                   </label>
                   <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Подтвердите пароль <span class="red">*</span></span>
-                    <input class="modal__input inp" type="password" placeholder="Подтвердите пароль"/>
+                    <input class="modal__input inp" type="password" name="password" placeholder="Подтвердите пароль" data-required="data-required" data-newpass="data-newpass"/><span class="pass-error-wrap"></span>
                     <div class="eyes">
                       <svg class="eye" width="22" height="22">
                         <use xlink:href="images/sprite.svg#eye"></use>
@@ -603,10 +608,10 @@
               </div>
               <div class="reg__line-one">
                 <label class="modal__input-wrap input-wrap">
-                  <input class="modal__input inp" type="text" placeholder="Введите имя"/>
+                  <input class="modal__input inp" type="text" placeholder="Капча"/>
                 </label>
                 <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Слово на картинке <span class="red">*</span></span>
-                  <input class="modal__input inp" type="text" placeholder="Введите слово на картинке *"/>
+                  <input class="modal__input inp" type="text" name="captcha" placeholder="Введите слово на картинке *" data-required="data-required"/>
                 </label>
               </div>
               <input class="reg__submit modal__submit modal__btn btn" type="submit" value="зарегистрироваться"/>
@@ -639,10 +644,10 @@
             <p class="modal__text">Оставьте свои контакты и мы свяжемся с вами в течение 15 минут</p>
             <form class="modal__form" id="callback-form" method="post">
               <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Ваше имя</span>
-                <input class="modal__input inp" type="text" placeholder="Введите имя"/>
+                <input class="modal__input inp" type="text" name="name" placeholder="Введите имя" data-required="data-required"/>
               </label>
               <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Телефон <span class="red">*</span></span>
-                <input class="modal__input inp" type="text" placeholder="Введите телефон *"/>
+                <input class="modal__input inp" type="text" name="phone" placeholder="Введите телефон *" data-required="data-required"/>
               </label>
               <input class="modal__submit modal__btn btn" type="submit" value="Перезвоните мне"/>
               <p class="modal__smalltext">
@@ -660,10 +665,10 @@
             <p class="modal__text">Пожалуйста, укажите Ваши имя и телефон. И с Вами свяжется наш менеджер. Спасибо!</p>
             <form class="modal__form" id="instant-form" method="post">
               <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Имя <span class="red">*</span></span>
-                <input class="modal__input inp" type="text" placeholder="Введите имя *"/>
+                <input class="modal__input inp" type="text" name="name" placeholder="Введите имя *"/>
               </label>
               <label class="modal__input-wrap input-wrap"><span class="modal__input-name inp-name">Телефон <span class="red">*</span></span>
-                <input class="modal__input inp" type="text" placeholder="Введите телефон *"/>
+                <input class="modal__input inp" type="text" name="phone" placeholder="Введите телефон *"/>
               </label>
               <input class="modal__submit modal__btn btn" type="submit" value="Оформить заказ"/>
               <p class="modal__smalltext">
@@ -690,7 +695,7 @@
       </div>
       <script src="libs/jquery.min.js"></script>
       <script src="libs/slick.min.js"></script>
-      <script src="libs/swiper-bundle.min.js"></script>
+      <script src="libs/imask.js"></script>
       <script src="scripts/main.js"></script>
     </div>
   </body>

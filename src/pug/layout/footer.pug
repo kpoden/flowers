@@ -78,8 +78,8 @@ footer.footer
         span Написать
 
 .linksHidden
-    a(data-modal="regThanks")
-    a(data-modal="callbackThanks")
+    a.regThanksLink(data-modal="regThanks")
+    a.callbackThanksLink(data-modal="callbackThanks")
 
 
 include ../layout/modals.pug
@@ -89,5 +89,5 @@ include ../layout/mob.pug
 script(src="libs/jquery.min.js")
 //- scriot(src="//code.jquery.com/jquery-migrate-1.2.1.min.js")
 script(src="libs/slick.min.js")
-script(src="libs/swiper-bundle.min.js")
+script(src="libs/imask.js")
 script(src="scripts/main.js")

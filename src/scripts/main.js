@@ -334,6 +334,17 @@ class Modal {
         });
     }
 
+    listenOpenTriggersModal() {
+        this.triggers = this.modal.querySelectorAll('[data-modal]');
+        this.triggers.forEach((trigger)=>{
+            trigger.addEventListener('click', () => {
+                this.templateName = trigger.dataset.modal;
+                
+                this.openModal();
+            });
+        });
+    }
+
     listenCloseTriggers() {
         this.close = document.querySelectorAll('.modal__close');
         this.close.forEach((close) => {
@@ -359,13 +370,22 @@ class Modal {
         
     }
 
+    initForms() {
+        if(this.modal.querySelector('form')) {
+            const form = this.modal.querySelector('form').id;
+            const formInit = new Form(form);
+        }
+    }
+
     openModal() {
         this.modal.classList.add('opened');
         document.body.classList.add('_locked');
         this.initTemplate();
         this.initAdditionals();
+        showPassword();
+        this.initForms();
         this.listenCloseTriggers();
-        this.listenOpenTriggers();
+        this.listenOpenTriggersModal();
     }
 
     closeModal() {
@@ -702,8 +722,17 @@ if(document.querySelector('.basketAddItems')) {
 }
 
 
-document.querySelectorAll('input[type=radio]').forEach(el => el.checked = false)
-document.querySelectorAll('input[type=text]').forEach(el => el.value = "")
+function clearFields() {
+    document.querySelectorAll('input[type=radio]').forEach(el => el.checked = false);
+    if(document.getElementById("order-form")) {
+        document.querySelectorAll('input[type=text]').forEach(el => el.value = "")
+    }
+    
+}
+
+clearFields()
+
+
 
 
 
@@ -915,19 +944,23 @@ function cropText() {
   function showPassword() {
     const passwords = document.querySelectorAll('.eyes');
 
-    passwords.forEach(el=> {
-        el.addEventListener('click', () => {
-            const input = el.parentNode.querySelector('.modal__input');
-            if(el.classList.contains('active')) {
-                input.setAttribute('type', 'password');
-                el.classList.remove('active');
-            } else {
-                input.setAttribute('type', 'text');
-                el.classList.add('active');
-            }
-            
+    if(passwords.length > 0) {
+        passwords.forEach(el=> {
+            el.addEventListener('click', () => {
+                const input = el.parentNode.querySelector('.modal__input');
+                if(el.classList.contains('active')) {
+                    input.setAttribute('type', 'password');
+                    el.classList.remove('active');
+                } else {
+                    input.setAttribute('type', 'text');
+                    el.classList.add('active');
+                }
+                
+            })
         })
-    })
+    }
+
+
   }
 
   showPassword()
@@ -937,7 +970,6 @@ function formStartInit() {
     if(document.querySelector('.construct')) {
 
         const panel = document.querySelector('.construct__panel');
-
         const color = panel.querySelectorAll('.color__input-wrap')[0].click();
         const length = panel.querySelectorAll('.lenght__radio')[0].click();
         const quant = panel.querySelectorAll('.quant__input')[0].value = 5;
@@ -945,9 +977,15 @@ function formStartInit() {
         const package = panel.querySelectorAll('.package__radio')[0].click();
         const green = panel.querySelectorAll('.green__radio')[0].click();
 
+    }
 
-
-
+    if(document.querySelector('.item-page .construct__panel')) {
+        const panel = document.querySelector('.construct__panel');
+        const color = panel.querySelectorAll('.color__input-wrap')[0].click();
+        const length = panel.querySelectorAll('.lenght__radio')[0].click();
+        const quant = panel.querySelectorAll('.quant__radio')[0].click();
+        const package = panel.querySelectorAll('.package__radio')[0].click();
+        const green = panel.querySelectorAll('.green__radio')[0].click();
     }
 }
 
@@ -956,3 +994,426 @@ formStartInit()
 
 //   document.querySelector('[data-modal="callbackThanks"]').click();
 //   document.querySelector('[data-modal="regThanks"]').click();
+
+
+class Form {
+    constructor(form) {
+
+        this.form = document.getElementById(form);
+        this.init()
+
+    }
+
+    deleteErrors() {
+        const errors = this.form.querySelectorAll('._error-txt');
+        errors.forEach((el) => {
+          const parent = el.parentNode;
+          parent.removeChild(el);
+        });
+    
+    
+        const inputs = this.form.querySelectorAll('input[type=text], input[type=tel');
+        inputs.forEach((input) => {
+          input.classList.remove('_error-input');
+        });
+
+        if(this.form.querySelector('.error-wrap')) {
+            this.form.querySelectorAll('.error-wrap').forEach(el=>el.textContent="");
+        }
+
+        if(this.form.id=='lk-form') {
+            const oldPassWrongWrap = this.form.querySelector('.oldpass-error-wrap');
+            oldPassWrongWrap.textContent = "";
+        }
+    }
+
+    createErrAuth() {
+
+            if(this.form.id == "auth-form") {
+
+            const inputs = this.form.querySelectorAll('.modal__input').forEach(el=>{
+                el.classList.add('_error-input');
+            })
+
+            let errorName = "Не правильный логин или пароль";
+            let errorEl = document.createElement('span');
+            errorEl.textContent = errorName;
+            errorEl.classList.add('_error-txt');
+            const errWrap = this.form.querySelector('.error-wrap');
+
+            errWrap.appendChild(errorEl);
+        }
+
+    }
+
+    createError(err) {
+
+        if(this.form.id == "callback-form" || 1) {
+       
+            let errorName = "Обязательное поле";
+        
+            err.forEach((el) => {
+                const inputWrap = el.closest('.input-wrap');
+                let errorEl = document.createElement('span');
+                errorEl.textContent = errorName;
+                errorEl.classList.add('_error-txt');
+                el.classList.add('_error-input');
+                inputWrap.appendChild(errorEl);
+        
+            });
+
+      } 
+
+    }
+
+    validateForm() {
+        const requiredInputs = this.form.querySelectorAll('[data-required]');
+        
+
+        let errorArr = [];
+
+        this.deleteErrors();
+
+        requiredInputs.forEach(el => {
+            const value = el.value.trim();
+            if(value === "") {
+                errorArr.push(el);
+            }
+        })
+
+
+        if(errorArr.length > 0) {
+        this.createError(errorArr);
+        
+        return false;
+        } else {
+        return true;
+        }
+
+    }
+
+    validatePasswords() {
+        const passFields = this.form.querySelectorAll('[data-newpass]');
+        const passErrWrap = this.form.querySelector('.pass-error-wrap');
+
+        let legitPass = passFields[0].value == passFields[1].value;
+
+        const minLength = 8;
+        const MaxLength = 25;
+
+        const pass = passFields[0].value;
+        const hasLetterAndNumber = /^(?=.*[a-zA-Z])(?=.*[0-9])/.test(pass);
+        const isValidFormat = /^[a-zA-Z0-9]+$/.test(pass);
+
+        const passwordLength = pass.length;
+        const isLengthValid = passwordLength >= minLength && passwordLength <= MaxLength;
+
+
+        passFields.forEach(el=>el.classList.remove('_error-input'));
+
+        if(!legitPass) {
+            
+                let errorName = "Пароли не совпадают";
+                let errorEl = document.createElement('span');
+                errorEl.textContent = errorName;
+                errorEl.classList.add('_error-txt');
+
+                passFields.forEach(el=>el.classList.add('_error-input'));
+
+                passErrWrap.appendChild(errorEl);
+
+                return false;
+            } else if(!isValidFormat || !isLengthValid || !hasLetterAndNumber ) {
+                let errorName = "Пароль должен быть 8-25 символов";
+                let errorEl = document.createElement('span');
+                errorEl.textContent = errorName;
+                errorEl.classList.add('_error-txt');
+                passErrWrap.appendChild(errorEl);
+
+                errorName = "содержать латинские буквы и цифры";
+                errorEl = document.createElement('span');
+                errorEl.textContent = errorName;
+                errorEl.classList.add('_error-txt');
+                passErrWrap.appendChild(errorEl);
+    
+                passFields.forEach(el=>el.classList.add('_error-input'));
+    
+                
+                return false;
+            } else {
+                return true;
+            }
+    }
+
+    oldPassWrong() {
+        if(this.form.id == 'lk-form') {
+            
+            const oldPassWrongWrap = this.form.querySelector('.oldpass-error-wrap');
+            const oldPassInput = oldPassWrongWrap.parentNode.querySelector('.profile__input');
+
+            let errorName = "Пароль не верный";
+            let errorEl = document.createElement('span');
+            errorEl.textContent = errorName;
+            errorEl.classList.add('_error-txt');
+            oldPassWrongWrap.appendChild(errorEl);
+            oldPassInput.classList.add('_error-input');
+        }
+    }
+
+
+
+    policyChecked() {
+        const check = this.form.querySelector('.profile__checkbox-input');
+        const chechErr = this.form.querySelector('.policy-err');
+        if(!check.checked) {
+            let errorName = "Ознакомьтесь с политикой конфиденциальности";
+            let errorEl = document.createElement('span');
+            errorEl.textContent = errorName;
+            errorEl.classList.add('_error-txt');
+            chechErr.appendChild(errorEl);
+
+            return false
+        } else {
+            return true
+        }
+    }
+
+    validateEmail() {
+        const emailInput = this.form.querySelector('input[name=email]');
+        const email = emailInput.value;
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        let validEmail = emailPattern.test(email);
+        if(!validEmail) {
+            console.log('email not val');
+            const errorName = "Введите верный Email";
+            const inputWrap = emailInput.closest('.input-wrap');
+            let errorEl = document.createElement('span');
+            errorEl.textContent = errorName;
+            errorEl.classList.add('_error-txt');
+            emailInput.classList.add('_error-input');
+            inputWrap.appendChild(errorEl);
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    createSuccsessMsg() {
+        if(this.form.id == 'lk-form') {
+            console.log(this.form.id);
+        
+        const succsessWrap = this.form.querySelector('.profile-succsess-msg');
+        succsessWrap.textContent = "Изменения успешно внесены";
+
+        } else if(this.form.id == 'reg-form') {
+            document.querySelector('.regThanksLink').click();
+        } if(this.form.id == 'callback-form') {
+            document.querySelector('.callbackThanksLink').click();
+        }
+    }
+
+
+    listenSubmit() {
+
+        this.form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            if(!this.validateForm()) {
+                return;
+              }
+
+              if(this.form.querySelector('input[name=email]') && this.form.querySelector('input[name=email]').value != "") {
+                if(!this.validateEmail()) {
+                    return;
+                  }
+              }
+
+            if(this.form.id == "reg-form" || this.form.id == "lk-form") {
+                if(!this.validatePasswords()) {
+                    return;
+                  }
+    
+            }
+
+            if(this.form.id == "lk-form") {
+                if(!this.policyChecked()) {
+                    return;
+                  }
+            }
+
+            const xhr = new XMLHttpRequest();
+            let formData = new FormData(this.form);
+            console.log(formData);
+            console.log('send form data');
+    
+            if(this.form.id == 'order-form') {
+                xhr.open('POST', 'local/ajax/order.php');
+            
+            } else if(this.form.id =='auth-form') {
+
+                xhr.open('POST', '/local/ajax/auth.php');
+
+            } else if(this.form.id =='reg-form') {
+
+                xhr.open('POST', '/local/ajax/reg.php');
+
+            } else if(this.form.id =='callback-form') {
+
+                xhr.open('POST', '/local/ajax/callback.php');
+
+            } else if(this.form.id =='lk-form') {
+
+                xhr.open('POST', '/local/ajax/lk.php');
+
+            } else if(this.form.id =='restore-form') {
+
+                xhr.open('POST', '/local/ajax/restore.php');
+            }
+              
+            xhr.onload = () => {
+                if (xhr.status === 200) {
+                    console.log(xhr.responseText);
+                } else if(xhr.responseText=="noauth"){
+                    console.error('Ошибка: ', xhr.status);
+                    this.createErrAuth();
+                } else if(xhr.responseText=="oldpasswrong") {
+                    this.oldPassWrong();
+                } else {
+                    this.createSuccsessMsg();
+                    console.log(xhr.responseText);
+                }
+            };
+
+            xhr.send(formData);
+            this.form.classList.add('sent');
+            this.form.reset();
+
+        });
+    }
+
+    maskInit() {
+        if(this.form.querySelector('input[name=phone]')) {
+        
+        const phoneInput = this.form.querySelector('input[name=phone]');
+        const maskOptions = {
+          mask: '+{7}(000) 000-00-00'
+        };
+    
+        const mask = IMask(phoneInput, maskOptions);
+        }
+
+        if(this.form.querySelector('input[name=date]')) {
+        
+            const dateInput = this.form.querySelector('input[name=date]');
+            const maskOptions = {
+                mask: Date,
+                min: new Date(1990, 0, 1),
+                max: new Date(2020, 0, 1),
+                lazy: false
+            };
+        
+            const mask = IMask(dateInput, maskOptions);
+        }
+    
+        if(this.form.querySelector('input[name=time]')) {
+        
+            const timeInput = this.form.querySelector('input[name=time]');
+            const maskOptions = {
+                overwrite: true,
+                autofix: true,
+                mask: 'HH:MM',
+                blocks: {
+                    HH: {
+                    mask: IMask.MaskedRange,
+                    placeholderChar: 'HH',
+                    from: 0,
+                    to: 23,
+                    maxLength: 2
+                    },
+                    MM: {
+                    mask: IMask.MaskedRange,
+                    placeholderChar: 'MM',
+                    from: 0,
+                    to: 59,
+                    maxLength: 2
+                    }
+                }
+            };
+        
+            const mask = IMask(timeInput, maskOptions);
+        }
+
+
+
+
+    }
+
+    init() {
+        this.listenSubmit();
+        this.maskInit();
+    }
+}
+
+if(document.querySelector('.item')) {
+   
+    formItem = new Form('item-form');
+}
+
+
+document.querySelectorAll('form').forEach(el => {
+    if(el.id) {
+        const form = new Form(el.id);
+    }
+    
+})
+
+
+function constructImages() {
+    const colors = document.querySelectorAll('.color__input-wrap'),
+          img    = document.querySelector('.construct__img img');
+
+
+    colors.forEach(el => {
+        el.addEventListener('click', () => {
+            img.src = el.dataset.img;
+        })
+    })
+
+
+}
+
+if(document.querySelector('.construct')) {
+    constructImages();
+}
+
+
+function sizesSelect() {
+
+    if(document.querySelector('.construct__sizes')) {
+
+
+        const selectors = document.querySelectorAll('[data-sizeselect]');
+        const sizes = document.querySelectorAll('[data-size]');
+
+        
+        selectors.forEach(el => {
+            el.addEventListener('click', () => {
+                selectors.forEach(el=>el.classList.remove('active-size'));
+                const size = el.dataset.sizeselect;
+                el.classList.add('active-size');
+
+                const allSizes = document.querySelectorAll('[data-size]');
+                const activeSizes = document.querySelectorAll('[data-size="'+size+'"]');
+                allSizes.forEach(el => el.classList.add('hidden'));
+                activeSizes.forEach(el => el.classList.remove('hidden'));
+
+
+            })
+            
+        })
+        selectors[0].click();
+
+    }
+}
+
+sizesSelect()

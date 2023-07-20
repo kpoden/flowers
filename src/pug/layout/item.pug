@@ -6,7 +6,7 @@ main.item-page
         a.breadcrumbs__item 101 роза
 
 
-    .item.wrapper
+    form.item.wrapper(id="item-form")
 
         .item__sliders
             .item__slider-main-wrap
@@ -57,7 +57,7 @@ main.item-page
             .item__slider-art Код товара: 4589
 
 
-        form.construct__panel
+        .construct__panel
             h1.item__title  Букет белых роз
             h3.color__title Выберите цвет:
             .construct__color.color
@@ -100,24 +100,24 @@ main.item-page
                     span.lenght__name 70 см
 
             h3.construct__subtitle Количество роз в букете, шт.:
-            .construct__radio.lenght
+            .construct__radio.quant
                 
-                label.lenght__radio
-                    input(type="radio", name="lenght")
-                    span.lenght__dot.dot
-                    span.lenght__name 15 шт.
-                label.lenght__radio
-                    input(type="radio", name="lenght")
-                    span.lenght__dot.dot
-                    span.lenght__name 25 шт.
-                label.lenght__radio
-                    input(type="radio", name="lenght")
-                    span.lenght__dot.dot
-                    span.lenght__name 51 шт.
-                label.lenght__radio
-                    input(type="radio", name="lenght")
-                    span.lenght__dot.dot
-                    span.lenght__name 101 шт.
+                label.quant__radio
+                    input(type="radio", name="quant")
+                    span.quant__dot.dot
+                    span.quant__name 15 шт.
+                label.quant__radio
+                    input(type="radio", name="quant")
+                    span.quant__dot.dot
+                    span.quant__name 25 шт.
+                label.quant__radio
+                    input(type="radio", name="quant")
+                    span.quant__dot.dot
+                    span.quant__name 51 шт.
+                label.quant__radio
+                    input(type="radio", name="quant")
+                    span.quant__dot.dot
+                    span.quant__name 101 шт.
 
 
             h3.construct__subtitle Вид упаковки:
@@ -140,19 +140,19 @@ main.item-page
             .construct__radio.green
                 
                 label.green__radio
-                    input(type="radio", name="lenght")
+                    input(type="radio", name="green")
                     span.green__dot.dot
                     span.green__name Без
                 label.green__radio
-                    input(type="radio", name="lenght")
+                    input(type="radio", name="green")
                     span.green__dot.dot
                     span.green__name +500 ₽
                 label.green__radio
-                    input(type="radio", name="lenght")
+                    input(type="radio", name="green")
                     span.green__dot.dot
                     span.lenght__name +750 ₽
                 label.green__radio
-                    input(type="radio", name="lenght")
+                    input(type="radio", name="green")
                     span.green__dot.dot
                     span.green__name +1 000 ₽
 

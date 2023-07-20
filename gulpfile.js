@@ -116,12 +116,12 @@ gulp.task('scripts:build', function(){
 
 gulp.task('img:build', function(){
     return gulp.src(path.src.img)
-        .pipe(imagemin([
-            imageminPngquant({
-                speed: 5,
-                quality: [0.6, 0.8]
-            })
-        ]))
+        // .pipe(imagemin([
+        //     imageminPngquant({
+        //         speed: 5,
+        //         quality: [0.6, 0.8]
+        //     })
+        // ]))
         .pipe(gulp.dest(path.build.img))
         .pipe(gulp.src(path.src.imgsvg))
         .pipe(gulp.dest(path.build.img));

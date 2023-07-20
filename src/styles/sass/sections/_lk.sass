@@ -19,6 +19,10 @@
         cursor: pointer
         transition: .2s
         border-bottom: 2px solid rgba(255, 255, 255, 0.2)
+        transition: .2s
+
+        &:hover
+            color: #fff
 
         &.tab-active
             color: #F9CC49
@@ -89,9 +93,16 @@
             gap: 12px
 
         .inp
-            background: #272727
             border: 1.5px solid #FFF
+            background: #FFF
             width: 390px
+            color: #1E2021
+            font-variant-numeric: lining-nums proportional-nums
+            font-family: Raleway
+            font-size: 16px
+            font-style: normal
+            font-weight: 500
+            line-height: normal
 
             +mw(1270)
                 width: 250px
@@ -114,6 +125,7 @@
             display: flex
             align-items: center
             gap: 15px
+            cursor: pointer
 
             &-input
                 display: none

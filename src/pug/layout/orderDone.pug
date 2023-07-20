@@ -1,0 +1,134 @@
+main.wrapper
+
+    .breadcrumbs
+        a.breadcrumbs__item(href="/") Главная
+        span.breadcrumbs__separator >
+        a.breadcrumbs__item(href="/basket.html") Моя корзина
+        span.breadcrumbs__separator >
+        a.breadcrumbs__item Оформление заказа
+
+    h1.section-title Оформление заказа
+
+    .orderDone
+            img(src="images/basket/done.png")
+            .orderDone__title Заказ сформирован
+            .orderDone__info Ваш заказ <span class="yellow">№164942</span> от 31.05.2023 15:02:26 успешно создан
+            p.orderDone__subtext.
+                Все заказы обрабатываются в порядке очереди, в ближайшее время с вами свяжется администратор.
+                Заказы на дневное время, оформленные в ночной период (21:00 -09:00), будут обработаны в порядке очереди с 09:00.
+                Оплата производится только после согласования всех деталей заказа с администратором.
+            a.orderDone__btn.btn(href="/lk.html") в личный кабинет
+            a.orderDone__callback(href="/") На главную
+
+
+    .basket__addItems
+        h2.item__add-title Оформить новый заказ
+
+        .item__add-filters
+            .item__slider-arrows
+                .item__slider-arrow.arr-left
+                .item__slider-arrow.arr-right
+            .item__add-filter(data-filter='').active-filter Популярное
+            .item__add-filter(data-filter='Игрушка') Игрушка
+            .item__add-filter(data-filter='Шарик') Шарик
+            .item__add-filter(data-filter='Конфеты') Конфеты
+            .item__add-filter(data-filter='Ваза') Ваза
+
+        .item__add-items.basketAddItems
+            .item__add-item(data-type='Популярное')
+                .item__add-item-top
+                    .item__add-item-img
+                        img(src="images/item/add/1.png")
+                    .item__add-item-info
+                        .item__add-item-name  Конфеты Raffaello Конфеты Raffaello
+                        .item__add-item-quant 300 г
+                        .item__add-item-price 599 ₽
+                a.item__add-item-btn.btn
+                    svg(width="20" height="20")
+                        use(xlink:href="images/sprite.svg#shop")
+                    span В корзину
+
+            
+            .item__add-item(data-type='Игрушка')
+                .item__add-item-top
+                    .item__add-item-img
+                        img(src="images/item/add/2.png")
+                    .item__add-item-info
+                        .item__add-item-name Медведь Плюша
+                        .item__add-item-quant 90 см
+                        .item__add-item-price 2 500 ₽
+                a.item__add-item-btn.btn
+                    svg(width="20" height="20")
+                        use(xlink:href="images/sprite.svg#shop")
+                    span В корзину
+
+            
+            .item__add-item(data-type='Шарик')
+                .item__add-item-top
+                    .item__add-item-img
+                        img(src="images/item/add/3.png")
+                    .item__add-item-info
+                        .item__add-item-name Фольгированное "Сердце"
+                        .item__add-item-quant 
+                        .item__add-item-price 1 750 ₽
+                a.item__add-item-btn.btn
+                    svg(width="20" height="20")
+                        use(xlink:href="images/sprite.svg#shop")
+                    span В корзину
+
+            
+            .item__add-item(data-type='Ваза')
+                .item__add-item-top
+                    .item__add-item-img
+                        img(src="images/item/add/4.png")
+                    .item__add-item-info
+                        .item__add-item-name Ваза прозрачная
+                        .item__add-item-quant 
+                        .item__add-item-price 550 ₽
+                a.item__add-item-btn.btn
+                    svg(width="20" height="20")
+                        use(xlink:href="images/sprite.svg#shop")
+                    span В корзину
+
+            
+            .item__add-item(data-type='Конфеты')
+                .item__add-item-top
+                    .item__add-item-img
+                        img(src="images/item/add/3.png")
+                    .item__add-item-info
+                        .item__add-item-name Фольгированное "Сердце"
+                        .item__add-item-quant 
+                        .item__add-item-price 1 750 ₽
+                a.item__add-item-btn.btn
+                    svg(width="20" height="20")
+                        use(xlink:href="images/sprite.svg#shop")
+                    span В корзину
+
+            
+            .item__add-item(data-type='Популярное')
+                .item__add-item-top
+                    .item__add-item-img
+                        img(src="images/item/add/2.png")
+                    .item__add-item-info
+                        .item__add-item-name Медведь Плюша
+                        .item__add-item-quant 90 см
+                        .item__add-item-price 2 500 ₽
+                a.item__add-item-btn.btn
+                    svg(width="20" height="20")
+                        use(xlink:href="images/sprite.svg#shop")
+                    span В корзину
+
+            
+            .item__add-item(data-type='Популярное')
+                .item__add-item-top
+                    .item__add-item-img
+                        img(src="images/item/add/3.png")
+                    .item__add-item-info
+                        .item__add-item-name Фольгированное "Сердце"
+                        .item__add-item-quant 
+                        .item__add-item-price 1 750 ₽
+                a.item__add-item-btn.btn
+                    svg(width="20" height="20")
+                        use(xlink:href="images/sprite.svg#shop")
+                    span В корзину
+            

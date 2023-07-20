@@ -8,16 +8,16 @@ main.wrapper
 
     h1.section-title Личный кабинет
 
-    form.lk
+    .lk
 
         .lk__tabs
 
             .lk__tab.tab-active(data-tab="Профиль") Профиль
             .lk__tab(data-tab="Мои заказы") Мои заказы
-            .lk__tab(data-tab="Адреса доставки") Адреса&nbsp;доставки
-            .lk__tab(data-tab="Выйти") Выйти
+            //- .lk__tab(data-tab="Адреса доставки") Адреса&nbsp;доставки
+            a.lk__tab(data-tab="Выйти" href="/logout") Выйти
 
-            a.lk__quit
+            a.lk__quit(href="/logout")
                 svg(width="20" height="20")
                     use(xlink:href="images/sprite.svg#quit")
                 span Выйти
@@ -26,7 +26,7 @@ main.wrapper
         .lk__pages
 
             .lk__page.profile(data-page="Профиль")
-                form.profile__form
+                form.profile__form(id="lk-form")
 
                     .lk__title Мои данные
                     .profile__input-line
@@ -39,45 +39,50 @@ main.wrapper
                         .profile__radios
                             span.inp-name Пол
                             label.profile__radio-wrap
-                                input(type="radio", name="sex")
+                                input(type="radio", name="sex" value="male")
                                 span.dot
                                 span Мужской
                             label.profile__radio-wrap
                                 
-                                input(type="radio", name="sex")
+                                input(type="radio", name="sex" value="female")
                                 span.dot
                                 span Женский
 
                     .profile__input-line
                         label.profile__input-wrap.input-wrap
                             span.profile__input-name.inp-name Телефон
-                            input.profile__input.inp(type="text"  placeholder="+7 (495) 458-89-89")
+                            input.profile__input.inp(type="text" name="phone" placeholder="+7 (495) 458-89-89")
                         label.profile__input-wrap.input-wrap
                             span.profile__input-name.inp-name E-mail
-                            input.profile__input.inp(type="text"   placeholder="info@gmail.com")
+                            input.profile__input.inp(type="text" name="email"   placeholder="info@gmail.com")
                         label.profile__input-wrap.input-wrap
                             span.profile__input-name.inp-name День рождения
-                            input.profile__input.inp(type="text"   placeholder="01.01.1987")
+                            input.profile__input.inp(type="text" name="date"  placeholder="01.01.1987")
 
 
                     .lk__title Изменить пароль
                     .profile__input-line
                         label.profile__input-wrap.input-wrap
                             span.profile__input-name.inp-name Старый пароль <span class="red">*</span>
-                            input.profile__input.inp(type="text" placeholder="Введите пароль *")
+                            input.profile__input.inp(type="text" placeholder="Введите пароль *" data-required)
+                            span.oldpass-error-wrap
                         label.profile__input-wrap.input-wrap
                             span.profile__input-name.inp-name Пароль <span class="red">*</span>
-                            input.profile__input.inp(type="text"  placeholder="Введите пароль *")
+                            input.profile__input.inp(type="text"  placeholder="Введите пароль *" data-required data-newpass)
+                            span.pass-error-wrap
                         label.profile__input-wrap.input-wrap
                             span.profile__input-name.inp-name Повторите пароль <span class="red">*</span>
-                            input.profile__input.inp(type="text"  placeholder="Введите пароль *")
+                            input.profile__input.inp(type="text"  placeholder="Введите пароль *" data-required data-newpass)
 
                     label.profile__checkbox
                         input.profile__checkbox-input(type="checkbox")
                         .profile__checkbox-square
                         .profile__checkbox-text Я ознакомлен(-а) с <a href="/policy.html">Политикой конфиденциальности</a>
+                        span.policy-err
 
-                    input.profile__submit.btn(type="submit" value="Сохранить изменения")
+                    .profile__submit-wrap
+                        input.profile__submit.btn(type="submit" value="Сохранить изменения")
+                        span.profile-succsess-msg 
 
 
             .lk__page.orders.hidden(data-page="Мои заказы")
@@ -203,9 +208,9 @@ main.wrapper
 
 
 
-            .lk__page.hidden.addresses(data-page="Адреса доставки")
+            //- .lk__page.hidden.addresses(data-page="Адреса доставки")
 
-                .lk__title Адреса доставки
+            //-     .lk__title Адреса доставки
 
 
             .lk__page.hidden.logout(data-page="Выйти")

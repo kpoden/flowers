@@ -9,7 +9,7 @@ main.wrapper
 
     h1.section-title Оформление заказа
 
-    form.order
+    form.order(id="order-form")
         .order__info
             p.order__claim.
                 Все заказы обрабатываются в порядке очереди, в ближайшее время с вами свяжется администратор.
@@ -25,13 +25,13 @@ main.wrapper
                 .order__line 
                     label.order__input-wrap.input-wrap
                         span.order__input-name.inp-name Имя <span class="red">*</span>
-                        input.order__input.inp(type="text" placeholder="Имя *")
+                        input.order__input.inp(type="text" name="name" placeholder="Имя *" data-required)
                     label.order__input-wrap.input-wrap
                         span.order__input-name.inp-name Телефон <span class="red">*</span>
-                        input.order__input.inp(type="text" placeholder="Телефон *")
+                        input.order__input.inp(type="text" name="phone" placeholder="Телефон *" data-required)
                     label.order__input-wrap.input-wrap
                         span.order__input-name.inp-name E-mail <span class="red">*</span>
-                        input.order__input.inp(type="text" placeholder="E-mail *")
+                        input.order__input.inp(type="text" name="email" placeholder="E-mail *"  data-required)
 
                 .order__radio
                     label.order__radio-wrap
@@ -40,7 +40,7 @@ main.wrapper
                         span Получать будет другой человек
             
             .order__delivery-wrap
-                h4.order__subtitle Подробности доставки
+                h4.order__subtitle Способы доставки
                 p.order__claim Заказы на дневное время, оформленные в ночной период (21:00 -09:00), будут обработаны в порядке очереди с 09:00.
 
                 .order__delivery
@@ -59,20 +59,20 @@ main.wrapper
                         .order__line 
                             label.order__input-wrap.input-wrap
                                 span.order__input-name.inp-name Населенный пункт, улица, дом <span class="red">*</span>
-                                input.order__input.inp(type="text" placeholder="Введите адрес")
+                                input.order__input.inp(type="text" name="address" placeholder="Введите адрес"  data-required)
                             label.order__input-wrap.input-wrap
                                 span.order__input-name.inp-name Квартира / офис
-                                input.order__input.inp(type="text" placeholder="Введите квартиру / офис")
+                                input.order__input.inp(type="text" name="kv" placeholder="Введите квартиру / офис")
                             label.order__input-wrap.input-wrap
                                 span.order__input-name.inp-name Подъезд
-                                input.order__input.inp(type="text" placeholder="Введите подъезд")
+                                input.order__input.inp(type="text" name="entrance" placeholder="Введите подъезд")
                             label.order__input-wrap.input-wrap
                                 span.order__input-name.inp-name Этаж
-                                input.order__input.inp(type="text" placeholder="Введите этаж")
+                                input.order__input.inp(type="text" name="floor" placeholder="Введите этаж")
                         .order__line 
                             label.order__input-wrap.input-wrap.w100
                                 span.order__input-name.inp-name Дополнительная информация
-                                input.order__input.inp(type="text" placeholder="Ваш комментарий")
+                                input.order__input.inp(type="text" name="comment" placeholder="Ваш комментарий")
 
                     .order__pickup
                         .order__line 
@@ -95,12 +95,12 @@ main.wrapper
                     .order__date
                         label.order__input-wrap.input-wrap
                             span.order__input-name.inp-name Дата доставки <span class="red">*</span>
-                            input.order__input.inp(type="text" placeholder="Выберите дату *")
+                            input.order__input.inp(type="text" name="date" placeholder="Выберите дату *"  data-required)
                             svg(width="20px" height="20px")
                                 use(xlink:href="images/sprite.svg#date")
                         label.order__input-wrap.input-wrap
                             span.order__input-name.inp-name Время доставки <span class="red">*</span>
-                            input.order__input.inp(type="text" placeholder="Выберите время *")
+                            input.order__input.inp(type="text" name="time" placeholder="Выберите время *"  data-required)
                             svg(width="20px" height="20px")
                                 use(xlink:href="images/sprite.svg#clock")
 
@@ -121,7 +121,7 @@ main.wrapper
             h4.order__subtitle Способ оплаты
             .order__pay
                 label.order__radio-wrap.order__pay-2line
-                    input(type="radio", name="other")
+                    input(type="radio", name="pay")
                     span.dot
                     .order__pay-text 
                         .order__pay-mainText Оплата наличными или картой в магазине
@@ -130,13 +130,13 @@ main.wrapper
                     Репина, 99 / 8 Марта 52 / Машиностроителей 10 / Вильгельма де Геннина 40
                     Оплата производится после согласования всех деталей заказа с администратором
                 label.order__radio-wrap
-                    input(type="radio", name="other")
+                    input(type="radio", name="pay")
                     span.dot
                     .order__pay-text 
                         .order__pay-mainText Оплата наличными курьеру
 
                 label.order__radio-wrap
-                    input(type="radio", name="other")
+                    input(type="radio", name="pay")
                     span.dot
                     .order__pay-text 
                         .order__pay-mainText Оплата картой на сайте
@@ -144,7 +144,7 @@ main.wrapper
                 p.order__pay-subtext.
                     Оплата производится после согласования всех деталей заказа с администратором
                 label.order__radio-wrap
-                    input(type="radio", name="other")
+                    input(type="radio", name="pay")
                     span.dot
                     .order__pay-text
                         .order__pay-mainText Оплата по &nbsp;
@@ -184,13 +184,4 @@ main.wrapper
                 .total__callback(data-modal="instant") Купить в 1 клик
 
 
-    .orderDone.hidden
-        img(src="images/basket/done.png")
-        .orderDone__title Заказ сформирован
-        .orderDone__info Ваш заказ <span class="yellow">№164942</span> от 31.05.2023 15:02:26 успешно создан
-        p.orderDone__subtext.
-            Все заказы обрабатываются в порядке очереди, в ближайшее время с вами свяжется администратор.
-            Заказы на дневное время, оформленные в ночной период (21:00 -09:00), будут обработаны в порядке очереди с 09:00.
-            Оплата производится только после согласования всех деталей заказа с администратором.
-        a.orderDone__btn.btn(href="/lk.html") в личный кабинет
-        a.orderDone__callback(href="/") На главную
+    

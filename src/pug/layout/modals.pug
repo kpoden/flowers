@@ -250,10 +250,16 @@
 
                 label.modal__input-wrap.input-wrap
                     span.modal__input-name.inp-name Логин
-                    input.modal__input.inp(type="text"  placeholder="Логин")
+                    input.modal__input.inp(type="text" name="login" placeholder="Логин" data-required)
                 label.modal__input-wrap.input-wrap
                     span.modal__input-name.inp-name Пароль
-                    input.modal__input.inp(type="text"  placeholder="Пароль")
+                    input.modal__input.inp(type="password" name="password" placeholder="Пароль" data-required)
+                    span.error-wrap
+                    .eyes
+                        svg.eye(width="22" height="22")
+                            use(xlink:href="images/sprite.svg#eye")
+                        svg.eye-y(width="22" height="22")
+                            use(xlink:href="images/sprite.svg#eye-y")
 
                 input.modal__submit.modal__btn.btn(type="submit" value="Войти")
 
@@ -274,22 +280,22 @@
                 .reg__line-one
                     label.modal__input-wrap.input-wrap
                         span.modal__input-name.inp-name Имя
-                        input.modal__input.inp(type="text"  placeholder="Введите имя")
+                        input.modal__input.inp(type="text" name="name"  placeholder="Введите имя")
                     label.modal__input-wrap.input-wrap
                         span.modal__input-name.inp-name Фамилия
-                        input.modal__input.inp(type="text"  placeholder="Введите фамилию")
+                        input.modal__input.inp(type="text" name="surname" placeholder="Введите фамилию")
                 .reg__line
                     .reg__col
                         label.modal__input-wrap.input-wrap
                             span.modal__input-name.inp-name Логин <span class="red">*</span>
-                            input.modal__input.inp(type="text"  placeholder="Введите логин (min 3 символа) *")
+                            input.modal__input.inp(type="text" name="login" placeholder="Введите логин (min 3 символа) *" data-required)
                         label.modal__input-wrap.input-wrap
                             span.modal__input-name.inp-name E-mail
-                            input.modal__input.inp(type="text"  placeholder="Введите e-mail")
+                            input.modal__input.inp(type="text" name="email" placeholder="Введите e-mail")
                     .reg__col
                         label.modal__input-wrap.input-wrap
                             span.modal__input-name.inp-name Пароль <span class="red">*</span>
-                            input.modal__input.inp(type="password"  placeholder="Введите пароль")
+                            input.modal__input.inp(type="password" name="password" placeholder="Введите пароль" data-required data-newpass)
                             .eyes
                                 svg.eye(width="22" height="22")
                                     use(xlink:href="images/sprite.svg#eye")
@@ -297,7 +303,8 @@
                                     use(xlink:href="images/sprite.svg#eye-y")
                         label.modal__input-wrap.input-wrap
                             span.modal__input-name.inp-name Подтвердите пароль <span class="red">*</span>
-                            input.modal__input.inp(type="password"  placeholder="Подтвердите пароль")
+                            input.modal__input.inp(type="password" name="password" placeholder="Подтвердите пароль" data-required data-newpass)
+                            span.pass-error-wrap
                             .eyes
                                 svg.eye(width="22" height="22")
                                     use(xlink:href="images/sprite.svg#eye")
@@ -306,10 +313,10 @@
 
                 .reg__line-one
                     label.modal__input-wrap.input-wrap
-                        input.modal__input.inp(type="text"  placeholder="Введите имя")
+                        input.modal__input.inp(type="text"  placeholder="Капча")
                     label.modal__input-wrap.input-wrap
                         span.modal__input-name.inp-name Слово на картинке <span class="red">*</span>
-                        input.modal__input.inp(type="text"  placeholder="Введите слово на картинке *")
+                        input.modal__input.inp(type="text" name="captcha" placeholder="Введите слово на картинке *" data-required)
 
                 input.reg__submit.modal__submit.modal__btn.btn(type="submit" value="зарегистрироваться")
 
@@ -353,10 +360,10 @@
 
                 label.modal__input-wrap.input-wrap
                     span.modal__input-name.inp-name Ваше имя
-                    input.modal__input.inp(type="text"  placeholder="Введите имя")
+                    input.modal__input.inp(type="text" name="name" placeholder="Введите имя" data-required)
                 label.modal__input-wrap.input-wrap
                     span.modal__input-name.inp-name Телефон <span class="red">*</span>
-                    input.modal__input.inp(type="text"  placeholder="Введите телефон *")
+                    input.modal__input.inp(type="text" name="phone" placeholder="Введите телефон *" data-required)
 
                 input.modal__submit.modal__btn.btn(type="submit" value="Перезвоните мне")
 
@@ -375,10 +382,10 @@
 
                 label.modal__input-wrap.input-wrap
                     span.modal__input-name.inp-name Имя <span class="red">*</span>
-                    input.modal__input.inp(type="text"  placeholder="Введите имя *")
+                    input.modal__input.inp(type="text" name="name"  placeholder="Введите имя *" )
                 label.modal__input-wrap.input-wrap
                     span.modal__input-name.inp-name Телефон <span class="red">*</span>
-                    input.modal__input.inp(type="text"  placeholder="Введите телефон *")
+                    input.modal__input.inp(type="text" name="phone"  placeholder="Введите телефон *" )
 
                 input.modal__submit.modal__btn.btn(type="submit" value="Оформить заказ")
 
