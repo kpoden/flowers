@@ -23,6 +23,7 @@
         padding: 20px
         transition: .2s
         min-height: 165px
+        flex-shrink: 0
 
         &:last-child
             margin-right: auto
@@ -52,7 +53,8 @@
                 height: 490px
 
                 +mw(750)
-                    height: 324px
+                    max-height: 324px
+
 
 
 
@@ -103,7 +105,7 @@
                     max-height: 75px
 
             .catalog__item-img
-                height: 350px
+                height: 100%;
 
                 +mw(750)
                     height: 150px
@@ -124,17 +126,22 @@
             height: 100%
             text-align: center
             position: relative
-            height: 490px
+            // height: 490px
             display: flex
             align-items: center
             justify-content: center
             display: inline-block
+            height: 100% !important
+            max-height: 490px
 
-            +mw(1250)
-                height: 350px
+            +mw(750)
+                max-height: 324px
 
-            +mw(900)
-                height: 250px
+            // +mw(1250)
+            //     height: 350px
+
+            // +mw(900)
+            //     height: 250px
 
 
             &-img
@@ -189,6 +196,9 @@
 
             +mw(1350)
                 gap: 20px
+            
+            +mw(1000)
+                gap: 15px
 
             +mw(750)
                 flex-direction: row-reverse
@@ -238,8 +248,8 @@
 
         &-present
             position: absolute
-            right: 0px
-            bottom: 0px
+            right: 20px
+            bottom: 30px
             max-height: 130px
 
 

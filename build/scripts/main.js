@@ -8,7 +8,7 @@ class Catalog {
 
     initGrid() {
         
-        if(window.innerWidth > 1000) {
+        if(window.innerWidth > 1200) {
             
             for(let i = 0; i < this.items.length; i++) {
                 
@@ -19,7 +19,7 @@ class Catalog {
                 }
             }
 
-        } else if(window.innerWidth <= 999 && window.innerWidth > 700) {
+        } else if(window.innerWidth <= 1199 && window.innerWidth > 850) {
 
             for(let i = 0; i < this.items.length; i++) {
                 if (i % 5 < 2) {
@@ -28,7 +28,7 @@ class Catalog {
                     this.items[i].classList.add('third');
                 }
             }
-        } else if(window.innerWidth <= 699) {
+        } else if(window.innerWidth <= 849) {
 
             for(let i = 0; i < this.items.length; i++) {
                 if (i % 3 < 1) {
@@ -1012,7 +1012,7 @@ class Form {
         });
     
     
-        const inputs = this.form.querySelectorAll('input[type=text], input[type=tel');
+        const inputs = this.form.querySelectorAll('input[type=text], input[type=tel], input[type=password]');
         inputs.forEach((input) => {
           input.classList.remove('_error-input');
         });
@@ -1235,6 +1235,18 @@ class Form {
     
             }
 
+            if(this.form.id == "reg-form") {
+                var captcha = grecaptcha.getResponse();
+
+                if (!captcha.length) {
+                    console.log(1);
+                    $('#recaptchaError').text('* Вы не прошли проверку капчей');
+                } else {
+                    console.log(2);
+                    $('#recaptchaError').text('');
+                }
+            }
+
             if(this.form.id == "lk-form") {
                 if(!this.policyChecked()) {
                     return;
@@ -1268,6 +1280,8 @@ class Form {
             } else if(this.form.id =='restore-form') {
 
                 xhr.open('POST', '/local/ajax/restore.php');
+            } else {
+                xhr.open('POST', '/local/ajax/test.php');
             }
               
             xhr.onload = () => {

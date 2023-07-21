@@ -56,10 +56,11 @@ main.wrapper
 
 
                     .order__courier
-                        .order__line 
-                            label.order__input-wrap.input-wrap
-                                span.order__input-name.inp-name Населенный пункт, улица, дом <span class="red">*</span>
-                                input.order__input.inp(type="text" name="address" placeholder="Введите адрес"  data-required)
+                        label.order__input-wrap.input-wrap.inp100w
+                            span.order__input-name.inp-name Населенный пункт, улица, дом <span class="red">*</span>
+                            input.order__input.inp(type="text" name="address" placeholder="Введите адрес"  data-required)
+                        .order__line.lineMaxWidth
+                            
                             label.order__input-wrap.input-wrap
                                 span.order__input-name.inp-name Квартира / офис
                                 input.order__input.inp(type="text" name="kv" placeholder="Введите квартиру / офис")
@@ -72,9 +73,9 @@ main.wrapper
                         .order__line 
                             label.order__input-wrap.input-wrap.w100
                                 span.order__input-name.inp-name Дополнительная информация
-                                input.order__input.inp(type="text" name="comment" placeholder="Ваш комментарий")
+                                textarea.order__input.inp(type="text" name="comment" placeholder="Ваш комментарий")
 
-                    .order__pickup
+                    .order__pickup.hidden
                         .order__line 
                             label.order__input-wrap.input-wrap.w100
                                 span.order__input-name.inp-name Магазин <span class="red">*</span>
@@ -121,7 +122,7 @@ main.wrapper
             h4.order__subtitle Способ оплаты
             .order__pay
                 label.order__radio-wrap.order__pay-2line
-                    input(type="radio", name="pay")
+                    input(type="radio", name="pay" value="Оплата наличными или картой в магазине")
                     span.dot
                     .order__pay-text 
                         .order__pay-mainText Оплата наличными или картой в магазине
@@ -130,13 +131,13 @@ main.wrapper
                     Репина, 99 / 8 Марта 52 / Машиностроителей 10 / Вильгельма де Геннина 40
                     Оплата производится после согласования всех деталей заказа с администратором
                 label.order__radio-wrap
-                    input(type="radio", name="pay")
+                    input(type="radio", name="pay" value="Оплата наличными курьеру")
                     span.dot
                     .order__pay-text 
                         .order__pay-mainText Оплата наличными курьеру
 
                 label.order__radio-wrap
-                    input(type="radio", name="pay")
+                    input(type="radio", name="pay" value="Оплата картой на сайте")
                     span.dot
                     .order__pay-text 
                         .order__pay-mainText Оплата картой на сайте
@@ -144,7 +145,7 @@ main.wrapper
                 p.order__pay-subtext.
                     Оплата производится после согласования всех деталей заказа с администратором
                 label.order__radio-wrap
-                    input(type="radio", name="pay")
+                    input(type="radio", name="pay" value="Оплата по СБП")
                     span.dot
                     .order__pay-text
                         .order__pay-mainText Оплата по &nbsp;
@@ -171,9 +172,9 @@ main.wrapper
                     .total__basketTotal-text В корзине 4 товара:
                     .total__basketTotal-num 9 520 ₽
 
-                .total__delivery
-                    .total__delivery-text Доставка:
-                    .total__delivery-num 0 ₽
+                //- .total__delivery
+                //-     .total__delivery-text Доставка:
+                //-     .total__delivery-num 0 ₽
 
             .total__bottom
                 .total__bonus

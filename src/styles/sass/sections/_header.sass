@@ -40,12 +40,22 @@
         left: 0
         z-index: -1
 
+    .videoOrerlay
+        width: 100%
+        height: 100%
+        opacity: 0.6
+        background: #2E2E2E
+        position: absolute
+        z-index: 0
+
     &-top
         display: flex
         justify-content: space-between
         align-items: center
         padding-top: 23px
         padding-bottom: 23px
+        z-index: 10
+        position: relative
 
         +mw(1150)
             padding-top: 10px
@@ -55,7 +65,7 @@
             width: 200px
             height: 27px
 
-            +mw(1150)
+            +mw(1300)
                 width: 150px
                 height: 21px
 
@@ -117,6 +127,7 @@
 
             +mw(1490)
                 padding-left: 10px
+                padding-right: 15px
 
 
 
@@ -126,6 +137,9 @@
             justify-content: space-between
             width: 100%
             gap: 30px
+
+            +mw(1450)
+                gap: 10px
 
             
         &__nav-item
@@ -141,6 +155,8 @@
             display: flex
             align-items: center
             gap: 10px
+            width: 166px
+            flex-shrink: 0
             span
                 text-transform: uppercase
                 font-size: 16px
@@ -226,6 +242,12 @@
             color: #272727
             margin-right: 20px
             border-color: transparent !important
+
+            +mw(1150)
+                margin-right: 0
+
+            &.btnBouqetScroll
+                width: 293px
 
             &:hover
                 color: #272727

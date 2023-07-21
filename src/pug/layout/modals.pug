@@ -20,7 +20,7 @@
         img(src = "images/modal/2.png")
         h2.modal__header Вернём 10% на счёт
         p.modal__text 10% от суммы каждого заказа на ваш счёт в личный кабинет
-        a.modal__btn.btn подробнее о бонусной программе
+        a.modal__btn.btn(href="bonus.html") подробнее о бонусной программе
 
 
     .photoBouqet
@@ -78,42 +78,13 @@
             .item__slider-arrow.arr-left
             .item__slider-arrow.arr-right
         .item__add-items
-            .item__add-item(data-type='Популярное')
+            .item__add-item(data-type='Ваза')
                 .item__add-item-top
                     .item__add-item-img
-                        img(src="images/item/add/1.png")
+                        img(src="images/item/vase/1.png")
                     .item__add-item-info
-                        .item__add-item-name  Конфеты Raffaello Конфеты Raffaello
-                        .item__add-item-quant 300 г
-                        .item__add-item-price 599 ₽
-                a.item__add-item-btn.btn
-                    svg(width="20" height="20")
-                        use(xlink:href="images/sprite.svg#shop")
-                    span В корзину
-
-            
-            .item__add-item(data-type='Игрушка')
-                .item__add-item-top
-                    .item__add-item-img
-                        img(src="images/item/add/2.png")
-                    .item__add-item-info
-                        .item__add-item-name Медведь Плюша
-                        .item__add-item-quant 90 см
-                        .item__add-item-price 2 500 ₽
-                a.item__add-item-btn.btn
-                    svg(width="20" height="20")
-                        use(xlink:href="images/sprite.svg#shop")
-                    span В корзину
-
-            
-            .item__add-item(data-type='Шарик')
-                .item__add-item-top
-                    .item__add-item-img
-                        img(src="images/item/add/3.png")
-                    .item__add-item-info
-                        .item__add-item-name Фольгированное "Сердце"
-                        .item__add-item-quant 
-                        .item__add-item-price 1 750 ₽
+                        .item__add-item-name  Ваза прозрачная
+                        .item__add-item-price 550 ₽
                 a.item__add-item-btn.btn
                     svg(width="20" height="20")
                         use(xlink:href="images/sprite.svg#shop")
@@ -123,7 +94,34 @@
             .item__add-item(data-type='Ваза')
                 .item__add-item-top
                     .item__add-item-img
-                        img(src="images/item/add/4.png")
+                        img(src="images/item/vase/2.png")
+                    .item__add-item-info
+                        .item__add-item-name Ваза №7
+                        .item__add-item-price 550 ₽
+                a.item__add-item-btn.btn
+                    svg(width="20" height="20")
+                        use(xlink:href="images/sprite.svg#shop")
+                    span В корзину
+
+            
+            .item__add-item(data-type='Ваза')
+                .item__add-item-top
+                    .item__add-item-img
+                        img(src="images/item/vase/3.png")
+                    .item__add-item-info
+                        .item__add-item-name Ваза №8
+                        .item__add-item-quant 
+                        .item__add-item-price 550 ₽
+                a.item__add-item-btn.btn
+                    svg(width="20" height="20")
+                        use(xlink:href="images/sprite.svg#shop")
+                    span В корзину
+
+            
+            .item__add-item(data-type='Ваза')
+                .item__add-item-top
+                    .item__add-item-img
+                        img(src="images/item/vase/1.png")
                     .item__add-item-info
                         .item__add-item-name Ваза прозрачная
                         .item__add-item-quant 
@@ -134,14 +132,14 @@
                     span В корзину
 
             
-            .item__add-item(data-type='Конфеты')
+            .item__add-item(data-type='Ваза')
                 .item__add-item-top
                     .item__add-item-img
-                        img(src="images/item/add/3.png")
+                        img(src="images/item/vase/3.png")
                     .item__add-item-info
-                        .item__add-item-name Фольгированное "Сердце"
+                        .item__add-item-name Ваза №12
                         .item__add-item-quant 
-                        .item__add-item-price 1 750 ₽
+                        .item__add-item-price 550 ₽
                 a.item__add-item-btn.btn
                     svg(width="20" height="20")
                         use(xlink:href="images/sprite.svg#shop")
@@ -158,11 +156,10 @@
             .item__add-item(data-type='Популярное')
                 .item__add-item-top
                     .item__add-item-img
-                        img(src="images/item/add/1.png")
+                        img(src="images/item/topper/1.png")
                     .item__add-item-info
-                        .item__add-item-name  Конфеты Raffaello Конфеты Raffaello
-                        .item__add-item-quant 300 г
-                        .item__add-item-price 599 ₽
+                        .item__add-item-name  Топпер Love you
+                        .item__add-item-price 100 ₽
                 a.item__add-item-btn.btn
                     svg(width="20" height="20")
                         use(xlink:href="images/sprite.svg#shop")
@@ -172,11 +169,11 @@
             .item__add-item(data-type='Игрушка')
                 .item__add-item-top
                     .item__add-item-img
-                        img(src="images/item/add/2.png")
+                        img(src="images/item/topper/2.png")
                     .item__add-item-info
-                        .item__add-item-name Медведь Плюша
-                        .item__add-item-quant 90 см
-                        .item__add-item-price 2 500 ₽
+                        .item__add-item-name Топпер Маме
+                        .item__add-item-quant 
+                        .item__add-item-price 100 ₽
                 a.item__add-item-btn.btn
                     svg(width="20" height="20")
                         use(xlink:href="images/sprite.svg#shop")
@@ -186,11 +183,11 @@
             .item__add-item(data-type='Шарик')
                 .item__add-item-top
                     .item__add-item-img
-                        img(src="images/item/add/3.png")
+                        img(src="images/item/topper/3.png")
                     .item__add-item-info
-                        .item__add-item-name Фольгированное "Сердце"
+                        .item__add-item-name Топпер С Днём Рождения
                         .item__add-item-quant 
-                        .item__add-item-price 1 750 ₽
+                        .item__add-item-price 100 ₽
                 a.item__add-item-btn.btn
                     svg(width="20" height="20")
                         use(xlink:href="images/sprite.svg#shop")
@@ -200,11 +197,11 @@
             .item__add-item(data-type='Ваза')
                 .item__add-item-top
                     .item__add-item-img
-                        img(src="images/item/add/4.png")
+                        img(src="images/item/topper/1.png")
                     .item__add-item-info
-                        .item__add-item-name Ваза прозрачная
+                        .item__add-item-name Топпер Love you
                         .item__add-item-quant 
-                        .item__add-item-price 550 ₽
+                        .item__add-item-price 100 ₽
                 a.item__add-item-btn.btn
                     svg(width="20" height="20")
                         use(xlink:href="images/sprite.svg#shop")
@@ -214,11 +211,11 @@
             .item__add-item(data-type='Конфеты')
                 .item__add-item-top
                     .item__add-item-img
-                        img(src="images/item/add/3.png")
+                        img(src="images/item/topper/3.png")
                     .item__add-item-info
-                        .item__add-item-name Фольгированное "Сердце"
+                        .item__add-item-name Топпер Маме
                         .item__add-item-quant 
-                        .item__add-item-price 1 750 ₽
+                        .item__add-item-price 100 ₽
                 a.item__add-item-btn.btn
                     svg(width="20" height="20")
                         use(xlink:href="images/sprite.svg#shop")
@@ -313,7 +310,8 @@
 
                 .reg__line-one
                     label.modal__input-wrap.input-wrap
-                        input.modal__input.inp(type="text"  placeholder="Капча")
+                        .g-recaptcha(data-sitekey="6LfMKD4nAAAAAD8aTM9O3VQ3ob8noM45yTC-62Ac")
+                        //- input.modal__input.inp(type="text"  placeholder="Капча")
                     label.modal__input-wrap.input-wrap
                         span.modal__input-name.inp-name Слово на картинке <span class="red">*</span>
                         input.modal__input.inp(type="text" name="captcha" placeholder="Введите слово на картинке *" data-required)

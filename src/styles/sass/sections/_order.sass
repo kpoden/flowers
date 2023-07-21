@@ -3,6 +3,10 @@
     justify-content: space-between
     gap: 30px
 
+    +mw(1000)
+        flex-direction: column
+
+
     .inp
         height: 60px
         border: 1.5px solid #FFF
@@ -25,6 +29,10 @@
         padding-bottom: 50px
         border-bottom: 2px solid rgba(255, 255, 255, 0.2)
 
+        +mw(1350)
+            .order__line
+                flex-wrap: wrap
+
     &__subtitle
         font-size: 28px
         font-weight: 600
@@ -44,7 +52,32 @@
         padding-bottom: 30px
 
 
-        
+    .order__courier
+
+        .inp100w
+            width: 100%
+            display: flex
+            padding-bottom: 30px
+
+            .inp
+                max-width: 810px
+                width: 100% 
+
+        .lineMaxWidth
+            max-width: 810px
+
+            +mw(1320)
+                flex-wrap: wrap
+
+            .order__input
+                max-width: 250px
+                padding: 0 20px 0 30px
+
+    textarea
+        height: 159px !important
+        border-radius: 15px !important
+        resize: none
+
 
     .inp-name
         font-size: 12px
@@ -75,6 +108,9 @@
         padding-bottom: 50px
         padding-top: 30px
 
+        +mw(600)
+            gap: 10px
+
     &__delivery-filter
         display: inline-flex
         align-items: center
@@ -87,6 +123,9 @@
         background: rgba(255, 255, 255, 0.10) !important
         height: 50px !important
         color: #fff !important
+
+        +mw(600)
+            font-size: 12px !important
 
         &:hover
             background: rgba(255, 255, 255, 0.30) !important
@@ -102,9 +141,11 @@
             color: #fff
 
     .w100
+
         width: 100%
 
         .inp
+            max-width: 810px
             width: 100%
 
     &__date
@@ -113,9 +154,15 @@
         gap: 30px
         padding-top: 40px
 
+        +mw(1590)
+            flex-wrap: wrap
+
         .inp
             width: 390px
             cursor: pointer
+
+            +mw(600)
+                max-width: 250px
 
         &-freeDelivery
             width: 260px !important
