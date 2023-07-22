@@ -57,6 +57,7 @@
                     span.lenght__dot.dot
                     span.lenght__name 70 см
 
+            h3.construct__subtitle Количество цветов в букете, шт.:
             .construct__range.quant
                 input.quant__input.inp(type="text", name="quant" value="1" disabled)
                 input.quant__range(type="range" min="1" max="101" value="5")
@@ -133,7 +134,7 @@
 
 
             .construct__btn-wrap
-                a.construct__btn.btn(type="submit")
+                a.construct__btn.btn(type="submit" data-modal="addedItem")
                     svg(width="20" height="20")
                         use(xlink:href="images/sprite.svg#shop")
                     span В корзину

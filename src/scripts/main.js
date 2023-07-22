@@ -30,11 +30,18 @@ class Catalog {
             }
         } else if(window.innerWidth <= 849) {
 
-            for(let i = 0; i < this.items.length; i++) {
+            const itemsArr = Array.from(this.items)
+
+            const firstArr = itemsArr.slice(0, 2);
+            const restArr = itemsArr.slice(2, itemsArr.length);
+            for(let i = 0; i < firstArr.length; i++) {
+                firstArr[i].classList.add('second');
+            }
+            for(let i = 0; i < restArr.length; i++) {
                 if (i % 3 < 1) {
-                    this.items[i].classList.add('once');
+                    restArr[i].classList.add('once');
                 } else if (i % 3 >= 1 && i % 3 < 3) {
-                    this.items[i].classList.add('second');
+                    restArr[i].classList.add('second');
                 }
             }
         }
@@ -512,9 +519,13 @@ class Modal {
 
     addedItem() {
         this.addedImg = this.modal.querySelector('.addedItemImg');
-        this.mainItemImg = document.querySelectorAll('.item__slider-main-slide img')[0].src;
+        if(document.querySelectorAll('.item__slider-main-slide img').length > 0) {
+            this.mainItemImg = document.querySelectorAll('.item__slider-main-slide img')[0].src;
+            this.addedImg.src = this.mainItemImg;
+        }
+        
 
-        this.addedImg.src = this.mainItemImg;
+        
 
 
     }

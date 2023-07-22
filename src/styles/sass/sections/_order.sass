@@ -27,9 +27,15 @@
 
     &__buyer
         padding-bottom: 50px
-        border-bottom: 2px solid rgba(255, 255, 255, 0.2)
+        border-bottom: 2px solid rgb(255, 255, 255)
 
-        +mw(1350)
+        .order__input-wrap
+            width: 100%
+
+            .order__input
+                width: 100%
+
+        +mw(1150)
             .order__line
                 flex-wrap: wrap
 
@@ -65,13 +71,17 @@
 
         .lineMaxWidth
             max-width: 810px
+            justify-content: space-between 
+
+            +mw(840)
+                justify-content: flex-start
 
             +mw(1320)
                 flex-wrap: wrap
 
             .order__input
-                max-width: 250px
-                padding: 0 20px 0 30px
+                width: 250px
+                padding: 0 10px 0 30px
 
     textarea
         height: 159px !important
@@ -99,7 +109,7 @@
 
 
     &__delivery-wrap
-        border-bottom: 2px solid rgba(255, 255, 255, 0.2)
+        border-bottom: 2px solid rgb(255, 255, 255)
 
 
     &__delivery-filters

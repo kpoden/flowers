@@ -225,10 +225,10 @@
 
 
     .addedItem
-        img.addedItemImg(src = "")
+        img.addedItemImg(src = "images/basket/empty.png")
         h2.modal__header Товар добавлен <br> в корзину
 
-        a.modal__btn.btn.addedItemBtn(href="/cart")
+        a.modal__btn.btn.addedItemBtn(href="/basket.html")
             svg(width="20" height="20")
                 use(xlink:href="images/sprite.svg#shop")
             span Перейти в корзину
@@ -327,8 +327,7 @@
 
 
     .regThanks
-        svg( width="170" height="180")
-            use(xlink:href="images/sprite.svg#plane")
+        img(src="images/modal/plane.png")
         h2.modal__header Благодарим <br> за регистрацию
         p.modal__text Вы зарегистрированы и успешно авторизовались
         
@@ -339,8 +338,7 @@
 
 
     .callbackThanks
-        svg( width="170" height="180")
-            use(xlink:href="images/sprite.svg#plane")
+        img(src="images/modal/plane.png")
         h2.modal__header Спасибо!
         p.modal__text Менеджер свяжется с Вами в течение 15 минут
         

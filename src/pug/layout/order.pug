@@ -22,7 +22,7 @@ main.wrapper
 
                 p.order__text Покупатель
 
-                .order__line 
+                .order__line.order__buyer
                     label.order__input-wrap.input-wrap
                         span.order__input-name.inp-name Имя <span class="red">*</span>
                         input.order__input.inp(type="text" name="name" placeholder="Имя *" data-required)
@@ -172,9 +172,9 @@ main.wrapper
                     .total__basketTotal-text В корзине 4 товара:
                     .total__basketTotal-num 9 520 ₽
 
-                //- .total__delivery
-                //-     .total__delivery-text Доставка:
-                //-     .total__delivery-num 0 ₽
+                .total__delivery
+                    .total__delivery-text Доставка:
+                    .total__delivery-num 0 ₽
 
             .total__bottom
                 .total__bonus

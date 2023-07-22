@@ -102,6 +102,7 @@
                   <input type="radio" name="lenght"/><span class="lenght__dot dot"></span><span class="lenght__name">70 см</span>
                 </label>
               </div>
+              <h3 class="construct__subtitle">Количество цветов в букете, шт.:</h3>
               <div class="construct__range quant">
                 <input class="quant__input inp" type="text" name="quant" value="1" disabled="disabled"/>
                 <input class="quant__range" type="range" min="1" max="101" value="5"/>
@@ -144,7 +145,7 @@
               <div class="construct__add">
                 <p class="construct__add-title">Добавить к заказу:</p><a class="construct__add-item" data-modal="delivery"><img src="images/construct/delivery.png"/><span class="construct__add-item-text">Бесплатная доставка от 1 500₽ *</span></a><a class="construct__add-item" data-modal="cashback"><img src="images/construct/card.png"/><span class="construct__add-item-text">Вернём 10% на счёт</span></a><a class="construct__add-item" data-modal="photoBouqet"><img src="images/construct/camera.png"/><span class="construct__add-item-text">Фото букета перед доставкой</span></a><a class="construct__add-item" data-modal="feeding"><img src="images/construct/fert.png"/><span class="construct__add-item-text">Подкормка для цветов в подарок</span></a><a class="construct__add-item" data-modal="card"><img src="images/construct/postcard.png"/><span class="construct__add-item-text">Открытка для букета в подарок</span></a><a class="construct__add-item" data-modal="topper"><img src="images/construct/love.png"/><span class="construct__add-item-text">Топпер для букета</span></a><a class="construct__add-item" data-modal="vase"><img src="images/construct/vase.png"/><span class="construct__add-item-text">Ваза для букета</span></a>
               </div>
-              <div class="construct__btn-wrap"><a class="construct__btn btn" type="submit">
+              <div class="construct__btn-wrap"><a class="construct__btn btn" type="submit" data-modal="addedItem">
                   <svg width="20" height="20">
                     <use xlink:href="images/sprite.svg#shop"></use>
                   </svg><span>В корзину</span></a><a class="construct__fast" data-modal="instant">Быстрый заказ</a></div>
@@ -401,8 +402,8 @@
             </div>
           </div>
         </div>
-        <div class="addedItem"><img class="addedItemImg" src=""/>
-          <h2 class="modal__header">Товар добавлен <br> в корзину</h2><a class="modal__btn btn addedItemBtn" href="/cart">
+        <div class="addedItem"><img class="addedItemImg" src="images/basket/empty.png"/>
+          <h2 class="modal__header">Товар добавлен <br> в корзину</h2><a class="modal__btn btn addedItemBtn" href="/basket.html">
             <svg width="20" height="20">
               <use xlink:href="images/sprite.svg#shop"></use>
             </svg><span>Перейти в корзину</span></a><a class="modal__btn btn modal__close addedItemBtn btn--white">
@@ -502,17 +503,11 @@
             </form>
           </div>
         </div>
-        <div class="regThanks">
-          <svg width="170" height="180">
-            <use xlink:href="images/sprite.svg#plane"></use>
-          </svg>
+        <div class="regThanks"><img src="images/modal/plane.png"/>
           <h2 class="modal__header">Благодарим <br> за регистрацию</h2>
           <p class="modal__text">Вы зарегистрированы и успешно авторизовались</p><a class="modal__btn btn" href="/"><span>На главную</span></a><a class="modal__link" href="/lk.html">В личный кабинет</a>
         </div>
-        <div class="callbackThanks">
-          <svg width="170" height="180">
-            <use xlink:href="images/sprite.svg#plane"></use>
-          </svg>
+        <div class="callbackThanks"><img src="images/modal/plane.png"/>
           <h2 class="modal__header">Спасибо!</h2>
           <p class="modal__text">Менеджер свяжется с Вами в течение 15 минут</p><a class="modal__btn btn" href="/"><span>На главную</span></a>
         </div>
