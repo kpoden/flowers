@@ -151,13 +151,14 @@ main.item-page
 
             .construct__price 
                 .construct__price-top 
-                .construct__price-num 3 500 ₽
+                .construct__price-num 1 400 ₽
             .construct__delivery
                 svg(width="20" height="20")
                     use(xlink:href="images/sprite.svg#read")
                 span Бесплатная доставка *
 
             .construct__delivery-under.hidden
+                span.freeDeliveryMin.hidden 1500
                 span.construct__delivery-under До бесплатной доставки <br> нехватает 
                 span.construct__delivery-num 100 ₽
             .construct__add

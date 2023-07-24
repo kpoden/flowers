@@ -1,3 +1,24 @@
+function bodyLock(con) {
+    const scrollFix = window.innerWidth - document.body.clientWidth + "px";
+    if (con === true) {
+      document.body.classList.add("_lock");
+      document.body.style.paddingRight = scrollFix;
+    } else if (con === false) {
+      document.body.classList.remove("_lock");
+      document.body.style.paddingRight = 0;
+    } else if (con === undefined) {
+      if (!body.classList.contains("_lock")) {
+        document.body.classList.add("_lock");
+        document.body.style.paddingRight = scrollFix;
+      } else {
+        document.body.classList.remove("_lock");
+        document.body.style.paddingRight = 0;
+      }
+    } else {
+      console.error("Неопределенный аргумент у функции bodyLock()");
+    }
+  }
+
 class Catalog {
     constructor(id) {
 
@@ -386,7 +407,7 @@ class Modal {
 
     openModal() {
         this.modal.classList.add('opened');
-        document.body.classList.add('_locked');
+        bodyLock(true);
         this.initTemplate();
         this.initAdditionals();
         showPassword();
@@ -397,7 +418,7 @@ class Modal {
 
     closeModal() {
         this.modal.classList.remove('opened');
-        document.body.classList.remove('_locked');
+        bodyLock(false);
     }
 
     listenCardRadio() {
@@ -1442,3 +1463,52 @@ function sizesSelect() {
 }
 
 sizesSelect()
+
+
+function freeDelivery() {
+    let priceNumRaw = document.querySelector('.construct__price-num').textContent;
+    const freeDeliveryMin = document.querySelector('.freeDeliveryMin').textContent;
+    const freeDeliveryBlock = document.querySelector('.construct__delivery');
+    const deliveryUnder = document.querySelector('.construct__delivery-under');
+
+    const gapNum = document.querySelector('.construct__delivery-num');
+
+    let priceNum = priceNumRaw.replace(/ /g, '');
+    let price = parseFloat(priceNum);
+
+    if(price < freeDeliveryMin) {
+        let gap = freeDeliveryMin - price;
+        freeDeliveryBlock.classList.add('hidden');
+        deliveryUnder.classList.remove('hidden');
+        gapNum.textContent = gap + " ₽"
+    } else {
+        freeDeliveryBlock.classList.remove('hidden');
+        deliveryUnder.classList.add('hidden');
+    }
+
+    document.querySelectorAll('input[type="radio"').forEach(el => {
+        el.addEventListener('click', () => {
+            priceNumRaw = document.querySelector('.construct__price-num').textContent;
+            priceNum = priceNumRaw.replace(/ /g, '');
+            price = parseFloat(priceNum);
+
+            if(price < freeDeliveryMin) {
+                let gap = freeDeliveryMin - price;
+                freeDeliveryBlock.classList.add('hidden');
+                deliveryUnder.classList.remove('hidden');
+                gapNum.textContent = gap + " ₽"
+                console.log(gap);
+            } else {
+                freeDeliveryBlock.classList.remove('hidden');
+                deliveryUnder.classList.add('hidden');
+            }
+        })
+    })
+
+}
+
+
+
+if(document.querySelector('.construct__delivery')) {
+    freeDelivery();
+}
