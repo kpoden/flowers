@@ -1021,7 +1021,7 @@ function formStartInit() {
     }
 }
 
-formStartInit()
+// formStartInit()
 
 
 //   document.querySelector('[data-modal="callbackThanks"]').click();
